@@ -1,0 +1,608 @@
+{
+  "channelId": "1252358048236830803",
+  "name": "🖥bots-commands-tests🖥",
+  "type": 0,
+  "position": 12,
+  "messages": [
+    {
+      "content": "!backup all",
+      "author": "not_ur_besness",
+      "timestamp": 1731744490191,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731712570331,
+      "attachments": []
+    },
+    {
+      "content": "!wallets",
+      "author": "not_ur_besness",
+      "timestamp": 1731712569461,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731711646054,
+      "attachments": []
+    },
+    {
+      "content": "!commands",
+      "author": "not_ur_besness",
+      "timestamp": 1731711645483,
+      "attachments": []
+    },
+    {
+      "content": "!commands",
+      "author": "not_ur_besness",
+      "timestamp": 1731704330900,
+      "attachments": []
+    },
+    {
+      "content": "❌ Command scamalert has been disabled",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731704327408,
+      "attachments": []
+    },
+    {
+      "content": "!scamalert off",
+      "author": "not_ur_besness",
+      "timestamp": 1731704326607,
+      "attachments": []
+    },
+    {
+      "content": "❌ Command swap has been disabled",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731704319001,
+      "attachments": []
+    },
+    {
+      "content": "!swap off",
+      "author": "not_ur_besness",
+      "timestamp": 1731704318122,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731704285540,
+      "attachments": []
+    },
+    {
+      "content": "!scamalert",
+      "author": "not_ur_besness",
+      "timestamp": 1731704284652,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731704279704,
+      "attachments": []
+    },
+    {
+      "content": "!scamalert",
+      "author": "not_ur_besness",
+      "timestamp": 1731704278804,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731704263169,
+      "attachments": []
+    },
+    {
+      "content": "!commands",
+      "author": "not_ur_besness",
+      "timestamp": 1731704262343,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731698496473,
+      "attachments": []
+    },
+    {
+      "content": "!role <@1123146239953883186> <@&1257783697583640686>",
+      "author": "not_ur_besness",
+      "timestamp": 1731698494921,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731697996720,
+      "attachments": []
+    },
+    {
+      "content": "!role <@1123146239953883186> <@&1257783697583640686>",
+      "author": "not_ur_besness",
+      "timestamp": 1731697995429,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731697923218,
+      "attachments": []
+    },
+    {
+      "content": "!role <@1123146239953883186> <@&1257783697583640686>",
+      "author": "not_ur_besness",
+      "timestamp": 1731697922021,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731697906121,
+      "attachments": []
+    },
+    {
+      "content": "!moderation",
+      "author": "not_ur_besness",
+      "timestamp": 1731697905484,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731696534811,
+      "attachments": []
+    },
+    {
+      "content": "!commands",
+      "author": "not_ur_besness",
+      "timestamp": 1731696534081,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731694559000,
+      "attachments": []
+    },
+    {
+      "content": "!commands",
+      "author": "not_ur_besness",
+      "timestamp": 1731694558264,
+      "attachments": []
+    },
+    {
+      "content": "Your report ticket has been created in <#1307036953707020371>. Please provide your report details there.",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731692294175,
+      "attachments": []
+    },
+    {
+      "content": "!report",
+      "author": "not_ur_besness",
+      "timestamp": 1731692292929,
+      "attachments": []
+    },
+    {
+      "content": "```\n    🚀 DRAXMH POWER 🚀\n    \n    【D】【R】【X】\n    \n    ⭐ TO THE MOON ⭐\n```",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731692176001,
+      "attachments": []
+    },
+    {
+      "content": "!draxmh",
+      "author": "not_ur_besness",
+      "timestamp": 1731692175658,
+      "attachments": []
+    },
+    {
+      "content": "🚀 DRX TO THE MOON! 🌕",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731692171402,
+      "attachments": []
+    },
+    {
+      "content": "!moon",
+      "author": "not_ur_besness",
+      "timestamp": 1731692171020,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731692025688,
+      "attachments": []
+    },
+    {
+      "content": "!moderation",
+      "author": "not_ur_besness",
+      "timestamp": 1731692025288,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731692018904,
+      "attachments": []
+    },
+    {
+      "content": "!commands",
+      "author": "not_ur_besness",
+      "timestamp": 1731692018504,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731691848423,
+      "attachments": []
+    },
+    {
+      "content": "!commands",
+      "author": "not_ur_besness",
+      "timestamp": 1731691848029,
+      "attachments": []
+    },
+    {
+      "content": "Please provide a wallet address! Usage: !wallet <address>",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731691801979,
+      "attachments": []
+    },
+    {
+      "content": "!wallet",
+      "author": "not_ur_besness",
+      "timestamp": 1731691801616,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731691770900,
+      "attachments": []
+    },
+    {
+      "content": "!wallets",
+      "author": "not_ur_besness",
+      "timestamp": 1731691770599,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731691759550,
+      "attachments": []
+    },
+    {
+      "content": "!commands",
+      "author": "not_ur_besness",
+      "timestamp": 1731691759209,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731691661852,
+      "attachments": []
+    },
+    {
+      "content": "!wallets",
+      "author": "not_ur_besness",
+      "timestamp": 1731691661493,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731691655967,
+      "attachments": []
+    },
+    {
+      "content": "!commands",
+      "author": "not_ur_besness",
+      "timestamp": 1731691655503,
+      "attachments": []
+    },
+    {
+      "content": "Announcement sent to <#1304483799442264104> successfully! ✅",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731691376503,
+      "attachments": []
+    },
+    {
+      "content": "!announce <#1304483799442264104> test",
+      "author": "not_ur_besness",
+      "timestamp": 1731691375626,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731691321900,
+      "attachments": []
+    },
+    {
+      "content": "!info",
+      "author": "not_ur_besness",
+      "timestamp": 1731691321457,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731691312170,
+      "attachments": []
+    },
+    {
+      "content": "!dapps",
+      "author": "not_ur_besness",
+      "timestamp": 1731691311827,
+      "attachments": []
+    },
+    {
+      "content": "!dapp",
+      "author": "not_ur_besness",
+      "timestamp": 1731691306733,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731691298043,
+      "attachments": []
+    },
+    {
+      "content": "!commands",
+      "author": "not_ur_besness",
+      "timestamp": 1731691297661,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731691234328,
+      "attachments": []
+    },
+    {
+      "content": "!swap 15",
+      "author": "not_ur_besness",
+      "timestamp": 1731691233611,
+      "attachments": []
+    },
+    {
+      "content": "✅ Command swap has been enabled",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731691228316,
+      "attachments": []
+    },
+    {
+      "content": "!swap on",
+      "author": "not_ur_besness",
+      "timestamp": 1731691227945,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731691093637,
+      "attachments": []
+    },
+    {
+      "content": "!moderation",
+      "author": "not_ur_besness",
+      "timestamp": 1731691093468,
+      "attachments": []
+    },
+    {
+      "content": "❌ Command raid has been disabled",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731691090193,
+      "attachments": []
+    },
+    {
+      "content": "!raid off",
+      "author": "not_ur_besness",
+      "timestamp": 1731691089909,
+      "attachments": []
+    },
+    {
+      "content": "❌ Command phishing has been disabled",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731691087883,
+      "attachments": []
+    },
+    {
+      "content": "!phishing off",
+      "author": "not_ur_besness",
+      "timestamp": 1731691087546,
+      "attachments": []
+    },
+    {
+      "content": "❌ Command verification has been disabled",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731691082554,
+      "attachments": []
+    },
+    {
+      "content": "!verification off",
+      "author": "not_ur_besness",
+      "timestamp": 1731691082151,
+      "attachments": []
+    },
+    {
+      "content": "❌ Command spam has been disabled",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731691077295,
+      "attachments": []
+    },
+    {
+      "content": "!spam off",
+      "author": "not_ur_besness",
+      "timestamp": 1731691076977,
+      "attachments": []
+    },
+    {
+      "content": "Backup of all channels completed",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731691050559,
+      "attachments": []
+    },
+    {
+      "content": "!backup all",
+      "author": "not_ur_besness",
+      "timestamp": 1731691038599,
+      "attachments": []
+    },
+    {
+      "content": "Backup of all channels completed",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731690897172,
+      "attachments": []
+    },
+    {
+      "content": "!backup all",
+      "author": "not_ur_besness",
+      "timestamp": 1731690896663,
+      "attachments": []
+    },
+    {
+      "content": "Backup of all channels completed",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731690713565,
+      "attachments": []
+    },
+    {
+      "content": "!backup all",
+      "author": "not_ur_besness",
+      "timestamp": 1731690713210,
+      "attachments": []
+    },
+    {
+      "content": "Usage: !backup <all/channel/list/restore>",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731690708375,
+      "attachments": []
+    },
+    {
+      "content": "!backup",
+      "author": "not_ur_besness",
+      "timestamp": 1731690707986,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731690680620,
+      "attachments": []
+    },
+    {
+      "content": "!moderation",
+      "author": "not_ur_besness",
+      "timestamp": 1731690680127,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731690673856,
+      "attachments": []
+    },
+    {
+      "content": "!commands",
+      "author": "not_ur_besness",
+      "timestamp": 1731690673505,
+      "attachments": []
+    },
+    {
+      "content": "❌ Command stake-stats has been disabled",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731690671647,
+      "attachments": []
+    },
+    {
+      "content": "!stake-stats off",
+      "author": "not_ur_besness",
+      "timestamp": 1731690671290,
+      "attachments": []
+    },
+    {
+      "content": "❌ Command swap has been disabled",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731690666418,
+      "attachments": []
+    },
+    {
+      "content": "!swap off",
+      "author": "not_ur_besness",
+      "timestamp": 1731690666115,
+      "attachments": []
+    },
+    {
+      "content": "✅ Command moon has been enabled",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731690663662,
+      "attachments": []
+    },
+    {
+      "content": "!moon on",
+      "author": "not_ur_besness",
+      "timestamp": 1731690663380,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731690655379,
+      "attachments": []
+    },
+    {
+      "content": "!commands",
+      "author": "not_ur_besness",
+      "timestamp": 1731690655046,
+      "attachments": []
+    },
+    {
+      "content": "❌ Command moon has been disabled",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731690652848,
+      "attachments": []
+    },
+    {
+      "content": "!moon off",
+      "author": "not_ur_besness",
+      "timestamp": 1731690652484,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731690646800,
+      "attachments": []
+    },
+    {
+      "content": "!commands",
+      "author": "not_ur_besness",
+      "timestamp": 1731690646344,
+      "attachments": []
+    },
+    {
+      "content": "✅ Command moon has been enabled",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731690643501,
+      "attachments": []
+    },
+    {
+      "content": "!moon on",
+      "author": "not_ur_besness",
+      "timestamp": 1731690642978,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731690418474,
+      "attachments": []
+    }
+  ]
+}

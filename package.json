@@ -1,0 +1,30 @@
+{
+  "name": "draxmh-discord-bot",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "watch": "nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.x.x",
+    "discord.js": "^14.x.x",
+    "dotenv": "^16.x.x",
+    "natural": "^8.0.1",
+    "node-fetch": "^2.7.0",
+    "puppeteer": "^23.8.0",
+    "qrcode": "^1.5.4",
+    "reddit-api-client": "^1.1.1",
+    "technicalindicators": "^3.1.0",
+    "tradingview-api": "^1.0.2",
+    "twitter-api-v2": "^1.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
