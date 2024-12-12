@@ -1,36 +1,28 @@
 const axios = require('axios');
 
-const BINANCE_API = 'https://api.binance.com/api/v3';
-const XRP_SYMBOL = 'XRPUSDT';
+async function getDRXPrice() {
+    const endpoints = [
+        'https://api.binance.com/api/v3/ticker/price?symbol=XRPUSDT',
+        'https://api.huobi.pro/market/detail/merged?symbol=xrpusdt',
+        'https://api.kraken.com/0/public/Ticker?pair=XRPUSD'
+    ];
 
-async function getXRPPrice() {
-    try {
-        const response = await axios.get(`${BINANCE_API}/ticker/24hr?symbol=${XRP_SYMBOL}`);
-        const data = response.data;
-        
-        return {
-            price: parseFloat(data.lastPrice),
-            change24h: parseFloat(data.priceChangePercent),
-            lastUpdate: new Date().toISOString()
-        };
-    } catch (error) {
-        console.error('Price Service: Error fetching XRP price:', error);
-        throw error;
-    }
-}
-
-// Add retry mechanism
-async function fetchWithRetry(fn, retries = 3) {
-    for (let i = 0; i < retries; i++) {
+    for (const endpoint of endpoints) {
         try {
-            return await fn();
+            const response = await axios.get(endpoint, {
+                timeout: 5000,
+                retry: 3,
+                retryDelay: 1000
+            });
+            return response.data;
         } catch (error) {
-            if (i === retries - 1) throw error;
-            await new Promise(resolve => setTimeout(resolve, 1000 * (i + 1)));
+            console.log(`Price fetch error from ${endpoint}:`, error.message);
+            continue;
         }
     }
+    throw new Error('All price endpoints failed');
 }
 
 module.exports = {
-    getXRPPrice: () => fetchWithRetry(getXRPPrice),
+    getXRPPrice: getDRXPrice,
 };

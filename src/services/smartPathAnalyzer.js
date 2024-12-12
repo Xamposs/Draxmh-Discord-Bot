@@ -5,11 +5,19 @@ class SmartPathAnalyzer {
     constructor(client, channelId) {
         this.discordClient = client;
         this.channelId = channelId;
-        this.xrplClient = new Client('wss://xrplcluster.com');
-        this.updateInterval = 10 * 60 * 1000; // 10 minutes
+        this.xrplClient = new Client('wss://xrplcluster.com', {
+            connectionTimeout: 20000,
+            timeout: 20000,
+            maxRetries: 3,
+            failoverURIs: [
+                'wss://s1.ripple.com',
+                'wss://s2.ripple.com',
+                'wss://xrplcluster.com'
+            ]
+        });
+        this.updateInterval = 10 * 60 * 1000;
         console.log('Smart Path Analyzer initialized');
     }
-
     startAutomatedUpdates = async () => {
         console.log('Starting Path Analysis updates...');
         await this.xrplClient.connect();

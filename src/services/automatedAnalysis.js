@@ -3,6 +3,7 @@ const { TechnicalAnalysis } = require('./technicalAnalysis');
 const { PatternRecognition } = require('./patternRecognition');
 const { SentimentAnalyzer } = require('./sentimentAnalysis');
 const { SignalAggregator } = require('./signalAggregator');
+const { withRetry } = require('../utils/networkRetry');
 
 class AutomatedAnalysis {
     constructor(client) {
@@ -35,10 +36,17 @@ class AutomatedAnalysis {
 
     async runXRPAnalysis() {
         if (!this.isEnabled) return;
-        const xrpChannel = this.client.channels.cache.get(this.xrpChannel);
-        if (xrpChannel) {
-            const xrpEmbed = await this.createAnalysisEmbed('XRP');
-            await xrpChannel.send({ embeds: [xrpEmbed] });
+        
+        try {
+            const xrpChannel = this.client.channels.cache.get(this.xrpChannel);
+            if (xrpChannel) {
+                const xrpEmbed = await this.createAnalysisEmbed('XRP');
+                if (xrpEmbed) {
+                    await xrpChannel.send({ embeds: [xrpEmbed] });
+                }
+            }
+        } catch (error) {
+            console.error('XRP Analysis error:', error.message);
         }
     }
 
@@ -111,34 +119,67 @@ class AutomatedAnalysis {
     }
 
     async getPriceData(token) {
-        try {
-            if (token === 'XRP') {
-                const response = await fetch('https://api.binance.com/api/v3/ticker/24hr?symbol=XRPUSDT');
+        const endpoints = [
+            'https://api.binance.com/api/v3/ticker/24hr?symbol=XRPUSDT',
+            'https://api.kraken.com/0/public/Ticker?pair=XRPUSD',
+            'https://api.huobi.pro/market/detail/merged?symbol=xrpusdt'
+        ];
+
+        for (let i = 0; i < endpoints.length; i++) {
+            try {
+                const response = await fetch(endpoints[i], {
+                    timeout: 5000,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
                 const data = await response.json();
-                return {
-                    price: parseFloat(data.lastPrice),
-                    high24h: parseFloat(data.highPrice),
-                    low24h: parseFloat(data.lowPrice),
-                    volume: parseFloat(data.volume)
-                };
-            } else {
-                return {
-                    price: 0.00425,
-                    high24h: 0.00450,
-                    low24h: 0.00400,
-                    volume: 1250000
-                };
+                
+                // Handle different API response formats
+                if (endpoints[i].includes('binance')) {
+                    return {
+                        price: parseFloat(data.lastPrice),
+                        high24h: parseFloat(data.highPrice),
+                        low24h: parseFloat(data.lowPrice),
+                        volume: parseFloat(data.volume)
+                    };
+                } else if (endpoints[i].includes('kraken')) {
+                    const pair = Object.values(data.result)[0];
+                    return {
+                        price: parseFloat(pair.c[0]),
+                        high24h: parseFloat(pair.h[0]),
+                        low24h: parseFloat(pair.l[0]),
+                        volume: parseFloat(pair.v[0])
+                    };
+                } else {
+                    // Huobi format
+                    return {
+                        price: data.tick.close,
+                        high24h: data.tick.high,
+                        low24h: data.tick.low,
+                        volume: data.tick.vol
+                    };
+                }
+            } catch (error) {
+                console.log(`Price fetch error from ${endpoints[i]}: ${error.message}`);
+                // Continue to next endpoint if current one fails
+                continue;
             }
-        } catch (error) {
-            console.log(`Error fetching ${token} price data:`, error);
-            return {
-                price: 0,
-                high24h: 0,
-                low24h: 0,
-                volume: 0
-            };
         }
-    }
-}
+
+        // If all endpoints fail, return default values
+        return {
+            price: 0,
+            high24h: 0,
+            low24h: 0,
+            volume: 0
+        };
+    }}
 
 module.exports = { AutomatedAnalysis };
+

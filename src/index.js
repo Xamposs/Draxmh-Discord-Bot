@@ -5,6 +5,7 @@ const { AutomatedAnalysis } = require('./services/automatedAnalysis');
 const PriceTracker = require('./services/priceTracker');
 const { monitorWhaleTransactions } = require('./services/whaleMonitor');
 
+
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
@@ -34,22 +35,37 @@ client.commands.set(toggleCmd.name, toggleCmd);
 const { startScamAlerts } = require('./services/autoScamAlert.js');
 
 const { startChartService } = require('./services/tradingViewChart.js');
+const { WhaleMonitor } = require('./services/whaleMonitor');
 
-client.once('ready', () => {
-    console.log(`Logged in as ${client.user.tag}!`);
+const { withDNSRetry } = require('./utils/networkRetry');
+client.once('ready', async () => {
+    try {
+        console.log(`Logged in as ${client.user.tag}!`);
     
-    // Initialize price tracker with client
-    const priceTracker = new PriceTracker(client);
-    priceTracker.start();
+        const whaleMonitor = new WhaleMonitor(client);
+        await withDNSRetry('xrplcluster.com', () => whaleMonitor.start());
     
-    // Start scam alert system
-    startScamAlerts(client);
+        // Initialize price tracker with client
+        const priceTracker = new PriceTracker(client);
+        priceTracker.start();
     
-    // Start automated analysis
-    const analysisSystem = new AutomatedAnalysis(client);
-    analysisSystem.start();
+        // Start scam alert system
+        startScamAlerts(client);
     
-    monitorWhaleTransactions(client);
+        // Start automated analysis
+        const analysisSystem = new AutomatedAnalysis(client);
+        analysisSystem.start();
+    
+        // Initialize DEX Analytics
+        const dexAnalytics = new XRPLDexAnalytics(client, process.env.DEX_ANALYTICS_CHANNEL_ID);
+        dexAnalytics.startAutomatedUpdates();
+
+        // Initialize Smart Path Analyzer
+        const pathAnalyzer = new SmartPathAnalyzer(client, process.env.PATH_ANALYSIS_CHANNEL_ID);
+        pathAnalyzer.startAutomatedUpdates();
+    } catch (error) {
+        console.error('An error occurred during initialization:', error);
+    }
 });
 
 const { logAction } = require('./utils/logging');
@@ -322,4 +338,11 @@ client.on('interactionCreate', async interaction => {
         }
     }
 });
+
+
+const { XRPLDexAnalytics } = require('./services/xrplDexAnalytics.js');
+
+// Make sure the path is correct and the file exists
+
+const { SmartPathAnalyzer } = require('./services/smartPathAnalyzer');
 

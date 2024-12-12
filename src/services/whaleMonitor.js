@@ -1,62 +1,140 @@
-const WebSocket = require('ws');
+const { WebSocket } = require('ws');
 const { processTransaction } = require('./whaleAlert');
 
 class WhaleMonitor {
     constructor(client) {
         this.client = client;
-        this.wsEndpoint = 'wss://xrplcluster.com/';
-        this.reconnectInterval = 5000;
+        this.endpoints = [
+            'wss://xrplcluster.com/',
+            'wss://s1.ripple.com/',
+            'wss://s2.ripple.com/'
+        ];
+        this.currentEndpoint = 0;
+        this.maxReconnectAttempts = 3;
+        this.reconnectDelay = 10000;
+        this.ws = null;
         this.isConnected = false;
+        this.reconnectAttempts = 0;
+        this.connectionTimeout = null;
     }
 
     start() {
         this.connect();
-        this.startHeartbeat();
+        this.setupPingInterval();
+    }
+
+    getNextEndpoint() {
+        this.currentEndpoint = (this.currentEndpoint + 1) % this.endpoints.length;
+        return this.endpoints[this.currentEndpoint];
     }
 
     connect() {
-        this.ws = new WebSocket(this.wsEndpoint);
+        if (this.reconnectAttempts >= this.maxReconnectAttempts * this.endpoints.length) {
+            console.log('All endpoints failed, waiting 60 seconds before retry...');
+            this.reconnectAttempts = 0;
+            setTimeout(() => this.connect(), 60000);
+            return;
+        }
+
+        const endpoint = this.getNextEndpoint();
+        console.log(`Attempting connection to ${endpoint}`);
         
-        this.ws.on('open', () => {
-            console.log('Whale Monitor: WebSocket connected');
-            this.isConnected = true;
-            this.ws.send(JSON.stringify({
-                command: 'subscribe',
-                streams: ['transactions']
-            }));
+        this.ws = new WebSocket(endpoint, {
+            handshakeTimeout: 15000,
+            timeout: 15000
         });
 
-        this.ws.on('message', (data) => {
-            const message = JSON.parse(data);
-            if (message.type === 'transaction') {
-                processTransaction(this.client, message.transaction);
+        this.connectionTimeout = setTimeout(() => {
+            if (!this.isConnected) {
+                this.handleDisconnect('Connection timeout');
             }
+        }, 15000);
+
+        this.ws.on('open', () => {
+            clearTimeout(this.connectionTimeout);
+            this.isConnected = true;
+            this.reconnectAttempts = 0;
+            console.log('Whale Monitor: Connected successfully');
+            
+            // Wait for connection to be fully established
+            setTimeout(() => {
+                this.subscribe();
+            }, 1000);
         });
 
+        this.setupEventHandlers();
+    }
+
+    setupEventHandlers() {
         this.ws.on('close', () => {
-            console.log('Whale Monitor: Connection lost, reconnecting...');
-            this.isConnected = false;
-            setTimeout(() => this.connect(), this.reconnectInterval);
+            this.handleDisconnect('Connection closed');
         });
 
         this.ws.on('error', (error) => {
-            console.error('Whale Monitor: WebSocket error:', error);
-            this.ws.close();
+            this.handleDisconnect(`Connection error: ${error.message}`);
+        });
+
+        this.ws.on('message', (data) => {
+            if (this.isConnected) {
+                try {
+                    const message = JSON.parse(data);
+                    if (message.type === 'transaction') {
+                        processTransaction(this.client, message.transaction);
+                    }
+                } catch (error) {
+                    console.log('Error processing message:', error);
+                }
+            }
         });
     }
 
-    startHeartbeat() {
-        setInterval(() => {
-            if (!this.isConnected) {
-                this.connect();
+    handleDisconnect(reason) {
+        clearTimeout(this.connectionTimeout);
+        this.isConnected = false;
+        this.reconnectAttempts++;
+        console.log(`${reason}. Attempt ${this.reconnectAttempts} of ${this.maxReconnectAttempts}`);
+        
+        if (this.ws) {
+            this.ws.terminate();
+        }
+        
+        if (this.reconnectAttempts < this.maxReconnectAttempts) {
+            setTimeout(() => this.connect(), this.reconnectDelay);
+        }
+    }
+
+    subscribe() {
+        if (this.isConnected && this.ws.readyState === WebSocket.OPEN) {
+            try {
+                this.ws.send(JSON.stringify({
+                    command: 'subscribe',
+                    streams: ['transactions']
+                }));
+            } catch (error) {
+                console.log('Subscribe error:', error);
+                this.handleDisconnect('Subscribe failed');
             }
-        }, 10000);
+        }
+    }
+
+    setupPingInterval() {
+        setInterval(() => {
+            if (this.isConnected && this.ws.readyState === WebSocket.OPEN) {
+                try {
+                    this.ws.ping();
+                } catch (error) {
+                    this.handleDisconnect('Ping failed');
+                }
+            }
+        }, 30000);
+    }
+
+    stop() {
+        clearTimeout(this.connectionTimeout);
+        if (this.ws) {
+            this.ws.terminate();
+        }
     }
 }
 
-function monitorWhaleTransactions(client) {
-    const monitor = new WhaleMonitor(client);
-    monitor.start();
-}
-
-module.exports = { monitorWhaleTransactions };
+module.exports = { WhaleMonitor };
