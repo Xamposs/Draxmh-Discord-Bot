@@ -1,6 +1,6 @@
 const { Client, GatewayIntentBits, Collection } = require('discord.js');
 const { toggleCommand, isCommandEnabled } = require('./utils/commandManager');
-require('dotenv').config();
+require('dotenv').config({ path: './.env' });
 const { AutomatedAnalysis } = require('./services/automatedAnalysis');
 const PriceTracker = require('./services/priceTracker');
 const { monitorWhaleTransactions } = require('./services/whaleMonitor');
@@ -346,3 +346,8 @@ const { XRPLDexAnalytics } = require('./services/xrplDexAnalytics.js');
 
 const { SmartPathAnalyzer } = require('./services/smartPathAnalyzer');
 
+
+console.log('XUMM Keys:', {
+    key: process.env.XUMM_API_KEY?.substring(0, 8) + '...',
+    secret: process.env.XUMM_API_SECRET?.substring(0, 8) + '...'
+});
