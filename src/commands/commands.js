@@ -13,7 +13,7 @@ module.exports = {
             .addFields(
                 { 
                     name: '💰 Token Commands', 
-                    value: `\`\`\`${getStatus('price')} !price - Check DRX price\n${getStatus('volume')} !volume - Trading volume\n${getStatus('swap')} !swap - Swap tokens\n${getStatus('wallet')} !wallet - Check XRPL wallet\n${getStatus('wallets')} !wallets - Recommended wallets\`\`\``,
+                    value: `\`\`\`${getStatus('price')} !price - Check DRX price\n${getStatus('volume')} !volume - Trading volume\n${getStatus('swap')} !swap - Swap tokens\`\`\``,
                     inline: false 
                 },
                 { 

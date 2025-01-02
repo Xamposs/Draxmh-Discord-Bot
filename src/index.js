@@ -1,10 +1,12 @@
 const { Client, GatewayIntentBits, Collection } = require('discord.js');
+const { PermissionFlagsBits } = require('discord-api-types/v10');
 const { toggleCommand, isCommandEnabled } = require('./utils/commandManager');
 require('dotenv').config({ path: './.env' });
 const { AutomatedAnalysis } = require('./services/automatedAnalysis');
 const PriceTracker = require('./services/priceTracker');
 const { monitorWhaleTransactions } = require('./services/whaleMonitor');
-
+const { XRPLDexAnalytics } = require('./services/xrplDexAnalytics');
+const { SmartPathAnalyzer } = require('./services/smartPathAnalyzer');
 
 const client = new Client({
     intents: [
@@ -14,53 +16,51 @@ const client = new Client({
     ]
 });
 
-// Add this line to define the prefix
-const prefix = '!';
+// Add event handlers for XRPL client
+client.on('error', (error) => {
+    console.log('Client error:', error);
+});
 
-// Initialize commands collection
+client.on('reconnect', () => {
+    console.log('Client reconnecting...');
+});
+
+const prefix = '!';
 client.commands = new Collection();
 
-// Load the price command
 const priceCommand = require('./commands/price.js');
 client.commands.set(priceCommand.name, priceCommand);
 
-// Add this with your other command imports
-const walletCommand = require('./commands/wallet.js');
-client.commands.set(walletCommand.name, walletCommand);
-
-// Load the toggle command
 const toggleCmd = require('./commands/toggle.js');
 client.commands.set(toggleCmd.name, toggleCmd);
 
 const { startScamAlerts } = require('./services/autoScamAlert.js');
-
 const { startChartService } = require('./services/tradingViewChart.js');
 const { WhaleMonitor } = require('./services/whaleMonitor');
-
 const { withDNSRetry } = require('./utils/networkRetry');
+
 client.once('ready', async () => {
     try {
         console.log(`Logged in as ${client.user.tag}!`);
-    
+        
         const whaleMonitor = new WhaleMonitor(client);
+        whaleMonitor.client.on('reconnect', () => {
+            console.log('XRPL reconnecting...');
+        });
+        
         await withDNSRetry('xrplcluster.com', () => whaleMonitor.start());
     
-        // Initialize price tracker with client
         const priceTracker = new PriceTracker(client);
         priceTracker.start();
     
-        // Start scam alert system
         startScamAlerts(client);
     
-        // Start automated analysis
         const analysisSystem = new AutomatedAnalysis(client);
         analysisSystem.start();
     
-        // Initialize DEX Analytics
         const dexAnalytics = new XRPLDexAnalytics(client, process.env.DEX_ANALYTICS_CHANNEL_ID);
         dexAnalytics.startAutomatedUpdates();
 
-        // Initialize Smart Path Analyzer
         const pathAnalyzer = new SmartPathAnalyzer(client, process.env.PATH_ANALYSIS_CHANNEL_ID);
         pathAnalyzer.startAutomatedUpdates();
     } catch (error) {
@@ -69,8 +69,8 @@ client.once('ready', async () => {
 });
 
 const { logAction } = require('./utils/logging');
+
 client.on('messageCreate', async message => {
-    // Log all messages
     if (!message.author.bot) {
         await logAction('MESSAGE', message.guild, {
             user: message.author,
@@ -84,17 +84,18 @@ client.on('messageCreate', async message => {
 
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const commandName = args.shift().toLowerCase();
-        // Handle command toggling
-        if (args[0]?.toLowerCase() === 'on' || args[0]?.toLowerCase() === 'off') {
-            if (!message.member.permissions.has(PermissionFlagsBits.Administrator)) {
-                return message.reply('You do not have permission to toggle commands.');
-            }
-        
-            const state = args[0].toLowerCase();
-            toggleCommand(commandName, state, message.guild.id);
-            const status = state === 'on' ? '✅' : '❌';
-            return message.reply(`${status} Command ${commandName} has been ${state === 'on' ? 'enabled' : 'disabled'}`);
+
+    if (args[0]?.toLowerCase() === 'on' || args[0]?.toLowerCase() === 'off') {
+        if (!message.member.permissions.has(PermissionFlagsBits.Administrator)) {
+            return message.reply('You do not have permission to toggle commands.');
         }
+    
+        const state = args[0].toLowerCase();
+        toggleCommand(commandName, state, message.guild.id);
+        const status = state === 'on' ? '✅' : '❌';
+        return message.reply(`${status} Command ${commandName} has been ${state === 'on' ? 'enabled' : 'disabled'}`);
+    }
+
     const command = client.commands.get(commandName);
     if (!command) return;
 
@@ -114,6 +115,7 @@ client.on('messageCreate', async message => {
         message.reply('There was an error executing that command!');
     }
 });
+
 client.login(process.env.DISCORD_TOKEN);
 
 const stakeStatsCommand = require('./commands/stake-stats.js');
@@ -122,14 +124,12 @@ client.commands.set(stakeStatsCommand.name, stakeStatsCommand);
 const volumeCommand = require('./commands/volume.js');
 client.commands.set(volumeCommand.name, volumeCommand);
 
-
 const dappsCommand = require('./commands/dapps.js');
 const swapCommand = require('./commands/swap.js');
 
 client.commands.set(dappsCommand.name, dappsCommand);
 client.commands.set(swapCommand.name, swapCommand);
 
-// Import all new commands
 const commandsCmd = require('./commands/commands.js');
 const clearCmd = require('./commands/clear.js');
 const lockCmd = require('./commands/lock.js');
@@ -139,7 +139,6 @@ const moonCmd = require('./commands/moon.js');
 const penisCmd = require('./commands/draxmh.js');
 const socialstatsCmd = require('./commands/socialstats.js');
 
-// Set all commands
 client.commands.set(commandsCmd.name, commandsCmd);
 client.commands.set(clearCmd.name, clearCmd);
 client.commands.set(lockCmd.name, lockCmd);
@@ -164,7 +163,6 @@ client.commands.set(reportCmd.name, reportCmd);
 const suggestCmd = require('./commands/suggest.js');
 client.commands.set(suggestCmd.name, suggestCmd);
 
-// Import moderation commands
 const banCommand = require('./commands/ban.js');
 const kickCommand = require('./commands/kick.js');
 const muteCommand = require('./commands/mute.js');
@@ -174,7 +172,6 @@ const warningsCommand = require('./commands/warnings.js');
 const historyCommand = require('./commands/history.js');
 const casesCommand = require('./commands/cases.js');
 
-// Register commands
 client.commands.set(banCommand.name, banCommand);
 client.commands.set(kickCommand.name, kickCommand);
 client.commands.set(muteCommand.name, muteCommand);
@@ -185,52 +182,39 @@ client.commands.set(historyCommand.name, historyCommand);
 client.commands.set(casesCommand.name, casesCommand);
 
 const memberJoinHandler = require('./events/guildMemberAdd.js');
-
 client.on('guildMemberAdd', memberJoinHandler);
 
-// Add these requires at the top with other imports
 const { handleSpamDetection } = require('./utils/security/spamManager');
 const { handlePhishingDetection } = require('./utils/security/phishingManager');
 const { handleRaidProtection } = require('./utils/security/raidManager');
 const { handleVerification } = require('./utils/security/verificationManager');
 
-// Add these event listeners after the existing ones
 client.on('messageCreate', async message => {
     if (message.author.bot) return;
-
-    // Run security checks
     await handleSpamDetection(message);
     await handlePhishingDetection(message);
 });
 
 client.on('guildMemberAdd', async member => {
-    // Check for raid activity
     await handleRaidProtection(member);
-    // Handle verification
     await handleVerification(member);
 });
 
-// Add security command imports
 const verificationCmd = require('./commands/verification.js');
 const phishingCmd = require('./commands/phishing.js');
 const spamCmd = require('./commands/spam.js');
 const raidCmd = require('./commands/raid.js');
 const backupCmd = require('./commands/backup.js');
 
-// Register security commands
 client.commands.set(verificationCmd.name, verificationCmd);
 client.commands.set(phishingCmd.name, phishingCmd);
 client.commands.set(spamCmd.name, spamCmd);
 client.commands.set(raidCmd.name, raidCmd);
 client.commands.set(backupCmd.name, backupCmd);
 
-const walletsCommand = require('./commands/wallets.js');
-client.commands.set(walletsCommand.name, walletsCommand);
-
 const invites = new Map();
 
 client.on('ready', async () => {
-    // Cache all guild invites
     client.guilds.cache.forEach(async guild => {
         const guildInvites = await guild.invites.fetch();
         invites.set(guild.id, new Map(guildInvites.map(invite => [invite.code, invite.uses])));
@@ -273,7 +257,6 @@ client.on('guildMemberAdd', async member => {
     invites.set(member.guild.id, new Map(newInvites.map(invite => [invite.code, invite.uses])));
 });
 
-// Channel Updates
 client.on('channelUpdate', async (oldChannel, newChannel) => {
     await logAction('CHANNEL', newChannel.guild, {
         action: 'Updated',
@@ -304,7 +287,6 @@ client.on('channelDelete', async channel => {
 
 const { AuditLogEvent } = require('discord.js');
 
-// Helper function to get the moderator from audit logs
 async function getAuditLogExecutor(guild, actionType) {
     try {
         const auditLogTypes = {
@@ -337,17 +319,4 @@ client.on('interactionCreate', async interaction => {
             });
         }
     }
-});
-
-
-const { XRPLDexAnalytics } = require('./services/xrplDexAnalytics.js');
-
-// Make sure the path is correct and the file exists
-
-const { SmartPathAnalyzer } = require('./services/smartPathAnalyzer');
-
-
-console.log('XUMM Keys:', {
-    key: process.env.XUMM_API_KEY?.substring(0, 8) + '...',
-    secret: process.env.XUMM_API_SECRET?.substring(0, 8) + '...'
 });
