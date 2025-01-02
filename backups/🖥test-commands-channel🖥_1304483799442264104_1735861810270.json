@@ -2,8 +2,44 @@
   "channelId": "1304483799442264104",
   "name": "🖥test-commands-channel🖥",
   "type": 0,
-  "position": 10,
+  "position": 13,
   "messages": [
+    {
+      "content": "!backup all",
+      "author": "not_ur_besness",
+      "timestamp": 1735861798194,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1735861792590,
+      "attachments": []
+    },
+    {
+      "content": "!moderation",
+      "author": "not_ur_besness",
+      "timestamp": 1735861791973,
+      "attachments": []
+    },
+    {
+      "content": "",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1735861787060,
+      "attachments": []
+    },
+    {
+      "content": "!commands",
+      "author": "not_ur_besness",
+      "timestamp": 1735861786188,
+      "attachments": []
+    },
+    {
+      "content": "test",
+      "author": "DRAXMH Bot#1233",
+      "timestamp": 1731691376073,
+      "attachments": []
+    },
     {
       "content": "",
       "author": "DRAXMH Bot#1233",
