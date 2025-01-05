@@ -22,7 +22,7 @@
           };
 
           await fs.mkdir(BACKUP_DIR, { recursive: true });
-          const fileName = `${channel.name}_${channel.id}_${Date.now()}.json`;
+          const fileName = `${channel.name}_${channel.id}.json`;
           const backupPath = path.join(BACKUP_DIR, fileName);
         
           await fs.writeFile(backupPath, JSON.stringify(backup, null, 2));
@@ -34,7 +34,6 @@
           throw error;
       }
   }
-
   async function backupAll(guild) {
       console.log(`Starting full backup for guild: ${guild.name}`);
       const backups = [];

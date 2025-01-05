@@ -7,6 +7,7 @@ const PriceTracker = require('./services/priceTracker');
 const { monitorWhaleTransactions } = require('./services/whaleMonitor');
 const { XRPLDexAnalytics } = require('./services/xrplDexAnalytics');
 const { SmartPathAnalyzer } = require('./services/smartPathAnalyzer');
+const { XRPMarketPsychologyAnalyzer } = require('./services/xrpMarketPsychologyAnalyzer');
 
 const client = new Client({
     intents: [
@@ -63,6 +64,15 @@ client.once('ready', async () => {
 
         const pathAnalyzer = new SmartPathAnalyzer(client, process.env.PATH_ANALYSIS_CHANNEL_ID);
         pathAnalyzer.startAutomatedUpdates();
+
+        console.log('Starting XRP Market Psychology service...');
+            const marketPsychology = new XRPMarketPsychologyAnalyzer(
+                client, 
+                process.env.MARKET_PSYCHOLOGY_CHANNEL_ID
+            );
+        await marketPsychology.startAutomatedUpdates();
+        console.log('XRP Market Psychology service started successfully');
+
     } catch (error) {
         console.error('An error occurred during initialization:', error);
     }
