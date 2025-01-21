@@ -1,13 +1,20 @@
+
 const { Client, GatewayIntentBits, Collection } = require('discord.js');
 const { PermissionFlagsBits } = require('discord-api-types/v10');
 const { toggleCommand, isCommandEnabled } = require('./utils/commandManager');
 require('dotenv').config({ path: './.env' });
 const { AutomatedAnalysis } = require('./services/automatedAnalysis');
 const PriceTracker = require('./services/priceTracker');
-const { monitorWhaleTransactions } = require('./services/whaleMonitor');
 const { XRPLDexAnalytics } = require('./services/xrplDexAnalytics');
 const { SmartPathAnalyzer } = require('./services/smartPathAnalyzer');
 const { XRPMarketPsychologyAnalyzer } = require('./services/xrpMarketPsychologyAnalyzer');
+const { WhaleMonitor } = require('./services/whaleMonitor');
+const { 
+    handleTradingButtons, 
+    handleInformationButtons, 
+    handleSecurityButtons, 
+    handleFunButtons 
+} = require('./buttonPanels/handlers/buttonHandler');
 
 const client = new Client({
     intents: [
@@ -17,7 +24,6 @@ const client = new Client({
     ]
 });
 
-// Add event handlers for XRPL client
 client.on('error', (error) => {
     console.log('Client error:', error);
 });
@@ -29,15 +35,19 @@ client.on('reconnect', () => {
 const prefix = '!';
 client.commands = new Collection();
 
-const priceCommand = require('./commands/price.js');
-client.commands.set(priceCommand.name, priceCommand);
+// Add button panel commands
+const tradingCmd = require('./buttonPanels/commands/trading.js');
+const informationCmd = require('./buttonPanels/commands/information.js');
+const securityCmd = require('./buttonPanels/commands/security.js');
+const funCmd = require('./buttonPanels/commands/fun.js');
 
-const toggleCmd = require('./commands/toggle.js');
-client.commands.set(toggleCmd.name, toggleCmd);
+client.commands.set(tradingCmd.name, tradingCmd);
+client.commands.set(informationCmd.name, informationCmd);
+client.commands.set(securityCmd.name, securityCmd);
+client.commands.set(funCmd.name, funCmd);
 
 const { startScamAlerts } = require('./services/autoScamAlert.js');
 const { startChartService } = require('./services/tradingViewChart.js');
-const { WhaleMonitor } = require('./services/whaleMonitor');
 const { withDNSRetry } = require('./utils/networkRetry');
 
 client.once('ready', async () => {
@@ -45,11 +55,7 @@ client.once('ready', async () => {
         console.log(`Logged in as ${client.user.tag}!`);
         
         const whaleMonitor = new WhaleMonitor(client);
-        whaleMonitor.client.on('reconnect', () => {
-            console.log('XRPL reconnecting...');
-        });
-        
-        await withDNSRetry('xrplcluster.com', () => whaleMonitor.start());
+        await whaleMonitor.start();
     
         const priceTracker = new PriceTracker(client);
         priceTracker.start();
@@ -66,10 +72,7 @@ client.once('ready', async () => {
         pathAnalyzer.startAutomatedUpdates();
 
         console.log('Starting XRP Market Psychology service...');
-            const marketPsychology = new XRPMarketPsychologyAnalyzer(
-                client, 
-                process.env.MARKET_PSYCHOLOGY_CHANNEL_ID
-            );
+        const marketPsychology = new XRPMarketPsychologyAnalyzer(client, '1307089076498993265');
         await marketPsychology.startAutomatedUpdates();
         console.log('XRP Market Psychology service started successfully');
 
@@ -77,7 +80,6 @@ client.once('ready', async () => {
         console.error('An error occurred during initialization:', error);
     }
 });
-
 const { logAction } = require('./utils/logging');
 
 client.on('messageCreate', async message => {
@@ -128,18 +130,11 @@ client.on('messageCreate', async message => {
 
 client.login(process.env.DISCORD_TOKEN);
 
+// Command registrations
 const stakeStatsCommand = require('./commands/stake-stats.js');
-client.commands.set(stakeStatsCommand.name, stakeStatsCommand);
-
 const volumeCommand = require('./commands/volume.js');
-client.commands.set(volumeCommand.name, volumeCommand);
-
 const dappsCommand = require('./commands/dapps.js');
 const swapCommand = require('./commands/swap.js');
-
-client.commands.set(dappsCommand.name, dappsCommand);
-client.commands.set(swapCommand.name, swapCommand);
-
 const commandsCmd = require('./commands/commands.js');
 const clearCmd = require('./commands/clear.js');
 const lockCmd = require('./commands/lock.js');
@@ -148,31 +143,11 @@ const infoCmd = require('./commands/info.js');
 const moonCmd = require('./commands/moon.js');
 const penisCmd = require('./commands/draxmh.js');
 const socialstatsCmd = require('./commands/socialstats.js');
-
-client.commands.set(commandsCmd.name, commandsCmd);
-client.commands.set(clearCmd.name, clearCmd);
-client.commands.set(lockCmd.name, lockCmd);
-client.commands.set(unlockCmd.name, unlockCmd);
-client.commands.set(infoCmd.name, infoCmd);
-client.commands.set(moonCmd.name, moonCmd);
-client.commands.set(penisCmd.name, penisCmd);
-client.commands.set(socialstatsCmd.name, socialstatsCmd);
-
 const announceCmd = require('./commands/announce.js');
-client.commands.set(announceCmd.name, announceCmd);
-
 const moderationCmd = require('./commands/moderation.js');
-client.commands.set(moderationCmd.name, moderationCmd);
-
 const scamAlertCmd = require('./commands/scamalert.js');
 const reportCmd = require('./commands/report.js');
-
-client.commands.set(scamAlertCmd.name, scamAlertCmd);
-client.commands.set(reportCmd.name, reportCmd);
-
 const suggestCmd = require('./commands/suggest.js');
-client.commands.set(suggestCmd.name, suggestCmd);
-
 const banCommand = require('./commands/ban.js');
 const kickCommand = require('./commands/kick.js');
 const muteCommand = require('./commands/mute.js');
@@ -181,7 +156,32 @@ const slowmodeCommand = require('./commands/slowmode.js');
 const warningsCommand = require('./commands/warnings.js');
 const historyCommand = require('./commands/history.js');
 const casesCommand = require('./commands/cases.js');
+const verificationCmd = require('./commands/verification.js');
+const phishingCmd = require('./commands/phishing.js');
+const spamCmd = require('./commands/spam.js');
+const raidCmd = require('./commands/raid.js');
+const backupCmd = require('./commands/backup.js');
+const priceCommand = require('./commands/price.js');
+const toggleCmd = require('./commands/toggle.js');
 
+// Set all commands
+client.commands.set(stakeStatsCommand.name, stakeStatsCommand);
+client.commands.set(volumeCommand.name, volumeCommand);
+client.commands.set(dappsCommand.name, dappsCommand);
+client.commands.set(swapCommand.name, swapCommand);
+client.commands.set(commandsCmd.name, commandsCmd);
+client.commands.set(clearCmd.name, clearCmd);
+client.commands.set(lockCmd.name, lockCmd);
+client.commands.set(unlockCmd.name, unlockCmd);
+client.commands.set(infoCmd.name, infoCmd);
+client.commands.set(moonCmd.name, moonCmd);
+client.commands.set(penisCmd.name, penisCmd);
+client.commands.set(socialstatsCmd.name, socialstatsCmd);
+client.commands.set(announceCmd.name, announceCmd);
+client.commands.set(moderationCmd.name, moderationCmd);
+client.commands.set(scamAlertCmd.name, scamAlertCmd);
+client.commands.set(reportCmd.name, reportCmd);
+client.commands.set(suggestCmd.name, suggestCmd);
 client.commands.set(banCommand.name, banCommand);
 client.commands.set(kickCommand.name, kickCommand);
 client.commands.set(muteCommand.name, muteCommand);
@@ -190,6 +190,13 @@ client.commands.set(slowmodeCommand.name, slowmodeCommand);
 client.commands.set(warningsCommand.name, warningsCommand);
 client.commands.set(historyCommand.name, historyCommand);
 client.commands.set(casesCommand.name, casesCommand);
+client.commands.set(verificationCmd.name, verificationCmd);
+client.commands.set(phishingCmd.name, phishingCmd);
+client.commands.set(spamCmd.name, spamCmd);
+client.commands.set(raidCmd.name, raidCmd);
+client.commands.set(backupCmd.name, backupCmd);
+client.commands.set(priceCommand.name, priceCommand);
+client.commands.set(toggleCmd.name, toggleCmd);
 
 const memberJoinHandler = require('./events/guildMemberAdd.js');
 client.on('guildMemberAdd', memberJoinHandler);
@@ -209,18 +216,6 @@ client.on('guildMemberAdd', async member => {
     await handleRaidProtection(member);
     await handleVerification(member);
 });
-
-const verificationCmd = require('./commands/verification.js');
-const phishingCmd = require('./commands/phishing.js');
-const spamCmd = require('./commands/spam.js');
-const raidCmd = require('./commands/raid.js');
-const backupCmd = require('./commands/backup.js');
-
-client.commands.set(verificationCmd.name, verificationCmd);
-client.commands.set(phishingCmd.name, phishingCmd);
-client.commands.set(spamCmd.name, spamCmd);
-client.commands.set(raidCmd.name, raidCmd);
-client.commands.set(backupCmd.name, backupCmd);
 
 const invites = new Map();
 
@@ -319,14 +314,41 @@ async function getAuditLogExecutor(guild, actionType) {
 client.on('interactionCreate', async interaction => {
     if (!interaction.isButton()) return;
 
-    if (interaction.customId === 'accept_rules') {
-        const memberRole = interaction.guild.roles.cache.get(MEMBER_ROLE);
-        if (memberRole) {
-            await interaction.member.roles.add(memberRole);
-            await interaction.reply({ 
-                content: '✅ Welcome to the community! You now have access to all channels.',
-                ephemeral: true 
-            });
+    try {
+        if (interaction.customId.includes('price_check') || 
+            interaction.customId.includes('volume_check') || 
+            interaction.customId.includes('swap_tokens')) {
+            await handleTradingButtons(interaction, client);
         }
-    }
+        else if (interaction.customId.includes('info_check') || 
+                 interaction.customId.includes('dapps_check') || 
+                 interaction.customId.includes('stake_stats_check')) {
+            await handleInformationButtons(interaction, client);
+        }
+             else if (interaction.customId.includes('moon_check') || 
+                      interaction.customId.includes('draxmh_check')) {
+                 await handleFunButtons(interaction, client);
+             }
+             else if (interaction.customId === 'accept_rules') {
+                 const memberRole = interaction.guild.roles.cache.get(MEMBER_ROLE);
+                 if (memberRole) {
+                     await interaction.member.roles.add(memberRole);
+                     await interaction.reply({ 
+                         content: '✅ Welcome to the community! You now have access to all channels.',
+                         ephemeral: true 
+                     });
+                 }
+             }
+         } catch (error) {
+             console.error('Button interaction error:', error);
+             if (!interaction.replied) {
+                 await interaction.reply({ 
+                     content: 'There was an error processing this button!', 
+                     ephemeral: true 
+                 });
+             }
+         }
 });
+
+// Export the client for use in other files
+module.exports = client;

@@ -1,26 +1,80 @@
-const { WebSocket } = require('ws');
-const { processTransaction } = require('./whaleAlert');
+const { Client } = require('xrpl');
 
 class WhaleMonitor {
-    constructor(client) {
-        this.client = client;
+    constructor(discordClient) {
+        this.discordClient = discordClient;
+        this.xrplClient = null;
         this.endpoints = [
-            'wss://xrplcluster.com/',
-            'wss://s1.ripple.com/',
-            'wss://s2.ripple.com/'
+            'wss://xrplcluster.com',
+            'wss://s1.ripple.com',
+            'wss://s2.ripple.com'
         ];
         this.currentEndpoint = 0;
-        this.maxReconnectAttempts = 3;
+        this.connectionAttempts = new Map();
+        this.maxAttemptsPerEndpoint = 3;
         this.reconnectDelay = 10000;
-        this.ws = null;
-        this.isConnected = false;
-        this.reconnectAttempts = 0;
-        this.connectionTimeout = null;
+        this.subscriptionRetryDelay = 5000;
+        this.isConnecting = false;
+        this.activeSubscriptions = new Set();
     }
 
-    start() {
-        this.connect();
-        this.setupPingInterval();
+    async start() {
+        await this.initializeConnection();
+        this.setupHealthCheck();
+    }
+
+    setupHealthCheck() {
+        setInterval(() => {
+            if (!this.xrplClient?.isConnected()) {
+                console.log('Health check: Connection lost, reinitializing...');
+                this.initializeConnection();
+            }
+        }, 30000);
+    }
+
+    async initializeConnection() {
+        if (this.isConnecting) return;
+        
+        this.isConnecting = true;
+        const endpoint = this.getNextEndpoint();
+        
+        try {
+            if (this.xrplClient) {
+                await this.xrplClient.disconnect();
+            }
+
+            this.xrplClient = new Client(endpoint, {
+                connectionTimeout: 20000,
+                maxRetries: 3
+            });
+
+            this.setupEventHandlers();
+            await this.connect();
+            
+        } catch (error) {
+            console.log(`Connection failed to ${endpoint}:`, error.message);
+            this.handleConnectionFailure();
+        } finally {
+            this.isConnecting = false;
+        }
+    }
+
+    setupEventHandlers() {
+        this.xrplClient.on('connected', () => {
+            console.log(`Connected successfully to ${this.endpoints[this.currentEndpoint]}`);
+            this.connectionAttempts.set(this.currentEndpoint, 0);
+            this.subscribe();
+        });
+
+        this.xrplClient.on('disconnected', (code, reason) => {
+            console.log(`Disconnected from ${this.endpoints[this.currentEndpoint]}: ${code}`);
+            this.handleConnectionFailure();
+        });
+
+        this.xrplClient.on('error', (error) => {
+            console.log(`Error on ${this.endpoints[this.currentEndpoint]}:`, error.message);
+            this.handleConnectionFailure();
+        });
     }
 
     getNextEndpoint() {
@@ -28,111 +82,50 @@ class WhaleMonitor {
         return this.endpoints[this.currentEndpoint];
     }
 
-    connect() {
-        if (this.reconnectAttempts >= this.maxReconnectAttempts * this.endpoints.length) {
-            console.log('All endpoints failed, waiting 60 seconds before retry...');
-            this.reconnectAttempts = 0;
-            setTimeout(() => this.connect(), 60000);
-            return;
+    async connect() {
+        try {
+            await this.xrplClient.connect();
+        } catch (error) {
+            throw new Error(`Connection failed: ${error.message}`);
+        }
+    }
+
+    handleConnectionFailure() {
+        const attempts = (this.connectionAttempts.get(this.currentEndpoint) || 0) + 1;
+        this.connectionAttempts.set(this.currentEndpoint, attempts);
+
+        if (attempts >= this.maxAttemptsPerEndpoint) {
+            console.log(`Max attempts reached for ${this.endpoints[this.currentEndpoint]}`);
+            this.connectionAttempts.set(this.currentEndpoint, 0);
         }
 
-        const endpoint = this.getNextEndpoint();
-        console.log(`Attempting connection to ${endpoint}`);
-        
-        this.ws = new WebSocket(endpoint, {
-            handshakeTimeout: 15000,
-            timeout: 15000
-        });
-
-        this.connectionTimeout = setTimeout(() => {
-            if (!this.isConnected) {
-                this.handleDisconnect('Connection timeout');
+        setTimeout(() => {
+            if (!this.isConnecting) {
+                this.initializeConnection();
             }
-        }, 15000);
+        }, this.reconnectDelay);
+    }
 
-        this.ws.on('open', () => {
-            clearTimeout(this.connectionTimeout);
-            this.isConnected = true;
-            this.reconnectAttempts = 0;
-            console.log('Whale Monitor: Connected successfully');
+    async subscribe() {
+        try {
+            const response = await this.xrplClient.request({
+                command: 'subscribe',
+                streams: ['transactions']
+            });
             
-            // Wait for connection to be fully established
-            setTimeout(() => {
-                this.subscribe();
-            }, 1000);
-        });
-
-        this.setupEventHandlers();
-    }
-
-    setupEventHandlers() {
-        this.ws.on('close', () => {
-            this.handleDisconnect('Connection closed');
-        });
-
-        this.ws.on('error', (error) => {
-            this.handleDisconnect(`Connection error: ${error.message}`);
-        });
-
-        this.ws.on('message', (data) => {
-            if (this.isConnected) {
-                try {
-                    const message = JSON.parse(data);
-                    if (message.type === 'transaction') {
-                        processTransaction(this.client, message.transaction);
-                    }
-                } catch (error) {
-                    console.log('Error processing message:', error);
-                }
+            if (response.status === 'success') {
+                console.log('Successfully subscribed to transactions');
+                this.activeSubscriptions.add('transactions');
             }
-        });
-    }
-
-    handleDisconnect(reason) {
-        clearTimeout(this.connectionTimeout);
-        this.isConnected = false;
-        this.reconnectAttempts++;
-        console.log(`${reason}. Attempt ${this.reconnectAttempts} of ${this.maxReconnectAttempts}`);
-        
-        if (this.ws) {
-            this.ws.terminate();
+        } catch (error) {
+            console.log('Subscription error:', error.message);
+            setTimeout(() => this.subscribe(), this.subscriptionRetryDelay);
         }
-        
-        if (this.reconnectAttempts < this.maxReconnectAttempts) {
-            setTimeout(() => this.connect(), this.reconnectDelay);
-        }
-    }
-
-    subscribe() {
-        if (this.isConnected && this.ws.readyState === WebSocket.OPEN) {
-            try {
-                this.ws.send(JSON.stringify({
-                    command: 'subscribe',
-                    streams: ['transactions']
-                }));
-            } catch (error) {
-                console.log('Subscribe error:', error);
-                this.handleDisconnect('Subscribe failed');
-            }
-        }
-    }
-
-    setupPingInterval() {
-        setInterval(() => {
-            if (this.isConnected && this.ws.readyState === WebSocket.OPEN) {
-                try {
-                    this.ws.ping();
-                } catch (error) {
-                    this.handleDisconnect('Ping failed');
-                }
-            }
-        }, 30000);
     }
 
     stop() {
-        clearTimeout(this.connectionTimeout);
-        if (this.ws) {
-            this.ws.terminate();
+        if (this.xrplClient?.isConnected()) {
+            this.xrplClient.disconnect();
         }
     }
 }
