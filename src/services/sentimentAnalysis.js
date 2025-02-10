@@ -1,7 +1,6 @@
-const { TwitterApi } = require('twitter-api-v2');
-const fetch = require('node-fetch');
-const natural = require('natural');
-
+import { TwitterApi } from 'twitter-api-v2';
+import fetch from 'node-fetch';
+import natural from 'natural';
 class SentimentAnalyzer {
     constructor() {
         this.tokenizer = new natural.WordTokenizer();
@@ -56,4 +55,5 @@ class SentimentAnalyzer {
     }
 }
 
-module.exports = { SentimentAnalyzer };
+// Single export statement at the end
+export { SentimentAnalyzer };

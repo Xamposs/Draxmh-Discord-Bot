@@ -1,8 +1,7 @@
+import { EmbedBuilder, PermissionFlagsBits } from 'discord.js';
+import { backupChannel, backupAll, restoreBackup, listBackups } from '../utils/security/backupManager.js';
 
-const { EmbedBuilder, PermissionFlagsBits } = require('discord.js');
-const { backupChannel, backupAll, restoreBackup, listBackups } = require('../utils/security/backupManager');
-
-module.exports = {
+export const backupCmd = {
     name: 'backup',
     description: 'Manage channel backups',
     async execute(message, args) {

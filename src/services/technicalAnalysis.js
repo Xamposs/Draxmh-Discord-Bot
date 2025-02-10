@@ -1,5 +1,4 @@
-const { EmbedBuilder } = require('discord.js');
-const technicalIndicators = require('technicalindicators');
+import technicalIndicators from 'technicalindicators';
 
 class TechnicalAnalysis {
     constructor() {
@@ -73,4 +72,4 @@ class TechnicalAnalysis {
     }
 }
 
-module.exports = { TechnicalAnalysis };
+export { TechnicalAnalysis };

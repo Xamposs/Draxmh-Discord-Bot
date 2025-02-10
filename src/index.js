@@ -1,20 +1,24 @@
-
-const { Client, GatewayIntentBits, Collection } = require('discord.js');
-const { PermissionFlagsBits } = require('discord-api-types/v10');
-const { toggleCommand, isCommandEnabled } = require('./utils/commandManager');
-require('dotenv').config({ path: './.env' });
-const { AutomatedAnalysis } = require('./services/automatedAnalysis');
-const PriceTracker = require('./services/priceTracker');
-const { XRPLDexAnalytics } = require('./services/xrplDexAnalytics');
-const { SmartPathAnalyzer } = require('./services/smartPathAnalyzer');
-const { XRPMarketPsychologyAnalyzer } = require('./services/xrpMarketPsychologyAnalyzer');
-const { WhaleMonitor } = require('./services/whaleMonitor');
-const { 
+import { Client, GatewayIntentBits, Collection } from 'discord.js';
+import { PermissionFlagsBits } from 'discord-api-types/v10';
+import { toggleCommand, isCommandEnabled } from './utils/commandManager.js';
+import dotenv from 'dotenv';
+import { AutomatedAnalysis } from './services/automatedAnalysis.js';
+import PriceTracker from './services/priceTracker.js';
+import { XRPLDexAnalytics } from './services/xrplDexAnalytics.js';
+import { SmartPathAnalyzer } from './services/smartPathAnalyzer.js';
+import { XRPMarketPsychologyAnalyzer } from './services/xrpMarketPsychologyAnalyzer.js';
+import { WhaleMonitor } from './services/whaleMonitor.js';
+import { withDNSRetry } from './utils/networkRetry.js';
+import { startScamAlerts } from './services/autoScamAlert.js';
+import { startChartService } from './services/tradingViewChart.js';
+import { 
     handleTradingButtons, 
     handleInformationButtons, 
     handleSecurityButtons, 
     handleFunButtons 
-} = require('./buttonPanels/handlers/buttonHandler');
+} from './buttonPanels/handlers/buttonHandler.js';
+
+dotenv.config({ path: './.env' });
 
 const client = new Client({
     intents: [
@@ -24,63 +28,125 @@ const client = new Client({
     ]
 });
 
+const xrplConfig = {
+    timeout: 20000,
+    connectionTimeout: 20000,
+    maxRetries: 10,
+    failoverURIs: [
+        'wss://s1.ripple.com',
+        'wss://s2.ripple.com',
+        'wss://xrplcluster.com'
+    ]
+};
+
 client.on('error', (error) => {
-    console.log('Client error:', error);
+    console.log('XRPL client error:', error);
 });
 
 client.on('reconnect', () => {
-    console.log('Client reconnecting...');
+    console.log('XRPL client reconnecting...');
 });
+
+const whaleMonitor = new WhaleMonitor(client);
 
 const prefix = '!';
 client.commands = new Collection();
-
-// Add button panel commands
-const tradingCmd = require('./buttonPanels/commands/trading.js');
-const informationCmd = require('./buttonPanels/commands/information.js');
-const securityCmd = require('./buttonPanels/commands/security.js');
-const funCmd = require('./buttonPanels/commands/fun.js');
-
-client.commands.set(tradingCmd.name, tradingCmd);
-client.commands.set(informationCmd.name, informationCmd);
-client.commands.set(securityCmd.name, securityCmd);
-client.commands.set(funCmd.name, funCmd);
-
-const { startScamAlerts } = require('./services/autoScamAlert.js');
-const { startChartService } = require('./services/tradingViewChart.js');
-const { withDNSRetry } = require('./utils/networkRetry');
 
 client.once('ready', async () => {
     try {
         console.log(`Logged in as ${client.user.tag}!`);
         
-        const whaleMonitor = new WhaleMonitor(client);
-        await whaleMonitor.start();
-    
-        const priceTracker = new PriceTracker(client);
-        priceTracker.start();
-    
+        await withDNSRetry('xrplcluster.com', async () => {
+            await whaleMonitor.start();
+            console.log('Whale Monitor started successfully');
+        });
+
         startScamAlerts(client);
-    
-        const analysisSystem = new AutomatedAnalysis(client);
-        analysisSystem.start();
-    
-        const dexAnalytics = new XRPLDexAnalytics(client, process.env.DEX_ANALYTICS_CHANNEL_ID);
-        dexAnalytics.startAutomatedUpdates();
+        console.log('Scam Alert System initialized - Channel: 1307095704858005545');
 
-        const pathAnalyzer = new SmartPathAnalyzer(client, process.env.PATH_ANALYSIS_CHANNEL_ID);
-        pathAnalyzer.startAutomatedUpdates();
+        const priceTracker = new PriceTracker(client);
+        try {
+            await priceTracker.start();
+            console.log('Price tracking started successfully');
+        } catch (error) {
+            console.log('Retrying price tracker initialization...');
+            setTimeout(() => priceTracker.start(), 5000);
+        }
 
-        console.log('Starting XRP Market Psychology service...');
-        const marketPsychology = new XRPMarketPsychologyAnalyzer(client, '1307089076498993265');
-        await marketPsychology.startAutomatedUpdates();
-        console.log('XRP Market Psychology service started successfully');
+        const dexAnalytics = new XRPLDexAnalytics(client, '1307799407000944720');
+        await dexAnalytics.startAutomatedUpdates();
+        console.log('DEX Analytics started - Channel: 1307799407000944720');
+
+        const pathAnalyzer = new SmartPathAnalyzer(client, '1308928972033359993');
+        await pathAnalyzer.startAutomatedUpdates();
+        console.log('Smart Path Analysis started - Channel: 1308928972033359993');
+
+        const marketAnalyzer = new XRPMarketPsychologyAnalyzer(client, '1325196609012895805');
+        await marketAnalyzer.startAutomatedUpdates();
+        console.log('Market Psychology Analysis started - Channel: 1325196609012895805');
 
     } catch (error) {
-        console.error('An error occurred during initialization:', error);
+        console.error('Service initialization error:', error);
     }
 });
-const { logAction } = require('./utils/logging');
+
+import { logAction } from './utils/logging.js';
+import { handleSpamDetection } from './utils/security/spamManager.js';
+import { handlePhishingDetection } from './utils/security/phishingManager.js';
+import { handleRaidProtection } from './utils/security/raidManager.js';
+import { handleVerification } from './utils/security/verificationManager.js';
+import { AuditLogEvent } from 'discord.js';
+
+// Import all commands
+import { priceCommand } from './commands/price.js';
+import { toggleCmd } from './commands/toggle.js';
+import { stakeStatsCommand } from './commands/stake-stats.js';
+import { slowmodeCommand as slowmodeCmdHandler } from './commands/slowmode.js';
+import { dappsCommand } from './commands/dapps.js';
+import { swapCommand } from './commands/swap.js';
+import { commandsCmd } from './commands/commands.js';
+import { clearCmd } from './commands/clear.js';
+import { lockCmd } from './commands/lock.js';
+import { unlockCmd } from './commands/unlock.js';
+import { infoCmd } from './commands/info.js';
+import { moonCmd } from './commands/moon.js';
+import { draxmhCmd } from './commands/draxmh.js';
+import { socialstatsCmd } from './commands/socialstats.js';
+import { announceCmd } from './commands/announce.js';
+import { backupCmd } from './commands/backup.js';  // Add it here
+import { moderationCmd } from './commands/moderation.js';
+import { scamAlertCmd } from './commands/scamalert.js';
+import { reportCmd } from './commands/report.js';
+import { suggestCmd } from './commands/suggest.js';
+import { banCommand } from './commands/ban.js';
+import { kickCommand } from './commands/kick.js';
+import { muteCommand } from './commands/mute.js';
+import { roleCommand } from './commands/role.js';
+import { slowmodeCommand } from './commands/slowmode.js';
+import { warningsCommand } from './commands/warnings.js';
+import { historyCommand } from './commands/history.js';
+import { casesCommand } from './commands/cases.js';
+import { verificationCmd } from './commands/verification.js';
+import { phishingCmd } from './commands/phishing.js';
+import { spamCmd } from './commands/spam.js';
+import { raidCmd } from './commands/raid.js';
+import { volumeCommand } from './commands/volume.js';
+
+// Set up commands
+const commands = [
+    priceCommand, toggleCmd, stakeStatsCommand, volumeCommand,
+    dappsCommand, swapCommand, commandsCmd, clearCmd,
+    lockCmd, unlockCmd, infoCmd, moonCmd,
+    draxmhCmd, socialstatsCmd, announceCmd, moderationCmd,
+    scamAlertCmd, reportCmd, suggestCmd, banCommand,
+    kickCommand, muteCommand, roleCommand, slowmodeCommand,
+    warningsCommand, historyCommand, casesCommand, verificationCmd,
+    phishingCmd, spamCmd, raidCmd, backupCmd
+];
+
+commands.forEach(cmd => {
+    client.commands.set(cmd.name, cmd);
+});
 
 client.on('messageCreate', async message => {
     if (!message.author.bot) {
@@ -127,84 +193,6 @@ client.on('messageCreate', async message => {
         message.reply('There was an error executing that command!');
     }
 });
-
-client.login(process.env.DISCORD_TOKEN);
-
-// Command registrations
-const stakeStatsCommand = require('./commands/stake-stats.js');
-const volumeCommand = require('./commands/volume.js');
-const dappsCommand = require('./commands/dapps.js');
-const swapCommand = require('./commands/swap.js');
-const commandsCmd = require('./commands/commands.js');
-const clearCmd = require('./commands/clear.js');
-const lockCmd = require('./commands/lock.js');
-const unlockCmd = require('./commands/unlock.js');
-const infoCmd = require('./commands/info.js');
-const moonCmd = require('./commands/moon.js');
-const penisCmd = require('./commands/draxmh.js');
-const socialstatsCmd = require('./commands/socialstats.js');
-const announceCmd = require('./commands/announce.js');
-const moderationCmd = require('./commands/moderation.js');
-const scamAlertCmd = require('./commands/scamalert.js');
-const reportCmd = require('./commands/report.js');
-const suggestCmd = require('./commands/suggest.js');
-const banCommand = require('./commands/ban.js');
-const kickCommand = require('./commands/kick.js');
-const muteCommand = require('./commands/mute.js');
-const roleCommand = require('./commands/role.js');
-const slowmodeCommand = require('./commands/slowmode.js');
-const warningsCommand = require('./commands/warnings.js');
-const historyCommand = require('./commands/history.js');
-const casesCommand = require('./commands/cases.js');
-const verificationCmd = require('./commands/verification.js');
-const phishingCmd = require('./commands/phishing.js');
-const spamCmd = require('./commands/spam.js');
-const raidCmd = require('./commands/raid.js');
-const backupCmd = require('./commands/backup.js');
-const priceCommand = require('./commands/price.js');
-const toggleCmd = require('./commands/toggle.js');
-
-// Set all commands
-client.commands.set(stakeStatsCommand.name, stakeStatsCommand);
-client.commands.set(volumeCommand.name, volumeCommand);
-client.commands.set(dappsCommand.name, dappsCommand);
-client.commands.set(swapCommand.name, swapCommand);
-client.commands.set(commandsCmd.name, commandsCmd);
-client.commands.set(clearCmd.name, clearCmd);
-client.commands.set(lockCmd.name, lockCmd);
-client.commands.set(unlockCmd.name, unlockCmd);
-client.commands.set(infoCmd.name, infoCmd);
-client.commands.set(moonCmd.name, moonCmd);
-client.commands.set(penisCmd.name, penisCmd);
-client.commands.set(socialstatsCmd.name, socialstatsCmd);
-client.commands.set(announceCmd.name, announceCmd);
-client.commands.set(moderationCmd.name, moderationCmd);
-client.commands.set(scamAlertCmd.name, scamAlertCmd);
-client.commands.set(reportCmd.name, reportCmd);
-client.commands.set(suggestCmd.name, suggestCmd);
-client.commands.set(banCommand.name, banCommand);
-client.commands.set(kickCommand.name, kickCommand);
-client.commands.set(muteCommand.name, muteCommand);
-client.commands.set(roleCommand.name, roleCommand);
-client.commands.set(slowmodeCommand.name, slowmodeCommand);
-client.commands.set(warningsCommand.name, warningsCommand);
-client.commands.set(historyCommand.name, historyCommand);
-client.commands.set(casesCommand.name, casesCommand);
-client.commands.set(verificationCmd.name, verificationCmd);
-client.commands.set(phishingCmd.name, phishingCmd);
-client.commands.set(spamCmd.name, spamCmd);
-client.commands.set(raidCmd.name, raidCmd);
-client.commands.set(backupCmd.name, backupCmd);
-client.commands.set(priceCommand.name, priceCommand);
-client.commands.set(toggleCmd.name, toggleCmd);
-
-const memberJoinHandler = require('./events/guildMemberAdd.js');
-client.on('guildMemberAdd', memberJoinHandler);
-
-const { handleSpamDetection } = require('./utils/security/spamManager');
-const { handlePhishingDetection } = require('./utils/security/phishingManager');
-const { handleRaidProtection } = require('./utils/security/raidManager');
-const { handleVerification } = require('./utils/security/verificationManager');
 
 client.on('messageCreate', async message => {
     if (message.author.bot) return;
@@ -290,8 +278,6 @@ client.on('channelDelete', async channel => {
     });
 });
 
-const { AuditLogEvent } = require('discord.js');
-
 async function getAuditLogExecutor(guild, actionType) {
     try {
         const auditLogTypes = {
@@ -325,30 +311,30 @@ client.on('interactionCreate', async interaction => {
                  interaction.customId.includes('stake_stats_check')) {
             await handleInformationButtons(interaction, client);
         }
-             else if (interaction.customId.includes('moon_check') || 
-                      interaction.customId.includes('draxmh_check')) {
-                 await handleFunButtons(interaction, client);
-             }
-             else if (interaction.customId === 'accept_rules') {
-                 const memberRole = interaction.guild.roles.cache.get(MEMBER_ROLE);
-                 if (memberRole) {
-                     await interaction.member.roles.add(memberRole);
-                     await interaction.reply({ 
-                         content: '✅ Welcome to the community! You now have access to all channels.',
-                         ephemeral: true 
-                     });
-                 }
-             }
-         } catch (error) {
-             console.error('Button interaction error:', error);
-             if (!interaction.replied) {
-                 await interaction.reply({ 
-                     content: 'There was an error processing this button!', 
-                     ephemeral: true 
-                 });
-             }
-         }
+        else if (interaction.customId.includes('scam_alert_check') || 
+                 interaction.customId.includes('report_check') || 
+                 interaction.customId.includes('suggest_check')) {
+            await handleSecurityButtons(interaction, client);
+        }
+        else if (interaction.customId === 'accept_rules') {
+            const memberRole = interaction.guild.roles.cache.get(MEMBER_ROLE);
+            if (memberRole) {
+                await interaction.member.roles.add(memberRole);
+                await interaction.reply({ 
+                    content: '✅ Welcome to the community! You now have access to all channels.',
+                    ephemeral: true 
+                });
+            }
+        }
+    } catch (error) {
+        console.error('Button interaction error:', error);
+        if (!interaction.replied) {
+            await interaction.reply({ 
+                content: 'There was an error processing this button!', 
+                ephemeral: true 
+            });
+        }
+    }
 });
 
-// Export the client for use in other files
-module.exports = client;
+client.login(process.env.DISCORD_TOKEN);

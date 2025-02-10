@@ -1,7 +1,7 @@
-const { EmbedBuilder } = require('discord.js');
-const { getUserCases } = require('../utils/moderationLog');
+import { EmbedBuilder } from 'discord.js';
+import { getUserCases } from '../utils/moderationLog.js';
 
-module.exports = {
+export const warningsCommand = {
     name: 'warnings',
     description: 'Check user warnings',
     execute(message, args) {

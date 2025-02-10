@@ -1,7 +1,7 @@
-const { EmbedBuilder } = require('discord.js');
-const { getDRXPrice } = require('../services/priceService');
+import { EmbedBuilder } from 'discord.js';
+import { getDRXPrice } from '../services/priceService.js';
 
-module.exports = {
+export const priceCommand = {
     name: 'price',
     description: 'Get DRX token price',
     async execute(message) {

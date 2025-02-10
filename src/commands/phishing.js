@@ -1,8 +1,7 @@
+import { EmbedBuilder, PermissionFlagsBits } from 'discord.js';
+import { togglePhishing, addWhitelist, removeWhitelist, getPhishingLogs } from '../utils/security/phishingManager.js';
 
-const { EmbedBuilder, PermissionFlagsBits } = require('discord.js');
-const { togglePhishing, addWhitelist, removeWhitelist, getPhishingLogs } = require('../utils/security/phishingManager');
-
-module.exports = {
+export const phishingCmd = {
     name: 'phishing',
     description: 'Control phishing protection',
     async execute(message, args) {

@@ -1,13 +1,12 @@
-const { EmbedBuilder } = require('discord.js');
+import { EmbedBuilder } from 'discord.js';
 
 const ADMIN_REVIEW_CHANNEL = '1304539451921535156';
 const SUGGESTIONS_CHANNEL = '1252357439807033374';
 
-module.exports = {
+export const suggestCmd = {
     name: 'suggest',
     description: 'Submit a suggestion',
     async execute(message, args) {
-        // Check if command is used in the correct channel
         if (message.channel.id !== SUGGESTIONS_CHANNEL) {
             return message.reply('Please use this command in the suggestions channel!');
         }

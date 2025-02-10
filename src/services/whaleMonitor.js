@@ -1,133 +1,176 @@
-const { Client } = require('xrpl');
+import WebSocket from 'ws';
+import { EmbedBuilder } from 'discord.js';
+import { withRetry } from '../utils/networkRetry.js';
 
 class WhaleMonitor {
     constructor(discordClient) {
         this.discordClient = discordClient;
-        this.xrplClient = null;
+        this.channelId = '1307089076498993265';
+        this.minAmount = 100000;
         this.endpoints = [
             'wss://xrplcluster.com',
-            'wss://s1.ripple.com',
-            'wss://s2.ripple.com'
+            'wss://s2.ripple.com',
+            'wss://s1.ripple.com'
         ];
         this.currentEndpoint = 0;
-        this.connectionAttempts = new Map();
-        this.maxAttemptsPerEndpoint = 3;
-        this.reconnectDelay = 10000;
-        this.subscriptionRetryDelay = 5000;
-        this.isConnecting = false;
-        this.activeSubscriptions = new Set();
+        this.ws = null;
+        this.connected = false;
+        this.reconnectAttempts = 0;
+        this.maxReconnectAttempts = 5;
+        this.reconnectDelay = 5000;
+        this.setupRetryConfig();
+    }
+
+    setupRetryConfig() {
+        this.retryConfig = {
+            maxAttempts: 3,
+            initialDelay: 1000,
+            maxDelay: 10000,
+            backoffFactor: 2
+        };
     }
 
     async start() {
-        await this.initializeConnection();
-        this.setupHealthCheck();
+        await this.connect();
+        this.setupHeartbeat();
     }
 
-    setupHealthCheck() {
+    async connect() {
+        if (this.ws) {
+            this.cleanup();
+        }
+
+        this.ws = new WebSocket(this.endpoints[this.currentEndpoint], {
+            handshakeTimeout: 10000,
+            timeout: 10000
+        });
+
+        this.setupEventHandlers();
+    }
+
+    setupEventHandlers() {
+        this.ws.on('open', () => {
+            this.connected = true;
+            this.reconnectAttempts = 0;
+            console.log(`Connected to ${this.endpoints[this.currentEndpoint]}`);
+            this.subscribe();
+        });
+
+        this.ws.on('close', () => {
+            this.handleDisconnect('Connection closed');
+        });
+
+        this.ws.on('error', (error) => {
+            this.handleDisconnect(`Connection error: ${error.message}`);
+        });
+
+        this.ws.on('message', (data) => {
+            this.handleMessage(data);
+        });
+    }
+
+    handleDisconnect(reason) {
+        this.connected = false;
+        this.reconnectAttempts++;
+
+        if (this.reconnectAttempts >= this.maxReconnectAttempts) {
+            this.rotateEndpoint();
+            this.reconnectAttempts = 0;
+        }
+
+        setTimeout(() => this.connect(), this.reconnectDelay * Math.pow(2, this.reconnectAttempts - 1));
+    }
+
+    rotateEndpoint() {
+        this.currentEndpoint = (this.currentEndpoint + 1) % this.endpoints.length;
+        console.log(`Rotating to endpoint: ${this.endpoints[this.currentEndpoint]}`);
+    }
+
+    setupHeartbeat() {
         setInterval(() => {
-            if (!this.xrplClient?.isConnected()) {
-                console.log('Health check: Connection lost, reinitializing...');
-                this.initializeConnection();
+            if (this.connected && this.ws.readyState === WebSocket.OPEN) {
+                this.ws.ping();
             }
         }, 30000);
     }
 
-    async initializeConnection() {
-        if (this.isConnecting) return;
-        
-        this.isConnecting = true;
-        const endpoint = this.getNextEndpoint();
-        
-        try {
-            if (this.xrplClient) {
-                await this.xrplClient.disconnect();
-            }
-
-            this.xrplClient = new Client(endpoint, {
-                connectionTimeout: 20000,
-                maxRetries: 3
-            });
-
-            this.setupEventHandlers();
-            await this.connect();
-            
-        } catch (error) {
-            console.log(`Connection failed to ${endpoint}:`, error.message);
-            this.handleConnectionFailure();
-        } finally {
-            this.isConnecting = false;
-        }
-    }
-
-    setupEventHandlers() {
-        this.xrplClient.on('connected', () => {
-            console.log(`Connected successfully to ${this.endpoints[this.currentEndpoint]}`);
-            this.connectionAttempts.set(this.currentEndpoint, 0);
-            this.subscribe();
-        });
-
-        this.xrplClient.on('disconnected', (code, reason) => {
-            console.log(`Disconnected from ${this.endpoints[this.currentEndpoint]}: ${code}`);
-            this.handleConnectionFailure();
-        });
-
-        this.xrplClient.on('error', (error) => {
-            console.log(`Error on ${this.endpoints[this.currentEndpoint]}:`, error.message);
-            this.handleConnectionFailure();
-        });
-    }
-
-    getNextEndpoint() {
-        this.currentEndpoint = (this.currentEndpoint + 1) % this.endpoints.length;
-        return this.endpoints[this.currentEndpoint];
-    }
-
-    async connect() {
-        try {
-            await this.xrplClient.connect();
-        } catch (error) {
-            throw new Error(`Connection failed: ${error.message}`);
-        }
-    }
-
-    handleConnectionFailure() {
-        const attempts = (this.connectionAttempts.get(this.currentEndpoint) || 0) + 1;
-        this.connectionAttempts.set(this.currentEndpoint, attempts);
-
-        if (attempts >= this.maxAttemptsPerEndpoint) {
-            console.log(`Max attempts reached for ${this.endpoints[this.currentEndpoint]}`);
-            this.connectionAttempts.set(this.currentEndpoint, 0);
-        }
-
-        setTimeout(() => {
-            if (!this.isConnecting) {
-                this.initializeConnection();
-            }
-        }, this.reconnectDelay);
-    }
-
-    async subscribe() {
-        try {
-            const response = await this.xrplClient.request({
+    subscribe() {
+        if (this.connected) {
+            const message = {
                 command: 'subscribe',
                 streams: ['transactions']
-            });
-            
-            if (response.status === 'success') {
-                console.log('Successfully subscribed to transactions');
-                this.activeSubscriptions.add('transactions');
+            };
+            this.ws.send(JSON.stringify(message));
+        }
+    }
+
+    cleanup() {
+        if (this.ws) {
+            this.ws.removeAllListeners();
+            if (this.ws.readyState === WebSocket.OPEN) {
+                this.ws.close();
+            }
+        }
+    }
+
+    handleMessage(data) {
+        try {
+            const message = JSON.parse(data.toString());
+            if (message.type === 'transaction') {
+                this.handleTransaction(message);
             }
         } catch (error) {
-            console.log('Subscription error:', error.message);
-            setTimeout(() => this.subscribe(), this.subscriptionRetryDelay);
+            console.log('Message parsing error:', error.message);
+        }
+    }
+
+    handleTransaction(message) {
+        const tx = message.transaction;
+        if (this.isValidTransaction(tx)) {
+            this.processTransaction(tx);
+        }
+    }
+
+    isValidTransaction(tx) {
+        return tx?.TransactionType === 'Payment' && 
+               tx?.Amount && 
+               this.getTransactionAmount(tx) >= this.minAmount;
+    }
+
+    getTransactionAmount(tx) {
+        const amount = tx.Amount;
+        return typeof amount === 'string' ? 
+            Number(amount) / 1000000 : 
+            Number(amount.value || 0);
+    }
+
+    async processTransaction(tx) {
+        try {
+            const amount = this.getTransactionAmount(tx);
+            
+            const embed = new EmbedBuilder()
+                .setTitle('🐋 Whale Transaction Detected')
+                .setColor('#ff9900')
+                .addFields(
+                    { name: '💰 Amount', value: `${amount.toLocaleString()} XRP`, inline: true },
+                    { name: '📤 From', value: `\`${tx.Account}\``, inline: true },
+                    { name: '📥 To', value: `\`${tx.Destination}\``, inline: true },
+                    { name: '🔍 Transaction Details', value: `[View on XRPSCAN](https://xrpscan.com/tx/${tx.hash})` }
+                )
+                .setTimestamp();
+
+            const channel = this.discordClient.channels.cache.get(this.channelId);
+            if (channel) {
+                await channel.send({ embeds: [embed] });
+            }
+        } catch (error) {
+            console.log('Transaction processing error:', error.message);
         }
     }
 
     stop() {
-        if (this.xrplClient?.isConnected()) {
-            this.xrplClient.disconnect();
-        }
+        this.cleanup();
     }
 }
 
-module.exports = { WhaleMonitor };
+export { WhaleMonitor };

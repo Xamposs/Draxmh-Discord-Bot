@@ -1,7 +1,7 @@
-const { EmbedBuilder } = require('discord.js');
-const { getRecentCases } = require('../utils/moderationLog');
+import { EmbedBuilder } from 'discord.js';
+import { getRecentCases } from '../utils/moderationLog.js';
 
-module.exports = {
+export const casesCommand = {
     name: 'cases',
     description: 'View recent moderation cases',
     execute(message, args) {

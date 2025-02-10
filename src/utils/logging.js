@@ -1,4 +1,4 @@
-const { EmbedBuilder, WebhookClient } = require('discord.js');
+import { EmbedBuilder, WebhookClient } from 'discord.js';
 
 const LogTypes = {
     COMMAND: '⌨️',
@@ -44,7 +44,7 @@ const colors = {
     UPDATE: '#ffaa00'
 };
 
-async function logAction(type, guild, data) {
+export const logAction = async (type, guild, data) => {
     const embed = new EmbedBuilder()
         .setColor(data.color || colors[type])
         .setTimestamp()
@@ -131,6 +131,6 @@ async function logAction(type, guild, data) {
     } catch (error) {
         console.error(`Failed to send ${type} log:`, error);
     }
-}
+};
 
-module.exports = { logAction, LogTypes, colors };
+export { LogTypes, colors };

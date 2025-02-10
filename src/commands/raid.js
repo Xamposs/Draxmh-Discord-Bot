@@ -1,8 +1,7 @@
+import { EmbedBuilder, PermissionFlagsBits } from 'discord.js';
+import { toggleRaid, setThreshold, setAction } from '../utils/security/raidManager.js';
 
-const { EmbedBuilder, PermissionFlagsBits } = require('discord.js');
-const { toggleRaid, setThreshold, setAction } = require('../utils/security/raidManager');
-
-module.exports = {
+export const raidCmd = {
     name: 'raid',
     description: 'Set raid protection',
     async execute(message, args) {

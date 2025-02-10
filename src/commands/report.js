@@ -1,8 +1,8 @@
-const { EmbedBuilder, PermissionFlagsBits } = require('discord.js');
+import { EmbedBuilder, PermissionFlagsBits } from 'discord.js';
 
 const LOGS_CHANNEL_ID = '1252358095116701716';
 
-module.exports = {
+export const reportCmd = {
     name: 'report',
     description: 'Create a private report ticket',
     async execute(message, args) {

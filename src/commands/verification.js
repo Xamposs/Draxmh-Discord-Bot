@@ -1,8 +1,7 @@
+import { EmbedBuilder, PermissionFlagsBits } from 'discord.js';
+import { toggleVerification, getVerificationStatus, setVerificationLevel } from '../utils/security/verificationManager.js';
 
-const { EmbedBuilder, PermissionFlagsBits } = require('discord.js');
-const { toggleVerification, getVerificationStatus, setVerificationLevel } = require('../utils/security/verificationManager');
-
-module.exports = {
+export const verificationCmd = {
     name: 'verification',
     description: 'Manage verification system',
     async execute(message, args) {

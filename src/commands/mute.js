@@ -1,6 +1,6 @@
-const { EmbedBuilder, PermissionFlagsBits } = require('discord.js');
+import { EmbedBuilder, PermissionFlagsBits } from 'discord.js';
 
-module.exports = {
+export const muteCommand = {
     name: 'mute',
     description: 'Mute a user',
     async execute(message, args) {
@@ -38,9 +38,9 @@ module.exports = {
     }
 };
 
-function parseDuration(duration) {
+const parseDuration = (duration) => {
     const time = parseInt(duration);
     const unit = duration.slice(-1);
     const units = { 's': 1000, 'm': 60000, 'h': 3600000, 'd': 86400000 };
     return time * (units[unit] || units['h']);
-}
+};

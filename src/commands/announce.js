@@ -1,6 +1,6 @@
-const { PermissionsBitField } = require('discord.js');
+import { PermissionsBitField } from 'discord.js';
 
-module.exports = {
+export const announceCmd = {
     name: 'announce',
     description: 'Send an announcement or execute command in specific channel',
     async execute(message, args, client) {
@@ -27,14 +27,12 @@ module.exports = {
             const command = client.commands.get(commandName);
 
             if (command) {
-                // Create a modified message object for the target channel
                 const modifiedMessage = {
                     ...message,
                     channel: targetChannel,
                     reply: (content) => targetChannel.send(content)
                 };
 
-                // Execute the command with the modified message object
                 await command.execute(modifiedMessage, commandArgs.slice(1), client);
                 message.reply(`Command ${commandName} executed in ${channelMention}!`);
             }

@@ -1,6 +1,6 @@
-const axios = require('axios');
+import axios from 'axios';
 
-async function getDRXPrice() {
+export const getDRXPrice = async () => {
     const endpoints = [
         'https://api.binance.com/api/v3/ticker/price?symbol=XRPUSDT',
         'https://api.huobi.pro/market/detail/merged?symbol=xrpusdt',
@@ -21,8 +21,4 @@ async function getDRXPrice() {
         }
     }
     throw new Error('All price endpoints failed');
-}
-
-module.exports = {
-    getXRPPrice: getDRXPrice,
 };

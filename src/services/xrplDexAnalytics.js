@@ -1,12 +1,12 @@
-const { Client } = require('xrpl');
-const { EmbedBuilder } = require('discord.js');
+import { Client } from 'xrpl';
+import { EmbedBuilder } from 'discord.js';
 
 class XRPLDexAnalytics {
     constructor(client, channelId) {
         this.discordClient = client;
         this.channelId = channelId;
         this.xrplClient = new Client('wss://xrplcluster.com');
-        this.updateInterval = 5 * 60 * 1000;
+        this.updateInterval = 5 * 60 * 1000; // 5 minutes
         console.log('DEX Analytics initialized with channel:', channelId);
     }
 
@@ -109,4 +109,4 @@ class XRPLDexAnalytics {
     }
 }
 
-module.exports = { XRPLDexAnalytics };
+export { XRPLDexAnalytics };

@@ -1,7 +1,7 @@
-const { EmbedBuilder, PermissionFlagsBits } = require('discord.js');
-const { isCommandEnabled } = require('../utils/commandManager');
+import { EmbedBuilder, PermissionFlagsBits } from 'discord.js';
+import { isCommandEnabled } from '../utils/commandManager.js';
 
-module.exports = {
+export const moderationCmd = {
     name: 'moderation',
     description: 'Shows all moderation commands',
     execute(message) {

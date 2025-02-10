@@ -1,8 +1,8 @@
-const { EmbedBuilder } = require('discord.js');
-const QRCode = require('qrcode');
-const { getDRXPrice } = require('../services/priceService');
+import { EmbedBuilder } from 'discord.js';
+import QRCode from 'qrcode';
+import { getDRXPrice } from '../services/priceService.js';
 
-module.exports = {
+export const swapCommand = {
     name: 'swap',
     description: 'Swap XRP to DRX with live pricing',
     async execute(message, args) {
@@ -17,7 +17,6 @@ module.exports = {
 
         try {
             const priceData = await getDRXPrice();
-            // Direct price calculation without division
             const price = priceData.price / 1000000;
             const expectedOutput = amount / price;
             

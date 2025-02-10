@@ -1,4 +1,4 @@
-module.exports = {
+export const draxmhCmd = {
     name: 'draxmh',
     description: 'Shows a cool DRX animation',
     execute(message) {

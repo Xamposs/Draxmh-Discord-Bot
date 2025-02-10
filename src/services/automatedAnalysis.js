@@ -1,9 +1,9 @@
-const { EmbedBuilder } = require('discord.js');
-const { TechnicalAnalysis } = require('./technicalAnalysis');
-const { PatternRecognition } = require('./patternRecognition');
-const { SentimentAnalyzer } = require('./sentimentAnalysis');
-const { SignalAggregator } = require('./signalAggregator');
-const { withRetry } = require('../utils/networkRetry');
+import { EmbedBuilder } from 'discord.js';
+import { TechnicalAnalysis } from './technicalAnalysis.js';
+import { PatternRecognition } from './patternRecognition.js';
+import { SentimentAnalyzer } from './sentimentAnalysis.js';
+import { SignalAggregator } from './signalAggregator.js';
+import { withRetry } from '../utils/networkRetry.js';
 
 class AutomatedAnalysis {
     constructor(client) {
@@ -181,5 +181,6 @@ class AutomatedAnalysis {
         };
     }}
 
-module.exports = { AutomatedAnalysis };
+// At the end of automatedAnalysis.js
+export { AutomatedAnalysis };
 

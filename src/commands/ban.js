@@ -1,6 +1,6 @@
-const { EmbedBuilder, PermissionFlagsBits } = require('discord.js');
+import { EmbedBuilder, PermissionFlagsBits } from 'discord.js';
 
-module.exports = {
+export const banCommand = {
     name: 'ban',
     description: 'Ban a user from the server',
     async execute(message, args) {

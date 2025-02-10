@@ -1,7 +1,7 @@
-const { EmbedBuilder, PermissionFlagsBits } = require('discord.js');
-const { logAction } = require('../utils/logging');
+import { EmbedBuilder, PermissionFlagsBits } from 'discord.js';
+import { logAction } from '../utils/logging.js';
 
-module.exports = {
+export const roleCommand = {
     name: 'role',
     description: 'Add or remove a role from a user',
     async execute(message, args) {

@@ -1,7 +1,7 @@
-const { EmbedBuilder } = require('discord.js');
-const axios = require('axios');
+import { EmbedBuilder } from 'discord.js';
+import axios from 'axios';
 
-module.exports = {
+export const volumeCommand = {
     name: 'volume',
     description: 'Get XRP trading volume statistics',
     async execute(message) {

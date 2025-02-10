@@ -1,7 +1,7 @@
-const { EmbedBuilder } = require('discord.js');
-const { getStakingStats } = require('../services/stakingService');
+import { EmbedBuilder } from 'discord.js';
+import { getStakingStats } from '../services/stakingService.js';
 
-module.exports = {
+export const stakeStatsCommand = {
     name: 'stake-stats',
     description: 'Get DRX staking pool statistics',
     async execute(message) {

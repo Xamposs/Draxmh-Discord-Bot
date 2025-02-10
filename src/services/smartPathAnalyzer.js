@@ -1,5 +1,5 @@
-const { Client } = require('xrpl');
-const { EmbedBuilder } = require('discord.js');
+import { Client } from 'xrpl';
+import { EmbedBuilder } from 'discord.js';
 
 class SmartPathAnalyzer {
     constructor(client, channelId) {
@@ -18,6 +18,7 @@ class SmartPathAnalyzer {
         this.updateInterval = 10 * 60 * 1000;
         console.log('Smart Path Analyzer initialized');
     }
+
     startAutomatedUpdates = async () => {
         console.log('Starting Path Analysis updates...');
         await this.xrplClient.connect();
@@ -115,4 +116,4 @@ class SmartPathAnalyzer {
     }
 }
 
-module.exports = { SmartPathAnalyzer };
+export { SmartPathAnalyzer };

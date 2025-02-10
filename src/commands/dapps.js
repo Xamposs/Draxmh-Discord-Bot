@@ -1,6 +1,6 @@
-const { EmbedBuilder } = require('discord.js');
+import { EmbedBuilder } from 'discord.js';
 
-module.exports = {
+export const dappsCommand = {
     name: 'dapps',
     description: 'Get DRX dApp links and integration info',
     async execute(message) {

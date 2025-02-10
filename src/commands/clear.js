@@ -1,6 +1,6 @@
-const { PermissionsBitField } = require('discord.js');
+import { PermissionsBitField } from 'discord.js';
 
-module.exports = {
+export const clearCmd = {
     name: 'clear',
     description: 'Clear messages',
     async execute(message, args) {

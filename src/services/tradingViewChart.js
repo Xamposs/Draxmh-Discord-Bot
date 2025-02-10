@@ -1,10 +1,10 @@
-const { EmbedBuilder } = require('discord.js');
-const axios = require('axios');
+import { EmbedBuilder } from 'discord.js';
+import axios from 'axios';
 
 const CHART_CHANNEL_ID = '1252356323853734110';
 const UPDATE_INTERVAL = 60000;
 
-async function startChartService(client) {
+export const startChartService = async (client) => {
     const channel = client.channels.cache.get(CHART_CHANNEL_ID);
     
     async function updateChart() {
@@ -30,7 +30,7 @@ async function startChartService(client) {
 
     await updateChart();
     setInterval(updateChart, UPDATE_INTERVAL);
-}
+};
 
 async function getBinancePrice() {
     const response = await axios.get('https://api.binance.com/api/v3/ticker/24hr?symbol=XRPUSDT');
@@ -39,5 +39,3 @@ async function getBinancePrice() {
         priceChange: parseFloat(response.data.priceChangePercent).toFixed(2)
     };
 }
-
-module.exports = { startChartService };

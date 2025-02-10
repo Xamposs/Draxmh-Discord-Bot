@@ -51,4 +51,5 @@ class SignalAggregator {
     }
 }
 
-module.exports = { SignalAggregator };
+export { SignalAggregator };
+

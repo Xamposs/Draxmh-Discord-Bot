@@ -1,7 +1,7 @@
-const { EmbedBuilder, PermissionFlagsBits } = require('discord.js');
-const { toggleCommand, getCommandStatus } = require('../utils/commandManager');
+import { EmbedBuilder, PermissionFlagsBits } from 'discord.js';
+import { toggleCommand, getCommandStatus } from '../utils/commandManager.js';
 
-module.exports = {
+export const toggleCmd = {
     name: 'toggle',
     description: 'Toggle commands on/off',
     execute(message, args) {

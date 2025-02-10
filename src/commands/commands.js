@@ -1,7 +1,7 @@
-const { EmbedBuilder } = require('discord.js');
-const { isCommandEnabled } = require('../utils/commandManager');
+import { EmbedBuilder } from 'discord.js';
+import { isCommandEnabled } from '../utils/commandManager.js';
 
-module.exports = {
+export const commandsCmd = {
     name: 'commands',
     description: 'Shows all available commands',
     execute(message) {

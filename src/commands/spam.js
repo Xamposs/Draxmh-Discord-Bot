@@ -1,8 +1,7 @@
+import { EmbedBuilder, PermissionFlagsBits } from 'discord.js';
+import { toggleSpam, setSensitivity, addExemptRole } from '../utils/security/spamManager.js';
 
-const { EmbedBuilder, PermissionFlagsBits } = require('discord.js');
-const { toggleSpam, setSensitivity, addExemptRole } = require('../utils/security/spamManager');
-
-module.exports = {
+export const spamCmd = {
     name: 'spam',
     description: 'Configure spam detection',
     async execute(message, args) {

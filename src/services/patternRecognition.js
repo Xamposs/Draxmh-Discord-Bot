@@ -1,4 +1,4 @@
-const technicalIndicators = require('technicalindicators');
+import technicalIndicators from 'technicalindicators';
 
 class PatternRecognition {
     constructor() {
@@ -54,4 +54,4 @@ class PatternRecognition {
     }
 }
 
-module.exports = { PatternRecognition };
+export { PatternRecognition };

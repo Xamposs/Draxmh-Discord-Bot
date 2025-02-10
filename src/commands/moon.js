@@ -1,4 +1,4 @@
-module.exports = {
+export const moonCmd = {
     name: 'moon',
     description: 'To the moon!',
     execute(message) {

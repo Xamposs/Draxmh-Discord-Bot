@@ -1,8 +1,9 @@
-const axios = require('axios');
+import axios from 'axios';
+
 const XRPL_API = 'https://xrplcluster.com/v2';
 const STAKING_ADDRESS = 'rUWUQhB2pcgCbjJxaBv9GrS1hr9pCUGXxX'; // DRX staking address
 
-async function getStakingStats() {
+export const getStakingStats = async () => {
     try {
         // Get account objects for staking data
         const response = await axios.post(XRPL_API, {
@@ -38,6 +39,4 @@ async function getStakingStats() {
         console.error('Error fetching staking stats:', error);
         throw error;
     }
-}
-
-module.exports = { getStakingStats };
+};

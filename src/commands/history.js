@@ -1,7 +1,7 @@
-const { EmbedBuilder } = require('discord.js');
-const { getUserCases } = require('../utils/moderationLog');
+import { EmbedBuilder } from 'discord.js';
+import { getUserCases } from '../utils/moderationLog.js';
 
-module.exports = {
+export const historyCommand = {
     name: 'history',
     description: 'View user moderation history',
     execute(message, args) {

@@ -1,6 +1,6 @@
-const { EmbedBuilder, PermissionFlagsBits } = require('discord.js');
+import { EmbedBuilder, PermissionFlagsBits } from 'discord.js';
 
-module.exports = {
+export const slowmodeCommand = {
     name: 'slowmode',
     description: 'Set channel slowmode',
     async execute(message, args) {

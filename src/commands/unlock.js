@@ -1,6 +1,6 @@
-const { PermissionsBitField } = require('discord.js');
+import { PermissionsBitField } from 'discord.js';
 
-module.exports = {
+export const unlockCmd = {
     name: 'unlock',
     description: 'Unlock a channel',
     async execute(message) {

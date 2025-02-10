@@ -1,6 +1,6 @@
-const { EmbedBuilder } = require('discord.js');
+import { EmbedBuilder } from 'discord.js';
 
-module.exports = {
+export const scamAlertCmd = {
     name: 'scamalert',
     description: 'Shows current scam alerts and security information',
     execute(message) {

@@ -1,5 +1,6 @@
-const dns = require('dns');
-const { promisify } = require('util');
+import dns from 'dns';
+import { promisify } from 'util';
+
 const resolve4 = promisify(dns.resolve4);
 
 async function withDNSRetry(hostname, operation, maxRetries = 3) {
@@ -25,4 +26,4 @@ async function withRetry(operation, maxRetries = 3) {
     }
 }
 
-module.exports = { withDNSRetry, withRetry };
+export { withDNSRetry, withRetry };
