@@ -11,6 +11,7 @@ import { WhaleMonitor } from './services/whaleMonitor.js';
 import { withDNSRetry } from './utils/networkRetry.js';
 import { startScamAlerts } from './services/autoScamAlert.js';
 import { startChartService } from './services/tradingViewChart.js';
+import { wsManager } from './services/websocketManager.js';
 import { 
     handleTradingButtons, 
     handleInformationButtons, 
@@ -326,6 +327,13 @@ client.on('interactionCreate', async interaction => {
                 });
             }
         }
+        else if (interaction.customId.includes('_check')) {
+            if (interaction.customId.startsWith('moon')) {
+                await handleFunButtons(interaction);
+            } else if (interaction.customId.startsWith('draxmh')) {
+                await handleFunButtons(interaction);
+            }
+        }
     } catch (error) {
         console.error('Button interaction error:', error);
         if (!interaction.replied) {
@@ -336,5 +344,4 @@ client.on('interactionCreate', async interaction => {
         }
     }
 });
-
 client.login(process.env.DISCORD_TOKEN);

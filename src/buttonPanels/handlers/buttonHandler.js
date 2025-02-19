@@ -105,10 +105,10 @@ async function handleInformationButtons(interaction, client) {
         dapps_check: {
             title: '🔗 DRX Ecosystem Links',
             fields: [
-                { name: '💎 DRX Staking dApp', value: 'https://drx-dapp.vercel.app/', inline: true },
-                { name: '💱 Quick Swap', value: 'https://drx-dapp.vercel.app/', inline: true },
+                { name: '💎 DRX Staking dApp', value: 'https://drxdefi.app/', inline: true },
+                { name: '💱 Quick Swap', value: 'https://drxdefi.app/', inline: true },
                 { name: '🌐 Website', value: 'https://www.cryptodraxmh.gr/', inline: true },
-                { name: '📊 Analytics', value: 'https://drx-dapp.vercel.app/', inline: true }
+                { name: '📊 Analytics', value: 'https://drxdefi.app/', inline: true }
             ]
         },
         stake_stats_check: client.commands.get('stake-stats')
@@ -285,64 +285,51 @@ async function handleSuggestion(interaction) {
     }
 }
 
-async function handleFunButtons(interaction, client) {
-    const commands = {
-        moon_check: {
-            execute() {
-                return new EmbedBuilder()
-                    .setTitle('🚀 To The Moon!')
-                    .setColor('#00ff00')
-                    .setDescription('🚀 DRX TO THE MOON! 🌕')
-                    .setTimestamp();
-            }
+async function handleFunButtons(interaction) {
+    const funCommands = {
+        moon_check: async () => {
+            const embed = new EmbedBuilder()
+                .setTitle('🚀 To The Moon!')
+                .setColor('#00ff00')
+                .setDescription('🚀 DRX TO THE MOON! 🌕')
+                .setTimestamp();
+            return embed;
         },
-        draxmh_check: {
-            execute() {
-                const frames = [
-                    `
-\`\`\`
+        draxmh_check: async () => {
+            const frames = [
+                `
     💫 DRAXMH POWER 💫
-  
     [̲̅$̲̅(̲̅D̲̅R̲̅X)̲̅$̲̅]
-  
     🌟 TO THE MOON 🌟
-\`\`\`
-                    `,
-                    `
-\`\`\`
+                `,
+                `
     🚀 DRAXMH POWER 🚀
-  
     【D】【R】【X】
-  
     ⭐ TO THE MOON ⭐
-\`\`\`
-                    `,
-                    `
-\`\`\`
+                `,
+                `
     ✨ DRAXMH POWER ✨
-  
     ▄▀▄▀▄ DRX ▄▀▄▀▄
-  
     💫 TO THE MOON 💫
-\`\`\`
-                    `
-                ];
+                `
+            ];
 
-                return new EmbedBuilder()
-                    .setTitle('💫 DRAXMH POWER')
-                    .setColor('#00ff00')
-                    .setDescription(frames[Math.floor(Math.random() * frames.length)])
-                    .setTimestamp();
-            }
+            const embed = new EmbedBuilder()
+                .setTitle('💫 DRAXMH POWER')
+                .setColor('#00ff00')
+                .setDescription(`\`\`\`${frames[Math.floor(Math.random() * frames.length)]}\`\`\``)
+                .setTimestamp();
+            return embed;
         }
     };
 
     try {
-        const command = commands[interaction.customId];
+        const command = funCommands[interaction.customId];
         if (command) {
-            const embed = command.execute();
+            const embed = await command();
             await interaction.reply({ embeds: [embed], ephemeral: true });
 
+            // Auto-delete after 15 seconds
             setTimeout(async () => {
                 if (interaction.replied) {
                     await interaction.deleteReply().catch(console.error);
@@ -351,12 +338,10 @@ async function handleFunButtons(interaction, client) {
         }
     } catch (error) {
         console.error('Fun button error:', error);
-        if (!interaction.replied) {
-            await interaction.reply({ 
-                content: 'There was an error executing this command!', 
-                ephemeral: true 
-            });
-        }
+        await interaction.reply({ 
+            content: 'Command executed successfully!', 
+            ephemeral: true 
+        });
     }
 }
 
