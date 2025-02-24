@@ -12,6 +12,7 @@ import { withDNSRetry } from './utils/networkRetry.js';
 import { startScamAlerts } from './services/autoScamAlert.js';
 import { startChartService } from './services/tradingViewChart.js';
 import { wsManager } from './services/websocketManager.js';
+import connectCommand from './commands/connect.js';
 import { 
     handleTradingButtons, 
     handleInformationButtons, 
@@ -132,6 +133,7 @@ import { phishingCmd } from './commands/phishing.js';
 import { spamCmd } from './commands/spam.js';
 import { raidCmd } from './commands/raid.js';
 import { volumeCommand } from './commands/volume.js';
+import walletCommand from './commands/wallet.js';
 
 // Set up commands
 const commands = [
@@ -149,6 +151,8 @@ commands.forEach(cmd => {
     client.commands.set(cmd.name, cmd);
 });
 
+client.commands.set(connectCommand.name, connectCommand);  // Add here
+client.commands.set(walletCommand.name, walletCommand);
 client.on('messageCreate', async message => {
     if (!message.author.bot) {
         await logAction('MESSAGE', message.guild, {

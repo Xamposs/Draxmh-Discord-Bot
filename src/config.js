@@ -1,7 +1,7 @@
-require('dotenv').config();
+import dotenv from 'dotenv';
+dotenv.config();
 
-module.exports = {
-    // ... existing config
+export const config = {
     xumm: {
         apiKey: process.env.XUMM_API_KEY,
         apiSecret: process.env.XUMM_API_SECRET
