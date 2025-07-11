@@ -21,45 +21,77 @@ class SmartPathAnalyzer {
 
     startAutomatedUpdates = async () => {
         console.log('Starting Path Analysis updates...');
-        await this.xrplClient.connect();
-        
-        this.sendUpdate();
-        setInterval(() => this.sendUpdate(), this.updateInterval);
+        try {
+            await this.xrplClient.connect();
+            console.log('Connected successfully to XRPL network');
+            
+            this.sendUpdate();
+            setInterval(() => this.sendUpdate(), this.updateInterval);
+        } catch (error) {
+            console.error('Error connecting to XRPL:', error.message);
+            // Try to reconnect after a delay
+            setTimeout(() => this.startAutomatedUpdates(), 30000);
+        }
     }
 
     async sendUpdate() {
         const channel = this.discordClient.channels.cache.get(this.channelId);
         if (channel) {
-            const pathEmbed = await this.createPathAnalysisEmbed();
-            await channel.send({ embeds: [pathEmbed] });
+            try {
+                const pathEmbed = await this.createPathAnalysisEmbed();
+                await channel.send({ embeds: [pathEmbed] });
+            } catch (error) {
+                console.error('Error sending path analysis update:', error.message);
+            }
         }
     }
 
     async analyzePaths() {
-        const paths = {
-            directRoutes: [
-                { from: 'XRP', to: 'USD', cost: '0.00001 XRP', efficiency: '99%' },
-                { from: 'XRP', to: 'EUR', cost: '0.00002 XRP', efficiency: '98%' }
-            ],
-            crossCurrency: [
-                { route: 'XRP → USD → EUR', savings: '2.5%', liquidity: 'High' },
-                { route: 'XRP → BTC → USD', savings: '1.8%', liquidity: 'Medium' }
-            ],
-            optimalPaths: [
-                { path: 'Direct XRP/USD', recommended: true, reason: 'Lowest fees' },
-                { path: 'XRP → EUR → USD', recommended: false, reason: 'Higher slippage' }
-            ]
-        };
-        return paths;
+        try {
+            // Your path analysis logic here
+            const paths = {
+                directRoutes: [
+                    { from: 'XRP', to: 'USD', cost: '0.00001 XRP', efficiency: '99%' },
+                    { from: 'XRP', to: 'EUR', cost: '0.00002 XRP', efficiency: '98%' }
+                ],
+                crossCurrency: [
+                    { route: 'XRP → USD → EUR', savings: '2.5%', liquidity: 'High' },
+                    { route: 'XRP → BTC → USD', savings: '1.8%', liquidity: 'Medium' }
+                ],
+                optimalPaths: [
+                    { path: 'Direct XRP/USD', recommended: true, reason: 'Lowest fees' },
+                    { path: 'XRP → EUR → USD', recommended: false, reason: 'Higher slippage' }
+                ]
+            };
+            return paths;
+        } catch (error) {
+            console.error('Error analyzing paths:', error.message);
+            return {
+                directRoutes: [],
+                crossCurrency: [],
+                optimalPaths: []
+            };
+        }
     }
 
     async getFeeAnalysis() {
-        return {
-            averageFee: '0.00001 XRP',
-            peakHours: '14:00-18:00 UTC',
-            lowestFees: '22:00-02:00 UTC',
-            congestionLevel: 'Low'
-        };
+        try {
+            // Your fee analysis logic here
+            return {
+                averageFee: '0.00001 XRP',
+                peakHours: '14:00-18:00 UTC',
+                lowestFees: '22:00-02:00 UTC',
+                congestionLevel: 'Low'
+            };
+        } catch (error) {
+            console.error('Error getting fee analysis:', error.message);
+            return {
+                averageFee: 'Unknown',
+                peakHours: 'Unknown',
+                lowestFees: 'Unknown',
+                congestionLevel: 'Unknown'
+            };
+        }
     }
 
     async createPathAnalysisEmbed() {
@@ -75,16 +107,18 @@ class SmartPathAnalyzer {
             .addFields(
                 {
                     name: '🔄 Best Direct Routes',
-                    value: paths.directRoutes.map(r => 
-                        `${r.from} → ${r.to}\nCost: ${r.cost}\nEfficiency: ${r.efficiency}`
-                    ).join('\n\n'),
+                    value: paths.directRoutes.length > 0 ? 
+                        paths.directRoutes.map(r => 
+                            `${r.from} → ${r.to}\nCost: ${r.cost}\nEfficiency: ${r.efficiency}`
+                        ).join('\n\n') : 'No direct routes available',
                     inline: false
                 },
                 {
                     name: '💱 Cross-Currency Opportunities',
-                    value: paths.crossCurrency.map(c => 
-                        `Route: ${c.route}\nPotential Savings: ${c.savings}\nLiquidity: ${c.liquidity}`
-                    ).join('\n\n'),
+                    value: paths.crossCurrency.length > 0 ?
+                        paths.crossCurrency.map(c => 
+                            `Route: ${c.route}\nPotential Savings: ${c.savings}\nLiquidity: ${c.liquidity}`
+                        ).join('\n\n') : 'No cross-currency opportunities available',
                     inline: false
                 },
                 {
@@ -94,9 +128,10 @@ class SmartPathAnalyzer {
                 },
                 {
                     name: '🎯 Recommended Paths',
-                    value: paths.optimalPaths.map(p => 
-                        `${p.path}\n${p.recommended ? '✅' : '⚠️'} ${p.reason}`
-                    ).join('\n\n'),
+                    value: paths.optimalPaths.length > 0 ?
+                        paths.optimalPaths.map(p => 
+                            `${p.path}\n${p.recommended ? '✅' : '⚠️'} ${p.reason}`
+                        ).join('\n\n') : 'No recommended paths available',
                     inline: false
                 }
             )

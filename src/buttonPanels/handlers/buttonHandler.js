@@ -118,12 +118,19 @@ async function handleInformationButtons(interaction, client) {
     if (commandData) {
         try {
             const embed = new EmbedBuilder()
-                .setTitle(commandData.title)
-                .setColor('#00ff00')
-                .addFields(commandData.fields)
-                .setTimestamp()
-                .setFooter({ text: 'DRX Information' });
+                .setTitle('Information Panel')
+                .setColor('#0099ff');
 
+            if (commandData && commandData.title) {
+                embed.setTitle(commandData.title);
+            }
+
+            if (commandData && commandData.fields) {
+                embed.addFields(commandData.fields);
+            }
+
+            embed.setTimestamp()
+                .setFooter({ text: 'DRX Information' });
             await interaction.reply({ 
                 embeds: [embed], 
                 ephemeral: true 

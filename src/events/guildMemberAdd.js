@@ -1,11 +1,32 @@
-const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
+import { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } from 'discord.js';
 
 const RULES_CHANNEL = '1252209254908170343';
 const WELCOME_CHANNEL = '1252359290132500632';
 const MEMBER_ROLE = 'Y121252360773229875220';
 
-module.exports = async (member) => {
+// Define the roles to automatically assign here
+// Replace these IDs with your actual role IDs
+const AUTO_ROLES = [
+    'ROLE_ID_1',  // Replace with your actual role ID
+    'ROLE_ID_2'   // Replace with your actual role ID (if needed)
+];
+
+export default async (member) => {
     try {
+        // Auto-role assignment
+        for (const roleId of AUTO_ROLES) {
+            try {
+                const role = member.guild.roles.cache.get(roleId);
+                if (role && member.guild.members.me.roles.highest.position > role.position) {
+                    await member.roles.add(role);
+                    console.log(`Auto-assigned role ${role.name} to ${member.user.tag}`);
+                }
+            } catch (roleError) {
+                console.error(`Failed to assign role ${roleId} to ${member.user.tag}:`, roleError);
+            }
+        }
+
+        // Welcome message
         const welcomeEmbed = new EmbedBuilder()
             .setTitle(`Welcome to ${member.guild.name}!`)
             .setDescription(`Hey ${member}, welcome to the official DRX community!\n\nPlease read our rules in <#${RULES_CHANNEL}> and click the button below to accept them.`)

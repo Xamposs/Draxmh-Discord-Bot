@@ -27,39 +27,70 @@ class PriceTracker {
         this.chart.setHeight(300);
         this.chart.setBackgroundColor('#2f3136');
     }
+      async fetchWithRetry(url, retries = 0) {
+          try {
+              return await this.api.get(url);
+          } catch (error) {
+              if (retries < this.maxRetries) {
+                  const delay = this.retryDelay * Math.pow(2, retries); // Exponential backoff
+                  console.log(`Retry ${retries + 1}/${this.maxRetries} for ${url}: ${error.message}`);
+                  await new Promise(resolve => setTimeout(resolve, delay));
+                  return this.fetchWithRetry(url, retries + 1);
+              }
+              console.error(`Failed after ${this.maxRetries} retries: ${error.message}`);
+              throw error;
+          }
+      }
 
-    async fetchWithRetry(url, retries = 0) {
-        try {
-            return await this.api.get(url);
-        } catch (error) {
-            if (retries < this.maxRetries && (error.code === 'ETIMEDOUT' || error.code === 'ECONNREFUSED')) {
-                await new Promise(resolve => setTimeout(resolve, this.retryDelay));
-                return this.fetchWithRetry(url, retries + 1);
-            }
-            throw error;
-        }
-    }
+      async startPriceUpdates() {
+          const updatePrice = async () => {
+              try {
+                  // Use Promise.allSettled instead of Promise.all to handle partial failures
+                  const results = await Promise.allSettled([
+                      this.fetchWithRetry('https://api.binance.com/api/v3/ticker/24hr?symbol=XRPUSDT'),
+                      this.fetchWithRetry('https://api.binance.com/api/v3/klines?symbol=XRPUSDT&interval=1w&limit=1')
+                  ]);
 
-    async startPriceUpdates() {
-        setInterval(async () => {
-            try {
-                const [priceData, weekData] = await Promise.all([
-                    this.fetchWithRetry('https://api.binance.com/api/v3/ticker/24hr?symbol=XRPUSDT'),
-                    this.fetchWithRetry('https://api.binance.com/api/v3/klines?symbol=XRPUSDT&interval=1w&limit=1')
-                ]);
+                  // Check if at least the price data succeeded
+                  if (results[0].status === 'fulfilled') {
+                      const priceData = results[0].value.data;
+                      this.updatePriceHistory(priceData);
+                      
+                      // Use week data if available, otherwise just use price data
+                      const weekData = results[1].status === 'fulfilled' ? results[1].value.data : null;
+                      await this.sendPriceUpdate(priceData, weekData);
+                  } else {
+                      console.log('Price data request failed, trying alternative source...');
+                      
+                      // Try an alternative API as fallback
+                      try {
+                          const altResponse = await this.fetchWithRetry('https://api.coingecko.com/api/v3/simple/price?ids=ripple&vs_currencies=usd&include_24hr_change=true');
+                          if (altResponse.data && altResponse.data.ripple) {
+                              const fallbackData = {
+                                  lastPrice: altResponse.data.ripple.usd,
+                                  priceChangePercent: altResponse.data.ripple.usd_24h_change,
+                                  highPrice: 0,
+                                  lowPrice: 0
+                              };
+                              this.updatePriceHistory(fallbackData);
+                              await this.sendPriceUpdate(fallbackData, null);
+                          }
+                      } catch (altError) {
+                          console.log('Alternative source also failed:', altError.message);
+                      }
+                  }
+              } catch (error) {
+                  console.error('Price update error:', error.message);
+                  // Continue running even if an update fails
+              }
+          };
 
-                // Process data and update chart only if both requests succeed
-                if (priceData?.data && weekData?.data) {
-                    this.updatePriceHistory(priceData.data);
-                    await this.sendPriceUpdate(priceData.data, weekData.data);
-                }
-            } catch (error) {
-                console.error('Price update error:', error.message);
-                // Continue running even if an update fails
-            }
-        }, 10000);
-    }
-
+          // Initial update
+          await updatePrice().catch(err => console.error('Initial price update failed:', err.message));
+          
+          // Set interval for updates with a longer interval to avoid rate limiting
+          setInterval(updatePrice, 30000); // Changed from 10000 to 30000 (30 seconds)
+      }
     updatePriceHistory(priceData) {
         this.priceHistory.push(parseFloat(priceData.lastPrice));
         if (this.priceHistory.length > 20) this.priceHistory.shift();
