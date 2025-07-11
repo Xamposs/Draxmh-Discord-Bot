@@ -39,7 +39,8 @@ const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
         GatewayIntentBits.GuildMessages,
-        GatewayIntentBits.MessageContent
+        GatewayIntentBits.MessageContent,
+        GatewayIntentBits.GuildMembers  // Add this for member join events
     ]
 });
 
@@ -256,9 +257,45 @@ client.on('messageCreate', async message => {
     await handlePhishingDetection(message);
 });
 
+// Add this import near the top with other imports
+import guildMemberAddHandler from './events/guildMemberAdd.js';
+
+// Add this constant after the client creation
+const MEMBER_ROLE = '1252360773229875220';
+
+// Replace the existing guildMemberAdd event handlers (around lines 259-262 and 289-307) with:
 client.on('guildMemberAdd', async member => {
-    await handleRaidProtection(member);
-    await handleVerification(member);
+    try {
+        // Handle the welcome message and auto-role assignment
+        await guildMemberAddHandler(member);
+        
+        // Handle raid protection
+        await handleRaidProtection(member);
+        
+        // Handle verification
+        await handleVerification(member);
+        
+        // Handle invite tracking
+        const oldInvites = invites.get(member.guild.id) || new Map();
+        const newInvites = await member.guild.invites.fetch();
+        
+        const usedInvite = newInvites.find(invite => oldInvites.get(invite.code) < invite.uses);
+        if (usedInvite) {
+            await logAction('INVITE', member.guild, {
+                action: 'Used',
+                inviter: usedInvite.inviter,
+                user: member.user,
+                code: usedInvite.code,
+                channel: usedInvite.channel,
+                uses: usedInvite.uses,
+                maxUses: usedInvite.maxUses
+            });
+        }
+
+        invites.set(member.guild.id, new Map(newInvites.map(invite => [invite.code, invite.uses])));
+    } catch (error) {
+        console.error('Error in guildMemberAdd handler:', error);
+    }
 });
 
 const invites = new Map();

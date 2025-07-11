@@ -2,13 +2,11 @@ import { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } from 'disc
 
 const RULES_CHANNEL = '1252209254908170343';
 const WELCOME_CHANNEL = '1252359290132500632';
-const MEMBER_ROLE = 'Y121252360773229875220';
+const MEMBER_ROLE = '1252360773229875220'; // Fixed: removed 'Y121' prefix
 
 // Define the roles to automatically assign here
-// Replace these IDs with your actual role IDs
 const AUTO_ROLES = [
-    'ROLE_ID_1',  // Replace with your actual role ID
-    'ROLE_ID_2'   // Replace with your actual role ID (if needed)
+    '1252360773229875220'  // Draxmh role ID
 ];
 
 export default async (member) => {
