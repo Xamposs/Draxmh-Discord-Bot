@@ -3,8 +3,9 @@ import { PermissionFlagsBits } from 'discord-api-types/v10';
 import { toggleCommand, isCommandEnabled } from './utils/commandManager.js';
 import dotenv from 'dotenv';
 
-// Import enhanced error handling first
+// Import enhanced systems
 import { errorHandler } from './utils/errorHandler.js';
+import { restartManager } from './utils/restartManager.js';
 import { xrplManager } from './utils/enhancedXrplManager.js';
 
 import { patchXrplClient } from './utils/xrplPatch.js';
