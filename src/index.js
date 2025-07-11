@@ -1,6 +1,12 @@
-import { Client, GatewayIntentBits, Collection, PermissionsBitField, ModalBuilder, TextInputBuilder, TextInputStyle, ActionRowBuilder } from 'discord.js';import { PermissionFlagsBits } from 'discord-api-types/v10';
+import { Client, GatewayIntentBits, Collection, PermissionsBitField, ModalBuilder, TextInputBuilder, TextInputStyle, ActionRowBuilder } from 'discord.js';
+import { PermissionFlagsBits } from 'discord-api-types/v10';
 import { toggleCommand, isCommandEnabled } from './utils/commandManager.js';
 import dotenv from 'dotenv';
+
+// Import enhanced error handling first
+import { errorHandler } from './utils/errorHandler.js';
+import { xrplManager } from './utils/enhancedXrplManager.js';
+
 import { patchXrplClient } from './utils/xrplPatch.js';
 import { AutomatedAnalysis } from './services/automatedAnalysis.js';
 import PriceTracker from './services/priceTracker.js';

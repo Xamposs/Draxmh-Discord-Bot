@@ -1,153 +1,131 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { healthCheck } from './healthCheck.js';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 class ErrorHandler {
     constructor() {
         this.errorCounts = new Map();
         this.circuitBreakers = new Map();
-        this.logPath = path.join(process.cwd(), 'logs');
+        this.isShuttingDown = false;
+        this.services = new Set();
         this.setupGlobalHandlers();
     }
 
     setupGlobalHandlers() {
-        // Enhanced uncaught exception handler
+        // Handle uncaught exceptions
         process.on('uncaughtException', async (error) => {
-            await this.handleCriticalError('UNCAUGHT_EXCEPTION', error);
-            // Give time for cleanup before exit
-            setTimeout(() => process.exit(1), 2000);
+            await this.logError('UNCAUGHT_EXCEPTION', error);
+            console.error('Uncaught Exception:', error);
+            
+            // Give time for cleanup
+            setTimeout(() => {
+                if (!this.isShuttingDown) {
+                    this.gracefulShutdown(1);
+                }
+            }, 1000);
         });
 
-        // Enhanced unhandled rejection handler
+        // Handle unhandled promise rejections
         process.on('unhandledRejection', async (reason, promise) => {
-            await this.handleCriticalError('UNHANDLED_REJECTION', reason, { promise });
-            // Don't exit immediately for rejections, log and continue
+            const error = reason instanceof Error ? reason : new Error(String(reason));
+            await this.logError('UNHANDLED_REJECTION', error, { promise: promise.toString() });
+            
+            // Don't restart for XRPL reconnect events - just log them
+            if (error.message && error.message.includes('reconnect')) {
+                console.log('XRPL reconnect event handled gracefully');
+                return;
+            }
+            
+            console.error('Unhandled Rejection:', reason);
         });
 
-        // Graceful shutdown handlers
-        process.on('SIGTERM', () => this.gracefulShutdown('SIGTERM'));
-        process.on('SIGINT', () => this.gracefulShutdown('SIGINT'));
+        // Handle SIGTERM and SIGINT for graceful shutdown
+        process.on('SIGTERM', () => this.gracefulShutdown(0));
+        process.on('SIGINT', () => this.gracefulShutdown(0));
     }
 
-    async handleCriticalError(type, error, context = {}) {
-        const errorInfo = {
+    async logError(type, error, context = {}) {
+        const timestamp = new Date().toISOString();
+        const logEntry = {
+            timestamp,
             type,
-            timestamp: new Date().toISOString(),
-            message: error?.message || String(error),
-            stack: error?.stack,
-            context,
-            pid: process.pid,
-            memory: process.memoryUsage(),
-            uptime: process.uptime()
+            message: error.message,
+            stack: error.stack,
+            context
         };
 
         // Log to console
-        console.error(`[${type}] Critical Error:`, errorInfo);
+        console.error(`[${timestamp}] ${type}:`, error.message);
 
         // Log to file
-        await this.logToFile('critical', errorInfo);
-
-        // Update health check
-        healthCheck.logError('SYSTEM', error);
-
-        // Notify if possible (don't await to avoid blocking)
-        this.notifyAdmins(errorInfo).catch(() => {});
-    }
-
-    async handleServiceError(service, error, operation = 'unknown') {
-        const errorKey = `${service}:${operation}`;
-        const count = (this.errorCounts.get(errorKey) || 0) + 1;
-        this.errorCounts.set(errorKey, count);
-
-        const errorInfo = {
-            service,
-            operation,
-            count,
-            timestamp: new Date().toISOString(),
-            message: error?.message || String(error),
-            stack: error?.stack
-        };
-
-        // Check if we should trigger circuit breaker
-        if (count >= 5) {
-            this.triggerCircuitBreaker(service, operation);
-        }
-
-        await this.logToFile('service', errorInfo);
-        healthCheck.logError(service, error);
-
-        return this.shouldRetry(service, operation, count);
-    }
-
-    triggerCircuitBreaker(service, operation) {
-        const key = `${service}:${operation}`;
-        const breaker = {
-            triggered: true,
-            timestamp: Date.now(),
-            resetTime: Date.now() + (5 * 60 * 1000) // 5 minutes
-        };
-        
-        this.circuitBreakers.set(key, breaker);
-        console.warn(`Circuit breaker triggered for ${key}`);
-    }
-
-    shouldRetry(service, operation, errorCount) {
-        const key = `${service}:${operation}`;
-        const breaker = this.circuitBreakers.get(key);
-        
-        if (breaker && breaker.triggered) {
-            if (Date.now() > breaker.resetTime) {
-                // Reset circuit breaker
-                this.circuitBreakers.delete(key);
-                this.errorCounts.delete(key);
-                return true;
-            }
-            return false; // Circuit breaker is active
-        }
-        
-        return errorCount < 10; // Allow up to 10 retries
-    }
-
-    async logToFile(type, errorInfo) {
         try {
-            await fs.mkdir(this.logPath, { recursive: true });
-            const date = new Date().toISOString().split('T')[0];
-            const logFile = path.join(this.logPath, `${type}-errors-${date}.log`);
-            const logData = JSON.stringify(errorInfo) + '\n';
-            await fs.appendFile(logFile, logData);
-        } catch (err) {
-            console.error('Failed to write error log:', err);
+            const logPath = path.join(__dirname, '../../crash.log');
+            const logLine = `${timestamp} - ${type}: ${error.message}\n${error.stack}\n\n`;
+            await fs.appendFile(logPath, logLine);
+        } catch (fileError) {
+            console.error('Failed to write to log file:', fileError);
         }
     }
 
-    async notifyAdmins(errorInfo) {
-        // Implementation depends on your notification system
-        // Could send to Discord channel, email, etc.
+    registerService(service) {
+        this.services.add(service);
     }
 
-    async gracefulShutdown(signal) {
-        console.log(`Received ${signal}, starting graceful shutdown...`);
-        
-        // Cleanup operations
-        await this.cleanup();
-        
+    unregisterService(service) {
+        this.services.delete(service);
+    }
+
+    async gracefulShutdown(exitCode = 0) {
+        if (this.isShuttingDown) return;
+        this.isShuttingDown = true;
+
+        console.log('Initiating graceful shutdown...');
+
+        // Stop all registered services
+        const shutdownPromises = Array.from(this.services).map(async (service) => {
+            try {
+                if (typeof service.stop === 'function') {
+                    await service.stop();
+                }
+            } catch (error) {
+                console.error('Error stopping service:', error);
+            }
+        });
+
+        // Wait for all services to stop (with timeout)
+        try {
+            await Promise.race([
+                Promise.all(shutdownPromises),
+                new Promise(resolve => setTimeout(resolve, 10000)) // 10 second timeout
+            ]);
+        } catch (error) {
+            console.error('Error during shutdown:', error);
+        }
+
         console.log('Graceful shutdown completed');
-        process.exit(0);
+        process.exit(exitCode);
     }
 
-    async cleanup() {
-        // Override this method to add specific cleanup logic
-        console.log('Performing cleanup operations...');
+    handleServiceError(serviceName, error) {
+        const key = `${serviceName}:${error.message}`;
+        const count = (this.errorCounts.get(key) || 0) + 1;
+        this.errorCounts.set(key, count);
+
+        // Circuit breaker logic
+        if (count >= 5) {
+            console.warn(`Circuit breaker triggered for ${serviceName}`);
+            this.circuitBreakers.set(serviceName, Date.now() + 300000); // 5 minute cooldown
+        }
+
+        this.logError(`SERVICE_ERROR_${serviceName}`, error);
     }
 
-    getStats() {
-        return {
-            errorCounts: Object.fromEntries(this.errorCounts),
-            circuitBreakers: Object.fromEntries(this.circuitBreakers),
-            activeBreakers: Array.from(this.circuitBreakers.entries())
-                .filter(([_, breaker]) => breaker.triggered && Date.now() < breaker.resetTime)
-                .map(([key]) => key)
-        };
+    isServiceBlocked(serviceName) {
+        const blockedUntil = this.circuitBreakers.get(serviceName);
+        return blockedUntil && Date.now() < blockedUntil;
     }
 }
 
