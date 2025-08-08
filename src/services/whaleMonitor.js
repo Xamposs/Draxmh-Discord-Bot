@@ -168,8 +168,15 @@ class WhaleMonitor {
         }
     }
 
-    stop() {
-        this.cleanup();
+    async stop() {
+        console.log('Stopping Whale Monitor...');
+        if (this.ws) {
+            this.ws.close();
+        }
+        if (this.reconnectTimer) {
+            clearTimeout(this.reconnectTimer);
+        }
+        console.log('Whale Monitor stopped');
     }
 }
 

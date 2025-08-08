@@ -44,9 +44,6 @@ const client = new Client({
     ]
 });
 
-// Set up restart mechanism
-const RESTART_INTERVAL = 48 * 60 * 60 * 1000; // 48 hours in milliseconds
-
 process.on('uncaughtException', (error) => {
     console.error('Uncaught Exception:', error);
     // Log the error to a file
@@ -63,31 +60,11 @@ process.on('unhandledRejection', (reason, promise) => {
     // Log the error to a file
     fs.appendFileSync('crash.log', `${new Date().toISOString()} - Unhandled Rejection: ${reason}\n`);
     // For critical unhandled rejections, you might want to restart
-    // Uncomment the following lines if you want to restart on unhandled rejections
     // setTimeout(() => {
     //     console.log('Restarting after unhandled rejection...');
     //     process.exit(1);
     // }, 1000);
 });
-
-function scheduleRestart() {
-    setTimeout(() => {
-        console.log('Scheduled restart initiated...');
-        
-        // Save any state if needed before restart
-        
-        // Force exit with error code to trigger restart
-        process.exit(1);
-    }, RESTART_INTERVAL);
-}// Discord client ready event
-client.once('ready', async () => {
-    console.log(`Logged in as ${client.user.tag}!`);
-    scheduleRestart();
-    // Rest of your initialization code...
-});
-
-// Login with your Discord token
-client.login(process.env.DISCORD_TOKEN);
 
 // Add retry mechanism for price updates
 const fetchPriceWithRetry = async (attempts = 3) => {
@@ -107,14 +84,19 @@ const whaleMonitor = new WhaleMonitor(client);
 const prefix = '!';
 client.commands = new Collection();
 
+// Main ready handler - consolidated and correct
 client.once('ready', async () => {
     console.log(`Logged in as ${client.user.tag}!`);
-    scheduleRestart();
+    
     try {
+        // Initialize services
         await withDNSRetry('xrplcluster.com', async () => {
             await whaleMonitor.start();
             console.log('Whale Monitor started successfully');
         });
+        
+        // Register services with RestartManager for graceful shutdown
+        restartManager.registerService(whaleMonitor);
 
         startScamAlerts(client);
         console.log('Scam Alert System initialized - Channel: 1307095704858005545');
@@ -122,6 +104,7 @@ client.once('ready', async () => {
         const priceTracker = new PriceTracker(client);
         try {
             await priceTracker.start();
+            restartManager.registerService(priceTracker);
             console.log('Price tracking started successfully');
         } catch (error) {
             console.log('Retrying price tracker initialization...');
@@ -130,15 +113,28 @@ client.once('ready', async () => {
 
         const dexAnalytics = new XRPLDexAnalytics(client, '1307799407000944720');
         await dexAnalytics.startAutomatedUpdates();
+        restartManager.registerService(dexAnalytics);
         console.log('DEX Analytics started - Channel: 1307799407000944720');
 
         const pathAnalyzer = new SmartPathAnalyzer(client, '1308928972033359993');
         await pathAnalyzer.startAutomatedUpdates();
+        restartManager.registerService(pathAnalyzer);
         console.log('Smart Path Analysis started - Channel: 1308928972033359993');
 
         const marketAnalyzer = new XRPMarketPsychologyAnalyzer(client, '1325196609012895805');
         await marketAnalyzer.startAutomatedUpdates();
+        restartManager.registerService(marketAnalyzer);
         console.log('Market Psychology Analysis started - Channel: 1325196609012895805');
+        
+        // Register Discord client for graceful shutdown
+        restartManager.registerService({
+            stop: async () => {
+                console.log('Destroying Discord client...');
+                client.destroy();
+            }
+        });
+        
+        console.log('All services initialized and registered for graceful shutdown');
 
     } catch (error) {
         console.error('Service initialization error:', error);
@@ -168,7 +164,7 @@ import { moonCmd } from './commands/moon.js';
 import { draxmhCmd } from './commands/draxmh.js';
 import { socialstatsCmd } from './commands/socialstats.js';
 import { announceCmd } from './commands/announce.js';
-import { backupCmd } from './commands/backup.js';  // Add it here
+import { backupCmd } from './commands/backup.js';
 import { moderationCmd } from './commands/moderation.js';
 import { scamAlertCmd } from './commands/scamalert.js';
 import { reportCmd } from './commands/report.js';
@@ -188,7 +184,6 @@ import { raidCmd } from './commands/raid.js';
 import { volumeCommand } from './commands/volume.js';
 import walletCommand from './commands/wallet.js';
 
-// Set up commands
 const commands = [
     priceCommand, toggleCmd, stakeStatsCommand, volumeCommand,
     dappsCommand, swapCommand, commandsCmd, clearCmd,
@@ -203,434 +198,284 @@ commands.forEach(cmd => {
     client.commands.set(cmd.name, cmd);
 });
 
-client.commands.set(connectCommand.name, connectCommand);  // Add here
+client.commands.set(connectCommand.name, connectCommand);
 client.commands.set(walletCommand.name, walletCommand);
+
 client.on('messageCreate', async message => {
-    if (!message.author.bot) {
-        await logAction('MESSAGE', message.guild, {
-            user: message.author,
-            channel: message.channel,
-            content: message.content,
-            action: 'SENT'
-        });
-    }
-
-    if (!message.content.startsWith(prefix) || message.author.bot) return;
-
-    const args = message.content.slice(prefix.length).trim().split(/ +/);
-    const commandName = args.shift().toLowerCase();
-
-    if (args[0]?.toLowerCase() === 'on' || args[0]?.toLowerCase() === 'off') {
-        if (!message.member.permissions.has(PermissionFlagsBits.Administrator)) {
-            return message.reply('You do not have permission to toggle commands.');
-        }
+    if (message.author.bot) return;
     
-        const state = args[0].toLowerCase();
-        toggleCommand(commandName, state, message.guild.id);
-        const status = state === 'on' ? '✅' : '❌';
-        return message.reply(`${status} Command ${commandName} has been ${state === 'on' ? 'enabled' : 'disabled'}`);
-    }
-
-    const command = client.commands.get(commandName);
-    if (!command) return;
-
-    if (!isCommandEnabled(commandName, message.guild.id)) {
-        return message.reply('⚠️ This command is currently disabled.');
-    }
-
     try {
-        await command.execute(message, args, client);
-        await logAction('COMMAND', message.guild, {
-            user: message.author,
-            command: commandName,
-            channel: message.channel
-        });
+        // Handle spam detection with proper error handling
+        await handleSpamDetection(message);
+        
+        // Handle phishing detection with proper error handling
+        await handlePhishingDetection(message);
+        
+        // Note: handleRaidProtection is for member joins, not messages
+        
+        if (!message.content.startsWith(prefix)) return;
+        
+        const args = message.content.slice(prefix.length).trim().split(/ +/);
+        const commandName = args.shift().toLowerCase();
+        
+        const command = client.commands.get(commandName);
+        if (!command) return;
+        
+        // Check if command is enabled
+        if (!isCommandEnabled(commandName)) {
+            return message.reply('This command is currently disabled.');
+        }
+        
+        await command.execute(message, args);
     } catch (error) {
-        console.error(error);
-        message.reply('There was an error executing that command!');
+        console.error('Message handling error:', error);
+        try {
+            message.reply('There was an error processing your message.');
+        } catch (replyError) {
+            console.error('Failed to send error reply:', replyError);
+        }
     }
 });
 
 client.on('messageCreate', async message => {
     if (message.author.bot) return;
-    await handleSpamDetection(message);
-    await handlePhishingDetection(message);
+    
+    try {
+        await logAction('MESSAGE_CREATE', message.guild, {
+            user: message.author,
+            channel: message.channel,
+            content: message.content.substring(0, 100)
+        });
+    } catch (error) {
+        console.error('Logging error:', error);
+    }
 });
 
-// Add this import near the top with other imports
 import guildMemberAddHandler from './events/guildMemberAdd.js';
 
-// Add this constant after the client creation
+// Define MEMBER_ROLE globally
 const MEMBER_ROLE = '1252360773229875220';
 
-// Replace the existing guildMemberAdd event handlers (around lines 259-262 and 289-307) with:
+// Guild member add event
 client.on('guildMemberAdd', async member => {
     try {
-        // Handle the welcome message and auto-role assignment
-        await guildMemberAddHandler(member);
+        console.log(`New member joined: ${member.user.tag}`);
         
         // Handle raid protection
         await handleRaidProtection(member);
         
-        // Handle verification
-        await handleVerification(member);
-        
-        // Handle invite tracking
-        const oldInvites = invites.get(member.guild.id) || new Map();
-        const newInvites = await member.guild.invites.fetch();
-        
-        const usedInvite = newInvites.find(invite => oldInvites.get(invite.code) < invite.uses);
-        if (usedInvite) {
-            await logAction('INVITE', member.guild, {
-                action: 'Used',
-                inviter: usedInvite.inviter,
-                user: member.user,
-                code: usedInvite.code,
-                channel: usedInvite.channel,
-                uses: usedInvite.uses,
-                maxUses: usedInvite.maxUses
-            });
+        // Get the role
+        const role = member.guild.roles.cache.get(MEMBER_ROLE);
+        if (!role) {
+            console.error(`Role with ID ${MEMBER_ROLE} not found`);
+            return;
         }
-
-        invites.set(member.guild.id, new Map(newInvites.map(invite => [invite.code, invite.uses])));
+        
+        // Add the role to the member
+        await member.roles.add(role);
+        console.log(`Added role ${role.name} to ${member.user.tag}`);
+        
+        // Log the action
+        await logAction('MEMBER', member.guild, {
+            action: 'JOIN',
+            user: member.user,
+            roleAdded: role.name
+        });
+        
     } catch (error) {
-        console.error('Error in guildMemberAdd handler:', error);
+        console.error('Error in guildMemberAdd event:', error);
+        try {
+            await logAction('ERROR', member.guild, {
+                event: 'guildMemberAdd',
+                user: member.user,
+                error: error.message
+            });
+        } catch (logError) {
+            console.error('Failed to log error:', logError);
+        }
     }
 });
 
 const invites = new Map();
 
-client.on('ready', async () => {
-    client.guilds.cache.forEach(async guild => {
-        const guildInvites = await guild.invites.fetch();
-        invites.set(guild.id, new Map(guildInvites.map(invite => [invite.code, invite.uses])));
-    });
-});
-
 client.on('inviteCreate', async invite => {
-    const guildInvites = invites.get(invite.guild.id) || new Map();
-    guildInvites.set(invite.code, invite.uses);
-    invites.set(invite.guild.id, guildInvites);
-
-    await logAction('INVITE', invite.guild, {
-        action: 'Created',
-        inviter: invite.inviter,
-        code: invite.code,
-        channel: invite.channel,
-        uses: invite.uses,
-        maxUses: invite.maxUses,
-        expiresAt: invite.expiresAt
-    });
+    try {
+        const guildInvites = await invite.guild.invites.fetch();
+        invites.set(invite.guild.id, guildInvites);
+        
+        await logAction('INVITE', invite.guild, {
+            action: 'CREATE',
+            code: invite.code,
+            inviter: invite.inviter,
+            channel: invite.channel,
+            maxUses: invite.maxUses,
+            expiresAt: invite.expiresAt
+        });
+    } catch (error) {
+        console.error('Error tracking invite creation:', error);
+    }
 });
 
 client.on('guildMemberAdd', async member => {
-    const oldInvites = invites.get(member.guild.id) || new Map();
-    const newInvites = await member.guild.invites.fetch();
-    
-    const usedInvite = newInvites.find(invite => oldInvites.get(invite.code) < invite.uses);
-    if (usedInvite) {
-        await logAction('INVITE', member.guild, {
-            action: 'Used',
-            inviter: usedInvite.inviter,
-            user: member.user,
-            code: usedInvite.code,
-            channel: usedInvite.channel,
-            uses: usedInvite.uses,
-            maxUses: usedInvite.maxUses
+    try {
+        const guildInvites = await member.guild.invites.fetch();
+        const oldInvites = invites.get(member.guild.id) || new Map();
+        
+        const usedInvite = guildInvites.find(invite => {
+            const oldInvite = oldInvites.get(invite.code);
+            return oldInvite && invite.uses > oldInvite.uses;
         });
+        
+        invites.set(member.guild.id, guildInvites);
+        
+        if (usedInvite) {
+            await logAction('MEMBER', member.guild, {
+                action: 'JOIN_INVITE',
+                user: member.user,
+                inviteCode: usedInvite.code,
+                inviter: usedInvite.inviter
+            });
+        }
+    } catch (error) {
+        console.error('Error tracking invite usage:', error);
     }
-
-    invites.set(member.guild.id, new Map(newInvites.map(invite => [invite.code, invite.uses])));
 });
 
 client.on('channelUpdate', async (oldChannel, newChannel) => {
-    await logAction('CHANNEL', newChannel.guild, {
-        action: 'Updated',
-        channel: newChannel,
-        moderator: await getAuditLogExecutor(newChannel.guild, 'CHANNEL_UPDATE'),
-        oldName: oldChannel.name,
-        newName: newChannel.name,
-        oldTopic: oldChannel.topic,
-        newTopic: newChannel.topic
-    });
+    try {
+        await logAction('CHANNEL', newChannel.guild, {
+            action: 'UPDATE',
+            channel: newChannel,
+            changes: {
+                name: oldChannel.name !== newChannel.name ? { old: oldChannel.name, new: newChannel.name } : null,
+                topic: oldChannel.topic !== newChannel.topic ? { old: oldChannel.topic, new: newChannel.topic } : null
+            }
+        });
+    } catch (error) {
+        console.error('Error logging channel update:', error);
+    }
 });
 
 client.on('channelCreate', async channel => {
-    await logAction('CHANNEL', channel.guild, {
-        action: 'Created',
-        channel: channel,
-        moderator: await getAuditLogExecutor(channel.guild, 'CHANNEL_CREATE')
-    });
+    try {
+        await logAction('CHANNEL', channel.guild, {
+            action: 'CREATE',
+            channel: channel,
+            type: channel.type
+        });
+    } catch (error) {
+        console.error('Error logging channel create:', error);
+    }
 });
 
 client.on('channelDelete', async channel => {
-    await logAction('CHANNEL', channel.guild, {
-        action: 'Deleted',
-        channel: channel,
-        moderator: await getAuditLogExecutor(channel.guild, 'CHANNEL_DELETE')
-    });
+    try {
+        await logAction('CHANNEL', channel.guild, {
+            action: 'DELETE',
+            channel: channel,
+            type: channel.type
+        });
+    } catch (error) {
+        console.error('Error logging channel delete:', error);
+    }
 });
 
 async function getAuditLogExecutor(guild, actionType) {
     try {
-        const auditLogTypes = {
-            'CHANNEL_UPDATE': AuditLogEvent.ChannelUpdate,
-            'CHANNEL_CREATE': AuditLogEvent.ChannelCreate,
-            'CHANNEL_DELETE': AuditLogEvent.ChannelDelete
-        };
-
-        const auditLog = await guild.fetchAuditLogs({
-            type: auditLogTypes[actionType],
+        const auditLogs = await guild.fetchAuditLogs({
+            type: actionType,
             limit: 1
         });
-        return auditLog.entries.first()?.executor || { tag: 'Unknown' };
+        
+        const latestLog = auditLogs.entries.first();
+        if (latestLog && Date.now() - latestLog.createdTimestamp < 5000) {
+            return latestLog.executor;
+        }
+        
+        return null;
     } catch (error) {
         console.error('Error fetching audit logs:', error);
-        return { tag: 'Unknown' };
+        return null;
     }
 }
-  client.on('interactionCreate', async interaction => {
-      if (!interaction.isButton() && !interaction.isModalSubmit() && !interaction.isStringSelectMenu()) return;
 
-      try {
-          if (interaction.isButton()) {
-              if (interaction.customId.includes('price_check') || 
-                  interaction.customId.includes('volume_check') || 
-                  interaction.customId.includes('swap_tokens')) {
-                  await handleTradingButtons(interaction, client);
-              }
-              else if (interaction.customId.includes('info_check') || 
-                     interaction.customId.includes('dapps_check') || 
-                     interaction.customId.includes('stake_stats_check')) {
-                  await handleInformationButtons(interaction, client);
-              }
-              else if (interaction.customId.includes('scam_alert_check') || 
-                     interaction.customId.includes('report_check') || 
-                     interaction.customId.includes('suggest_check')) {
-                  await handleSecurityButtons(interaction, client);
-              }
-              else if (interaction.customId === 'accept_rules') {
-                  const memberRole = interaction.guild.roles.cache.get(MEMBER_ROLE);
-                  if (memberRole) {
-                      await interaction.member.roles.add(memberRole);
-                      await interaction.reply({ 
-                          content: '✅ Welcome to the community! You now have access to all channels.',
-                          ephemeral: true 
-                      });
-                  }
-              }
-              else if (interaction.customId.includes('_check')) {
-                  if (interaction.customId.startsWith('moon')) {
-                      await handleFunButtons(interaction);
-                  } else if (interaction.customId.startsWith('draxmh')) {
-                      await handleFunButtons(interaction);
-                  }
-              }
-              else if (interaction.customId.startsWith('announce_')) {
-                  if (!interaction.member.permissions.has(PermissionsBitField.Flags.Administrator)) {
-                      return interaction.reply({ 
-                          content: 'Only administrators can use this feature!', 
-                          ephemeral: true 
-                      });
-                  }
-
-                  const templateType = interaction.customId.replace('announce_', '');
-                
-                  const selectMenu = new StringSelectMenuBuilder()
-                      .setCustomId(`template_channel_${templateType}`)
-                      .setPlaceholder('Select a channel to send this template to...');
-                    
-                  const channelOptions = interaction.guild.channels.cache
-                      .filter(channel => 
-                          channel.type === 0 && 
-                          channel.permissionsFor(client.user).has(PermissionsBitField.Flags.SendMessages)
-                      )
-                      .sort((a, b) => a.position - b.position)
-                      .map(channel => 
-                          new StringSelectMenuOptionBuilder()
-                              .setLabel(`#${channel.name}`)
-                              .setDescription(`Send to #${channel.name}`)
-                              .setValue(channel.id)
-                              .setEmoji('📢')
-                      );
-                    
-                  selectMenu.addOptions(channelOptions);
-                
-                  const row = new ActionRowBuilder().addComponents(selectMenu);
-                
-                  let templateTitle = 'Announcement';
-                  switch(templateType) {
-                      case 'info':
-                          templateTitle = 'Information Announcement';
-                          break;
-                      case 'alert':
-                          templateTitle = 'Alert Announcement';
-                          break;
-                      case 'event':
-                          templateTitle = 'Event Announcement';
-                          break;
-                  }
-                
-                  await interaction.reply({ 
-                      content: `Select a channel to send the ${templateTitle} to:`,
-                      components: [row],
-                      ephemeral: true 
-                  });
-              }
-          }
-          else if (interaction.isStringSelectMenu() && interaction.customId.startsWith('announce_channel_select_')) {
-              if (!interaction.member.permissions.has(PermissionsBitField.Flags.Administrator)) {
-                  return interaction.reply({ 
-                      content: 'Only administrators can use this feature!', 
-                      ephemeral: true 
-                  });
-              }
-
-              const selectedValue = interaction.values[0];
+client.on('interactionCreate', async interaction => {
+    try {
+        if (interaction.isButton()) {
+            const buttonId = interaction.customId;
             
-              if (selectedValue.startsWith('category_')) {
-                  return interaction.reply({ 
-                      content: 'Please select a channel, not a category header.', 
-                      ephemeral: true 
-                  });
-              }
-
-              const channelId = selectedValue.replace('channel_', '');
-              const channel = interaction.guild.channels.cache.get(channelId);
+            // Handle different button categories
+            if (buttonId.startsWith('trading_')) {
+                await handleTradingButtons(interaction);
+            } else if (buttonId.startsWith('info_')) {
+                await handleInformationButtons(interaction);
+            } else if (buttonId.startsWith('security_')) {
+                await handleSecurityButtons(interaction);
+            } else if (buttonId.startsWith('fun_')) {
+                await handleFunButtons(interaction);
+            }
+        }
+        
+        if (interaction.isModalSubmit()) {
+            if (interaction.customId === 'announcement_modal') {
+                const title = interaction.fields.getTextInputValue('announcement_title');
+                const content = interaction.fields.getTextInputValue('announcement_content');
+                const channelId = interaction.fields.getTextInputValue('announcement_channel');
+                
+                const channel = interaction.guild.channels.cache.get(channelId);
+                if (!channel) {
+                    return interaction.reply({ content: 'Invalid channel ID!', ephemeral: true });
+                }
+                
+                const embed = {
+                    title: title,
+                    description: content,
+                    color: 0x00ff00,
+                    timestamp: new Date().toISOString(),
+                    footer: {
+                        text: `Announced by ${interaction.user.tag}`,
+                        icon_url: interaction.user.displayAvatarURL()
+                    }
+                };
+                
+                await channel.send({ embeds: [embed] });
+                await interaction.reply({ content: 'Announcement sent successfully!', ephemeral: true });
+                
+                await logAction('MOD', interaction.guild, {
+                    action: 'ANNOUNCEMENT_SENT',
+                    mod: interaction.user,
+                    target: channel,
+                    reason: title
+                });
+            }
+        }
+        
+        if (interaction.isCommand()) {
+            const command = client.commands.get(interaction.commandName);
+            if (!command) return;
             
-              if (!channel) {
-                  return interaction.reply({ 
-                      content: 'Channel not found!', 
-                      ephemeral: true 
-                  });
-              }
-
-              const modal = new ModalBuilder()
-                  .setCustomId(`announcement_modal_${channelId}`)
-                  .setTitle(`Announcement to #${channel.name}`);
-
-              const announcementInput = new TextInputBuilder()
-                  .setCustomId('announcement_content')
-                  .setLabel('Message')
-                  .setStyle(TextInputStyle.Paragraph)
-                  .setPlaceholder('Enter your announcement message here...')
-                  .setRequired(true)
-                  .setMaxLength(2000);
-
-              const firstActionRow = new ActionRowBuilder().addComponents(announcementInput);
-              modal.addComponents(firstActionRow);
-
-              await interaction.showModal(modal);
-          }
-          else if (interaction.isStringSelectMenu() && interaction.customId.startsWith('template_channel_')) {
-              const templateType = interaction.customId.replace('template_channel_', '');
-              const channelId = interaction.values[0];
-              const channel = interaction.guild.channels.cache.get(channelId);
+            // Check if command is enabled
+            if (!isCommandEnabled(interaction.commandName)) {
+                return interaction.reply({ content: 'This command is currently disabled.', ephemeral: true });
+            }
             
-              if (!channel) {
-                  return interaction.reply({ 
-                      content: 'Channel not found!', 
-                      ephemeral: true 
-                  });
-              }
-            
-              const modal = new ModalBuilder()
-                  .setCustomId(`template_modal_${templateType}_${channelId}`)
-                  .setTitle(`${templateType.charAt(0).toUpperCase() + templateType.slice(1)} Template`);
+            try {
+                await command.execute(interaction);
+            } catch (error) {
+                console.error('Slash command execution error:', error);
+                const errorMessage = 'There was an error executing this command!';
                 
-              let placeholder = '';
-              switch(templateType) {
-                  case 'info':
-                      placeholder = '📋 **INFORMATION ANNOUNCEMENT**\n\n• Important details: \n• Effective date: \n• Additional info: \n\nPlease read carefully and let us know if you have any questions.';
-                      break;
-                  case 'alert':
-                      placeholder = '⚠️ **URGENT ALERT**\n\n• Issue: \n• Impact: \n• Action required: \n\nPlease respond immediately. Contact moderators if you need assistance.';
-                      break;
-                  case 'event':
-                      placeholder = '🎉 **UPCOMING EVENT**\n\n• Event: \n• Date & Time: \n• Location: \n• Details: \n\nWe hope to see you there! React with ✅ if you plan to attend.';
-                      break;
-              }
-            
-              const templateInput = new TextInputBuilder()
-                  .setCustomId('announcement_content')
-                  .setLabel('Edit Template')
-                  .setStyle(TextInputStyle.Paragraph)
-                  .setValue(placeholder)
-                  .setRequired(true)
-                  .setMaxLength(2000);
-                
-              const firstActionRow = new ActionRowBuilder().addComponents(templateInput);
-              modal.addComponents(firstActionRow);
-            
-              await interaction.showModal(modal);
-          }
-          else if (interaction.isModalSubmit()) {
-              if (interaction.customId.startsWith('template_modal_')) {
-                  const parts = interaction.customId.split('_');
-                  const templateType = parts[2];
-                  const channelId = parts[3];
-                  const channel = interaction.guild.channels.cache.get(channelId);
-                
-                  if (!channel) {
-                      return interaction.reply({ 
-                          content: 'Channel not found!', 
-                          ephemeral: true 
-                      });
-                  }
-                
-                  const announcementContent = interaction.fields.getTextInputValue('announcement_content');
-                
-                  try {
-                      await channel.send(announcementContent);
-                    
-                      await interaction.reply({ 
-                          content: `${templateType.charAt(0).toUpperCase() + templateType.slice(1)} announcement sent to ${channel} successfully! ✅`, 
-                          ephemeral: true 
-                      });
-                  } catch (error) {
-                      console.error('Error sending announcement:', error);
-                      await interaction.reply({ 
-                          content: `Error sending announcement: ${error.message}`, 
-                          ephemeral: true 
-                      });
-                  }
-              }
-              else if (interaction.customId.startsWith('announcement_modal_')) {
-                  const channelId = interaction.customId.replace('announcement_modal_', '');
-                  const channel = interaction.guild.channels.cache.get(channelId);
-                
-                  if (!channel) {
-                      return interaction.reply({ 
-                          content: 'Channel not found!', 
-                          ephemeral: true 
-                      });
-                  }
+                if (interaction.replied || interaction.deferred) {
+                    await interaction.followUp({ content: errorMessage, ephemeral: true });
+                } else {
+                    await interaction.reply({ content: errorMessage, ephemeral: true });
+                }
+            }
+        }
+    } catch (error) {
+        console.error('Interaction handling error:', error);
+    }
+});
 
-                  const announcementContent = interaction.fields.getTextInputValue('announcement_content');
-                
-                  try {
-                      await channel.send(announcementContent);
-                    
-                      await interaction.reply({ 
-                          content: `Announcement sent to ${channel} successfully! ✅`, 
-                          ephemeral: true 
-                      });
-                  } catch (error) {
-                      console.error('Error sending announcement:', error);
-                      await interaction.reply({ 
-                          content: `Error sending announcement: ${error.message}`, 
-                          ephemeral: true 
-                      });
-                  }
-              }
-          }
-      } catch (error) {
-          console.error('Button interaction error:', error);
-          if (!interaction.replied) {
-              await interaction.reply({ 
-                  content: 'There was an error processing this button!', 
-                  ephemeral: true 
-              });
-          }
-      }
-});client.login(process.env.DISCORD_TOKEN);
+// Single login call at the end
+client.login(process.env.DISCORD_TOKEN);
