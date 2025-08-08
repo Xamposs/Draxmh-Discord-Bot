@@ -337,3 +337,55 @@ TypeError: Cannot read properties of undefined (reading 'color')
     at WebSocketShard.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\@discordjs\ws\dist\index.js:1190:51)
     at WebSocketShard.emit (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\@vladfrangu\async_event_emitter\dist\index.cjs:287:31)
 
+2025-08-08T21:12:41.576Z - Unhandled Rejection: Error [ERR_UNHANDLED_ERROR]: Unhandled error. ('reconnect')
+2025-08-08T21:12:41.573Z - UNHANDLED_REJECTION: Unhandled error. ('reconnect')
+Error [ERR_UNHANDLED_ERROR]: Unhandled error. ('reconnect')
+    at Client.emit (node:events:496:17)
+    at Client.emit (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/utils/xrplPatch.js:27:29)
+    at Connection.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\index.js:94:18)
+    at Connection.emit (node:events:507:28)
+    at C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:315:26
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-08-08T21:12:50.006Z - Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'includes')
+2025-08-08T21:12:50.005Z - UNHANDLED_REJECTION: Cannot read properties of undefined (reading 'includes')
+TypeError: Cannot read properties of undefined (reading 'includes')
+    at Client.<anonymous> (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/utils/enhancedXrplManager.js:95:32)
+    at Client.emit (node:events:507:28)
+    at Client.emit (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/utils/xrplPatch.js:27:29)
+    at client.emit (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/utils/enhancedXrplManager.js:86:20)
+    at Connection.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\index.js:94:18)
+    at Connection.emit (node:events:519:35)
+    at C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:315:26
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-08-08T21:12:55.316Z - Unhandled Rejection: Error [ERR_UNHANDLED_ERROR]: Unhandled error. ('reconnect')
+2025-08-08T21:12:55.315Z - UNHANDLED_REJECTION: Unhandled error. ('reconnect')
+Error [ERR_UNHANDLED_ERROR]: Unhandled error. ('reconnect')
+    at Client.emit (node:events:496:17)
+    at Client.emit (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/utils/xrplPatch.js:27:29)
+    at Connection.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\index.js:94:18)
+    at Connection.emit (node:events:507:28)
+    at C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:315:26
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-08-08T21:13:21.980Z - Uncaught Exception: Error: Opening handshake has timed out
+    at ClientRequest.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:873:7)
+    at ClientRequest.emit (node:events:507:28)
+    at TLSSocket.emitRequestTimeout (node:_http_client:863:9)
+    at Object.onceWrapper (node:events:621:28)
+    at TLSSocket.emit (node:events:507:28)
+    at Socket._onTimeout (node:net:604:8)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7)
+2025-08-08T21:13:21.980Z - UNCAUGHT_EXCEPTION: Opening handshake has timed out
+Error: Opening handshake has timed out
+    at ClientRequest.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:873:7)
+    at ClientRequest.emit (node:events:507:28)
+    at TLSSocket.emitRequestTimeout (node:_http_client:863:9)
+    at Object.onceWrapper (node:events:621:28)
+    at TLSSocket.emit (node:events:507:28)
+    at Socket._onTimeout (node:net:604:8)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7)
+
