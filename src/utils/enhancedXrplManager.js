@@ -69,7 +69,14 @@ class EnhancedXrplManager extends EventEmitter {
             return client;
         } catch (error) {
             this.connectionStatus.set(purpose, 'error');
-            errorHandler.handleServiceError('XrplManager', error);
+            const errorMessage = error?.message || error?.toString() || 'Unknown XRPL connection error';
+            console.error(`[${purpose}] Connection failed:`, errorMessage);
+            
+            // Only report non-reconnect errors to error handler
+            if (!this.isReconnectError(error)) {
+                errorHandler.handleServiceError('XrplManager', error);
+            }
+            
             this.scheduleReconnect(purpose);
             throw error;
         }
@@ -80,19 +87,21 @@ class EnhancedXrplManager extends EventEmitter {
         const originalEmit = client.emit.bind(client);
         client.emit = (event, ...args) => {
             if (event === 'reconnect') {
-                console.log(`[${purpose}] XRPL reconnect event - handling gracefully`);
+                console.log(`[${purpose}] XRPL reconnect event handled gracefully`);
                 return true; // Mark as handled
             }
             return originalEmit(event, ...args);
         };
 
         client.on('error', (error) => {
-            console.error(`[${purpose}] XRPL client error:`, error.message);
+            const errorMessage = error?.message || error?.toString() || 'Unknown error';
+            console.error(`[${purpose}] XRPL client error:`, errorMessage);
+            
             this.connectionStatus.set(purpose, 'error');
             this.stopHeartbeat(purpose);
             
             // Don't log reconnect errors as service errors
-            if (!error.message.includes('reconnect')) {
+            if (!this.isReconnectError(error)) {
                 errorHandler.handleServiceError('XrplManager', error);
             }
             
@@ -113,25 +122,52 @@ class EnhancedXrplManager extends EventEmitter {
             });
             
             client.connection.on('error', (error) => {
-                if (!error.message.includes('reconnect')) {
-                    console.error(`[${purpose}] Connection error:`, error.message);
+                const errorMessage = error?.message || error?.toString() || 'Unknown connection error';
+                if (!this.isReconnectError(error)) {
+                    console.error(`[${purpose}] Connection error:`, errorMessage);
                 }
             });
         }
+
+        // Add unhandled error protection
+        client.on('unhandledRejection', (reason, promise) => {
+            console.error(`[${purpose}] Unhandled rejection in XRPL client:`, reason);
+        });
+
+        // Catch any other events that might cause issues
+        client.setMaxListeners(20); // Increase listener limit to prevent warnings
+    }
+
+    isReconnectError(error) {
+        if (!error) return false;
+        
+        const errorStr = error.toString().toLowerCase();
+        const messageStr = (error.message || '').toLowerCase();
+        
+        return errorStr.includes('reconnect') || 
+               messageStr.includes('reconnect') ||
+               errorStr.includes('websocket') ||
+               messageStr.includes('websocket') ||
+               error.code === 'ERR_UNHANDLED_ERROR';
     }
 
     startHeartbeat(purpose, client) {
         this.stopHeartbeat(purpose); // Clear any existing heartbeat
         
-        const interval = setInterval(() => {
-            if (client.isConnected()) {
-                // Send a lightweight request to check connection
-                client.request({ command: 'server_info' }).catch(() => {
-                    console.log(`[${purpose}] Heartbeat failed - connection may be stale`);
+        const interval = setInterval(async () => {
+            try {
+                if (client && client.isConnected()) {
+                    // Send a lightweight request to check connection
+                    await client.request({ command: 'server_info' });
+                } else {
+                    console.log(`[${purpose}] Client disconnected during heartbeat`);
+                    this.stopHeartbeat(purpose);
                     this.scheduleReconnect(purpose);
-                });
-            } else {
+                }
+            } catch (error) {
+                console.log(`[${purpose}] Heartbeat failed - connection may be stale`);
                 this.stopHeartbeat(purpose);
+                this.scheduleReconnect(purpose);
             }
         }, 30000); // 30 second heartbeat
         
@@ -147,20 +183,23 @@ class EnhancedXrplManager extends EventEmitter {
     }
 
     scheduleReconnect(purpose) {
-        // Clear existing timer
-        const existingTimer = this.reconnectTimers.get(purpose);
-        if (existingTimer) {
-            clearTimeout(existingTimer);
+        // Prevent multiple reconnect attempts
+        if (this.reconnectTimers.has(purpose)) {
+            return;
         }
         
         const delay = 5000 + Math.random() * 5000; // 5-10 second delay
+        console.log(`[${purpose}] Scheduling reconnect in ${Math.round(delay/1000)}s`);
         
         const timer = setTimeout(async () => {
             this.reconnectTimers.delete(purpose);
             try {
+                console.log(`[${purpose}] Attempting reconnection...`);
                 await this.createClient(purpose);
             } catch (error) {
-                console.error(`[${purpose}] Reconnection failed:`, error.message);
+                const errorMessage = error?.message || error?.toString() || 'Unknown reconnection error';
+                console.error(`[${purpose}] Reconnection failed:`, errorMessage);
+                // Don't schedule another reconnect immediately to prevent spam
             }
         }, delay);
         
@@ -174,10 +213,14 @@ class EnhancedXrplManager extends EventEmitter {
             
             try {
                 if (client.isConnected()) {
-                    await client.disconnect();
+                    await Promise.race([
+                        client.disconnect(),
+                        new Promise((_, reject) => setTimeout(() => reject(new Error('Disconnect timeout')), 5000))
+                    ]);
                 }
             } catch (error) {
                 // Ignore cleanup errors
+                console.log(`[${purpose}] Cleanup error (ignored):`, error?.message || 'Unknown');
             }
             
             this.clients.delete(purpose);
@@ -189,6 +232,24 @@ class EnhancedXrplManager extends EventEmitter {
             clearTimeout(timer);
             this.reconnectTimers.delete(purpose);
         }
+        
+        this.connectionStatus.delete(purpose);
+    }
+
+    getConnectionStatus(purpose = 'default') {
+        return this.connectionStatus.get(purpose) || 'disconnected';
+    }
+
+    getAllConnections() {
+        const connections = {};
+        for (const [purpose, status] of this.connectionStatus.entries()) {
+            connections[purpose] = {
+                status,
+                hasClient: this.clients.has(purpose),
+                isConnected: this.clients.get(purpose)?.isConnected() || false
+            };
+        }
+        return connections;
     }
 
     async stop() {
@@ -199,7 +260,7 @@ class EnhancedXrplManager extends EventEmitter {
             this.cleanupClient(purpose)
         );
         
-        await Promise.all(cleanupPromises);
+        await Promise.allSettled(cleanupPromises);
         
         // Clear all timers
         this.reconnectTimers.forEach(timer => clearTimeout(timer));
@@ -208,6 +269,7 @@ class EnhancedXrplManager extends EventEmitter {
         this.reconnectTimers.clear();
         this.heartbeatIntervals.clear();
         this.connectionStatus.clear();
+        this.clients.clear();
         
         console.log('XRPL Manager stopped');
     }
