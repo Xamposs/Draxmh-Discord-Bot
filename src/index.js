@@ -1,6 +1,6 @@
 import { Client, GatewayIntentBits, Collection, PermissionsBitField, ModalBuilder, TextInputBuilder, TextInputStyle, ActionRowBuilder } from 'discord.js';
 import { PermissionFlagsBits } from 'discord-api-types/v10';
-import { toggleCommand, isCommandEnabled } from './utils/commandManager.js';
+import { toggleCommand, isCommandEnabled, commandToggles } from './utils/commandManager.js';
 import dotenv from 'dotenv';
 
 // Import enhanced systems
@@ -30,6 +30,7 @@ import {
 import { exec } from 'child_process';
 import fs from 'fs';
 
+// Apply XRPL client patches
 patchXrplClient();
 
 dotenv.config({ path: './.env' });
@@ -126,11 +127,36 @@ client.once('ready', async () => {
         restartManager.registerService(marketAnalyzer);
         console.log('Market Psychology Analysis started - Channel: 1325196609012895805');
         
+        // Register spam manager cleanup
+        restartManager.registerService({
+            stop: async () => {
+                console.log('Stopping spam manager...');
+                stopSpamManager();
+            }
+        });
+        
         // Register Discord client for graceful shutdown
         restartManager.registerService({
             stop: async () => {
                 console.log('Destroying Discord client...');
                 client.destroy();
+            }
+        });
+        
+        // Register memory cleanup service
+        restartManager.registerService({
+            stop: async () => {
+                console.log('Performing final memory cleanup...');
+                
+                // Clear command collections
+                client.commands.clear();
+                commandToggles.clear();
+                
+                // Force garbage collection if available
+                if (global.gc) {
+                    console.log('Running garbage collection...');
+                    global.gc();
+                }
             }
         });
         
@@ -142,7 +168,7 @@ client.once('ready', async () => {
 });
 
 import { logAction } from './utils/logging.js';
-import { handleSpamDetection } from './utils/security/spamManager.js';
+import { handleSpamDetection, stopSpamManager } from './utils/security/spamManager.js';
 import { handlePhishingDetection } from './utils/security/phishingManager.js';
 import { handleRaidProtection } from './utils/security/raidManager.js';
 import { handleVerification } from './utils/security/verificationManager.js';
@@ -194,8 +220,12 @@ const commands = [
     warningsCommand, historyCommand, casesCommand, verificationCmd,
     phishingCmd, spamCmd, raidCmd, backupCmd, announcePanelCmd
 ];
+
+// Register commands with memory-efficient approach
 commands.forEach(cmd => {
-    client.commands.set(cmd.name, cmd);
+    if (cmd && cmd.name) {
+        client.commands.set(cmd.name, cmd);
+    }
 });
 
 client.commands.set(connectCommand.name, connectCommand);
@@ -229,6 +259,7 @@ client.on('messageCreate', async message => {
         await command.execute(message, args);
     } catch (error) {
         console.error('Message handling error:', error);
+        errorHandler.handleServiceError('MessageHandler', error);
         try {
             message.reply('There was an error processing your message.');
         } catch (replyError) {
@@ -244,10 +275,11 @@ client.on('messageCreate', async message => {
         await logAction('MESSAGE_CREATE', message.guild, {
             user: message.author,
             channel: message.channel,
-            content: message.content.substring(0, 100)
+            content: message.content.substring(0, 100) // Limit content length to prevent memory issues
         });
     } catch (error) {
         console.error('Logging error:', error);
+        errorHandler.handleServiceError('MessageLogger', error);
     }
 });
 
@@ -284,6 +316,7 @@ client.on('guildMemberAdd', async member => {
         
     } catch (error) {
         console.error('Error in guildMemberAdd event:', error);
+        errorHandler.handleServiceError('GuildMemberAdd', error);
         try {
             await logAction('ERROR', member.guild, {
                 event: 'guildMemberAdd',
@@ -479,3 +512,27 @@ client.on('interactionCreate', async interaction => {
 
 // Single login call at the end
 client.login(process.env.DISCORD_TOKEN);
+
+// Enhanced error handling for Discord client
+client.on('error', error => {
+    console.error('Discord client error:', error);
+    errorHandler.handleServiceError('DiscordClient', error);
+});
+
+client.on('warn', warning => {
+    console.warn('Discord client warning:', warning);
+});
+
+// Memory monitoring (optional - for debugging)
+if (process.env.NODE_ENV === 'development') {
+    setInterval(() => {
+        const memUsage = process.memoryUsage();
+        console.log('Memory Usage:', {
+            rss: Math.round(memUsage.rss / 1024 / 1024) + 'MB',
+            heapUsed: Math.round(memUsage.heapUsed / 1024 / 1024) + 'MB',
+            heapTotal: Math.round(memUsage.heapTotal / 1024 / 1024) + 'MB'
+        });
+    }, 60000); // Every minute in development
+}
+
+// Remove the duplicate login call: client.login(config.token);

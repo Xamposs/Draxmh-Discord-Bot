@@ -11,7 +11,40 @@ class ErrorHandler {
         this.circuitBreakers = new Map();
         this.isShuttingDown = false;
         this.services = new Set();
+        this.cleanupInterval = null;
+        this.maxErrorEntries = 1000; // Limit error count entries
         this.setupGlobalHandlers();
+        this.startCleanup();
+    }
+
+    startCleanup() {
+        // Clean up old error counts every 5 minutes
+        this.cleanupInterval = setInterval(() => {
+            const now = Date.now();
+            const oneHourAgo = now - (60 * 60 * 1000); // 1 hour
+            
+            // Clean up old circuit breakers
+            for (const [service, blockedUntil] of this.circuitBreakers.entries()) {
+                if (now > blockedUntil) {
+                    this.circuitBreakers.delete(service);
+                }
+            }
+            
+            // Limit error counts size
+            if (this.errorCounts.size > this.maxErrorEntries) {
+                // Convert to array, sort by count, keep only top entries
+                const sortedErrors = Array.from(this.errorCounts.entries())
+                    .sort(([,a], [,b]) => b - a)
+                    .slice(0, Math.floor(this.maxErrorEntries * 0.8)); // Keep 80%
+                
+                this.errorCounts.clear();
+                sortedErrors.forEach(([key, count]) => {
+                    this.errorCounts.set(key, count);
+                });
+                
+                console.log(`Error handler cleanup: reduced to ${this.errorCounts.size} entries`);
+            }
+        }, 5 * 60 * 1000); // 5 minutes
     }
 
     setupGlobalHandlers() {
@@ -60,10 +93,23 @@ class ErrorHandler {
         // Log to console
         console.error(`[${timestamp}] ${type}:`, error.message);
 
-        // Log to file
+        // Log to file (with size limit)
         try {
             const logPath = path.join(__dirname, '../../crash.log');
             const logLine = `${timestamp} - ${type}: ${error.message}\n${error.stack}\n\n`;
+            
+            // Check file size and rotate if needed
+            try {
+                const stats = await fs.stat(logPath);
+                if (stats.size > 10 * 1024 * 1024) { // 10MB limit
+                    const backupPath = path.join(__dirname, '../../crash.log.old');
+                    await fs.rename(logPath, backupPath);
+                    console.log('Log file rotated due to size limit');
+                }
+            } catch (statError) {
+                // File doesn't exist yet, that's fine
+            }
+            
             await fs.appendFile(logPath, logLine);
         } catch (fileError) {
             console.error('Failed to write to log file:', fileError);
@@ -83,6 +129,12 @@ class ErrorHandler {
         this.isShuttingDown = true;
 
         console.log('Initiating graceful shutdown...');
+
+        // Stop cleanup interval
+        if (this.cleanupInterval) {
+            clearInterval(this.cleanupInterval);
+            this.cleanupInterval = null;
+        }
 
         // Stop all registered services
         const shutdownPromises = Array.from(this.services).map(async (service) => {
@@ -105,12 +157,23 @@ class ErrorHandler {
             console.error('Error during shutdown:', error);
         }
 
+        // Clear all maps to free memory
+        this.errorCounts.clear();
+        this.circuitBreakers.clear();
+        this.services.clear();
+
+        // Force garbage collection if available
+        if (global.gc) {
+            global.gc();
+        }
+
         console.log('Graceful shutdown completed');
         process.exit(exitCode);
     }
 
     handleServiceError(serviceName, error) {
-        const key = `${serviceName}:${error.message}`;
+        const errorMessage = error?.message || error?.toString() || 'Unknown error';
+        const key = `${serviceName}:${errorMessage}`;
         const count = (this.errorCounts.get(key) || 0) + 1;
         this.errorCounts.set(key, count);
 
@@ -126,6 +189,22 @@ class ErrorHandler {
     isServiceBlocked(serviceName) {
         const blockedUntil = this.circuitBreakers.get(serviceName);
         return blockedUntil && Date.now() < blockedUntil;
+    }
+
+    getStats() {
+        return {
+            errorCounts: this.errorCounts.size,
+            circuitBreakers: this.circuitBreakers.size,
+            services: this.services.size,
+            isShuttingDown: this.isShuttingDown
+        };
+    }
+
+    // Method to manually clear old errors
+    clearOldErrors() {
+        this.errorCounts.clear();
+        this.circuitBreakers.clear();
+        console.log('Error handler data cleared');
     }
 }
 

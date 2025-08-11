@@ -389,3 +389,15 @@ Error: Opening handshake has timed out
     at listOnTimeout (node:internal/timers:608:17)
     at process.processTimers (node:internal/timers:543:7)
 
+2025-08-11T19:46:16.828Z - Uncaught Exception: ReferenceError: config is not defined
+    at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:538:14
+    at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:99:5)
+2025-08-11T19:46:16.826Z - UNCAUGHT_EXCEPTION: config is not defined
+ReferenceError: config is not defined
+    at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:538:14
+    at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:99:5)
+

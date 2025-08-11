@@ -18,3 +18,6 @@ export const getCommandStatus = (commandName, guildId) => {
     const key = `${guildId}-${commandName}`;
     return !disabledCommands.has(key) ? 'enabled' : 'disabled';
 };
+
+// Export the disabledCommands Map as commandToggles for cleanup purposes
+export const commandToggles = disabledCommands;

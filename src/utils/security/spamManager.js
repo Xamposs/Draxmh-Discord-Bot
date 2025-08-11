@@ -2,6 +2,8 @@ const spamSettings = new Map();
 const userMessages = new Map();
 const SPAM_WINDOW = 5000; // 5 seconds
 const TIMEOUT_DURATION = 300000; // 5 minutes
+const CLEANUP_INTERVAL = 60000; // 1 minute
+const MAX_USER_ENTRIES = 1000; // Maximum number of users to track
 
 const SENSITIVITY_THRESHOLDS = {
     low: { messages: 10, interval: 5000 },
@@ -9,7 +11,66 @@ const SENSITIVITY_THRESHOLDS = {
     high: { messages: 5, interval: 5000 }
 };
 
+// Cleanup interval to prevent memory leaks
+let cleanupInterval = null;
+
+const startCleanup = () => {
+    if (cleanupInterval) return; // Already running
+    
+    cleanupInterval = setInterval(() => {
+        const now = Date.now();
+        const threshold = now - SPAM_WINDOW * 2; // Keep data for 2x spam window
+        
+        // Clean up old user message histories
+        for (const [userId, history] of userMessages.entries()) {
+            // Remove old messages
+            const filteredHistory = history.filter(msg => msg.timestamp > threshold);
+            
+            if (filteredHistory.length === 0) {
+                // Remove user entirely if no recent messages
+                userMessages.delete(userId);
+            } else {
+                // Update with filtered history
+                userMessages.set(userId, filteredHistory);
+            }
+        }
+        
+        // If we have too many users, remove the oldest ones
+        if (userMessages.size > MAX_USER_ENTRIES) {
+            const sortedUsers = Array.from(userMessages.entries())
+                .sort(([,a], [,b]) => {
+                    const lastA = Math.max(...a.map(msg => msg.timestamp));
+                    const lastB = Math.max(...b.map(msg => msg.timestamp));
+                    return lastA - lastB;
+                });
+            
+            // Remove oldest 20% of users
+            const toRemove = Math.floor(sortedUsers.length * 0.2);
+            for (let i = 0; i < toRemove; i++) {
+                userMessages.delete(sortedUsers[i][0]);
+            }
+        }
+        
+        console.log(`Spam manager cleanup: ${userMessages.size} users tracked`);
+    }, CLEANUP_INTERVAL);
+    
+    console.log('Spam manager cleanup started');
+};
+
+const stopCleanup = () => {
+    if (cleanupInterval) {
+        clearInterval(cleanupInterval);
+        cleanupInterval = null;
+        console.log('Spam manager cleanup stopped');
+    }
+};
+
 export const handleSpamDetection = async (message) => {
+    // Start cleanup if not already running
+    if (!cleanupInterval) {
+        startCleanup();
+    }
+    
     const settings = spamSettings.get(message.guild.id);
     if (!settings?.enabled) return;
 
@@ -32,10 +93,15 @@ export const handleSpamDetection = async (message) => {
         channelId: message.channel.id
     });
     
-    // Clean old messages
+    // Clean old messages from this user's history
     const threshold = now - SPAM_WINDOW;
     while (userHistory.length && userHistory[0].timestamp < threshold) {
         userHistory.shift();
+    }
+    
+    // Limit individual user history size
+    if (userHistory.length > 50) {
+        userHistory.splice(0, userHistory.length - 50);
     }
     
     // Get threshold based on sensitivity
@@ -102,6 +168,11 @@ export const toggleSpam = (guildId, enabled) => {
     };
     settings.enabled = enabled;
     spamSettings.set(guildId, settings);
+    
+    // Start cleanup when spam detection is enabled
+    if (enabled && !cleanupInterval) {
+        startCleanup();
+    }
 };
 
 export const setSensitivity = (guildId, level) => {
@@ -154,6 +225,7 @@ export const getSpamStats = (guildId) => {
 
     return {
         activeUsers,
+        totalTrackedUsers: userMessages.size,
         settings,
         thresholds: SENSITIVITY_THRESHOLDS[settings.sensitivity]
     };
@@ -161,4 +233,16 @@ export const getSpamStats = (guildId) => {
 
 export const clearUserHistory = (userId) => {
     userMessages.delete(userId);
+};
+
+export const clearAllHistory = () => {
+    userMessages.clear();
+    console.log('All spam detection history cleared');
+};
+
+export const stopSpamManager = () => {
+    stopCleanup();
+    userMessages.clear();
+    spamSettings.clear();
+    console.log('Spam manager stopped and cleaned up');
 };
