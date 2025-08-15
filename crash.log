@@ -401,3 +401,16 @@ ReferenceError: config is not defined
     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
     at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:99:5)
 
+2025-08-14T22:07:36.631Z - SERVICE_ERROR_MessageLogger: Received one or more errors
+Error: Received one or more errors
+    at _UnionValidator.handle (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\@sapphire\shapeshift\dist\cjs\index.cjs:1965:23)
+    at _UnionValidator.parse (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\@sapphire\shapeshift\dist\cjs\index.cjs:972:90)
+    at EmbedBuilder.setColor (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\@discordjs\builders\dist\index.js:300:20)
+    at EmbedBuilder.setColor (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\discord.js\src\structures\EmbedBuilder.js:23:18)
+    at logAction (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/utils/logging.js:49:10)
+    at Client.<anonymous> (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:275:15)
+    at Client.emit (node:events:519:35)
+    at MessageCreateAction.handle (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\discord.js\src\client\actions\MessageCreate.js:32:14)
+    at module.exports [as MESSAGE_CREATE] (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\discord.js\src\client\websocket\handlers\MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\discord.js\src\client\websocket\WebSocketManager.js:348:31)
+
