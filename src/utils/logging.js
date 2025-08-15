@@ -46,7 +46,7 @@ const colors = {
 
 export const logAction = async (type, guild, data) => {
     const embed = new EmbedBuilder()
-        .setColor(data.color || colors[type])
+        .setColor(color ?? 0x00ff00) // Use a default color if color is undefined
         .setTimestamp()
         .setFooter({ text: guild.name, iconURL: guild.iconURL() });
 
