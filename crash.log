@@ -414,3 +414,37 @@ Error: Received one or more errors
     at module.exports [as MESSAGE_CREATE] (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\discord.js\src\client\websocket\handlers\MESSAGE_CREATE.js:4:32)
     at WebSocketManager.handlePacket (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\discord.js\src\client\websocket\WebSocketManager.js:348:31)
 
+2025-08-21T08:27:56.019Z - SERVICE_ERROR_XrplManager: Error: connect() timed out after 15000 ms. If your internet connection is working, the rippled server may be blocked or inaccessible. You can also try setting the 'connectionTimeout' option in the Client constructor.
+NotConnectedError: Error: connect() timed out after 15000 ms. If your internet connection is working, the rippled server may be blocked or inaccessible. You can also try setting the 'connectionTimeout' option in the Client constructor.
+    at Connection.onConnectionFailed (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:334:54)
+    at Timeout._onTimeout (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:148:22)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7)
+
+2025-08-21T08:28:17.067Z - SERVICE_ERROR_XrplManager: Error: connect() timed out after 15000 ms. If your internet connection is working, the rippled server may be blocked or inaccessible. You can also try setting the 'connectionTimeout' option in the Client constructor.
+NotConnectedError: Error: connect() timed out after 15000 ms. If your internet connection is working, the rippled server may be blocked or inaccessible. You can also try setting the 'connectionTimeout' option in the Client constructor.
+    at Connection.onConnectionFailed (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:334:54)
+    at Timeout._onTimeout (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:148:22)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7)
+
+2025-08-21T08:28:27.498Z - Uncaught Exception: Error: Opening handshake has timed out
+    at ClientRequest.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:873:7)
+    at ClientRequest.emit (node:events:507:28)
+    at TLSSocket.emitRequestTimeout (node:_http_client:863:9)
+    at Object.onceWrapper (node:events:621:28)
+    at TLSSocket.emit (node:events:507:28)
+    at Socket._onTimeout (node:net:604:8)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7)
+2025-08-21T08:28:27.496Z - UNCAUGHT_EXCEPTION: Opening handshake has timed out
+Error: Opening handshake has timed out
+    at ClientRequest.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:873:7)
+    at ClientRequest.emit (node:events:507:28)
+    at TLSSocket.emitRequestTimeout (node:_http_client:863:9)
+    at Object.onceWrapper (node:events:621:28)
+    at TLSSocket.emit (node:events:507:28)
+    at Socket._onTimeout (node:net:604:8)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7)
+

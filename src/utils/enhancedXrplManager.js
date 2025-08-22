@@ -18,9 +18,13 @@ class EnhancedXrplManager extends EventEmitter {
         ];
         
         this.connectionSettings = {
-            timeout: 15000,
-            connectionTimeout: 15000,
-            maxRetries: 3
+            timeout: 30000,           // Increased from 15000
+            connectionTimeout: 30000, // Increased from 15000
+            maxRetries: 3,
+            // Add WebSocket-specific timeout settings
+            handshakeTimeout: 30000,
+            pingInterval: 30000,
+            pongTimeout: 10000
         };
         
         errorHandler.registerService(this);
@@ -88,19 +92,43 @@ class EnhancedXrplManager extends EventEmitter {
         client.emit = (event, ...args) => {
             if (event === 'reconnect') {
                 console.log(`[${purpose}] XRPL reconnect event handled gracefully`);
-                return true; // Mark as handled
+                return true;
             }
-            return originalEmit(event, ...args);
+            
+            // Handle timeout and handshake errors
+            if (event === 'error') {
+                const error = args[0];
+                if (error && (error.message?.includes('timeout') || error.message?.includes('handshake'))) {
+                    console.log(`[${purpose}] XRPL timeout/handshake error handled:`, error.message);
+                    this.scheduleReconnect(purpose);
+                    return true;
+                }
+            }
+            
+            try {
+                return originalEmit(event, ...args);
+            } catch (emitError) {
+                console.error(`[${purpose}] Error in XRPL client emit:`, emitError.message);
+                return false;
+            }
         };
-
+    
         client.on('error', (error) => {
             const errorMessage = error?.message || error?.toString() || 'Unknown error';
-            console.error(`[${purpose}] XRPL client error:`, errorMessage);
             
+            // Handle timeout and handshake errors gracefully
+            if (errorMessage.includes('timeout') || errorMessage.includes('handshake')) {
+                console.log(`[${purpose}] XRPL connection timeout, scheduling reconnect:`, errorMessage);
+                this.connectionStatus.set(purpose, 'error');
+                this.stopHeartbeat(purpose);
+                this.scheduleReconnect(purpose);
+                return;
+            }
+            
+            console.error(`[${purpose}] XRPL client error:`, errorMessage);
             this.connectionStatus.set(purpose, 'error');
             this.stopHeartbeat(purpose);
             
-            // Don't log reconnect errors as service errors
             if (!this.isReconnectError(error)) {
                 errorHandler.handleServiceError('XrplManager', error);
             }

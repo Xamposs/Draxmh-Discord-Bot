@@ -18,16 +18,21 @@ export function patchXrplClient() {
             // Special case for reconnect events
             if (event === 'reconnect') {
                 console.log('XRPL reconnect event handled gracefully');
-                
-                // Don't throw an unhandled error for reconnect events
-                // Just return true to indicate it was "handled"
                 return true;
+            }
+            
+            // Handle error events to prevent uncaught exceptions
+            if (event === 'error') {
+                const error = args[0];
+                if (error && (error.message?.includes('timeout') || error.message?.includes('handshake'))) {
+                    console.log('XRPL timeout/handshake error handled gracefully:', error.message);
+                    return true;
+                }
             }
             
             // For all other events, use the original behavior
             return originalEmit.apply(this, [event, ...args]);
         } catch (error) {
-            // Catch any errors in the emit process
             console.error('Error in XRPL client emit:', error?.message || error);
             return false;
         }
@@ -37,9 +42,13 @@ export function patchXrplClient() {
     const originalOn = Client.prototype.on;
     Client.prototype.on = function(event, listener) {
         if (event === 'error') {
-            // Wrap error listeners to prevent unhandled rejections
             const wrappedListener = (error) => {
                 try {
+                    // Handle timeout and handshake errors gracefully
+                    if (error && (error.message?.includes('timeout') || error.message?.includes('handshake'))) {
+                        console.log('XRPL connection error handled:', error.message);
+                        return;
+                    }
                     listener(error);
                 } catch (listenerError) {
                     console.error('Error in XRPL error listener:', listenerError?.message || listenerError);
@@ -50,19 +59,33 @@ export function patchXrplClient() {
         return originalOn.call(this, event, listener);
     };
     
-    // Add global unhandled rejection handler for XRPL clients
+    // Enhanced global unhandled rejection handler
     process.on('unhandledRejection', (reason, promise) => {
-        if (reason && reason.toString().includes('reconnect')) {
-            console.log('Unhandled Rejection: XRPL reconnect event handled gracefully');
+        const reasonStr = reason?.toString() || '';
+        if (reasonStr.includes('reconnect') || 
+            reasonStr.includes('timeout') || 
+            reasonStr.includes('handshake') ||
+            reasonStr.includes('XRPL')) {
+            console.log('Unhandled Rejection: XRPL event handled gracefully -', reasonStr);
             return;
         }
         
-        // Let other unhandled rejections be handled normally
         console.error('Unhandled Rejection:', reason);
     });
     
-    // Mark as patched to avoid double patching
-    Client.prototype._isPatchedForReconnect = true;
+    // Add global uncaught exception handler for WebSocket timeouts
+    process.on('uncaughtException', (error) => {
+        if (error.message?.includes('Opening handshake has timed out') ||
+            error.message?.includes('timeout') ||
+            error.message?.includes('XRPL')) {
+            console.log('Uncaught Exception: XRPL timeout handled gracefully -', error.message);
+            return;
+        }
+        
+        // Re-throw other uncaught exceptions
+        throw error;
+    });
     
-    console.log('XRPL Client successfully patched to handle reconnect events');
+    Client.prototype._isPatchedForReconnect = true;
+    console.log('XRPL Client successfully patched to handle reconnect events and timeouts');
 }
