@@ -1,0 +1,34 @@
+2025-08-25T10:21:22: XRPL Client successfully patched to handle reconnect events and timeouts
+2025-08-25T10:21:24: Logged in as DRAXMH Bot#1233!
+2025-08-25T10:21:24: Whale Monitor started successfully
+2025-08-25T10:21:24: Registered service for graceful shutdown: WhaleMonitor
+2025-08-25T10:21:24: Scam Alert System initialized - Channel: 1307095704858005545
+2025-08-25T10:21:24: Registered service for graceful shutdown: PriceTracker
+2025-08-25T10:21:24: Price tracking started successfully
+2025-08-25T10:21:24: DEX Analytics initialized with channel: 1307799407000944720
+2025-08-25T10:21:24: Starting DEX Analytics updates...
+2025-08-25T10:21:24: [dex-analytics] Connecting to XRPL: wss://xrplcluster.com
+2025-08-25T10:21:24: [dex-analytics] Connecting to XRPL: wss://xrpl.ws
+2025-08-25T10:21:24: Connected to wss://xrplcluster.com
+2025-08-25T10:21:24: [dex-analytics] Successfully connected to wss://xrplcluster.com
+2025-08-25T10:21:24: [dex-analytics] Successfully connected to wss://xrpl.ws
+2025-08-25T10:21:25: WebSocket connected for price updates
+2025-08-25T10:21:25: DEX Analytics update sent at 2025-08-25T07:21:25.499Z
+2025-08-25T10:21:25: Registered service for graceful shutdown: XRPLDexAnalytics
+2025-08-25T10:21:25: DEX Analytics started - Channel: 1307799407000944720
+2025-08-25T10:21:25: Smart Path Analyzer initialized
+2025-08-25T10:21:25: Starting Path Analysis updates...
+2025-08-25T10:21:25: Connected successfully to XRPL network
+2025-08-25T10:21:25: Registered service for graceful shutdown: SmartPathAnalyzer
+2025-08-25T10:21:25: Smart Path Analysis started - Channel: 1308928972033359993
+2025-08-25T10:21:26: Registered service for graceful shutdown: XRPMarketPsychologyAnalyzer
+2025-08-25T10:21:26: Market Psychology Analysis started - Channel: 1325196609012895805
+2025-08-25T10:21:26: Registered service for graceful shutdown: Object
+2025-08-25T10:21:26: Registered service for graceful shutdown: Object
+2025-08-25T10:21:26: Registered service for graceful shutdown: Object
+2025-08-25T10:21:26: All services initialized and registered for graceful shutdown
+2025-08-25T10:21:26: Price tracker started with 30s intervals
+2025-08-25T10:26:26: DEX Analytics update sent at 2025-08-25T07:26:26.192Z
+2025-08-25T10:31:25: DEX Analytics update sent at 2025-08-25T07:31:25.981Z
+2025-08-25T10:36:25: DEX Analytics update sent at 2025-08-25T07:36:25.942Z
+2025-08-25T10:41:26: DEX Analytics update sent at 2025-08-25T07:41:26.083Z
