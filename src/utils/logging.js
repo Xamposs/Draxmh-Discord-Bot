@@ -13,19 +13,29 @@ const LogTypes = {
     THREAD: '🧵'
 };
 
+// Secure webhook initialization using environment variables
+const createWebhookClient = (envVar) => {
+    const url = process.env[envVar];
+    if (!url) {
+        console.warn(`Warning: ${envVar} not found in environment variables`);
+        return null;
+    }
+    return new WebhookClient({ url });
+};
+
 const webhooks = {
-    COMMAND: new WebhookClient({ url: 'https://discord.com/api/webhooks/1307040417015005275/D7NSPLoL5tkxlwlzGWzFyxXEiju4K9W3C7Crpz6dlcgvIS8H-LqeYfRuRzDdUXpxnGYD' }),
-    MESSAGE: new WebhookClient({ url: 'https://discord.com/api/webhooks/1307039968186728559/l7isNnQfCU6raZWqJ8KgkrwDHgy5VdmBEUbh5imv1o3yPaf-MFJ4whKZLRZwgffXXei3' }),
-    MOD: new WebhookClient({ url: 'https://discord.com/api/webhooks/1307040417015005275/D7NSPLoL5tkxlwlzGWzFyxXEiju4K9W3C7Crpz6dlcgvIS8H-LqeYfRuRzDdUXpxnGYD' }),
-    MEMBER: new WebhookClient({ url: 'https://discord.com/api/webhooks/1307040755742670948/3mTQ9OGSiimkg_RUE_1ZrxcwFCkN6VQfqapV8xmT_IK5-whXYwVVvT0Re8ekGiNrx72b' }),
-    ROLE: new WebhookClient({ url: 'https://discord.com/api/webhooks/1307041081489358871/R-51Qih9c-pscS_M3X5aarIIYKgEaHuuvxAxIWXBGKRW-57TEV_C0ZcohbJybySU3gBR' }),
-    VOICE: new WebhookClient({ url: 'https://discord.com/api/webhooks/1307041220257910804/tcRAZ3gnY7copYO2eKWbU4Pc_6vTFA6NHK3y8LzuI81yiCY6omkDAmpN2slAD0Dr8XKp' }),
-    INVITE: new WebhookClient({ url: 'https://discord.com/api/webhooks/1307041316189765814/cBPpdDRw-ZL3vuXmMAcAeUD_kkeiCSKm8sul-azzjhqbL0T2cxMt47kTz_Q-9PQMAZnW' }),
-    SERVER: new WebhookClient({ url: 'https://discord.com/api/webhooks/1307041506778943639/C9kwowau-OmidgZt4biOgdz_mUcG1KiDeUMVD_4mlcyCUZ8Lr89KK3XMQR4A-E5l4Rn0' }),
-    THREAD: new WebhookClient({ url: 'https://discord.com/api/webhooks/1307041681014521856/PZNVu-ruAtENDHpHpBERt0f_f_NxL-rDh6xIzCUz1DcE1cx-9n-RRq7dGyM2UD7O742R' }),
-    CHANNEL: new WebhookClient({ url: 'https://discord.com/api/webhooks/1307041681014521856/PZNVu-ruAtENDHpHpBERt0f_f_NxL-rDh6xIzCUz1DcE1cx-9n-RRq7dGyM2UD7O742R' }),
-    CHANNEL_PERMS: new WebhookClient({ url: 'https://discord.com/api/webhooks/1307041681014521856/PZNVu-ruAtENDHpHpBERt0f_f_NxL-rDh6xIzCUz1DcE1cx-9n-RRq7dGyM2UD7O742R' }),
-    CHANNEL_UPDATE: new WebhookClient({ url: 'https://discord.com/api/webhooks/1307041681014521856/PZNVu-ruAtENDHpHpBERt0f_f_NxL-rDh6xIzCUz1DcE1cx-9n-RRq7dGyM2UD7O742R' })
+    COMMAND: createWebhookClient('WEBHOOK_COMMAND'),
+    MESSAGE: createWebhookClient('WEBHOOK_MESSAGE'),
+    MOD: createWebhookClient('WEBHOOK_MOD'),
+    MEMBER: createWebhookClient('WEBHOOK_MEMBER'),
+    ROLE: createWebhookClient('WEBHOOK_ROLE'),
+    VOICE: createWebhookClient('WEBHOOK_VOICE'),
+    INVITE: createWebhookClient('WEBHOOK_INVITE'),
+    SERVER: createWebhookClient('WEBHOOK_SERVER'),
+    THREAD: createWebhookClient('WEBHOOK_THREAD'),
+    CHANNEL: createWebhookClient('WEBHOOK_CHANNEL'),
+    CHANNEL_PERMS: createWebhookClient('WEBHOOK_CHANNEL'),
+    CHANNEL_UPDATE: createWebhookClient('WEBHOOK_CHANNEL')
 };
 
 const colors = {
@@ -45,8 +55,14 @@ const colors = {
 };
 
 export const logAction = async (type, guild, data) => {
+    const webhook = webhooks[type];
+    if (!webhook) {
+        console.warn(`No webhook configured for type: ${type}`);
+        return;
+    }
+    
     const embed = new EmbedBuilder()
-        .setColor(colors[type] ?? 0x00ff00) // Use the color for the specific type, with fallback
+        .setColor(colors[type] ?? 0x00ff00)
         .setTimestamp()
         .setFooter({ text: guild.name, iconURL: guild.iconURL() });
 
