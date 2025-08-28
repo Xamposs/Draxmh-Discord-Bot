@@ -1,0 +1,155 @@
+2025-08-25T14:56:31: Error in XRPL client emit: Unhandled error. ('reconnect')
+2025-08-25T14:56:32: Error in XRPL client emit: Unhandled error. ('reconnect')
+2025-08-25T14:56:37: [dex-analytics] XRPL client error: reconnect
+2025-08-25T14:56:38: Error fetching data for XRP/USD: websocket was closed, 
+2025-08-25T14:56:38: Error fetching data for XRP/EUR: websocket was closed, 
+2025-08-25T14:56:38: Error fetching data for XRP/BTC: websocket was closed, 
+2025-08-25T14:56:38: Error fetching data for XRP/ETH: websocket was closed, 
+2025-08-25T14:56:38: Error fetching market makers: websocket was closed, 
+2025-08-25T14:56:38: [dex-analytics] XRPL client error: reconnect
+2025-08-25T15:00:55: Failed after 3 retries: timeout of 5000ms exceeded
+2025-08-25T15:00:55: Failed after 3 retries: timeout of 5000ms exceeded
+2025-08-26T13:31:43: [dex-analytics] XRPL client error: reconnect
+2025-08-26T22:14:15: Error in XRPL client emit: Unhandled error. ('reconnect')
+2025-08-27T22:21:44: Error sending price update: getaddrinfo ENOTFOUND discord.com
+2025-08-28T11:49:24: Error sending price update: request to https://quickchart.io/chart/create failed, reason: socket hang up
+2025-08-28T19:28:43: SyntaxError: Identifier 'webhook' has already been declared
+2025-08-28T19:28:43:     at compileSourceTextModule (node:internal/modules/esm/utils:351:16)
+2025-08-28T19:28:43:     at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+2025-08-28T19:28:43:     at #translate (node:internal/modules/esm/loader:546:12)
+2025-08-28T19:28:43:     at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:593:27)
+2025-08-28T19:28:43:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-08-28T19:28:43:     at async #link (node:internal/modules/esm/module_job:173:19)
+2025-08-28T19:28:51: SyntaxError: Identifier 'webhook' has already been declared
+2025-08-28T19:28:51:     at compileSourceTextModule (node:internal/modules/esm/utils:351:16)
+2025-08-28T19:28:51:     at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+2025-08-28T19:28:51:     at #translate (node:internal/modules/esm/loader:546:12)
+2025-08-28T19:28:51:     at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:593:27)
+2025-08-28T19:28:51:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-08-28T19:28:51:     at async #link (node:internal/modules/esm/module_job:173:19)
+2025-08-28T19:28:59: SyntaxError: Identifier 'webhook' has already been declared
+2025-08-28T19:28:59:     at compileSourceTextModule (node:internal/modules/esm/utils:351:16)
+2025-08-28T19:28:59:     at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+2025-08-28T19:28:59:     at #translate (node:internal/modules/esm/loader:546:12)
+2025-08-28T19:28:59:     at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:593:27)
+2025-08-28T19:28:59:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-08-28T19:28:59:     at async #link (node:internal/modules/esm/module_job:173:19)
+2025-08-28T19:29:07: SyntaxError: Identifier 'webhook' has already been declared
+2025-08-28T19:29:07:     at compileSourceTextModule (node:internal/modules/esm/utils:351:16)
+2025-08-28T19:29:07:     at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+2025-08-28T19:29:07:     at #translate (node:internal/modules/esm/loader:546:12)
+2025-08-28T19:29:07:     at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:593:27)
+2025-08-28T19:29:07:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-08-28T19:29:07:     at async #link (node:internal/modules/esm/module_job:173:19)
+2025-08-28T19:29:15: SyntaxError: Identifier 'webhook' has already been declared
+2025-08-28T19:29:15:     at compileSourceTextModule (node:internal/modules/esm/utils:351:16)
+2025-08-28T19:29:15:     at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+2025-08-28T19:29:15:     at #translate (node:internal/modules/esm/loader:546:12)
+2025-08-28T19:29:15:     at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:593:27)
+2025-08-28T19:29:15:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-08-28T19:29:15:     at async #link (node:internal/modules/esm/module_job:173:19)
+2025-08-28T19:29:24: SyntaxError: Identifier 'webhook' has already been declared
+2025-08-28T19:29:24:     at compileSourceTextModule (node:internal/modules/esm/utils:351:16)
+2025-08-28T19:29:24:     at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+2025-08-28T19:29:24:     at #translate (node:internal/modules/esm/loader:546:12)
+2025-08-28T19:29:24:     at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:593:27)
+2025-08-28T19:29:24:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-08-28T19:29:24:     at async #link (node:internal/modules/esm/module_job:173:19)
+2025-08-28T19:29:32: SyntaxError: Identifier 'webhook' has already been declared
+2025-08-28T19:29:32:     at compileSourceTextModule (node:internal/modules/esm/utils:351:16)
+2025-08-28T19:29:32:     at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+2025-08-28T19:29:32:     at #translate (node:internal/modules/esm/loader:546:12)
+2025-08-28T19:29:32:     at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:593:27)
+2025-08-28T19:29:32:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-08-28T19:29:32:     at async #link (node:internal/modules/esm/module_job:173:19)
+2025-08-28T19:29:40: SyntaxError: Identifier 'webhook' has already been declared
+2025-08-28T19:29:40:     at compileSourceTextModule (node:internal/modules/esm/utils:351:16)
+2025-08-28T19:29:40:     at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+2025-08-28T19:29:40:     at #translate (node:internal/modules/esm/loader:546:12)
+2025-08-28T19:29:40:     at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:593:27)
+2025-08-28T19:29:40:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-08-28T19:29:40:     at async #link (node:internal/modules/esm/module_job:173:19)
+2025-08-28T19:29:48: SyntaxError: Identifier 'webhook' has already been declared
+2025-08-28T19:29:48:     at compileSourceTextModule (node:internal/modules/esm/utils:351:16)
+2025-08-28T19:29:48:     at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+2025-08-28T19:29:48:     at #translate (node:internal/modules/esm/loader:546:12)
+2025-08-28T19:29:48:     at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:593:27)
+2025-08-28T19:29:48:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-08-28T19:29:48:     at async #link (node:internal/modules/esm/module_job:173:19)
+2025-08-28T19:29:56: SyntaxError: Identifier 'webhook' has already been declared
+2025-08-28T19:29:56:     at compileSourceTextModule (node:internal/modules/esm/utils:351:16)
+2025-08-28T19:29:56:     at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+2025-08-28T19:29:56:     at #translate (node:internal/modules/esm/loader:546:12)
+2025-08-28T19:29:56:     at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:593:27)
+2025-08-28T19:29:56:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-08-28T19:29:56:     at async #link (node:internal/modules/esm/module_job:173:19)
+2025-08-28T19:33:26: SyntaxError: Identifier 'webhook' has already been declared
+2025-08-28T19:33:26:     at compileSourceTextModule (node:internal/modules/esm/utils:351:16)
+2025-08-28T19:33:26:     at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+2025-08-28T19:33:26:     at #translate (node:internal/modules/esm/loader:546:12)
+2025-08-28T19:33:26:     at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:593:27)
+2025-08-28T19:33:26:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-08-28T19:33:26:     at async #link (node:internal/modules/esm/module_job:173:19)
+2025-08-28T19:33:34: SyntaxError: Identifier 'webhook' has already been declared
+2025-08-28T19:33:34:     at compileSourceTextModule (node:internal/modules/esm/utils:351:16)
+2025-08-28T19:33:34:     at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+2025-08-28T19:33:34:     at #translate (node:internal/modules/esm/loader:546:12)
+2025-08-28T19:33:34:     at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:593:27)
+2025-08-28T19:33:34:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-08-28T19:33:34:     at async #link (node:internal/modules/esm/module_job:173:19)
+2025-08-28T19:33:42: SyntaxError: Identifier 'webhook' has already been declared
+2025-08-28T19:33:42:     at compileSourceTextModule (node:internal/modules/esm/utils:351:16)
+2025-08-28T19:33:42:     at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+2025-08-28T19:33:42:     at #translate (node:internal/modules/esm/loader:546:12)
+2025-08-28T19:33:42:     at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:593:27)
+2025-08-28T19:33:42:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-08-28T19:33:42:     at async #link (node:internal/modules/esm/module_job:173:19)
+2025-08-28T19:33:50: SyntaxError: Identifier 'webhook' has already been declared
+2025-08-28T19:33:50:     at compileSourceTextModule (node:internal/modules/esm/utils:351:16)
+2025-08-28T19:33:50:     at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+2025-08-28T19:33:50:     at #translate (node:internal/modules/esm/loader:546:12)
+2025-08-28T19:33:50:     at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:593:27)
+2025-08-28T19:33:50:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-08-28T19:33:50:     at async #link (node:internal/modules/esm/module_job:173:19)
+2025-08-28T19:33:58: SyntaxError: Identifier 'webhook' has already been declared
+2025-08-28T19:33:58:     at compileSourceTextModule (node:internal/modules/esm/utils:351:16)
+2025-08-28T19:33:58:     at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+2025-08-28T19:33:58:     at #translate (node:internal/modules/esm/loader:546:12)
+2025-08-28T19:33:58:     at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:593:27)
+2025-08-28T19:33:58:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-08-28T19:33:58:     at async #link (node:internal/modules/esm/module_job:173:19)
+2025-08-28T19:34:06: SyntaxError: Identifier 'webhook' has already been declared
+2025-08-28T19:34:06:     at compileSourceTextModule (node:internal/modules/esm/utils:351:16)
+2025-08-28T19:34:06:     at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+2025-08-28T19:34:06:     at #translate (node:internal/modules/esm/loader:546:12)
+2025-08-28T19:34:06:     at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:593:27)
+2025-08-28T19:34:06:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-08-28T19:34:06:     at async #link (node:internal/modules/esm/module_job:173:19)
+2025-08-28T19:34:15: SyntaxError: Identifier 'webhook' has already been declared
+2025-08-28T19:34:15:     at compileSourceTextModule (node:internal/modules/esm/utils:351:16)
+2025-08-28T19:34:15:     at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+2025-08-28T19:34:15:     at #translate (node:internal/modules/esm/loader:546:12)
+2025-08-28T19:34:15:     at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:593:27)
+2025-08-28T19:34:15:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-08-28T19:34:15:     at async #link (node:internal/modules/esm/module_job:173:19)
+2025-08-28T19:34:23: SyntaxError: Identifier 'webhook' has already been declared
+2025-08-28T19:34:23:     at compileSourceTextModule (node:internal/modules/esm/utils:351:16)
+2025-08-28T19:34:23:     at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+2025-08-28T19:34:23:     at #translate (node:internal/modules/esm/loader:546:12)
+2025-08-28T19:34:23:     at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:593:27)
+2025-08-28T19:34:23:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-08-28T19:34:23:     at async #link (node:internal/modules/esm/module_job:173:19)
+2025-08-28T19:34:31: SyntaxError: Identifier 'webhook' has already been declared
+2025-08-28T19:34:31:     at compileSourceTextModule (node:internal/modules/esm/utils:351:16)
+2025-08-28T19:34:31:     at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+2025-08-28T19:34:31:     at #translate (node:internal/modules/esm/loader:546:12)
+2025-08-28T19:34:31:     at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:593:27)
+2025-08-28T19:34:31:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-08-28T19:34:31:     at async #link (node:internal/modules/esm/module_job:173:19)
+2025-08-28T19:34:39: SyntaxError: Identifier 'webhook' has already been declared
+2025-08-28T19:34:39:     at compileSourceTextModule (node:internal/modules/esm/utils:351:16)
+2025-08-28T19:34:39:     at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+2025-08-28T19:34:39:     at #translate (node:internal/modules/esm/loader:546:12)
+2025-08-28T19:34:39:     at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:593:27)
+2025-08-28T19:34:39:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-08-28T19:34:39:     at async #link (node:internal/modules/esm/module_job:173:19)

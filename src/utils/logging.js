@@ -66,8 +66,8 @@ export const logAction = async (type, guild, data) => {
         .setTimestamp()
         .setFooter({ text: guild.name, iconURL: guild.iconURL() });
 
-    const webhook = webhooks[type];
-    if (!webhook) return;
+    // Remove this duplicate line: const webhook = webhooks[type];
+    // Remove this duplicate line: if (!webhook) return;
 
     switch (type) {
         case 'COMMAND':
