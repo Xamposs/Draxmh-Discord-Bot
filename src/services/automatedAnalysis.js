@@ -9,7 +9,8 @@ class AutomatedAnalysis {
     constructor(client) {
         this.client = client;
         this.xrpChannel = process.env.XRP_ANALYSIS_CHANNEL_ID;
-        this.drxChannel = process.env.DRX_ANALYSIS_CHANNEL_ID;
+        // DELETE THIS LINE:
+        // this.drxChannel = process.env.DRX_ANALYSIS_CHANNEL_ID;
         this.isEnabled = true;
         this.xrpInterval = 5 * 60 * 1000; // 5 minutes in milliseconds
         this.drxInterval = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
@@ -27,13 +28,23 @@ class AutomatedAnalysis {
             this.runXRPAnalysis();
         }, this.xrpInterval);
 
+        // DELETE THIS ENTIRE BLOCK:
         // Start DRX analysis every 24 hours
-        this.runDRXAnalysis();
-        setInterval(() => {
-            this.runDRXAnalysis();
-        }, this.drxInterval);
+        // this.runDRXAnalysis();
+        // setInterval(() => {
+        //     this.runDRXAnalysis();
+        // }, this.drxInterval);
     }
 
+    // DELETE THIS ENTIRE METHOD:
+    // async runDRXAnalysis() {
+    //     if (!this.isEnabled) return;
+    //     const drxChannel = this.client.channels.cache.get(this.drxChannel);
+    //     if (drxChannel) {
+    //         const drxEmbed = await this.createAnalysisEmbed('DRX');
+    //         await drxChannel.send({ embeds: [drxEmbed] });
+    //     }
+    // }
     async runXRPAnalysis() {
         if (!this.isEnabled) return;
         

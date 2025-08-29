@@ -20,10 +20,9 @@ class ConfigManager extends EventEmitter {
             'XUMM_API_KEY': 'xumm.apiKey',
             'XUMM_API_SECRET': 'xumm.apiSecret',
             'XRP_ANALYSIS_CHANNEL_ID': 'channels.xrpAnalysis',
-            'DRX_ANALYSIS_CHANNEL_ID': 'channels.drxAnalysis',
-            'DEX_ANALYTICS_CHANNEL_ID': 'channels.dexAnalytics',
-            'PATH_ANALYSIS_CHANNEL_ID': 'channels.pathAnalysis',
-            'TOKEN_SCANNER_CHANNEL_ID': 'channels.tokenScanner',
+            // DELETE THESE LINES:
+            // 'DRX_ANALYSIS_CHANNEL_ID': 'channels.drxAnalysis',
+            // 'DEX_ANALYTICS_CHANNEL_ID': 'channels.dexAnalytics',
             'MARKET_PSYCHOLOGY_CHANNEL_ID': 'channels.marketPsychology'
         };
 

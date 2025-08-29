@@ -8,12 +8,13 @@ class XRPMarketPsychologyAnalyzer {
         this.channelId = channelId;
         this.xrplClient = new Client('wss://xrplcluster.com');
         this.updateInterval = 15 * 60 * 1000; // 15 minutes
+        this.intervalId = null; // Store interval reference
     }
 
     async startAutomatedUpdates() {
         await this.xrplClient.connect();
         this.sendUpdate();
-        setInterval(() => this.sendUpdate(), this.updateInterval);
+        this.intervalId = setInterval(() => this.sendUpdate(), this.updateInterval);
     }
 
     async sendUpdate() {
@@ -89,6 +90,13 @@ class XRPMarketPsychologyAnalyzer {
     }
 
     stop() {
+        // Clear the interval
+        if (this.intervalId) {
+            clearInterval(this.intervalId);
+            this.intervalId = null;
+        }
+        
+        // Disconnect XRPL client
         if (this.xrplClient) {
             this.xrplClient.disconnect();
         }

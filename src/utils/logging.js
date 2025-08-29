@@ -66,8 +66,9 @@ export const logAction = async (type, guild, data) => {
         .setTimestamp()
         .setFooter({ text: guild.name, iconURL: guild.iconURL() });
 
-    // Remove this duplicate line: const webhook = webhooks[type];
-    // Remove this duplicate line: if (!webhook) return;
+    // DELETE THESE TWO LINES (they're duplicates):
+    // const webhook = webhooks[type];
+    // if (!webhook) return;
 
     switch (type) {
         case 'COMMAND':
@@ -75,7 +76,7 @@ export const logAction = async (type, guild, data) => {
             break;
 
         case 'MESSAGE':
-            embed.setDescription(`**Message ${data.action}**\n**User:** ${data.user.tag}\n**Channel:** <#${data.channel.id}>\n\n**Content:**\n${data.content || 'No content'}`);
+            embed.setDescription(`**Message ${data.action}**\n**User:** ${data.user.tag}\n**Channel:** <#${data.channel.id}>\n\n**Content:** \n${data.content || 'No content'}`);
             if (data.oldContent) {
                 embed.addFields({ name: 'Old Content', value: data.oldContent });
             }

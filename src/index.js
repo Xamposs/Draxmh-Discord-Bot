@@ -11,8 +11,6 @@ import { xrplManager } from './utils/enhancedXrplManager.js';
 import { patchXrplClient } from './utils/xrplPatch.js';
 import { AutomatedAnalysis } from './services/automatedAnalysis.js';
 import PriceTracker from './services/priceTracker.js';
-import { XRPLDexAnalytics } from './services/xrplDexAnalytics.js';
-import { SmartPathAnalyzer } from './services/smartPathAnalyzer.js';
 import { XRPMarketPsychologyAnalyzer } from './services/xrpMarketPsychologyAnalyzer.js';
 import { WhaleMonitor } from './services/whaleMonitor.js';
 import { withDNSRetry } from './utils/networkRetry.js';
@@ -112,15 +110,16 @@ client.once('ready', async () => {
             setTimeout(() => priceTracker.start(), 5000);
         }
 
-        const dexAnalytics = new XRPLDexAnalytics(client, '1307799407000944720');
-        await dexAnalytics.startAutomatedUpdates();
-        restartManager.registerService(dexAnalytics);
-        console.log('DEX Analytics started - Channel: 1307799407000944720');
+        // DELETE THIS ENTIRE BLOCK:
+        // const dexAnalytics = new XRPLDexAnalytics(client, '1307799407000944720');
+        // await dexAnalytics.startAutomatedUpdates();
+        // restartManager.registerService(dexAnalytics);
+        // console.log('DEX Analytics started - Channel: 1307799407000944720');
 
-        const pathAnalyzer = new SmartPathAnalyzer(client, '1308928972033359993');
-        await pathAnalyzer.startAutomatedUpdates();
-        restartManager.registerService(pathAnalyzer);
-        console.log('Smart Path Analysis started - Channel: 1308928972033359993');
+        // const pathAnalyzer = new SmartPathAnalyzer(client, '1308928972033359993');
+        // await pathAnalyzer.startAutomatedUpdates();
+        // restartManager.registerService(pathAnalyzer);
+        // console.log('Smart Path Analysis started - Channel: 1308928972033359993');
 
         const marketAnalyzer = new XRPMarketPsychologyAnalyzer(client, '1325196609012895805');
         await marketAnalyzer.startAutomatedUpdates();
@@ -523,16 +522,16 @@ client.on('warn', warning => {
     console.warn('Discord client warning:', warning);
 });
 
-// Memory monitoring (optional - for debugging)
+// Memory monitoring (add after other imports)
 if (process.env.NODE_ENV === 'development') {
     setInterval(() => {
-        const memUsage = process.memoryUsage();
-        console.log('Memory Usage:', {
-            rss: Math.round(memUsage.rss / 1024 / 1024) + 'MB',
-            heapUsed: Math.round(memUsage.heapUsed / 1024 / 1024) + 'MB',
-            heapTotal: Math.round(memUsage.heapTotal / 1024 / 1024) + 'MB'
-        });
-    }, 60000); // Every minute in development
+        const used = process.memoryUsage();
+        const usage = Math.round(used.heapUsed / 1024 / 1024);
+        if (usage > 3000) { // Alert if over 3GB
+            console.warn(`⚠️ High memory usage: ${usage}MB`);
+        }
+        console.log(`Memory usage: ${usage}MB`);
+    }, 60000); // Check every minute
 }
 
 // Remove the duplicate login call: client.login(config.token);

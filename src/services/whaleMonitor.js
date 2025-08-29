@@ -18,6 +18,8 @@ class WhaleMonitor {
         this.reconnectAttempts = 0;
         this.maxReconnectAttempts = 5;
         this.reconnectDelay = 5000;
+        this.heartbeatInterval = null; // Store heartbeat interval reference
+        this.reconnectTimer = null; // Store reconnect timer reference
         this.setupRetryConfig();
     }
 
@@ -69,6 +71,14 @@ class WhaleMonitor {
         });
     }
 
+    setupHeartbeat() {
+        this.heartbeatInterval = setInterval(() => {
+            if (this.connected && this.ws.readyState === WebSocket.OPEN) {
+                this.ws.ping();
+            }
+        }, 30000);
+    }
+
     handleDisconnect(reason) {
         this.connected = false;
         this.reconnectAttempts++;
@@ -78,20 +88,12 @@ class WhaleMonitor {
             this.reconnectAttempts = 0;
         }
 
-        setTimeout(() => this.connect(), this.reconnectDelay * Math.pow(2, this.reconnectAttempts - 1));
+        this.reconnectTimer = setTimeout(() => this.connect(), this.reconnectDelay * Math.pow(2, this.reconnectAttempts - 1));
     }
 
     rotateEndpoint() {
         this.currentEndpoint = (this.currentEndpoint + 1) % this.endpoints.length;
         console.log(`Rotating to endpoint: ${this.endpoints[this.currentEndpoint]}`);
-    }
-
-    setupHeartbeat() {
-        setInterval(() => {
-            if (this.connected && this.ws.readyState === WebSocket.OPEN) {
-                this.ws.ping();
-            }
-        }, 30000);
     }
 
     subscribe() {
@@ -170,12 +172,24 @@ class WhaleMonitor {
 
     async stop() {
         console.log('Stopping Whale Monitor...');
+        
+        // Clear heartbeat interval
+        if (this.heartbeatInterval) {
+            clearInterval(this.heartbeatInterval);
+            this.heartbeatInterval = null;
+        }
+        
+        // Clear reconnect timer
+        if (this.reconnectTimer) {
+            clearTimeout(this.reconnectTimer);
+            this.reconnectTimer = null;
+        }
+        
+        // Close WebSocket
         if (this.ws) {
             this.ws.close();
         }
-        if (this.reconnectTimer) {
-            clearTimeout(this.reconnectTimer);
-        }
+        
         console.log('Whale Monitor stopped');
     }
 }
