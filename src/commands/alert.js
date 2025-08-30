@@ -1,6 +1,8 @@
-const { EmbedBuilder } = require('discord.js');
+import { EmbedBuilder } from 'discord.js';
 
-module.exports = {
+const alerts = new Map();
+
+export const alertCommand = {
     name: 'alert',
     description: 'Set price alerts for DRX',
     async execute(message, args) {

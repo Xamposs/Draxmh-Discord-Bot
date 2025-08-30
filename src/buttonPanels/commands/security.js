@@ -7,15 +7,15 @@ module.exports = {
         const row = new ActionRowBuilder()
             .addComponents(
                 new ButtonBuilder()
-                    .setCustomId('scam_alert_check')
+                    .setCustomId('security_scam_alert_check')
                     .setLabel('🚨 Scam Alerts')
                     .setStyle(ButtonStyle.Danger),
                 new ButtonBuilder()
-                    .setCustomId('report_check')
+                    .setCustomId('security_report_check')
                     .setLabel('⚠️ Report')
                     .setStyle(ButtonStyle.Primary),
                 new ButtonBuilder()
-                    .setCustomId('suggest_check')
+                    .setCustomId('security_suggest_check')
                     .setLabel('💡 Suggest')
                     .setStyle(ButtonStyle.Success)
             );

@@ -448,3 +448,19 @@ Error: Opening handshake has timed out
     at listOnTimeout (node:internal/timers:608:17)
     at process.processTimers (node:internal/timers:543:7)
 
+2025-08-30T07:45:04.335Z - Unhandled Rejection: ReferenceError: lockCmd is not defined
+2025-08-30T07:45:04.333Z - UNHANDLED_REJECTION: lockCmd is not defined
+ReferenceError: lockCmd is not defined
+    at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:225:5
+    at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+
+2025-08-30T07:52:28.116Z - SERVICE_ERROR_MessageHandler: Cannot read properties of undefined (reading 'user')
+TypeError: Cannot read properties of undefined (reading 'user')
+    at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/commands/announcepanel.js:24:47
+    at _Collection.filter (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\@discordjs\collection\dist\index.js:207:11)
+    at Object.execute (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/commands/announcepanel.js:22:14)
+    at Client.<anonymous> (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:305:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+

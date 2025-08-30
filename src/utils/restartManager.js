@@ -10,6 +10,7 @@ class RestartManager {
         this.restartTimer = null;
         this.isRestarting = false;
         this.services = new Set();
+        this.serviceRegistry = new Map(); // Add service registry
         this.restartInterval = 48 * 60 * 60 * 1000; // 48 hours
         this.gracefulShutdownTimeout = 30000; // 30 seconds
         this.restartStateFile = path.join(__dirname, '../../restart-state.json');
@@ -93,13 +94,23 @@ class RestartManager {
         }
     }
 
-    registerService(service) {
+    registerService(service, name = null) {
         this.services.add(service);
+        if (name) {
+            this.serviceRegistry.set(name, service);
+        }
         console.log(`Registered service for graceful shutdown: ${service.constructor.name}`);
     }
 
-    unregisterService(service) {
+    getService(name) {
+        return this.serviceRegistry.get(name) || null;
+    }
+
+    unregisterService(service, name = null) {
         this.services.delete(service);
+        if (name) {
+            this.serviceRegistry.delete(name);
+        }
     }
 
     setupSignalHandlers() {

@@ -1,6 +1,6 @@
-const { PermissionFlagsBits } = require('discord.js');
+import { PermissionFlagsBits } from 'discord.js';
 
-module.exports = {
+export const analysisCommand = {
     name: 'analysis',
     description: 'Toggle automated analysis system',
     async execute(message, args) {
@@ -14,7 +14,11 @@ module.exports = {
         }
 
         const analysis = message.client.analysisSystem;
-        const response = analysis.toggle(state);
-        message.reply(response);
+        if (analysis) {
+            const response = analysis.toggle(state);
+            message.reply(response);
+        } else {
+            message.reply('Analysis system not available.');
+        }
     }
 };

@@ -90,7 +90,10 @@ export const logAction = async (type, guild, data) => {
             break;
 
         case 'CHANNEL':
-            embed.setDescription(`**Channel ${data.action}**\n**Channel:** ${data.channel.name}\n**Moderator:** ${data.moderator.tag}`);
+            const moderatorInfo = data.moderator ? 
+                (data.moderator.tag || `${data.moderator.username || 'Unknown'}#${data.moderator.discriminator || '0000'}`) : 
+                'System';
+            embed.setDescription(`**Channel ${data.action}**\n**Channel:** ${data.channel.name}\n**Moderator:** ${moderatorInfo}`);
             if (data.action === 'Updated') {
                 if (data.oldName !== data.newName) {
                     embed.addFields(

@@ -153,12 +153,15 @@ async function handleInformationButtons(interaction, client) {
 
 async function handleSecurityButtons(interaction, client) {
     switch (interaction.customId) {
+        case 'security_scam_alert_check':
         case 'scam_alert_check':
             await handleScamAlert(interaction);
             break;
+        case 'security_report_check':
         case 'report_check':
             await createReportTicket(interaction);
             break;
+        case 'security_suggest_check':
         case 'suggest_check':
             await handleSuggestion(interaction);
             break;
@@ -168,28 +171,92 @@ async function handleSecurityButtons(interaction, client) {
 async function handleScamAlert(interaction) {
     const embed = new EmbedBuilder()
         .setTitle('🚨 DRX Security Alert System')
+        .setDescription('**Stay protected with our comprehensive security guide**')
         .setColor('#ff0000')
+        .setThumbnail('https://i.imgur.com/your-drx-logo.png') // Add your DRX logo URL
         .addFields(
-            { name: '⚠️ Known Scam Projects', value: 
-                '• DraxMH Token (Fake)\n' +
-                '• DraxMH Inu\n' +
-                '• DraxMH AI\n' +
-                '• DraxMH 2.0'
+            { 
+                name: '⚠️ Known Scam Projects & Red Flags', 
+                value: 
+                    '```diff\n' +
+                    '- DraxMH Token (Fake)\n' +
+                    '- DraxMH Inu\n' +
+                    '- DraxMH AI\n' +
+                    '- DraxMH 2.0\n' +
+                    '- Any "DraxMH" variations\n' +
+                    '```\n' +
+                    '🔍 **Warning Signs:**\n' +
+                    '• Promises of guaranteed returns\n' +
+                    '• Urgent "limited time" offers\n' +
+                    '• Requests for private keys/seeds\n' +
+                    '• Unofficial social media accounts',
+                inline: false
             },
-            { name: '✅ Official DRX Contract', value: 
-                '`rUWUQhB2pcgCbjJxaBv9GrS1hr9pCUGXxX`\n' +
-                'Always verify on Sologenic DEX'
+            { 
+                name: '✅ Official DRX Information', 
+                value: 
+                    '**Contract Address:**\n' +
+                    '```\nrUWUQhB2pcgCbjJxaBv9GrS1hr9pCUGXxX\n```\n' +
+                    '**Official Platforms:**\n' +
+                    '🌐 Website: [drxdefi.app](https://drxdefi.app/)\n' +
+                    '🌐 Website: [cryptodraxmh.gr](https://www.cryptodraxmh.gr/)\n' +
+                    '💱 DEX: [Sologenic DEX](https://sologenic.org/trade?market=DRX%2BrUWUQhB2pcgCbjJxaBv9GrS1hr9pCUGXxX%2F524C555344000000000000000000000000000000%2BrMxCKbEDwqr76QuheSUMdEGf4B9xJ8m5De)\n' +
+                    '📱 Twitter: [@Crypto_draxmi](https://x.com/Crypto_draxmi?t=Yinx4sJQEFj0DBuV4jNf5A&s=09)\n' +
+                    '💬 Discord: This server only',
+                inline: false
             },
-            { name: '🛡️ How to Stay Safe', value: 
-                '• Only use official website: draxmh.io\n' +
-                '• Trade only on Sologenic DEX\n' +
-                '• Never share private keys\n' +
-                '• Team never DMs first'
+            { 
+                name: '🛡️ Security Best Practices', 
+                value: 
+                    '**Essential Security Rules:**\n' +
+                    '🔐 Never share private keys or seed phrases\n' +
+                    '👥 Team members never DM first\n' +
+                    '🔍 Always verify contract addresses\n' +
+                    '💰 Only trade on official platforms\n' +
+                    '📧 Be wary of phishing emails\n' +
+                    '🔗 Check URLs carefully (official sites only)',
+                inline: false
+            },
+            { 
+                name: '🚨 If You\'ve Been Scammed', 
+                value: 
+                    '**Immediate Actions:**\n' +
+                    '1️⃣ Stop all transactions immediately\n' +
+                    '2️⃣ Change all passwords & 2FA\n' +
+                    '3️⃣ Report to our moderators\n' +
+                    '4️⃣ Document everything (screenshots)\n' +
+                    '5️⃣ Report to relevant authorities',
+                inline: false
             }
         )
+        .setFooter({ 
+            text: 'DRX Security Team • Stay vigilant, stay safe', 
+            iconURL: 'https://i.imgur.com/shield-icon.png' // Add shield icon URL
+        })
         .setTimestamp();
 
-    await interaction.reply({ embeds: [embed], ephemeral: true });
+    // Create action buttons for additional resources
+    const actionRow = new ActionRowBuilder()
+        .addComponents(
+            new ButtonBuilder()
+                .setLabel('🔍 Verify Contract')
+                .setStyle(ButtonStyle.Link)
+                .setURL('https://sologenic.org/trade?market=DRX%2BrUWUQhB2pcgCbjJxaBv9GrS1hr9pCUGXxX%2F524C555344000000000000000000000000000000%2BrMxCKbEDwqr76QuheSUMdEGf4B9xJ8m5De'),
+            new ButtonBuilder()
+                .setLabel('🌐 Official Website')
+                .setStyle(ButtonStyle.Link)
+                .setURL('https://drxdefi.app/'),
+            new ButtonBuilder()
+                .setLabel('📞 Report Scam')
+                .setCustomId('security_report_scam')
+                .setStyle(ButtonStyle.Danger)
+        );
+
+    await interaction.reply({ 
+        embeds: [embed], 
+        components: [actionRow],
+        ephemeral: true 
+    });
 }
 
 async function createReportTicket(interaction) {

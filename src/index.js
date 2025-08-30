@@ -1,13 +1,11 @@
-import { Client, GatewayIntentBits, Collection, PermissionsBitField, ModalBuilder, TextInputBuilder, TextInputStyle, ActionRowBuilder } from 'discord.js';
+import { Client, GatewayIntentBits, Collection, PermissionsBitField, ModalBuilder, TextInputBuilder, TextInputStyle, ActionRowBuilder, EmbedBuilder } from 'discord.js';
 import { PermissionFlagsBits } from 'discord-api-types/v10';
 import { toggleCommand, isCommandEnabled, commandToggles } from './utils/commandManager.js';
 import dotenv from 'dotenv';
-
 // Import enhanced systems
 import { errorHandler } from './utils/errorHandler.js';
 import { restartManager } from './utils/restartManager.js';
 import { xrplManager } from './utils/enhancedXrplManager.js';
-
 import { patchXrplClient } from './utils/xrplPatch.js';
 import { AutomatedAnalysis } from './services/automatedAnalysis.js';
 import PriceTracker from './services/priceTracker.js';
@@ -15,6 +13,7 @@ import { XRPMarketPsychologyAnalyzer } from './services/xrpMarketPsychologyAnaly
 import { WhaleMonitor } from './services/whaleMonitor.js';
 import { withDNSRetry } from './utils/networkRetry.js';
 import { startScamAlerts } from './services/autoScamAlert.js';
+import { EnhancedScamProtection } from './services/enhancedScamProtection.js';
 import { startChartService } from './services/tradingViewChart.js';
 import { wsManager } from './services/websocketManager.js';
 import { announcePanelCmd } from './commands/announcepanel.js';
@@ -27,6 +26,7 @@ import {
 } from './buttonPanels/handlers/buttonHandler.js';
 import { exec } from 'child_process';
 import fs from 'fs';
+import { Client as XrplClient } from 'xrpl';
 
 // Apply XRPL client patches
 patchXrplClient();
@@ -80,6 +80,11 @@ const fetchPriceWithRetry = async (attempts = 3) => {
 
 const whaleMonitor = new WhaleMonitor(client);
 
+// Initialize the enhanced scam protection
+const scamProtection = new EnhancedScamProtection(client);
+
+// Register the scam protection service with a name
+restartManager.registerService(scamProtection, 'enhancedScamProtection');
 const prefix = '!';
 client.commands = new Collection();
 
@@ -96,6 +101,9 @@ client.once('ready', async () => {
         
         // Register services with RestartManager for graceful shutdown
         restartManager.registerService(whaleMonitor);
+        
+        // Register with restart manager for cleanup
+        restartManager.registerService(scamProtection);
 
         startScamAlerts(client);
         console.log('Scam Alert System initialized - Channel: 1307095704858005545');
@@ -110,16 +118,12 @@ client.once('ready', async () => {
             setTimeout(() => priceTracker.start(), 5000);
         }
 
-        // DELETE THIS ENTIRE BLOCK:
-        // const dexAnalytics = new XRPLDexAnalytics(client, '1307799407000944720');
-        // await dexAnalytics.startAutomatedUpdates();
-        // restartManager.registerService(dexAnalytics);
-        // console.log('DEX Analytics started - Channel: 1307799407000944720');
-
-        // const pathAnalyzer = new SmartPathAnalyzer(client, '1308928972033359993');
-        // await pathAnalyzer.startAutomatedUpdates();
-        // restartManager.registerService(pathAnalyzer);
-        // console.log('Smart Path Analysis started - Channel: 1308928972033359993');
+        // Uncomment and enable DEX Analytics
+        const { XRPLDexAnalytics } = await import('./services/xrplDexAnalytics.js');
+        const dexAnalytics = new XRPLDexAnalytics(client, '1307799407000944720');
+        await dexAnalytics.startAutomatedUpdates();
+        restartManager.registerService(dexAnalytics);
+        console.log('DEX Analytics started - Channel: 1307799407000944720');
 
         const marketAnalyzer = new XRPMarketPsychologyAnalyzer(client, '1325196609012895805');
         await marketAnalyzer.startAutomatedUpdates();
@@ -175,9 +179,7 @@ import { AuditLogEvent } from 'discord.js';
 
 // Import all commands
 import { priceCommand } from './commands/price.js';
-import { toggleCmd } from './commands/toggle.js';
 import { stakeStatsCommand } from './commands/stake-stats.js';
-import { slowmodeCommand as slowmodeCmdHandler } from './commands/slowmode.js';
 import { dappsCommand } from './commands/dapps.js';
 import { swapCommand } from './commands/swap.js';
 import { commandsCmd } from './commands/commands.js';
@@ -208,16 +210,19 @@ import { spamCmd } from './commands/spam.js';
 import { raidCmd } from './commands/raid.js';
 import { volumeCommand } from './commands/volume.js';
 import walletCommand from './commands/wallet.js';
+import { alertCommand } from './commands/alert.js';
+import { analysisCommand } from './commands/analysis.js';
 
 const commands = [
-    priceCommand, toggleCmd, stakeStatsCommand, volumeCommand,
+    priceCommand, stakeStatsCommand, volumeCommand,
     dappsCommand, swapCommand, commandsCmd, clearCmd,
     lockCmd, unlockCmd, infoCmd, moonCmd,
     draxmhCmd, socialstatsCmd, announceCmd, moderationCmd,
     scamAlertCmd, reportCmd, suggestCmd, banCommand,
     kickCommand, muteCommand, roleCommand, slowmodeCommand,
     warningsCommand, historyCommand, casesCommand, verificationCmd,
-    phishingCmd, spamCmd, raidCmd, backupCmd, announcePanelCmd
+    phishingCmd, spamCmd, raidCmd, backupCmd, announcePanelCmd,
+    alertCommand, analysisCommand
 ];
 
 // Register commands with memory-efficient approach
@@ -230,18 +235,60 @@ commands.forEach(cmd => {
 client.commands.set(connectCommand.name, connectCommand);
 client.commands.set(walletCommand.name, walletCommand);
 
+// SINGLE CONSOLIDATED MESSAGE HANDLER
 client.on('messageCreate', async message => {
     if (message.author.bot) return;
     
     try {
-        // Handle spam detection with proper error handling
-        await handleSpamDetection(message);
+        // 1. Enhanced scam protection
+        await scamProtection.handleMessage(message);
         
-        // Handle phishing detection with proper error handling
+        // 2. Security checks
+        await handleSpamDetection(message);
         await handlePhishingDetection(message);
         
-        // Note: handleRaidProtection is for member joins, not messages
+        // 3. Additional scam detection with analysis
+        const scamProtectionService = restartManager.getService('enhancedScamProtection');
+        if (scamProtectionService) {
+            const analysis = await scamProtectionService.analyzeMessage(message);
+            
+            if (analysis.isScam) {
+                await message.delete().catch(console.error);
+                
+                await scamProtectionService.quarantineUser(
+                    message.author,
+                    'Automatic scam detection',
+                    analysis
+                );
+                
+                const alertChannel = client.channels.cache.get('1307095704858005545');
+                if (alertChannel) {
+                    const embed = new EmbedBuilder()
+                        .setTitle('🚨 Scam Message Detected & Removed')
+                        .setColor('#ff0000')
+                        .addFields(
+                            { name: 'User', value: `${message.author.tag} (${message.author.id})` },
+                            { name: 'Channel', value: `${message.channel}` },
+                            { name: 'Confidence', value: `${(analysis.confidence * 100).toFixed(1)}%` },
+                            { name: 'Risk Factors', value: analysis.reasons?.join('\n') || 'None' },
+                            { name: 'Message Content', value: `\`\`\`${message.content.slice(0, 500)}\`\`\`` }
+                        )
+                        .setTimestamp();
+                    
+                    await alertChannel.send({ embeds: [embed] });
+                }
+                return; // Don't process commands for scam messages
+            }
+        }
         
+        // 4. Message logging
+        await logAction('MESSAGE_CREATE', message.guild, {
+            user: message.author,
+            channel: message.channel,
+            content: message.content.substring(0, 100)
+        });
+        
+        // 5. Command processing
         if (!message.content.startsWith(prefix)) return;
         
         const args = message.content.slice(prefix.length).trim().split(/ +/);
@@ -255,7 +302,8 @@ client.on('messageCreate', async message => {
             return message.reply('This command is currently disabled.');
         }
         
-        await command.execute(message, args);
+        await command.execute(message, args, client);
+        
     } catch (error) {
         console.error('Message handling error:', error);
         errorHandler.handleServiceError('MessageHandler', error);
@@ -265,261 +313,6 @@ client.on('messageCreate', async message => {
             console.error('Failed to send error reply:', replyError);
         }
     }
-});
-
-client.on('messageCreate', async message => {
-    if (message.author.bot) return;
-    
-    try {
-        await logAction('MESSAGE_CREATE', message.guild, {
-            user: message.author,
-            channel: message.channel,
-            content: message.content.substring(0, 100) // Limit content length to prevent memory issues
-        });
-    } catch (error) {
-        console.error('Logging error:', error);
-        errorHandler.handleServiceError('MessageLogger', error);
-    }
-});
-
-import guildMemberAddHandler from './events/guildMemberAdd.js';
-
-// Define MEMBER_ROLE globally
-const MEMBER_ROLE = '1252360773229875220';
-
-// Guild member add event
-client.on('guildMemberAdd', async member => {
-    try {
-        console.log(`New member joined: ${member.user.tag}`);
-        
-        // Handle raid protection
-        await handleRaidProtection(member);
-        
-        // Get the role
-        const role = member.guild.roles.cache.get(MEMBER_ROLE);
-        if (!role) {
-            console.error(`Role with ID ${MEMBER_ROLE} not found`);
-            return;
-        }
-        
-        // Add the role to the member
-        await member.roles.add(role);
-        console.log(`Added role ${role.name} to ${member.user.tag}`);
-        
-        // Log the action
-        await logAction('MEMBER', member.guild, {
-            action: 'JOIN',
-            user: member.user,
-            roleAdded: role.name
-        });
-        
-    } catch (error) {
-        console.error('Error in guildMemberAdd event:', error);
-        errorHandler.handleServiceError('GuildMemberAdd', error);
-        try {
-            await logAction('ERROR', member.guild, {
-                event: 'guildMemberAdd',
-                user: member.user,
-                error: error.message
-            });
-        } catch (logError) {
-            console.error('Failed to log error:', logError);
-        }
-    }
-});
-
-const invites = new Map();
-
-client.on('inviteCreate', async invite => {
-    try {
-        const guildInvites = await invite.guild.invites.fetch();
-        invites.set(invite.guild.id, guildInvites);
-        
-        await logAction('INVITE', invite.guild, {
-            action: 'CREATE',
-            code: invite.code,
-            inviter: invite.inviter,
-            channel: invite.channel,
-            maxUses: invite.maxUses,
-            expiresAt: invite.expiresAt
-        });
-    } catch (error) {
-        console.error('Error tracking invite creation:', error);
-    }
-});
-
-client.on('guildMemberAdd', async member => {
-    try {
-        const guildInvites = await member.guild.invites.fetch();
-        const oldInvites = invites.get(member.guild.id) || new Map();
-        
-        const usedInvite = guildInvites.find(invite => {
-            const oldInvite = oldInvites.get(invite.code);
-            return oldInvite && invite.uses > oldInvite.uses;
-        });
-        
-        invites.set(member.guild.id, guildInvites);
-        
-        if (usedInvite) {
-            await logAction('MEMBER', member.guild, {
-                action: 'JOIN_INVITE',
-                user: member.user,
-                inviteCode: usedInvite.code,
-                inviter: usedInvite.inviter
-            });
-        }
-    } catch (error) {
-        console.error('Error tracking invite usage:', error);
-    }
-});
-
-client.on('channelUpdate', async (oldChannel, newChannel) => {
-    try {
-        await logAction('CHANNEL', newChannel.guild, {
-            action: 'UPDATE',
-            channel: newChannel,
-            changes: {
-                name: oldChannel.name !== newChannel.name ? { old: oldChannel.name, new: newChannel.name } : null,
-                topic: oldChannel.topic !== newChannel.topic ? { old: oldChannel.topic, new: newChannel.topic } : null
-            }
-        });
-    } catch (error) {
-        console.error('Error logging channel update:', error);
-    }
-});
-
-client.on('channelCreate', async channel => {
-    try {
-        await logAction('CHANNEL', channel.guild, {
-            action: 'CREATE',
-            channel: channel,
-            type: channel.type
-        });
-    } catch (error) {
-        console.error('Error logging channel create:', error);
-    }
-});
-
-client.on('channelDelete', async channel => {
-    try {
-        await logAction('CHANNEL', channel.guild, {
-            action: 'DELETE',
-            channel: channel,
-            type: channel.type
-        });
-    } catch (error) {
-        console.error('Error logging channel delete:', error);
-    }
-});
-
-async function getAuditLogExecutor(guild, actionType) {
-    try {
-        const auditLogs = await guild.fetchAuditLogs({
-            type: actionType,
-            limit: 1
-        });
-        
-        const latestLog = auditLogs.entries.first();
-        if (latestLog && Date.now() - latestLog.createdTimestamp < 5000) {
-            return latestLog.executor;
-        }
-        
-        return null;
-    } catch (error) {
-        console.error('Error fetching audit logs:', error);
-        return null;
-    }
-}
-
-client.on('interactionCreate', async interaction => {
-    try {
-        if (interaction.isButton()) {
-            const buttonId = interaction.customId;
-            
-            // Handle different button categories
-            if (buttonId.startsWith('trading_')) {
-                await handleTradingButtons(interaction);
-            } else if (buttonId.startsWith('info_')) {
-                await handleInformationButtons(interaction);
-            } else if (buttonId.startsWith('security_')) {
-                await handleSecurityButtons(interaction);
-            } else if (buttonId.startsWith('fun_')) {
-                await handleFunButtons(interaction);
-            }
-        }
-        
-        if (interaction.isModalSubmit()) {
-            if (interaction.customId === 'announcement_modal') {
-                const title = interaction.fields.getTextInputValue('announcement_title');
-                const content = interaction.fields.getTextInputValue('announcement_content');
-                const channelId = interaction.fields.getTextInputValue('announcement_channel');
-                
-                const channel = interaction.guild.channels.cache.get(channelId);
-                if (!channel) {
-                    return interaction.reply({ content: 'Invalid channel ID!', ephemeral: true });
-                }
-                
-                const embed = {
-                    title: title,
-                    description: content,
-                    color: 0x00ff00,
-                    timestamp: new Date().toISOString(),
-                    footer: {
-                        text: `Announced by ${interaction.user.tag}`,
-                        icon_url: interaction.user.displayAvatarURL()
-                    }
-                };
-                
-                await channel.send({ embeds: [embed] });
-                await interaction.reply({ content: 'Announcement sent successfully!', ephemeral: true });
-                
-                await logAction('MOD', interaction.guild, {
-                    action: 'ANNOUNCEMENT_SENT',
-                    mod: interaction.user,
-                    target: channel,
-                    reason: title
-                });
-            }
-        }
-        
-        if (interaction.isCommand()) {
-            const command = client.commands.get(interaction.commandName);
-            if (!command) return;
-            
-            // Check if command is enabled
-            if (!isCommandEnabled(interaction.commandName)) {
-                return interaction.reply({ content: 'This command is currently disabled.', ephemeral: true });
-            }
-            
-            try {
-                await command.execute(interaction);
-            } catch (error) {
-                console.error('Slash command execution error:', error);
-                const errorMessage = 'There was an error executing this command!';
-                
-                if (interaction.replied || interaction.deferred) {
-                    await interaction.followUp({ content: errorMessage, ephemeral: true });
-                } else {
-                    await interaction.reply({ content: errorMessage, ephemeral: true });
-                }
-            }
-        }
-    } catch (error) {
-        console.error('Interaction handling error:', error);
-    }
-});
-
-// Single login call at the end
-client.login(process.env.DISCORD_TOKEN);
-
-// Enhanced error handling for Discord client
-client.on('error', error => {
-    console.error('Discord client error:', error);
-    errorHandler.handleServiceError('DiscordClient', error);
-});
-
-client.on('warn', warning => {
-    console.warn('Discord client warning:', warning);
 });
 
 // Memory monitoring (add after other imports)
@@ -534,4 +327,5 @@ if (process.env.NODE_ENV === 'development') {
     }, 60000); // Check every minute
 }
 
-// Remove the duplicate login call: client.login(config.token);
+// Login the client
+client.login(process.env.DISCORD_TOKEN);
