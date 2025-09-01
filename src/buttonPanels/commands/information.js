@@ -1,6 +1,6 @@
-const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
+import { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } from 'discord.js';
 
-module.exports = {
+export const information = {
     name: 'information',
     description: 'Display information commands panel',
     async execute(message) {
@@ -8,26 +8,26 @@ module.exports = {
             .addComponents(
                 new ButtonBuilder()
                     .setCustomId('info_check')
-                    .setLabel('ℹ️ Token Info')
+                    .setLabel('ℹ️ Info')
                     .setStyle(ButtonStyle.Primary),
                 new ButtonBuilder()
                     .setCustomId('dapps_check')
-                    .setLabel('🔗 DApps')
-                    .setStyle(ButtonStyle.Primary),
+                    .setLabel('📱 DApps')
+                    .setStyle(ButtonStyle.Success),
                 new ButtonBuilder()
                     .setCustomId('stake_stats_check')
-                    .setLabel('🌟 Staking Stats')
-                    .setStyle(ButtonStyle.Primary)
+                    .setLabel('📊 Stake Stats')
+                    .setStyle(ButtonStyle.Secondary)
             );
 
         const embed = new EmbedBuilder()
-            .setTitle('ℹ️ DRX Information Center')
-            .setColor('#00ff00')
+            .setTitle('ℹ️ Information Center')
+            .setColor('#0099ff')
             .setDescription('Click the buttons below to access information!')
             .addFields(
-                { name: 'ℹ️ Token Info', value: 'View DRX token information' },
-                { name: '🔗 DApps', value: 'Check DRX ecosystem dApps' },
-                { name: '🌟 Staking Stats', value: 'View staking statistics' }
+                { name: 'ℹ️ Info', value: 'Get general information' },
+                { name: '📱 DApps', value: 'View available DApps' },
+                { name: '📊 Stake Stats', value: 'Check staking statistics' }
             );
 
         await message.channel.send({

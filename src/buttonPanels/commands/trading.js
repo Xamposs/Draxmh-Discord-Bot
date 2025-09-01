@@ -1,7 +1,7 @@
 
-const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
+import { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } from 'discord.js';
 
-module.exports = {
+export const trading = {
     name: 'trading',
     description: 'Display trading commands panel',
     async execute(message) {
@@ -9,26 +9,26 @@ module.exports = {
             .addComponents(
                 new ButtonBuilder()
                     .setCustomId('price_check')
-                    .setLabel('💰 Price Check')
-                    .setStyle(ButtonStyle.Primary),
+                    .setLabel('💰 Price')
+                    .setStyle(ButtonStyle.Success),
                 new ButtonBuilder()
                     .setCustomId('volume_check')
-                    .setLabel('📊 Volume')
+                    .setLabel('📈 Volume')
                     .setStyle(ButtonStyle.Primary),
                 new ButtonBuilder()
                     .setCustomId('swap_tokens')
                     .setLabel('🔄 Swap')
-                    .setStyle(ButtonStyle.Primary)
+                    .setStyle(ButtonStyle.Secondary)
             );
 
         const embed = new EmbedBuilder()
-            .setTitle('🚀 DRX Trading Commands')
+            .setTitle('📊 Trading Center')
             .setColor('#00ff00')
             .setDescription('Click the buttons below to access trading features!')
             .addFields(
-                { name: '💰 Price Check', value: 'Check current DRX price' },
-                { name: '📊 Volume', value: 'View trading volume statistics' },
-                { name: '🔄 Swap', value: 'Swap tokens on Sologenic DEX' }
+                { name: '💰 Price', value: 'Check current token prices' },
+                { name: '📈 Volume', value: 'View trading volume' },
+                { name: '🔄 Swap', value: 'Swap tokens' }
             );
 
         await message.channel.send({

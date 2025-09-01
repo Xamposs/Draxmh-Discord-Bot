@@ -1,6 +1,6 @@
 import { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } from 'discord.js';
 
-export const security = {
+export const securityCmd = {
     name: 'security',
     description: 'Display security commands panel',
     async execute(message) {

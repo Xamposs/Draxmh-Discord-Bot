@@ -18,6 +18,7 @@ import { startChartService } from './services/tradingViewChart.js';
 import { wsManager } from './services/websocketManager.js';
 import { announcePanelCmd } from './commands/announcepanel.js';
 import connectCommand from './commands/connect.js';
+import guildMemberAddHandler from './events/guildMemberAdd.js';
 import { 
     handleTradingButtons, 
     handleInformationButtons, 
@@ -27,6 +28,7 @@ import {
 import { exec } from 'child_process';
 import fs from 'fs';
 import { Client as XrplClient } from 'xrpl';
+import { SmartPathAnalyzer } from './services/smartPathAnalyzer.js';
 
 // Apply XRPL client patches
 patchXrplClient();
@@ -165,6 +167,13 @@ client.once('ready', async () => {
         
         console.log('All services initialized and registered for graceful shutdown');
 
+        // Add SmartPathAnalyzer initialization here
+        const { SmartPathAnalyzer } = await import('./services/smartPathAnalyzer.js');
+        const smartPathAnalyzer = new SmartPathAnalyzer(client, '1308928972033359993');
+        await smartPathAnalyzer.start();
+        restartManager.registerService(smartPathAnalyzer, 'SmartPathAnalyzer');
+        console.log('Smart Path Analysis started - Channel: 1308928972033359993');
+
     } catch (error) {
         console.error('Service initialization error:', error);
     }
@@ -212,6 +221,7 @@ import { volumeCommand } from './commands/volume.js';
 import walletCommand from './commands/wallet.js';
 import { alertCommand } from './commands/alert.js';
 import { analysisCommand } from './commands/analysis.js';
+import { securityCmd } from './commands/security.js';
 
 const commands = [
     priceCommand, stakeStatsCommand, volumeCommand,
@@ -222,7 +232,7 @@ const commands = [
     kickCommand, muteCommand, roleCommand, slowmodeCommand,
     warningsCommand, historyCommand, casesCommand, verificationCmd,
     phishingCmd, spamCmd, raidCmd, backupCmd, announcePanelCmd,
-    alertCommand, analysisCommand
+    alertCommand, analysisCommand, securityCmd
 ];
 
 // Register commands with memory-efficient approach
@@ -235,7 +245,7 @@ commands.forEach(cmd => {
 client.commands.set(connectCommand.name, connectCommand);
 client.commands.set(walletCommand.name, walletCommand);
 
-// SINGLE CONSOLIDATED MESSAGE HANDLER
+// Welcome button
 client.on('messageCreate', async message => {
     if (message.author.bot) return;
     
@@ -302,8 +312,68 @@ client.on('messageCreate', async message => {
             return message.reply('This command is currently disabled.');
         }
         
+        // Log the command usage
+        await logAction('COMMAND', message.guild, {
+            command: commandName,
+            user: message.author,
+            channel: message.channel
+        });
+        
         await command.execute(message, args, client);
         
+        // Remove these lines from messageCreate handler:
+        // Fun buttons
+        // if (['moon_check', 'draxmh_check'].includes(customId)) {
+        //     await handleFunButtons(interaction, client);
+        // }
+        
+        // Welcome button
+        // if (customId === 'accept_rules') {
+        //     try {
+        //         const VERIFIED_MEMBER_ROLE = '1252360773229875220'; // Your role ID
+        //         
+        //         const member = interaction.member;
+        //         const verifiedRole = interaction.guild.roles.cache.get(VERIFIED_MEMBER_ROLE);
+        //         
+        //         // Check if user already has the verified role
+        //         if (member.roles.cache.has(VERIFIED_MEMBER_ROLE)) {
+        //             return await interaction.reply({
+        //                 content: '✅ You have already accepted the rules and have full server access!',
+        //                 ephemeral: true
+        //             });
+        //         }
+        //         
+        //         if (verifiedRole) {
+        //             // Add verified member role (in case auto-assignment failed)
+        //             await member.roles.add(verifiedRole);
+        //             console.log(`Confirmed verified access for ${member.user.tag}`);
+        //             
+        //             await interaction.reply({
+        //                 content: '🎉 **Welcome to the DRX Community!**\n\n✅ **Rules accepted successfully!**\n🚀 **You have full access to all server channels!**\n\nEnjoy your stay and welcome to the family!',
+        //                 ephemeral: true
+        //             });
+        //             
+        //             // Log the action
+        //             await logAction('MEMBER', interaction.guild, {
+        //                 action: 'Rules Accepted',
+        //                 member: member.user,
+        //                 details: 'Member accepted rules and confirmed verified access'
+        //             });
+        //         } else {
+        //             await interaction.reply({
+        //                 content: '❌ Verified member role not found. Please contact an administrator.',
+        //                 ephemeral: true
+        //             });
+        //         }
+        //         
+        //     } catch (error) {
+        //         console.error('Error handling accept_rules:', error);
+        //         await interaction.reply({
+        //             content: '❌ There was an error processing your request. Please contact a moderator.',
+        //             ephemeral: true
+        //         });
+        //     }
+        // }
     } catch (error) {
         console.error('Message handling error:', error);
         errorHandler.handleServiceError('MessageHandler', error);
@@ -315,7 +385,95 @@ client.on('messageCreate', async message => {
     }
 });
 
-// Memory monitoring (add after other imports)
+// Add guildMemberAdd event handler
+client.on('guildMemberAdd', guildMemberAddHandler);
+
+// Add interactionCreate event handler for button interactions
+client.on('interactionCreate', async interaction => {
+    if (!interaction.isButton()) return;
+    
+    const { customId } = interaction;
+    console.log(`Button interaction received: ${customId}`);
+    
+    try {
+        // Welcome button
+        if (customId === 'accept_rules') {
+            const VERIFIED_MEMBER_ROLE = '1252360773229875220'; // Your role ID
+            
+            const member = interaction.member;
+            const verifiedRole = interaction.guild.roles.cache.get(VERIFIED_MEMBER_ROLE);
+            
+            // Check if user already has the verified role
+            if (member.roles.cache.has(VERIFIED_MEMBER_ROLE)) {
+                return await interaction.reply({
+                    content: '✅ You have already accepted the rules and have full server access!',
+                    ephemeral: true
+                });
+            }
+            
+            if (verifiedRole) {
+                // Add verified member role (in case auto-assignment failed)
+                await member.roles.add(verifiedRole);
+                console.log(`Confirmed verified access for ${member.user.tag}`);
+                
+                await interaction.reply({
+                    content: '🎉 **Welcome to the DRX Community!**\n\n✅ **Rules accepted successfully!**\n🚀 **You have full access to all server channels!**\n\nEnjoy your stay and welcome to the family!',
+                    ephemeral: true
+                });
+                
+                // Log the action
+                await logAction('MEMBER', interaction.guild, {
+                    action: 'Rules Accepted',
+                    member: member.user,
+                    details: 'Member accepted rules and confirmed verified access'
+                });
+            } else {
+                await interaction.reply({
+                    content: '❌ Verified member role not found. Please contact an administrator.',
+                    ephemeral: true
+                });
+            }
+        }
+        
+        // Fun buttons
+        if (['moon_check', 'draxmh_check'].includes(customId)) {
+            console.log('Handling fun buttons');
+            await handleFunButtons(interaction, client);
+        }
+        
+        // Trading buttons - handle both prefixed and non-prefixed IDs
+        if (customId.startsWith('trading_') || ['price_check', 'volume_check', 'swap_tokens'].includes(customId)) {
+            console.log('Handling trading buttons');
+            await handleTradingButtons(interaction, client);
+        }
+        
+        if (customId.startsWith('info_')) {
+            console.log('Handling info buttons');
+            await handleInformationButtons(interaction, client);
+        }
+        
+        // Security buttons - handle both prefixed and non-prefixed IDs
+        if (customId.startsWith('security_') || ['scam_alert_check', 'report_check', 'suggest_check'].includes(customId)) {
+            console.log('Routing to security buttons handler');
+            await handleSecurityButtons(interaction, client);
+        }
+        
+    } catch (error) {
+        console.error('Error handling button interaction:', error);
+        if (!interaction.replied && !interaction.deferred) {
+            try {
+                await interaction.reply({
+                    content: '❌ There was an error processing your request. Please contact a moderator.',
+                    ephemeral: true
+                });
+            } catch (replyError) {
+                console.error('Failed to send error reply:', replyError);
+            }
+        }
+    }
+});
+
+// Memory monitoring section
 if (process.env.NODE_ENV === 'development') {
     setInterval(() => {
         const used = process.memoryUsage();
@@ -329,3 +487,9 @@ if (process.env.NODE_ENV === 'development') {
 
 // Login the client
 client.login(process.env.DISCORD_TOKEN);
+
+// Remove these lines that are incorrectly placed after login:
+// const smartPathAnalyzer = new SmartPathAnalyzer(client, '1308928972033359993');
+// await smartPathAnalyzer.start();
+// restartManager.registerService(smartPathAnalyzer, 'SmartPathAnalyzer');
+// console.log('Smart Path Analysis started - Channel: 1308928972033359993');

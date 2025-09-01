@@ -6,7 +6,8 @@ class WhaleMonitor {
     constructor(discordClient) {
         this.discordClient = discordClient;
         this.channelId = '1307089076498993265';
-        this.minAmount = 100000;
+        this.minAmount = 100000; // 100k XRP minimum
+        this.maxAmount = 50000000; // 50M XRP maximum (reasonable whale limit)
         this.endpoints = [
             'wss://xrplcluster.com',
             'wss://s2.ripple.com',
@@ -18,8 +19,8 @@ class WhaleMonitor {
         this.reconnectAttempts = 0;
         this.maxReconnectAttempts = 5;
         this.reconnectDelay = 5000;
-        this.heartbeatInterval = null; // Store heartbeat interval reference
-        this.reconnectTimer = null; // Store reconnect timer reference
+        this.heartbeatInterval = null;
+        this.reconnectTimer = null;
         this.setupRetryConfig();
     }
 
@@ -134,31 +135,81 @@ class WhaleMonitor {
     }
 
     isValidTransaction(tx) {
-        return tx?.TransactionType === 'Payment' && 
-               tx?.Amount && 
-               this.getTransactionAmount(tx) >= this.minAmount;
+        if (!tx?.TransactionType || tx.TransactionType !== 'Payment') return false;
+        if (!tx?.Amount || !tx?.Account || !tx?.Destination) return false;
+        
+        // Skip self-transfers
+        if (tx.Account === tx.Destination) return false;
+        
+        const amount = this.getTransactionAmount(tx);
+        
+        // Validate amount is within reasonable whale range
+        if (isNaN(amount) || amount < this.minAmount || amount > this.maxAmount) return false;
+        
+        // Skip transactions with suspicious patterns (test transactions often have repeated digits)
+        const amountStr = amount.toString();
+        if (this.isSuspiciousAmount(amountStr)) return false;
+        
+        return true;
+    }
+
+    isSuspiciousAmount(amountStr) {
+        // Check for repeated patterns that indicate test transactions
+        const repeatedPattern = /(\d)\1{6,}/; // 7+ repeated digits
+        const ninesPattern = /9{8,}/; // 8+ consecutive 9s
+        const zerosPattern = /0{8,}/; // 8+ consecutive 0s
+        
+        return repeatedPattern.test(amountStr) || ninesPattern.test(amountStr) || zerosPattern.test(amountStr);
     }
 
     getTransactionAmount(tx) {
         const amount = tx.Amount;
-        return typeof amount === 'string' ? 
-            Number(amount) / 1000000 : 
-            Number(amount.value || 0);
+        if (typeof amount === 'string') {
+            return Number(amount) / 1000000; // Convert drops to XRP
+        } else if (amount?.value) {
+            return Number(amount.value);
+        }
+        return 0;
     }
 
     async processTransaction(tx) {
         try {
             const amount = this.getTransactionAmount(tx);
             
+            // Format amount with appropriate precision
+            const formattedAmount = amount >= 1000000 
+                ? `${(amount / 1000000).toFixed(2)}M` 
+                : amount.toLocaleString(undefined, { maximumFractionDigits: 0 });
+            
             const embed = new EmbedBuilder()
                 .setTitle('🐋 Whale Transaction Detected')
                 .setColor('#ff9900')
                 .addFields(
-                    { name: '💰 Amount', value: `${amount.toLocaleString()} XRP`, inline: true },
-                    { name: '📤 From', value: `\`${tx.Account}\``, inline: true },
-                    { name: '📥 To', value: `\`${tx.Destination}\``, inline: true },
-                    { name: '🔍 Transaction Details', value: `[View on XRPSCAN](https://xrpscan.com/tx/${tx.hash})` }
+                    { 
+                        name: '💰 Amount', 
+                        value: `**${formattedAmount} XRP**\n*≈ $${(amount * 0.5).toLocaleString(undefined, { maximumFractionDigits: 0 })}*`, 
+                        inline: true 
+                    },
+                    { 
+                        name: '📤 From', 
+                        value: `\`${tx.Account.substring(0, 8)}...${tx.Account.substring(tx.Account.length - 8)}\``, 
+                        inline: true 
+                    },
+                    { 
+                        name: '📥 To', 
+                        value: `\`${tx.Destination.substring(0, 8)}...${tx.Destination.substring(tx.Destination.length - 8)}\``, 
+                        inline: true 
+                    }
                 )
+                .addFields({
+                    name: '🔍 Transaction Details', 
+                    value: `[View on XRPSCAN](https://xrpscan.com/tx/${tx.hash})`,
+                    inline: false
+                })
+                .setFooter({ 
+                    text: `Whale Alert • ${amount >= 1000000 ? '🚨 MEGA WHALE' : amount >= 500000 ? '🐋 BIG WHALE' : '🐳 WHALE'}`,
+                    iconURL: 'https://cryptologos.cc/logos/xrp-xrp-logo.png'
+                })
                 .setTimestamp();
 
             const channel = this.discordClient.channels.cache.get(this.channelId);

@@ -1,6 +1,6 @@
-const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
+import { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } from 'discord.js';
 
-module.exports = {
+export const fun = {
     name: 'fun',
     description: 'Display fun commands panel',
     async execute(message) {
@@ -8,21 +8,21 @@ module.exports = {
             .addComponents(
                 new ButtonBuilder()
                     .setCustomId('moon_check')
-                    .setLabel('🚀 To The Moon')
+                    .setLabel('🌙 Moon')
                     .setStyle(ButtonStyle.Primary),
                 new ButtonBuilder()
                     .setCustomId('draxmh_check')
-                    .setLabel('💫 DRAXMH Power')
+                    .setLabel('🔥 DRAXMH')
                     .setStyle(ButtonStyle.Success)
             );
 
         const embed = new EmbedBuilder()
-            .setTitle('🎮 DRX Fun Zone')
-            .setColor('#00ff00')
-            .setDescription('Click the buttons below to have some fun!')
+            .setTitle('🎉 Fun Commands')
+            .setColor('#ffff00')
+            .setDescription('Click the buttons below to access fun features!')
             .addFields(
-                { name: '🚀 To The Moon', value: 'Send DRX to the moon!' },
-                { name: '💫 DRAXMH Power', value: 'Show the power of DRX' }
+                { name: '🌙 Moon', value: 'Check moon phase and predictions' },
+                { name: '🔥 DRAXMH', value: 'Get DRAXMH information' }
             );
 
         await message.channel.send({

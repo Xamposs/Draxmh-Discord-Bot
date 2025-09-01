@@ -1,25 +1,6 @@
 {
   "knownScams": [],
   "suspiciousUsers": [],
-  "userReputations": [
-    [
-      "1123146239953883186",
-      {
-        "messages": [
-          {
-            "content": "!announcepanel",
-            "timestamp": 1756540523881
-          },
-          {
-            "content": "!announcepanel",
-            "timestamp": 1756540523881
-          }
-        ],
-        "reports": 0,
-        "joinDate": "2023-06-27T07:02:10.653Z",
-        "reputation": 0
-      }
-    ]
-  ],
-  "lastUpdated": 1756544715803
+  "userReputations": [],
+  "lastUpdated": 1756746527600
 }

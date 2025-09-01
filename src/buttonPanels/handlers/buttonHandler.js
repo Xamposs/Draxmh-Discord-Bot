@@ -56,12 +56,15 @@ async function handleTradingButtons(interaction, client) {
             title: '🔄 DRX Swap',
             async execute() {
                 return new EmbedBuilder()
-                    .setTitle('🔄 DRX Swap Preview')
+                    .setTitle('🔄 DRX Swap')
                     .setColor('#00ff00')
+                    .setDescription('🚀 **Access the official DRX Swap platform!**\n\n💰 Swap tokens securely on our official platform')
                     .addFields(
-                        { name: '🔗 Swap Now', value: `[Click to open Sologenic DEX](https://sologenic.org/trade?market=DRX%2BrUWUQhB2pcgCbjJxaBv9GrS1hr9pCUGXxX%2FXRP&network=mainnet)` }
+                        { name: '🔗 Official DRX Swap', value: '[**Click here to access DRX Swap**](https://drxdefi.app/)', inline: false },
+                        { name: '🔒 Security', value: 'Always use the official link for safe trading', inline: false }
                     )
-                    .setFooter({ text: 'Swap on Sologenic DEX' });
+                    .setFooter({ text: 'Official DRX Swap Platform' })
+                    .setTimestamp();
             }
         }
     };
@@ -116,55 +119,120 @@ async function handleInformationButtons(interaction, client) {
 
     const commandData = commands[interaction.customId];
     if (commandData) {
-        try {
-            const embed = new EmbedBuilder()
-                .setTitle('Information Panel')
-                .setColor('#0099ff');
+        const embed = new EmbedBuilder()
+            .setTitle('Information Panel')
+            .setColor('#0099ff');
 
-            if (commandData && commandData.title) {
-                embed.setTitle(commandData.title);
-            }
-
-            if (commandData && commandData.fields) {
-                embed.addFields(commandData.fields);
-            }
-
-            embed.setTimestamp()
-                .setFooter({ text: 'DRX Information' });
-            await interaction.reply({ 
-                embeds: [embed], 
-                ephemeral: true 
-            });
-
-            setTimeout(async () => {
-                if (interaction.replied) {
-                    await interaction.deleteReply().catch(console.error);
-                }
-            }, 15000);
-        } catch (error) {
-            console.error(error);
-            await interaction.reply({ 
-                content: 'There was an error executing this command!', 
-                ephemeral: true 
-            });
+        if (commandData && commandData.title) {
+            embed.setTitle(commandData.title);
         }
+
+        if (commandData && commandData.fields) {
+            embed.addFields(commandData.fields);
+        }
+
+        embed.setTimestamp()
+            .setFooter({ text: 'DRX Information' });
+        
+        await interaction.reply({ 
+            embeds: [embed], 
+            ephemeral: true 
+        });
+
+        setTimeout(async () => {
+            if (interaction.replied) {
+                await interaction.deleteReply().catch(console.error);
+            }
+        }, 15000);
     }
 }
 
 async function handleSecurityButtons(interaction, client) {
-    switch (interaction.customId) {
-        case 'security_scam_alert_check':
-        case 'scam_alert_check':
-            await handleScamAlert(interaction);
-            break;
-        case 'security_report_check':
-        case 'report_check':
-            await createReportTicket(interaction);
-            break;
-        case 'security_suggest_check':
-        case 'suggest_check':
-            await handleSuggestion(interaction);
-            break;
+    console.log(`Security button clicked: ${interaction.customId}`);
+    
+    try {
+        switch (interaction.customId) {
+            case 'security_scam_alert_check':
+            case 'scam_alert_check':
+                console.log('Handling scam alert button');
+                await handleScamAlert(interaction);
+                break;
+            case 'security_report_check':
+            case 'report_check':
+                console.log('Handling report button');
+                await createReportTicket(interaction);
+                break;
+            case 'security_suggest_check':
+            case 'suggest_check':
+                console.log('Handling suggest button');
+                await handleSuggestion(interaction);
+                break;
+            default:
+                console.log(`Unhandled security button: ${interaction.customId}`);
+                if (!interaction.replied && !interaction.deferred) {
+                    await interaction.reply({
+                        content: '❌ This button is not currently available. Please try again later.',
+                        ephemeral: true
+                    });
+                }
+                break;
+        }
+    } catch (error) {
+        console.error('Error in handleSecurityButtons:', error);
+        if (!interaction.replied && !interaction.deferred) {
+            try {
+                await interaction.reply({
+                    content: '❌ There was an error processing your request. Please try again.',
+                    ephemeral: true
+                });
+            } catch (replyError) {
+                console.error('Failed to send error reply:', replyError);
+            }
+        }
+    }
+}
+
+async function handleSuggestion(interaction) {
+    try {
+        console.log('handleSuggestion called for user:', interaction.user.tag);
+        
+        if (interaction.replied || interaction.deferred) {
+            console.log('Interaction already replied/deferred, skipping');
+            return;
+        }
+        
+        const embed = new EmbedBuilder()
+            .setTitle('💡 Submit a Suggestion')
+            .setColor('#00ff00')
+            .setDescription('Thank you for wanting to contribute to our community! 🎉\n\nTo submit your suggestion, please use the `!suggest` command in the <#1252357439807033374> channel.')
+            .addFields(
+                { name: '📝 How to Use', value: '`!suggest <your suggestion here>`', inline: false },
+                { name: '💡 Example', value: '`!suggest Add more trading features to the bot`', inline: false },
+                { name: '📋 Note', value: 'Your suggestion will be reviewed by our moderation team and considered for implementation.', inline: false }
+            )
+            .setFooter({ text: 'DRX Community Suggestions' })
+            .setTimestamp();
+
+        await interaction.reply({ 
+            embeds: [embed],
+            ephemeral: true 
+        });
+        
+        console.log('Suggestion response sent successfully');
+        
+    } catch (error) {
+        console.error('Error in handleSuggestion:', error);
+        
+        if (!interaction.replied && !interaction.deferred) {
+            try {
+                await interaction.reply({ 
+                    content: '❌ There was an error processing your suggestion request. Please try using the `!suggest` command directly in the suggestions channel.',
+                    ephemeral: true 
+                });
+            } catch (replyError) {
+                console.error('Failed to send error reply:', replyError);
+            }
+        }
     }
 }
 
@@ -200,7 +268,7 @@ async function handleScamAlert(interaction) {
                     '**Official Platforms:**\n' +
                     '🌐 Website: [drxdefi.app](https://drxdefi.app/)\n' +
                     '🌐 Website: [cryptodraxmh.gr](https://www.cryptodraxmh.gr/)\n' +
-                    '💱 DEX: [Sologenic DEX](https://sologenic.org/trade?market=DRX%2BrUWUQhB2pcgCbjJxaBv9GrS1hr9pCUGXxX%2F524C555344000000000000000000000000000000%2BrMxCKbEDwqr76QuheSUMdEGf4B9xJ8m5De)\n' +
+                    '💱 DEX: [Sologenic DEX](https://sologenic.org/trade?market=DRX%2BrUWUQhB2pcgCbjJxaBv9GrS1hr9pCUGXxX%2F524C55534400000000000000000000000000000%2BrMxCKbEDwqr76QuheSUMdEGf4B9xJ8m5De)\n' +
                     '📱 Twitter: [@Crypto_draxmi](https://x.com/Crypto_draxmi?t=Yinx4sJQEFj0DBuV4jNf5A&s=09)\n' +
                     '💬 Discord: This server only',
                 inline: false
@@ -329,31 +397,6 @@ async function createReportTicket(interaction) {
         console.error('Error creating report:', error);
         await interaction.reply({ 
             content: 'There was an error creating your report ticket. Please contact a moderator.',
-            ephemeral: true 
-        });
-    }
-}
-
-async function handleSuggestion(interaction) {
-    try {
-        const embed = new EmbedBuilder()
-            .setTitle('💡 New Suggestion')
-            .setColor('#00ff00')
-            .setDescription('Please type your suggestion in suggestions channel.\nFormat: `!suggest <your suggestion>`')
-            .addFields(
-                { name: 'Example', value: '!suggest Add more trading features' },
-                { name: 'Note', value: 'Your suggestion will be reviewed by moderators' }
-            )
-            .setTimestamp();
-
-        await interaction.reply({ 
-            embeds: [embed],
-            ephemeral: true 
-        });
-    } catch (error) {
-        console.error('Error handling suggestion:', error);
-        await interaction.reply({ 
-            content: 'There was an error processing your suggestion. Please try again.',
             ephemeral: true 
         });
     }

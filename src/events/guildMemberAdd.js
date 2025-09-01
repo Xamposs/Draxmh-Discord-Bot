@@ -1,59 +1,47 @@
-import { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } from 'discord.js';
+import { EmbedBuilder } from 'discord.js';
 
 const RULES_CHANNEL = '1252209254908170343';
 const WELCOME_CHANNEL = '1252359290132500632';
-const MEMBER_ROLE = '1252360773229875220'; // Fixed: removed 'Y121' prefix
+const VERIFIED_MEMBER_ROLE = '1252360773229875220'; // Your role ID
+const TICKET_CHANNEL = '1324865431185657906';
 
-// Define the roles to automatically assign here
-const AUTO_ROLES = [
-    '1252360773229875220'  // Draxmh role ID
-];
+// Auto-assign this role to new members
+const AUTO_ROLES = ['1252360773229875220'];
 
 export default async (member) => {
+    console.log(`New member joined: ${member.user.tag}`);
     try {
-        // Auto-role assignment
+        // Auto-assign the verified member role
         for (const roleId of AUTO_ROLES) {
-            try {
-                const role = member.guild.roles.cache.get(roleId);
-                if (role && member.guild.members.me.roles.highest.position > role.position) {
-                    await member.roles.add(role);
-                    console.log(`Auto-assigned role ${role.name} to ${member.user.tag}`);
-                }
-            } catch (roleError) {
-                console.error(`Failed to assign role ${roleId} to ${member.user.tag}:`, roleError);
+            const role = member.guild.roles.cache.get(roleId);
+            if (role) {
+                await member.roles.add(role);
+                console.log(`Auto-assigned role ${role.name} to ${member.user.tag}`);
             }
         }
-
+        
         // Welcome message
         const welcomeEmbed = new EmbedBuilder()
             .setTitle(`Welcome to ${member.guild.name}!`)
-            .setDescription(`Hey ${member}, welcome to the official DRX community!\n\nPlease read our rules in <#${RULES_CHANNEL}> and click the button below to accept them.`)
-            .setColor('#00ff00')
+            .setDescription(`Hey ${member}, welcome to the official DRX community!\n\n🎉 **You now have full access to the server!**`)
+            .setColor('#ff6b35')
             .setThumbnail(member.user.displayAvatarURL())
             .addFields(
                 { name: '📜 Rules', value: '1. Be respectful to all members\n2. No spam or self-promotion\n3. Use appropriate channels\n4. No NSFW content\n5. Follow Discord TOS' },
-                { name: '🎯 Next Steps', value: '• Accept the rules below\n• Get your roles\n• Introduce yourself\n• Join the community!' }
+                { name: '🎫 Need Help?', value: `If you have any issues or questions, you can open a support ticket in <#${TICKET_CHANNEL}>` }
             )
-            .setImage('https://your-banner-image.png');
-
-        const row = new ActionRowBuilder()
-            .addComponents(
-                new ButtonBuilder()
-                    .setCustomId('accept_rules')
-                    .setLabel('Accept Rules')
-                    .setStyle(ButtonStyle.Success)
-                    .setEmoji('✅')
-            );
+            .setFooter({ text: 'Welcome to the DRX community!' });
 
         const welcomeChannel = member.guild.channels.cache.get(WELCOME_CHANNEL);
+        console.log('Welcome channel found:', !!welcomeChannel);
         if (welcomeChannel) {
             welcomeChannel.send({ 
-                content: `Welcome ${member}!`,
-                embeds: [welcomeEmbed],
-                components: [row]
+                content: `🎉 Welcome ${member}!`,
+                embeds: [welcomeEmbed]
             });
         }
+        
     } catch (error) {
-        console.error('Member join error:', error);
+        console.error('Error in guildMemberAdd:', error);
     }
 };
