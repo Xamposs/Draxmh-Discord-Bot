@@ -66,10 +66,6 @@ export const logAction = async (type, guild, data) => {
         .setTimestamp()
         .setFooter({ text: guild.name, iconURL: guild.iconURL() });
 
-    // DELETE THESE TWO LINES (they're duplicates):
-    // const webhook = webhooks[type];
-    // if (!webhook) return;
-
     switch (type) {
         case 'COMMAND':
             embed.setDescription(`**Command Used:** \`${data.command}\`\n**User:** ${data.user.tag}\n**Channel:** <#${data.channel.id}>`);

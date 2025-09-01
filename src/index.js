@@ -388,6 +388,101 @@ client.on('messageCreate', async message => {
 // Add guildMemberAdd event handler
 client.on('guildMemberAdd', guildMemberAddHandler);
 
+// Add role change event handlers for automatic logging
+client.on('guildMemberUpdate', async (oldMember, newMember) => {
+    try {
+        // Check if roles changed
+        const oldRoles = oldMember.roles.cache;
+        const newRoles = newMember.roles.cache;
+        
+        // Find added roles
+        const addedRoles = newRoles.filter(role => !oldRoles.has(role.id));
+        const removedRoles = oldRoles.filter(role => !newRoles.has(role.id));
+        
+        // Log added roles
+        for (const role of addedRoles.values()) {
+            await logAction('ROLE', newMember.guild, {
+                action: 'Added',
+                role: role,
+                member: newMember.user,
+                moderator: { tag: 'System/Unknown' }
+            });
+        }
+        
+        // Log removed roles
+        for (const role of removedRoles.values()) {
+            await logAction('ROLE', newMember.guild, {
+                action: 'Removed',
+                role: role,
+                member: newMember.user,
+                moderator: { tag: 'System/Unknown' }
+            });
+        }
+    } catch (error) {
+        console.error('Error logging role changes:', error);
+    }
+});
+
+// Log role creation
+client.on('roleCreate', async (role) => {
+    try {
+        await logAction('ROLE', role.guild, {
+            action: 'Created',
+            role: role,
+            moderator: { tag: 'System' }
+        });
+    } catch (error) {
+        console.error('Error logging role creation:', error);
+    }
+});
+
+// Log role deletion
+client.on('roleDelete', async (role) => {
+    try {
+        await logAction('ROLE', role.guild, {
+            action: 'Deleted',
+            role: role,
+            moderator: { tag: 'System' }
+        });
+    } catch (error) {
+        console.error('Error logging role deletion:', error);
+    }
+});
+
+// Log role updates
+client.on('roleUpdate', async (oldRole, newRole) => {
+    try {
+        let changes = [];
+        
+        if (oldRole.name !== newRole.name) {
+            changes.push(`Name: ${oldRole.name} → ${newRole.name}`);
+        }
+        if (oldRole.color !== newRole.color) {
+            changes.push(`Color: ${oldRole.hexColor} → ${newRole.hexColor}`);
+        }
+        if (oldRole.permissions.bitfield !== newRole.permissions.bitfield) {
+            changes.push('Permissions updated');
+        }
+        if (oldRole.hoist !== newRole.hoist) {
+            changes.push(`Hoist: ${oldRole.hoist} → ${newRole.hoist}`);
+        }
+        if (oldRole.mentionable !== newRole.mentionable) {
+            changes.push(`Mentionable: ${oldRole.mentionable} → ${newRole.mentionable}`);
+        }
+        
+        if (changes.length > 0) {
+            await logAction('ROLE', newRole.guild, {
+                action: 'Updated',
+                role: newRole,
+                moderator: { tag: 'System' },
+                changes: changes.join(', ')
+            });
+        }
+    } catch (error) {
+        console.error('Error logging role update:', error);
+    }
+});
+
 // Add interactionCreate event handler for button interactions
 client.on('interactionCreate', async interaction => {
     if (!interaction.isButton()) return;

@@ -2174,3 +2174,11 @@
 2025-09-01T17:32:43: No webhook configured for type: MESSAGE_CREATE
 2025-09-01T18:01:13: Smart Path Analysis channel 1308928972033359993 not found
 2025-09-01T19:28:47: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-01T20:28:47: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-01T21:28:47: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-01T22:23:56: ⚠️ Data source failed, trying next... timeout of 5000ms exceeded
+2025-09-01T22:23:56: ⚠️ Data source failed, trying next... timeout of 5000ms exceeded
+2025-09-01T22:23:56: ⚠️ Data source failed, trying next... timeout of 5000ms exceeded
+2025-09-01T22:28:47: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-01T23:28:32: No webhook configured for type: MESSAGE_CREATE
+2025-09-01T23:29:38: No webhook configured for type: MESSAGE_CREATE
