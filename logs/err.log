@@ -2182,3 +2182,42 @@
 2025-09-01T22:28:47: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
 2025-09-01T23:28:32: No webhook configured for type: MESSAGE_CREATE
 2025-09-01T23:29:38: No webhook configured for type: MESSAGE_CREATE
+2025-09-02T00:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-02T01:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-02T02:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-02T03:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-02T04:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-02T05:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-02T06:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-02T07:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-02T08:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-02T09:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-02T10:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-02T11:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-02T12:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-02T13:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-02T14:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-02T14:25:59: ⚠️ Data source failed, trying next... timeout of 5000ms exceeded
+2025-09-02T14:25:59: ⚠️ Data source failed, trying next... timeout of 5000ms exceeded
+2025-09-02T14:25:59: ⚠️ Data source failed, trying next... timeout of 5000ms exceeded
+2025-09-02T15:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-02T16:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-02T17:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-02T18:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-02T19:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-02T20:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-02T21:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-02T22:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-02T23:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-03T00:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-03T01:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-03T02:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-03T03:25:50: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-03T04:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-03T05:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-03T06:25:50: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-03T07:25:49: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-03T08:25:50: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-03T09:25:50: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-03T10:25:50: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-03T11:25:50: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com

@@ -19,6 +19,8 @@ import { wsManager } from './services/websocketManager.js';
 import { announcePanelCmd } from './commands/announcepanel.js';
 import connectCommand from './commands/connect.js';
 import guildMemberAddHandler from './events/guildMemberAdd.js';
+import telegramService from './services/telegramService.js';
+import { config } from './config.js';
 import { 
     handleTradingButtons, 
     handleInformationButtons, 
@@ -291,7 +293,20 @@ client.on('messageCreate', async message => {
             }
         }
         
-        // 4. Message logging
+        // 4. Telegram Bridge - Check if message is from announcement channel
+        const isAnnouncementChannel = config.discord.announcementChannelNames.includes(message.channel.name.toLowerCase()) ||
+                                    config.discord.announcementChannelIds?.includes(message.channel.id);
+        
+        if (isAnnouncementChannel) {
+            try {
+                await telegramService.forwardDiscordMessage(message);
+                console.log(`✅ Message forwarded to Telegram from #${message.channel.name}`);
+            } catch (error) {
+                console.error('❌ Failed to forward message to Telegram:', error);
+            }
+        }
+        
+        // 5. Message logging
         await logAction('MESSAGE_CREATE', message.guild, {
             user: message.author,
             channel: message.channel,
@@ -582,9 +597,3 @@ if (process.env.NODE_ENV === 'development') {
 
 // Login the client
 client.login(process.env.DISCORD_TOKEN);
-
-// Remove these lines that are incorrectly placed after login:
-// const smartPathAnalyzer = new SmartPathAnalyzer(client, '1308928972033359993');
-// await smartPathAnalyzer.start();
-// restartManager.registerService(smartPathAnalyzer, 'SmartPathAnalyzer');
-// console.log('Smart Path Analysis started - Channel: 1308928972033359993');
