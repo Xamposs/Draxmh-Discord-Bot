@@ -2221,3 +2221,436 @@
 2025-09-03T09:25:50: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
 2025-09-03T10:25:50: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
 2025-09-03T11:25:50: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-03T18:40:31: (node:15460) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-03T18:40:31: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-03T19:40:28: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-03T20:40:28: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-03T21:40:28: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-03T21:45:04: Channel with ID 1412857950673834115 not found
+2025-09-03T21:45:05: (node:70456) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-03T21:45:05: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-03T21:59:26: SyntaxError: Identifier 'OrderbookVisualizationService' has already been declared
+2025-09-03T21:59:26:     at compileSourceTextModule (node:internal/modules/esm/utils:351:16)
+2025-09-03T21:59:26:     at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+2025-09-03T21:59:26:     at #translate (node:internal/modules/esm/loader:546:12)
+2025-09-03T21:59:26:     at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:593:27)
+2025-09-03T21:59:26:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-03T21:59:26:     at async #link (node:internal/modules/esm/module_job:173:19)
+2025-09-03T22:03:33: Error during service initialization: TypeError: whaleMonitor.initialize is not a function
+2025-09-03T22:03:33:     at Client.<anonymous> (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:110:28)
+2025-09-03T22:03:33:     at Object.onceWrapper (node:events:622:26)
+2025-09-03T22:03:33:     at Client.emit (node:events:507:28)
+2025-09-03T22:03:33:     at WebSocketManager.triggerClientReady (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\discord.js\src\client\websocket\WebSocketManager.js:386:21)
+2025-09-03T22:03:33:     at WebSocketManager.checkShardsReady (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\discord.js\src\client\websocket\WebSocketManager.js:368:10)
+2025-09-03T22:03:33:     at WebSocketShard.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\discord.js\src\client\websocket\WebSocketManager.js:198:16)
+2025-09-03T22:03:33:     at WebSocketShard.emit (node:events:507:28)
+2025-09-03T22:03:33:     at WebSocketShard.checkReady (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\discord.js\src\client\websocket\WebSocketShard.js:184:12)
+2025-09-03T22:03:33:     at WebSocketShard.gotGuild (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\discord.js\src\client\websocket\WebSocketShard.js:158:10)
+2025-09-03T22:03:33:     at WebSocketManager.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\discord.js\src\client\websocket\WebSocketManager.js:238:15)
+2025-09-03T22:03:33:     at WebSocketManager.emit (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\@vladfrangu\async_event_emitter\dist\index.cjs:287:31)
+2025-09-03T22:03:33:     at WebSocketShard.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\@discordjs\ws\dist\index.js:1190:51)
+2025-09-03T22:03:33:     at WebSocketShard.emit (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\@vladfrangu\async_event_emitter\dist\index.cjs:287:31)
+2025-09-03T22:03:33:     at WebSocketShard.onMessage (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\@discordjs\ws\dist\index.js:1007:14)
+2025-09-03T22:03:33:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-03T22:03:33: (node:69056) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-03T22:03:33: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-03T22:03:54: (node:69056) Warning: Supplying "ephemeral" for interaction response options is deprecated. Utilize flags instead.
+2025-09-03T22:11:22: Error during service initialization: TypeError: whaleMonitor.initialize is not a function
+2025-09-03T22:11:22:     at Client.<anonymous> (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:110:28)
+2025-09-03T22:11:22:     at Object.onceWrapper (node:events:622:26)
+2025-09-03T22:11:22:     at Client.emit (node:events:507:28)
+2025-09-03T22:11:22:     at WebSocketManager.triggerClientReady (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\discord.js\src\client\websocket\WebSocketManager.js:386:21)
+2025-09-03T22:11:22:     at WebSocketManager.checkShardsReady (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\discord.js\src\client\websocket\WebSocketManager.js:368:10)
+2025-09-03T22:11:22:     at WebSocketShard.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\discord.js\src\client\websocket\WebSocketManager.js:198:16)
+2025-09-03T22:11:22:     at WebSocketShard.emit (node:events:507:28)
+2025-09-03T22:11:22:     at WebSocketShard.checkReady (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\discord.js\src\client\websocket\WebSocketShard.js:184:12)
+2025-09-03T22:11:22:     at WebSocketShard.gotGuild (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\discord.js\src\client\websocket\WebSocketShard.js:158:10)
+2025-09-03T22:11:22:     at WebSocketManager.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\discord.js\src\client\websocket\WebSocketManager.js:238:15)
+2025-09-03T22:11:22:     at WebSocketManager.emit (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\@vladfrangu\async_event_emitter\dist\index.cjs:287:31)
+2025-09-03T22:11:22:     at WebSocketShard.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\@discordjs\ws\dist\index.js:1190:51)
+2025-09-03T22:11:22:     at WebSocketShard.emit (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\@vladfrangu\async_event_emitter\dist\index.cjs:287:31)
+2025-09-03T22:11:22:     at WebSocketShard.onMessage (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\@discordjs\ws\dist\index.js:1007:14)
+2025-09-03T22:11:22:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-03T22:11:22: (node:17232) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-03T22:11:22: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-03T22:24:02: file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:35
+2025-09-03T22:24:02: import XRPLDexAnalytics from './services/xrplDexAnalytics.js';
+2025-09-03T22:24:02:        ^^^^^^^^^^^^^^^^
+2025-09-03T22:24:02: SyntaxError: The requested module './services/xrplDexAnalytics.js' does not provide an export named 'default'
+2025-09-03T22:24:02:     at #_instantiate (node:internal/modules/esm/module_job:249:21)
+2025-09-03T22:24:02:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-03T22:24:02:     at async ModuleJob.run (node:internal/modules/esm/module_job:357:5)
+2025-09-03T22:24:02:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+2025-09-03T22:29:42: (node:34580) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-03T22:29:42: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-03T22:30:00: No webhook configured for type: MESSAGE_CREATE
+2025-09-03T23:01:31: (node:69160) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-03T23:01:31: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-03T23:19:27: (node:28560) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-03T23:19:27: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-03T23:26:35: (node:28560) Warning: Supplying "ephemeral" for interaction response options is deprecated. Utilize flags instead.
+2025-09-03T23:27:02: No webhook configured for type: MESSAGE_CREATE
+2025-09-03T23:27:04: No webhook configured for type: MESSAGE_CREATE
+2025-09-03T23:27:36: No webhook configured for type: MESSAGE_CREATE
+2025-09-03T23:29:23: No webhook configured for type: MESSAGE_CREATE
+2025-09-03T23:29:29: No webhook configured for type: MESSAGE_CREATE
+2025-09-03T23:33:11: (node:66396) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-03T23:33:11: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-03T23:33:23: No webhook configured for type: MESSAGE_CREATE
+2025-09-04T00:33:11: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-04T00:33:22: Error fetching Coinbase price: timeout of 5000ms exceeded
+2025-09-04T01:33:11: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-04T02:33:11: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-04T03:33:11: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-04T04:33:11: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-04T05:33:11: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-04T06:33:11: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-04T06:43:21: Error fetching Bitstamp orderbook: AxiosError: timeout of 5000ms exceeded
+2025-09-04T06:43:21:     at RedirectableRequest.handleRequestTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/node_modules/axios/lib/adapters/http.js:657:16)
+2025-09-04T06:43:21:     at RedirectableRequest.emit (node:events:507:28)
+2025-09-04T06:43:21:     at Timeout.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\follow-redirects\index.js:221:12)
+2025-09-04T06:43:21:     at listOnTimeout (node:internal/timers:608:17)
+2025-09-04T06:43:21:     at process.processTimers (node:internal/timers:543:7)
+2025-09-04T06:43:21:     at Axios.request (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/node_modules/axios/lib/core/Axios.js:45:41)
+2025-09-04T06:43:21:     at runNextTicks (node:internal/process/task_queues:65:5)
+2025-09-04T06:43:21:     at listOnTimeout (node:internal/timers:569:9)
+2025-09-04T06:43:21:     at process.processTimers (node:internal/timers:543:7)
+2025-09-04T06:43:21:     at async LiveOrderbookService.fetchBitstampOrderbook (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:257:30)
+2025-09-04T06:43:21:     at async Promise.allSettled (index 1)
+2025-09-04T06:43:21:     at async LiveOrderbookService.fetchOrderbookData (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:186:49)
+2025-09-04T06:43:21:     at async LiveOrderbookService.createOrderbookEmbed (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:66:35)
+2025-09-04T06:43:21:     at async Promise.all (index 0)
+2025-09-04T06:43:21:     at async LiveOrderbookService.sendUpdate (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:51:45)
+2025-09-04T06:43:21:     at async Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:30:21) {
+2025-09-04T06:43:21:   code: 'ECONNABORTED',
+2025-09-04T06:43:21:   config: {
+2025-09-04T06:43:21:     transitional: {
+2025-09-04T06:43:21:       silentJSONParsing: true,
+2025-09-04T06:43:21:       forcedJSONParsing: true,
+2025-09-04T06:43:21:       clarifyTimeoutError: false
+2025-09-04T06:43:21:     },
+2025-09-04T06:43:21:     adapter: [ 'xhr', 'http', 'fetch' ],
+2025-09-04T06:43:21:     transformRequest: [ [Function: transformRequest] ],
+2025-09-04T06:43:21:     transformResponse: [ [Function: transformResponse] ],
+2025-09-04T06:43:21:     timeout: 5000,
+2025-09-04T06:43:21:     xsrfCookieName: 'XSRF-TOKEN',
+2025-09-04T06:43:21:     xsrfHeaderName: 'X-XSRF-TOKEN',
+2025-09-04T06:43:21:     maxContentLength: -1,
+2025-09-04T06:43:21:     maxBodyLength: -1,
+2025-09-04T06:43:21:     env: { FormData: [Function [FormData]], Blob: [class Blob] },
+2025-09-04T06:43:21:     validateStatus: [Function: validateStatus],
+2025-09-04T06:43:21:     headers: Object [AxiosHeaders] {
+2025-09-04T06:43:21:       Accept: 'application/json, text/plain, */*',
+2025-09-04T06:43:21:       'Content-Type': undefined,
+2025-09-04T06:43:21:       'User-Agent': 'axios/1.11.0',
+2025-09-04T06:43:21:       'Accept-Encoding': 'gzip, compress, deflate, br'
+2025-09-04T06:43:21:     },
+2025-09-04T06:43:21:     method: 'get',
+2025-09-04T06:43:21:     url: 'https://www.bitstamp.net/api/v2/order_book/xrpusd/',
+2025-09-04T06:43:21:     allowAbsoluteUrls: true,
+2025-09-04T06:43:21:     data: undefined
+2025-09-04T06:43:21:   },
+2025-09-04T06:43:21:   request: <ref *1> Writable {
+2025-09-04T06:43:21:     _events: {
+2025-09-04T06:43:21:       close: undefined,
+2025-09-04T06:43:21:       error: [Function: handleRequestError],
+2025-09-04T06:43:21:       prefinish: undefined,
+2025-09-04T06:43:21:       finish: undefined,
+2025-09-04T06:43:21:       drain: undefined,
+2025-09-04T06:43:21:       response: [Function: handleResponse],
+2025-09-04T06:43:21:       socket: [Array],
+2025-09-04T06:43:21:       timeout: undefined,
+2025-09-04T06:43:21:       abort: undefined
+2025-09-04T06:43:21:     },
+2025-09-04T06:43:21:     _writableState: WritableState {
+2025-09-04T06:43:21:       highWaterMark: 16384,
+2025-09-04T06:43:21:       length: 0,
+2025-09-04T06:43:21:       corked: 0,
+2025-09-04T06:43:21:       onwrite: [Function: bound onwrite],
+2025-09-04T06:43:21:       writelen: 0,
+2025-09-04T06:43:21:       bufferedIndex: 0,
+2025-09-04T06:43:21:       pendingcb: 0,
+2025-09-04T06:43:21:       Symbol(kState): 17580812,
+2025-09-04T06:43:21:       Symbol(kBufferedValue): null
+2025-09-04T06:43:21:     },
+2025-09-04T06:43:21:     _maxListeners: undefined,
+2025-09-04T06:43:21:     _options: {
+2025-09-04T06:43:21:       maxRedirects: 21,
+2025-09-04T06:43:21:       maxBodyLength: Infinity,
+2025-09-04T06:43:21:       protocol: 'https:',
+2025-09-04T06:43:21:       path: '/api/v2/order_book/xrpusd/',
+2025-09-04T06:43:21:       method: 'GET',
+2025-09-04T06:43:21:       headers: [Object: null prototype],
+2025-09-04T06:43:21:       agents: [Object],
+2025-09-04T06:43:21:       auth: undefined,
+2025-09-04T06:43:21:       family: undefined,
+2025-09-04T06:43:21:       beforeRedirect: [Function: dispatchBeforeRedirect],
+2025-09-04T06:43:21:       beforeRedirects: [Object],
+2025-09-04T06:43:21:       hostname: 'www.bitstamp.net',
+2025-09-04T06:43:21:       port: '',
+2025-09-04T06:43:21:       agent: undefined,
+2025-09-04T06:43:21:       nativeProtocols: [Object],
+2025-09-04T06:43:21:       pathname: '/api/v2/order_book/xrpusd/'
+2025-09-04T06:43:21:     },
+2025-09-04T06:43:21:     _ended: true,
+2025-09-04T06:43:21:     _ending: true,
+2025-09-04T06:43:21:     _redirectCount: 0,
+2025-09-04T06:43:21:     _redirects: [],
+2025-09-04T06:43:21:     _requestBodyLength: 0,
+2025-09-04T06:43:21:     _requestBodyBuffers: [],
+2025-09-04T06:43:21:     _eventsCount: 3,
+2025-09-04T06:43:21:     _onNativeResponse: [Function (anonymous)],
+2025-09-04T06:43:21:     _currentRequest: ClientRequest {
+2025-09-04T06:43:21:       _events: [Object: null prototype],
+2025-09-04T06:43:21:       _eventsCount: 7,
+2025-09-04T06:43:21:       _maxListeners: undefined,
+2025-09-04T06:43:21:       outputData: [],
+2025-09-04T06:43:21:       outputSize: 0,
+2025-09-04T06:43:21:       writable: true,
+2025-09-04T06:43:21:       destroyed: false,
+2025-09-04T06:43:21:       _last: true,
+2025-09-04T06:43:21:       chunkedEncoding: false,
+2025-09-04T06:43:21:       shouldKeepAlive: true,
+2025-09-04T06:43:21:       maxRequestsOnConnectionReached: false,
+2025-09-04T06:43:21:       _defaultKeepAlive: true,
+2025-09-04T06:43:21:       useChunkedEncodingByDefault: false,
+2025-09-04T06:43:21:       sendDate: false,
+2025-09-04T06:43:21:       _removedConnection: false,
+2025-09-04T06:43:21:       _removedContLen: false,
+2025-09-04T06:43:21:       _removedTE: false,
+2025-09-04T06:43:21:       strictContentLength: false,
+2025-09-04T06:43:21:       _contentLength: 0,
+2025-09-04T06:43:21:       _hasBody: true,
+2025-09-04T06:43:21:       _trailer: '',
+2025-09-04T06:43:21:       finished: true,
+2025-09-04T06:43:21:       _headerSent: true,
+2025-09-04T06:43:21:       _closed: false,
+2025-09-04T06:43:21:       _header: 'GET /api/v2/order_book/xrpusd/ HTTP/1.1\r\n' +
+2025-09-04T06:43:21:         'Accept: application/json, text/plain, */*\r\n' +
+2025-09-04T06:43:21:         'User-Agent: axios/1.11.0\r\n' +
+2025-09-04T06:43:21:         'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+2025-09-04T06:43:21:         'Host: www.bitstamp.net\r\n' +
+2025-09-04T06:43:21:         'Connection: keep-alive\r\n' +
+2025-09-04T06:43:21:         '\r\n',
+2025-09-04T06:43:21:       _keepAliveTimeout: 0,
+2025-09-04T06:43:21:       _onPendingData: [Function: nop],
+2025-09-04T06:43:21:       agent: [Agent],
+2025-09-04T06:43:21:       socketPath: undefined,
+2025-09-04T06:43:21:       method: 'GET',
+2025-09-04T06:43:21:       maxHeaderSize: undefined,
+2025-09-04T06:43:21:       insecureHTTPParser: undefined,
+2025-09-04T06:43:21:       joinDuplicateHeaders: undefined,
+2025-09-04T06:43:21:       path: '/api/v2/order_book/xrpusd/',
+2025-09-04T06:43:21:       _ended: false,
+2025-09-04T06:43:21:       res: null,
+2025-09-04T06:43:21:       aborted: false,
+2025-09-04T06:43:21:       timeoutCb: [Function: emitRequestTimeout],
+2025-09-04T06:43:21:       upgradeOrConnect: false,
+2025-09-04T06:43:21:       parser: [HTTPParser],
+2025-09-04T06:43:21:       maxHeadersCount: null,
+2025-09-04T06:43:21:       reusedSocket: false,
+2025-09-04T06:43:21:       host: 'www.bitstamp.net',
+2025-09-04T06:43:21:       protocol: 'https:',
+2025-09-04T06:43:21:       _redirectable: [Circular *1],
+2025-09-04T06:43:21:       Symbol(shapeMode): false,
+2025-09-04T06:43:21:       Symbol(kCapture): false,
+2025-09-04T06:43:21:       Symbol(kBytesWritten): 0,
+2025-09-04T06:43:21:       Symbol(kNeedDrain): false,
+2025-09-04T06:43:21:       Symbol(corked): 0,
+2025-09-04T06:43:21:       Symbol(kChunkedBuffer): [],
+2025-09-04T06:43:21:       Symbol(kChunkedLength): 0,
+2025-09-04T06:43:21:       Symbol(kSocket): [TLSSocket],
+2025-09-04T06:43:21:       Symbol(kOutHeaders): [Object: null prototype],
+2025-09-04T06:43:21:       Symbol(errored): null,
+2025-09-04T06:43:21:       Symbol(kHighWaterMark): 16384,
+2025-09-04T06:43:21:       Symbol(kRejectNonStandardBodyWrites): false,
+2025-09-04T06:43:21:       Symbol(kUniqueHeaders): null
+2025-09-04T06:43:21:     },
+2025-09-04T06:43:21:     _currentUrl: 'https://www.bitstamp.net/api/v2/order_book/xrpusd/',
+2025-09-04T06:43:21:     _timeout: null,
+2025-09-04T06:43:21:     Symbol(shapeMode): true,
+2025-09-04T06:43:21:     Symbol(kCapture): false
+2025-09-04T06:43:21:   }
+2025-09-04T06:43:21: }
+2025-09-04T06:43:21: Error fetching Bitstamp orderbook: AxiosError: timeout of 5000ms exceeded
+2025-09-04T06:43:21:     at RedirectableRequest.handleRequestTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/node_modules/axios/lib/adapters/http.js:657:16)
+2025-09-04T06:43:21:     at RedirectableRequest.emit (node:events:507:28)
+2025-09-04T06:43:21:     at Timeout.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\follow-redirects\index.js:221:12)
+2025-09-04T06:43:21:     at listOnTimeout (node:internal/timers:608:17)
+2025-09-04T06:43:21:     at process.processTimers (node:internal/timers:543:7)
+2025-09-04T06:43:21:     at Axios.request (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/node_modules/axios/lib/core/Axios.js:45:41)
+2025-09-04T06:43:21:     at runNextTicks (node:internal/process/task_queues:65:5)
+2025-09-04T06:43:21:     at listOnTimeout (node:internal/timers:569:9)
+2025-09-04T06:43:21:     at process.processTimers (node:internal/timers:543:7)
+2025-09-04T06:43:21:     at async LiveOrderbookService.fetchBitstampOrderbook (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:257:30)
+2025-09-04T06:43:21:     at async Promise.allSettled (index 1)
+2025-09-04T06:43:21:     at async LiveOrderbookService.fetchOrderbookData (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:186:49)
+2025-09-04T06:43:21:     at async LiveOrderbookService.createDepthChartEmbed (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:118:35)
+2025-09-04T06:43:21:     at async Promise.all (index 1)
+2025-09-04T06:43:21:     at async LiveOrderbookService.sendUpdate (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:51:45)
+2025-09-04T06:43:21:     at async Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:30:21) {
+2025-09-04T06:43:21:   code: 'ECONNABORTED',
+2025-09-04T06:43:21:   config: {
+2025-09-04T06:43:21:     transitional: {
+2025-09-04T06:43:21:       silentJSONParsing: true,
+2025-09-04T06:43:21:       forcedJSONParsing: true,
+2025-09-04T06:43:21:       clarifyTimeoutError: false
+2025-09-04T06:43:21:     },
+2025-09-04T06:43:21:     adapter: [ 'xhr', 'http', 'fetch' ],
+2025-09-04T06:43:21:     transformRequest: [ [Function: transformRequest] ],
+2025-09-04T06:43:21:     transformResponse: [ [Function: transformResponse] ],
+2025-09-04T06:43:21:     timeout: 5000,
+2025-09-04T06:43:21:     xsrfCookieName: 'XSRF-TOKEN',
+2025-09-04T06:43:21:     xsrfHeaderName: 'X-XSRF-TOKEN',
+2025-09-04T06:43:21:     maxContentLength: -1,
+2025-09-04T06:43:21:     maxBodyLength: -1,
+2025-09-04T06:43:21:     env: { FormData: [Function [FormData]], Blob: [class Blob] },
+2025-09-04T06:43:21:     validateStatus: [Function: validateStatus],
+2025-09-04T06:43:21:     headers: Object [AxiosHeaders] {
+2025-09-04T06:43:21:       Accept: 'application/json, text/plain, */*',
+2025-09-04T06:43:21:       'Content-Type': undefined,
+2025-09-04T06:43:21:       'User-Agent': 'axios/1.11.0',
+2025-09-04T06:43:21:       'Accept-Encoding': 'gzip, compress, deflate, br'
+2025-09-04T06:43:21:     },
+2025-09-04T06:43:21:     method: 'get',
+2025-09-04T06:43:21:     url: 'https://www.bitstamp.net/api/v2/order_book/xrpusd/',
+2025-09-04T06:43:21:     allowAbsoluteUrls: true,
+2025-09-04T06:43:21:     data: undefined
+2025-09-04T06:43:21:   },
+2025-09-04T06:43:21:   request: <ref *1> Writable {
+2025-09-04T06:43:21:     _events: {
+2025-09-04T06:43:21:       close: undefined,
+2025-09-04T06:43:21:       error: [Function: handleRequestError],
+2025-09-04T06:43:21:       prefinish: undefined,
+2025-09-04T06:43:21:       finish: undefined,
+2025-09-04T06:43:21:       drain: undefined,
+2025-09-04T06:43:21:       response: [Function: handleResponse],
+2025-09-04T06:43:21:       socket: [Array],
+2025-09-04T06:43:21:       timeout: undefined,
+2025-09-04T06:43:21:       abort: undefined
+2025-09-04T06:43:21:     },
+2025-09-04T06:43:21:     _writableState: WritableState {
+2025-09-04T06:43:21:       highWaterMark: 16384,
+2025-09-04T06:43:21:       length: 0,
+2025-09-04T06:43:21:       corked: 0,
+2025-09-04T06:43:21:       onwrite: [Function: bound onwrite],
+2025-09-04T06:43:21:       writelen: 0,
+2025-09-04T06:43:21:       bufferedIndex: 0,
+2025-09-04T06:43:21:       pendingcb: 0,
+2025-09-04T06:43:21:       Symbol(kState): 17580812,
+2025-09-04T06:43:21:       Symbol(kBufferedValue): null
+2025-09-04T06:43:21:     },
+2025-09-04T06:43:21:     _maxListeners: undefined,
+2025-09-04T06:43:21:     _options: {
+2025-09-04T06:43:21:       maxRedirects: 21,
+2025-09-04T06:43:21:       maxBodyLength: Infinity,
+2025-09-04T06:43:21:       protocol: 'https:',
+2025-09-04T06:43:21:       path: '/api/v2/order_book/xrpusd/',
+2025-09-04T06:43:21:       method: 'GET',
+2025-09-04T06:43:21:       headers: [Object: null prototype],
+2025-09-04T06:43:21:       agents: [Object],
+2025-09-04T06:43:21:       auth: undefined,
+2025-09-04T06:43:21:       family: undefined,
+2025-09-04T06:43:21:       beforeRedirect: [Function: dispatchBeforeRedirect],
+2025-09-04T06:43:21:       beforeRedirects: [Object],
+2025-09-04T06:43:21:       hostname: 'www.bitstamp.net',
+2025-09-04T06:43:21:       port: '',
+2025-09-04T06:43:21:       agent: undefined,
+2025-09-04T06:43:21:       nativeProtocols: [Object],
+2025-09-04T06:43:21:       pathname: '/api/v2/order_book/xrpusd/'
+2025-09-04T06:43:21:     },
+2025-09-04T06:43:21:     _ended: true,
+2025-09-04T06:43:21:     _ending: true,
+2025-09-04T06:43:21:     _redirectCount: 0,
+2025-09-04T06:43:21:     _redirects: [],
+2025-09-04T06:43:21:     _requestBodyLength: 0,
+2025-09-04T06:43:21:     _requestBodyBuffers: [],
+2025-09-04T06:43:21:     _eventsCount: 3,
+2025-09-04T06:43:21:     _onNativeResponse: [Function (anonymous)],
+2025-09-04T06:43:21:     _currentRequest: ClientRequest {
+2025-09-04T06:43:21:       _events: [Object: null prototype],
+2025-09-04T06:43:21:       _eventsCount: 7,
+2025-09-04T06:43:21:       _maxListeners: undefined,
+2025-09-04T06:43:21:       outputData: [],
+2025-09-04T06:43:21:       outputSize: 0,
+2025-09-04T06:43:21:       writable: true,
+2025-09-04T06:43:21:       destroyed: false,
+2025-09-04T06:43:21:       _last: true,
+2025-09-04T06:43:21:       chunkedEncoding: false,
+2025-09-04T06:43:21:       shouldKeepAlive: true,
+2025-09-04T06:43:21:       maxRequestsOnConnectionReached: false,
+2025-09-04T06:43:21:       _defaultKeepAlive: true,
+2025-09-04T06:43:21:       useChunkedEncodingByDefault: false,
+2025-09-04T06:43:21:       sendDate: false,
+2025-09-04T06:43:21:       _removedConnection: false,
+2025-09-04T06:43:21:       _removedContLen: false,
+2025-09-04T06:43:21:       _removedTE: false,
+2025-09-04T06:43:21:       strictContentLength: false,
+2025-09-04T06:43:21:       _contentLength: 0,
+2025-09-04T06:43:21:       _hasBody: true,
+2025-09-04T06:43:21:       _trailer: '',
+2025-09-04T06:43:21:       finished: true,
+2025-09-04T06:43:21:       _headerSent: true,
+2025-09-04T06:43:21:       _closed: false,
+2025-09-04T06:43:21:       _header: 'GET /api/v2/order_book/xrpusd/ HTTP/1.1\r\n' +
+2025-09-04T06:43:21:         'Accept: application/json, text/plain, */*\r\n' +
+2025-09-04T06:43:21:         'User-Agent: axios/1.11.0\r\n' +
+2025-09-04T06:43:21:         'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+2025-09-04T06:43:21:         'Host: www.bitstamp.net\r\n' +
+2025-09-04T06:43:21:         'Connection: keep-alive\r\n' +
+2025-09-04T06:43:21:         '\r\n',
+2025-09-04T06:43:21:       _keepAliveTimeout: 0,
+2025-09-04T06:43:21:       _onPendingData: [Function: nop],
+2025-09-04T06:43:21:       agent: [Agent],
+2025-09-04T06:43:21:       socketPath: undefined,
+2025-09-04T06:43:21:       method: 'GET',
+2025-09-04T06:43:21:       maxHeaderSize: undefined,
+2025-09-04T06:43:21:       insecureHTTPParser: undefined,
+2025-09-04T06:43:21:       joinDuplicateHeaders: undefined,
+2025-09-04T06:43:21:       path: '/api/v2/order_book/xrpusd/',
+2025-09-04T06:43:21:       _ended: false,
+2025-09-04T06:43:21:       res: null,
+2025-09-04T06:43:21:       aborted: false,
+2025-09-04T06:43:21:       timeoutCb: [Function: emitRequestTimeout],
+2025-09-04T06:43:21:       upgradeOrConnect: false,
+2025-09-04T06:43:21:       parser: [HTTPParser],
+2025-09-04T06:43:21:       maxHeadersCount: null,
+2025-09-04T06:43:21:       reusedSocket: false,
+2025-09-04T06:43:21:       host: 'www.bitstamp.net',
+2025-09-04T06:43:21:       protocol: 'https:',
+2025-09-04T06:43:21:       _redirectable: [Circular *1],
+2025-09-04T06:43:21:       Symbol(shapeMode): false,
+2025-09-04T06:43:21:       Symbol(kCapture): false,
+2025-09-04T06:43:21:       Symbol(kBytesWritten): 0,
+2025-09-04T06:43:21:       Symbol(kNeedDrain): false,
+2025-09-04T06:43:21:       Symbol(corked): 0,
+2025-09-04T06:43:21:       Symbol(kChunkedBuffer): [],
+2025-09-04T06:43:21:       Symbol(kChunkedLength): 0,
+2025-09-04T06:43:21:       Symbol(kSocket): [TLSSocket],
+2025-09-04T06:43:21:       Symbol(kOutHeaders): [Object: null prototype],
+2025-09-04T06:43:21:       Symbol(errored): null,
+2025-09-04T06:43:21:       Symbol(kHighWaterMark): 16384,
+2025-09-04T06:43:21:       Symbol(kRejectNonStandardBodyWrites): false,
+2025-09-04T06:43:21:       Symbol(kUniqueHeaders): null
+2025-09-04T06:43:21:     },
+2025-09-04T06:43:21:     _currentUrl: 'https://www.bitstamp.net/api/v2/order_book/xrpusd/',
+2025-09-04T06:43:21:     _timeout: null,
+2025-09-04T06:43:21:     Symbol(shapeMode): true,
+2025-09-04T06:43:21:     Symbol(kCapture): false
+2025-09-04T06:43:21:   }
+2025-09-04T06:43:21: }
+2025-09-04T07:18:20: ⚠️ Data source failed, trying next... timeout of 5000ms exceeded
+2025-09-04T07:18:20: ⚠️ Data source failed, trying next... timeout of 5000ms exceeded
+2025-09-04T07:18:20: ⚠️ Data source failed, trying next... timeout of 5000ms exceeded
+2025-09-04T07:33:11: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-04T08:33:11: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-04T09:33:11: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-04T10:33:11: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-04T11:14:01: No webhook configured for type: MESSAGE_CREATE
+2025-09-04T11:33:11: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-04T12:33:11: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-04T13:33:11: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-04T14:33:11: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-04T15:33:11: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-04T16:33:11: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-04T17:33:11: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com

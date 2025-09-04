@@ -134,6 +134,35 @@ client.once('ready', async () => {
         restartManager.registerService(marketAnalyzer);
         console.log('Market Psychology Analysis started - Channel: 1325196609012895805');
         
+        // Add SmartPathAnalyzer initialization here
+        const { SmartPathAnalyzer } = await import('./services/smartPathAnalyzer.js');
+        const smartPathAnalyzer = new SmartPathAnalyzer(client, '1308928972033359993');
+        await smartPathAnalyzer.start();
+        restartManager.registerService(smartPathAnalyzer, 'SmartPathAnalyzer');
+        console.log('Smart Path Analysis started - Channel: 1308928972033359993');
+
+        // NEW: Initialize the three new auto channels
+        // Live XRP Orderbook Service
+        const { LiveOrderbookService } = await import('./services/liveOrderbookService.js');
+        const liveOrderbook = new LiveOrderbookService(client, '1412857950673834115');
+        await liveOrderbook.startAutomatedUpdates();
+        restartManager.registerService(liveOrderbook, 'LiveOrderbookService');
+        console.log('Live XRP Orderbook started - Channel: 1412857950673834115');
+
+        // Multi-Exchange Price Comparison Service
+        const { MultiExchangePriceService } = await import('./services/multiExchangePriceService.js');
+        const multiExchangePrice = new MultiExchangePriceService(client, '1412858397447159869');
+        await multiExchangePrice.startAutomatedUpdates();
+        restartManager.registerService(multiExchangePrice, 'MultiExchangePriceService');
+        console.log('Multi-Exchange Price Comparison started - Channel: 1412858397447159869');
+
+        // Arbitrage Opportunity Alerts Service
+        const { ArbitrageAlertsService } = await import('./services/arbitrageAlertsService.js');
+        const arbitrageAlerts = new ArbitrageAlertsService(client, '1412858441780695244');
+        await arbitrageAlerts.startAutomatedUpdates();
+        restartManager.registerService(arbitrageAlerts, 'ArbitrageAlertsService');
+        console.log('Arbitrage Opportunity Alerts started - Channel: 1412858441780695244');
+        
         // Register spam manager cleanup
         restartManager.registerService({
             stop: async () => {
@@ -168,13 +197,6 @@ client.once('ready', async () => {
         });
         
         console.log('All services initialized and registered for graceful shutdown');
-
-        // Add SmartPathAnalyzer initialization here
-        const { SmartPathAnalyzer } = await import('./services/smartPathAnalyzer.js');
-        const smartPathAnalyzer = new SmartPathAnalyzer(client, '1308928972033359993');
-        await smartPathAnalyzer.start();
-        restartManager.registerService(smartPathAnalyzer, 'SmartPathAnalyzer');
-        console.log('Smart Path Analysis started - Channel: 1308928972033359993');
 
     } catch (error) {
         console.error('Service initialization error:', error);
@@ -495,6 +517,44 @@ client.on('roleUpdate', async (oldRole, newRole) => {
         }
     } catch (error) {
         console.error('Error logging role update:', error);
+    }
+});
+
+// Add messageUpdate event handler for logging message edits
+client.on('messageUpdate', async (oldMessage, newMessage) => {
+    try {
+        // Ignore bot messages and partial messages
+        if (newMessage.author?.bot || newMessage.partial) return;
+        
+        // Only log if content actually changed
+        if (oldMessage.content === newMessage.content) return;
+        
+        await logAction('MESSAGE', newMessage.guild, {
+            action: 'Message Edited',
+            user: newMessage.author,
+            channel: newMessage.channel,
+            content: newMessage.content.substring(0, 100),
+            oldContent: oldMessage.content.substring(0, 100)
+        });
+    } catch (error) {
+        console.error('Error logging message edit:', error);
+    }
+});
+
+// Add messageDelete event handler for logging message deletions
+client.on('messageDelete', async (message) => {
+    try {
+        // Ignore bot messages and partial messages
+        if (message.author?.bot || message.partial) return;
+        
+        await logAction('MESSAGE', message.guild, {
+            action: 'Message Deleted',
+            user: message.author,
+            channel: message.channel,
+            content: message.content?.substring(0, 100) || 'No content available'
+        });
+    } catch (error) {
+        console.error('Error logging message deletion:', error);
     }
 });
 
