@@ -32,6 +32,14 @@ import fs from 'fs';
 import { Client as XrplClient } from 'xrpl';
 import { SmartPathAnalyzer } from './services/smartPathAnalyzer.js';
 
+// Add whale watching service imports - Fixed to match export patterns
+import { WhaleDiscoveryService } from './services/whaleDiscoveryService.js';  // Named export
+import WhaleSocialFeedService from './services/whaleSocialFeedService.js';     // Default export
+import WhaleProfileService from './services/whaleProfileService.js';           // Default export
+import PortfolioAnalysisService from './services/portfolioAnalysisService.js'; // Default export
+import TradingPatternRecognitionService from './services/tradingPatternRecognitionService.js'; // Default export
+import { CommunityFeaturesService } from './services/communityFeaturesService.js'; // Named export
+
 // Apply XRPL client patches
 patchXrplClient();
 
@@ -162,6 +170,47 @@ client.once('ready', async () => {
         await arbitrageAlerts.startAutomatedUpdates();
         restartManager.registerService(arbitrageAlerts, 'ArbitrageAlertsService');
         console.log('Arbitrage Opportunity Alerts started - Channel: 1412858441780695244');
+        
+        // WHALE WATCHING SOCIAL NETWORK SERVICES
+        console.log('🐋 Initializing XRPL Whale Watching Social Network...');
+        
+        // 1. Whale Discovery & Following Service
+        const whaleDiscoveryService = new WhaleDiscoveryService(client, '1413174672375156767');
+        await whaleDiscoveryService.start(); // Uses start()
+        restartManager.registerService(whaleDiscoveryService, 'WhaleDiscoveryService');
+        console.log('🔍 Whale Discovery & Following started - Channel: 1413174672375156767');
+        
+        // 2. Social Feed Service
+        const whaleSocialFeedService = new WhaleSocialFeedService(client, '1413174720798658622');
+        await whaleSocialFeedService.initialize(); // Changed to initialize()
+        restartManager.registerService(whaleSocialFeedService, 'WhaleSocialFeedService');
+        console.log('📱 Whale Social Feed started - Channel: 1413174720798658622');
+        
+        // 3. Individual Whale Profile Service
+        const whaleProfileService = new WhaleProfileService(client, '1413174757649547356');
+        await whaleProfileService.initialize(); // Changed to initialize()
+        restartManager.registerService(whaleProfileService, 'WhaleProfileService');
+        console.log('👤 Individual Whale Profile started - Channel: 1413174757649547356');
+        
+        // 4. Portfolio Composition Analysis Service
+        const portfolioAnalysisService = new PortfolioAnalysisService(client, '1413174804122439680');
+        await portfolioAnalysisService.initialize(); // Changed to initialize()
+        restartManager.registerService(portfolioAnalysisService, 'PortfolioAnalysisService');
+        console.log('📊 Portfolio Composition Analysis started - Channel: 1413174804122439680');
+        
+        // 5. Trading Pattern Recognition Service
+        const tradingPatternService = new TradingPatternRecognitionService(client, '1413174836041351219');
+        await tradingPatternService.initialize(); // Changed to initialize()
+        restartManager.registerService(tradingPatternService, 'TradingPatternRecognitionService');
+        console.log('🧠 Trading Pattern Recognition started - Channel: 1413174836041351219');
+        
+        // 6. Community Features Service
+        const communityFeaturesService = new CommunityFeaturesService(client, '1413174865128587355');
+        await communityFeaturesService.start(); // Uses start()
+        restartManager.registerService(communityFeaturesService, 'CommunityFeaturesService');
+        console.log('🎮 Community Features started - Channel: 1413174865128587355');
+        
+        console.log('🎉 XRPL Whale Watching Social Network fully initialized!');
         
         // Register spam manager cleanup
         restartManager.registerService({

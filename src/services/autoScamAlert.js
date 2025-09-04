@@ -4,7 +4,7 @@ import path from 'path';
 import axios from 'axios';
 
 const ALERT_CHANNEL_ID = '1307095704858005545';
-const SCAN_INTERVAL = 10 * 60 * 1000; // 10 minutes
+const SCAN_INTERVAL = 15 * 60 * 1000; // 15 minutes (changed from 10 minutes)
 
 const NETWORKS = {
     SOLANA: 'Solana',
@@ -327,16 +327,17 @@ class EnhancedScamProtection {
 export { EnhancedScamProtection };
 
 // Legacy export for compatibility
+// In the startScamAlerts function, update the interval:
 export const startScamAlerts = (client) => {
     const protection = new EnhancedScamProtection(client);
     
     // Send initial security alert
     protection.sendSecurityAlert();
     
-    // Send periodic security updates (every 6 hours)
+    // Send periodic security updates every 15 minutes
     setInterval(() => {
         protection.sendSecurityAlert();
-    }, 6 * 60 * 60 * 1000);
+    }, 15 * 60 * 1000); // 15 minutes
     
     return protection;
 };

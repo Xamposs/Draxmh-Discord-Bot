@@ -1,73 +1,33 @@
 {
-  "knownScams": [],
-  "suspiciousUsers": [],
-  "userReputations": [
+  "scams": [
     [
-      "1123146239953883186",
+      "phishing-site.com",
       {
-        "messages": [
-          {
-            "content": "test",
-            "timestamp": 1756927800624
-          },
-          {
-            "content": "test",
-            "timestamp": 1756927800624
-          },
-          {
-            "content": "test 1-2-3",
-            "timestamp": 1756931222204
-          },
-          {
-            "content": "test 1-2-3",
-            "timestamp": 1756931222205
-          },
-          {
-            "content": "!close",
-            "timestamp": 1756931224595
-          },
-          {
-            "content": "!close",
-            "timestamp": 1756931224595
-          },
-          {
-            "content": "!draxmh",
-            "timestamp": 1756931256055
-          },
-          {
-            "content": "!draxmh",
-            "timestamp": 1756931256055
-          },
-          {
-            "content": "!suggest",
-            "timestamp": 1756931363658
-          },
-          {
-            "content": "!suggest",
-            "timestamp": 1756931363658
-          },
-          {
-            "content": "test",
-            "timestamp": 1756931603922
-          },
-          {
-            "content": "test",
-            "timestamp": 1756931603922
-          },
-          {
-            "content": "test",
-            "timestamp": 1756973640777
-          },
-          {
-            "content": "test",
-            "timestamp": 1756973640778
-          }
-        ],
-        "reports": 0,
-        "joinDate": "2023-06-27T07:02:10.653Z",
-        "reputation": 0
+        "type": "malicious_url",
+        "confidence": 0.95,
+        "source": "threat_intelligence",
+        "timestamp": 1757006985955
+      }
+    ],
+    [
+      "fake-drx-token.scam",
+      {
+        "type": "malicious_url",
+        "confidence": 0.95,
+        "source": "threat_intelligence",
+        "timestamp": 1757006985955
+      }
+    ],
+    [
+      "crypto-doubler.fraud",
+      {
+        "type": "malicious_url",
+        "confidence": 0.95,
+        "source": "threat_intelligence",
+        "timestamp": 1757006985955
       }
     ]
   ],
-  "lastUpdated": 1756996991737
+  "trustedUsers": [],
+  "lastUpdated": "2025-09-04T17:29:45.966Z"
 }

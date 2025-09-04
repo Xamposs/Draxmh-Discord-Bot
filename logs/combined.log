@@ -17225,3 +17225,978 @@
 2025-09-04T17:44:31: Spam manager cleanup: 0 users tracked
 2025-09-04T17:45:31: Spam manager cleanup: 0 users tracked
 2025-09-04T17:46:31: Spam manager cleanup: 0 users tracked
+2025-09-04T17:47:31: Spam manager cleanup: 0 users tracked
+2025-09-04T17:48:14: DEX Analytics update sent at 2025-09-04T14:48:14.620Z
+2025-09-04T17:48:16: Smart Path Analysis update sent successfully
+2025-09-04T17:48:17: 🧠 Market psychology update sent successfully
+2025-09-04T17:48:31: Spam manager cleanup: 0 users tracked
+2025-09-04T17:49:31: Spam manager cleanup: 0 users tracked
+2025-09-04T17:50:31: Spam manager cleanup: 0 users tracked
+2025-09-04T17:51:31: Spam manager cleanup: 0 users tracked
+2025-09-04T17:52:32: Spam manager cleanup: 0 users tracked
+2025-09-04T17:53:14: DEX Analytics update sent at 2025-09-04T14:53:14.962Z
+2025-09-04T17:53:16: Smart Path Analysis update sent successfully
+2025-09-04T17:53:17: 🧠 Market psychology update sent successfully
+2025-09-04T17:53:17: 📊 Live Orderbook update sent at 2025-09-04T14:53:17.690Z
+2025-09-04T17:53:18: ⚡ Arbitrage Alerts update sent at 2025-09-04T14:53:18.934Z
+2025-09-04T17:53:18: 💱 Multi-Exchange Price update sent at 2025-09-04T14:53:18.948Z
+2025-09-04T17:53:32: Spam manager cleanup: 0 users tracked
+2025-09-04T17:54:32: Spam manager cleanup: 0 users tracked
+2025-09-04T17:55:32: Spam manager cleanup: 0 users tracked
+2025-09-04T17:56:32: Spam manager cleanup: 0 users tracked
+2025-09-04T17:57:32: Spam manager cleanup: 0 users tracked
+2025-09-04T17:58:14: DEX Analytics update sent at 2025-09-04T14:58:14.657Z
+2025-09-04T17:58:16: Smart Path Analysis update sent successfully
+2025-09-04T17:58:18: 🧠 Market psychology update sent successfully
+2025-09-04T17:58:32: Spam manager cleanup: 0 users tracked
+2025-09-04T17:59:32: Spam manager cleanup: 0 users tracked
+2025-09-04T18:00:32: Spam manager cleanup: 0 users tracked
+2025-09-04T18:01:32: Spam manager cleanup: 0 users tracked
+2025-09-04T18:02:32: Spam manager cleanup: 0 users tracked
+2025-09-04T18:03:14: DEX Analytics update sent at 2025-09-04T15:03:14.707Z
+2025-09-04T18:03:16: Smart Path Analysis update sent successfully
+2025-09-04T18:03:17: 🧠 Market psychology update sent successfully
+2025-09-04T18:03:17: 📊 Live Orderbook update sent at 2025-09-04T15:03:17.597Z
+2025-09-04T18:03:19: 💱 Multi-Exchange Price update sent at 2025-09-04T15:03:19.055Z
+2025-09-04T18:03:19: ⚡ Arbitrage Alerts update sent at 2025-09-04T15:03:19.434Z
+2025-09-04T18:03:32: Spam manager cleanup: 0 users tracked
+2025-09-04T18:04:32: Spam manager cleanup: 0 users tracked
+2025-09-04T18:05:32: Spam manager cleanup: 0 users tracked
+2025-09-04T18:06:32: Spam manager cleanup: 0 users tracked
+2025-09-04T18:07:32: Spam manager cleanup: 0 users tracked
+2025-09-04T18:08:14: DEX Analytics update sent at 2025-09-04T15:08:14.695Z
+2025-09-04T18:08:16: Smart Path Analysis update sent successfully
+2025-09-04T18:08:17: 🧠 Market psychology update sent successfully
+2025-09-04T18:08:32: Spam manager cleanup: 0 users tracked
+2025-09-04T18:09:32: Spam manager cleanup: 0 users tracked
+2025-09-04T18:10:32: Spam manager cleanup: 0 users tracked
+2025-09-04T18:11:32: Spam manager cleanup: 0 users tracked
+2025-09-04T18:12:32: Spam manager cleanup: 0 users tracked
+2025-09-04T18:13:14: DEX Analytics update sent at 2025-09-04T15:13:14.816Z
+2025-09-04T18:13:17: 🧠 Market psychology update sent successfully
+2025-09-04T18:13:17: Smart Path Analysis update sent successfully
+2025-09-04T18:13:17: 📊 Live Orderbook update sent at 2025-09-04T15:13:17.620Z
+2025-09-04T18:13:18: ⚡ Arbitrage Alerts update sent at 2025-09-04T15:13:18.999Z
+2025-09-04T18:13:19: 💱 Multi-Exchange Price update sent at 2025-09-04T15:13:19.201Z
+2025-09-04T18:13:32: Spam manager cleanup: 0 users tracked
+2025-09-04T18:14:32: Spam manager cleanup: 0 users tracked
+2025-09-04T18:15:32: Spam manager cleanup: 0 users tracked
+2025-09-04T18:16:32: Spam manager cleanup: 0 users tracked
+2025-09-04T18:17:32: Spam manager cleanup: 0 users tracked
+2025-09-04T18:18:15: DEX Analytics update sent at 2025-09-04T15:18:15.016Z
+2025-09-04T18:18:17: Smart Path Analysis update sent successfully
+2025-09-04T18:18:17: 🧠 Market psychology update sent successfully
+2025-09-04T18:18:32: Spam manager cleanup: 0 users tracked
+2025-09-04T18:19:32: Spam manager cleanup: 0 users tracked
+2025-09-04T18:19:39: Error [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\Users\xampo\Desktop\Draxmh Discord Bot\src\services\communityFeaturesService.js' imported from C:\Users\xampo\Desktop\Draxmh Discord Bot\src\index.js
+2025-09-04T18:19:39:     at finalizeResolution (node:internal/modules/esm/resolve:274:11)
+2025-09-04T18:19:39:     at moduleResolve (node:internal/modules/esm/resolve:859:10)
+2025-09-04T18:19:39:     at defaultResolve (node:internal/modules/esm/resolve:983:11)
+2025-09-04T18:19:39:     at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:801:12)
+2025-09-04T18:19:39:     at #cachedDefaultResolve (node:internal/modules/esm/loader:725:25)
+2025-09-04T18:19:39:     at ModuleLoader.resolve (node:internal/modules/esm/loader:708:38)
+2025-09-04T18:19:39:     at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:309:38)
+2025-09-04T18:19:39:     at #link (node:internal/modules/esm/module_job:202:49)
+2025-09-04T18:19:39:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+2025-09-04T18:19:39:   code: 'ERR_MODULE_NOT_FOUND',
+2025-09-04T18:19:39:   url: 'file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/communityFeaturesService.js'
+2025-09-04T18:19:39: }
+2025-09-04T18:21:38: Error [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\Users\xampo\Desktop\Draxmh Discord Bot\src\services\communityFeaturesService.js' imported from C:\Users\xampo\Desktop\Draxmh Discord Bot\src\index.js
+2025-09-04T18:21:38:     at finalizeResolution (node:internal/modules/esm/resolve:274:11)
+2025-09-04T18:21:38:     at moduleResolve (node:internal/modules/esm/resolve:859:10)
+2025-09-04T18:21:38:     at defaultResolve (node:internal/modules/esm/resolve:983:11)
+2025-09-04T18:21:38:     at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:801:12)
+2025-09-04T18:21:38:     at #cachedDefaultResolve (node:internal/modules/esm/loader:725:25)
+2025-09-04T18:21:38:     at ModuleLoader.resolve (node:internal/modules/esm/loader:708:38)
+2025-09-04T18:21:38:     at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:309:38)
+2025-09-04T18:21:38:     at #link (node:internal/modules/esm/module_job:202:49)
+2025-09-04T18:21:38:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+2025-09-04T18:21:38:   code: 'ERR_MODULE_NOT_FOUND',
+2025-09-04T18:21:38:   url: 'file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/communityFeaturesService.js'
+2025-09-04T18:21:38: }
+2025-09-04T18:26:18: file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:39
+2025-09-04T18:26:18: import { PortfolioAnalysisService } from './services/portfolioAnalysisService.js';
+2025-09-04T18:26:18:          ^^^^^^^^^^^^^^^^^^^^^^^^
+2025-09-04T18:26:18: SyntaxError: The requested module './services/portfolioAnalysisService.js' does not provide an export named 'PortfolioAnalysisService'
+2025-09-04T18:26:18:     at #_instantiate (node:internal/modules/esm/module_job:249:21)
+2025-09-04T18:26:18:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:26:18:     at async ModuleJob.run (node:internal/modules/esm/module_job:357:5)
+2025-09-04T18:26:18:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+2025-09-04T18:28:24: [dotenv@17.2.2] injecting env (0) from .env -- tip: 📡 auto-backup env with Radar: https://dotenvx.com/radar
+2025-09-04T18:28:25: XRPL Client successfully patched to handle reconnect events and timeouts
+2025-09-04T18:28:25: [dotenv@17.2.2] injecting env (0) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+2025-09-04T18:28:25: Registered service for graceful shutdown: EnhancedScamProtection
+2025-09-04T18:28:25: Scam database loaded successfully
+2025-09-04T18:28:25: ✅ Telegram Bot connected: @draxmh_bridge_bot
+2025-09-04T18:28:26: Logged in as DRAXMH Bot#1233!
+2025-09-04T18:28:26: (node:46668) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-04T18:28:26: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-04T18:28:26: Whale Monitor started successfully
+2025-09-04T18:28:26: Registered service for graceful shutdown: WhaleMonitor
+2025-09-04T18:28:26: Registered service for graceful shutdown: EnhancedScamProtection
+2025-09-04T18:28:26: Scam Alert System initialized - Channel: 1307095704858005545
+2025-09-04T18:28:26: Registered service for graceful shutdown: PriceTracker
+2025-09-04T18:28:26: Price tracking started successfully
+2025-09-04T18:28:26: Updated threat database with 3 new entries
+2025-09-04T18:28:27: Connected to wss://xrplcluster.com
+2025-09-04T18:28:27: 🔗 XRPL Client connected for DEX analytics
+2025-09-04T18:28:27: WebSocket connected for price updates
+2025-09-04T18:28:27: 📊 XRPL DEX Analytics started successfully
+2025-09-04T18:28:27: Registered service for graceful shutdown: XRPLDexAnalytics
+2025-09-04T18:28:27: DEX Analytics started - Channel: 1307799407000944720
+2025-09-04T18:28:28: 🔗 XRPL Client connected for market psychology analysis
+2025-09-04T18:28:28: Price tracker started with 30s intervals
+2025-09-04T18:28:29: 🧠 Market psychology update sent successfully
+2025-09-04T18:28:29: 📊 XRP Market Psychology Analyzer started successfully
+2025-09-04T18:28:29: Registered service for graceful shutdown: XRPMarketPsychologyAnalyzer
+2025-09-04T18:28:29: Market Psychology Analysis started - Channel: 1325196609012895805
+2025-09-04T18:28:29: Smart Path Analyzer initialized
+2025-09-04T18:28:29: Smart Path Analyzer connected to XRPL
+2025-09-04T18:28:30: Smart Path Analysis update sent successfully
+2025-09-04T18:28:30: Smart Path Analysis started - Channel: 1308928972033359993
+2025-09-04T18:28:30: Registered service for graceful shutdown: SmartPathAnalyzer
+2025-09-04T18:28:30: Smart Path Analysis started - Channel: 1308928972033359993
+2025-09-04T18:28:30: 🔗 Starting Live Orderbook Service
+2025-09-04T18:28:31: 📊 Live XRP Orderbook Service started successfully
+2025-09-04T18:28:31: Registered service for graceful shutdown: LiveOrderbookService
+2025-09-04T18:28:31: Live XRP Orderbook started - Channel: 1412857950673834115
+2025-09-04T18:28:31: 🔗 Starting Multi-Exchange Price Comparison Service
+2025-09-04T18:28:32: 💱 Multi-Exchange Price Comparison Service started successfully
+2025-09-04T18:28:32: Registered service for graceful shutdown: MultiExchangePriceService
+2025-09-04T18:28:32: Multi-Exchange Price Comparison started - Channel: 1412858397447159869
+2025-09-04T18:28:32: 🔗 Starting Arbitrage Alerts Service
+2025-09-04T18:28:32: ⚡ Arbitrage Opportunity Alerts Service started successfully
+2025-09-04T18:28:32: Registered service for graceful shutdown: ArbitrageAlertsService
+2025-09-04T18:28:32: Arbitrage Opportunity Alerts started - Channel: 1412858441780695244
+2025-09-04T18:28:32: 🐋 Initializing XRPL Whale Watching Social Network...
+2025-09-04T18:28:32: 🐋 Starting Whale Discovery Service...
+2025-09-04T18:28:33: 🔍 Initializing whale database...
+2025-09-04T18:28:34: 📊 Initialized 0 whales in database
+2025-09-04T18:28:34: ✅ Whale Discovery Service started successfully
+2025-09-04T18:28:34: Registered service for graceful shutdown: WhaleDiscoveryService
+2025-09-04T18:28:34: 🔍 Whale Discovery & Following started - Channel: 1413174672375156767
+2025-09-04T18:28:34: Service initialization error: TypeError: whaleSocialFeedService.start is not a function
+2025-09-04T18:28:34:     at Client.<anonymous> (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:185:38)
+2025-09-04T18:28:34:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:28:57: Button interaction received: price_check
+2025-09-04T18:28:57: Handling trading buttons
+2025-09-04T18:28:57: (node:46668) Warning: Supplying "ephemeral" for interaction response options is deprecated. Utilize flags instead.
+2025-09-04T18:33:28: DEX Analytics update sent at 2025-09-04T15:33:28.040Z
+2025-09-04T18:33:30: 🧠 Market psychology update sent successfully
+2025-09-04T18:33:30: Smart Path Analysis update sent successfully
+2025-09-04T18:37:25: [dotenv@17.2.2] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2025-09-04T18:37:25: XRPL Client successfully patched to handle reconnect events and timeouts
+2025-09-04T18:37:25: [dotenv@17.2.2] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2025-09-04T18:37:25: Registered service for graceful shutdown: EnhancedScamProtection
+2025-09-04T18:37:25: Scam database loaded successfully
+2025-09-04T18:37:26: ✅ Telegram Bot connected: @draxmh_bridge_bot
+2025-09-04T18:37:27: Logged in as DRAXMH Bot#1233!
+2025-09-04T18:37:27: (node:51764) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-04T18:37:27: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-04T18:37:27: Whale Monitor started successfully
+2025-09-04T18:37:27: Registered service for graceful shutdown: WhaleMonitor
+2025-09-04T18:37:27: Registered service for graceful shutdown: EnhancedScamProtection
+2025-09-04T18:37:27: Scam Alert System initialized - Channel: 1307095704858005545
+2025-09-04T18:37:27: Registered service for graceful shutdown: PriceTracker
+2025-09-04T18:37:27: Price tracking started successfully
+2025-09-04T18:37:27: Updated threat database with 3 new entries
+2025-09-04T18:37:27: Connected to wss://xrplcluster.com
+2025-09-04T18:37:27: 🔗 XRPL Client connected for DEX analytics
+2025-09-04T18:37:27: WebSocket connected for price updates
+2025-09-04T18:37:27: 📊 XRPL DEX Analytics started successfully
+2025-09-04T18:37:27: Registered service for graceful shutdown: XRPLDexAnalytics
+2025-09-04T18:37:27: DEX Analytics started - Channel: 1307799407000944720
+2025-09-04T18:37:28: 🔗 XRPL Client connected for market psychology analysis
+2025-09-04T18:37:28: Price tracker started with 30s intervals
+2025-09-04T18:37:29: 🧠 Market psychology update sent successfully
+2025-09-04T18:37:29: 📊 XRP Market Psychology Analyzer started successfully
+2025-09-04T18:37:29: Registered service for graceful shutdown: XRPMarketPsychologyAnalyzer
+2025-09-04T18:37:29: Market Psychology Analysis started - Channel: 1325196609012895805
+2025-09-04T18:37:29: Smart Path Analyzer initialized
+2025-09-04T18:37:29: Smart Path Analyzer connected to XRPL
+2025-09-04T18:37:29: Smart Path Analysis update sent successfully
+2025-09-04T18:37:29: Smart Path Analysis started - Channel: 1308928972033359993
+2025-09-04T18:37:29: Registered service for graceful shutdown: SmartPathAnalyzer
+2025-09-04T18:37:29: Smart Path Analysis started - Channel: 1308928972033359993
+2025-09-04T18:37:29: 🔗 Starting Live Orderbook Service
+2025-09-04T18:37:30: 📊 Live XRP Orderbook Service started successfully
+2025-09-04T18:37:30: Registered service for graceful shutdown: LiveOrderbookService
+2025-09-04T18:37:30: Live XRP Orderbook started - Channel: 1412857950673834115
+2025-09-04T18:37:30: 🔗 Starting Multi-Exchange Price Comparison Service
+2025-09-04T18:37:32: 💱 Multi-Exchange Price Comparison Service started successfully
+2025-09-04T18:37:32: Registered service for graceful shutdown: MultiExchangePriceService
+2025-09-04T18:37:32: Multi-Exchange Price Comparison started - Channel: 1412858397447159869
+2025-09-04T18:37:32: 🔗 Starting Arbitrage Alerts Service
+2025-09-04T18:37:32: ⚡ Arbitrage Opportunity Alerts Service started successfully
+2025-09-04T18:37:32: Registered service for graceful shutdown: ArbitrageAlertsService
+2025-09-04T18:37:32: Arbitrage Opportunity Alerts started - Channel: 1412858441780695244
+2025-09-04T18:37:32: 🐋 Initializing XRPL Whale Watching Social Network...
+2025-09-04T18:37:32: 🐋 Starting Whale Discovery Service...
+2025-09-04T18:37:33: 🔍 Initializing whale database...
+2025-09-04T18:37:33: 📊 Initialized 0 whales in database
+2025-09-04T18:37:34: ✅ Whale Discovery Service started successfully
+2025-09-04T18:37:34: Registered service for graceful shutdown: WhaleDiscoveryService
+2025-09-04T18:37:34: 🔍 Whale Discovery & Following started - Channel: 1413174672375156767
+2025-09-04T18:37:35: 🐋 Whale Social Feed Service initialized
+2025-09-04T18:37:35: Registered service for graceful shutdown: WhaleSocialFeedService
+2025-09-04T18:37:35: 📱 Whale Social Feed started - Channel: 1413174720798658622
+2025-09-04T18:37:36: 🐋 Whale Profile Service initialized
+2025-09-04T18:37:36: Registered service for graceful shutdown: WhaleProfileService
+2025-09-04T18:37:36: 👤 Individual Whale Profile started - Channel: 1413174757649547356
+2025-09-04T18:37:37: 📊 Portfolio Analysis Service initialized
+2025-09-04T18:37:37: Registered service for graceful shutdown: PortfolioAnalysisService
+2025-09-04T18:37:37: 📊 Portfolio Composition Analysis started - Channel: 1413174804122439680
+2025-09-04T18:37:38: Trading Pattern Recognition Service initialized successfully
+2025-09-04T18:37:38: Registered service for graceful shutdown: TradingPatternRecognitionService
+2025-09-04T18:37:38: 🧠 Trading Pattern Recognition started - Channel: 1413174836041351219
+2025-09-04T18:37:40: Community Features Service: XRPL client connected
+2025-09-04T18:37:41: 🏆 Community Features Service started successfully
+2025-09-04T18:37:41: Registered service for graceful shutdown: CommunityFeaturesService
+2025-09-04T18:37:41: 🎮 Community Features started - Channel: 1413174865128587355
+2025-09-04T18:37:41: 🎉 XRPL Whale Watching Social Network fully initialized!
+2025-09-04T18:37:41: Registered service for graceful shutdown: Object
+2025-09-04T18:37:41: Registered service for graceful shutdown: Object
+2025-09-04T18:37:41: Registered service for graceful shutdown: Object
+2025-09-04T18:37:41: All services initialized and registered for graceful shutdown
+2025-09-04T18:41:29: [dotenv@17.2.2] injecting env (0) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+2025-09-04T18:41:30: XRPL Client successfully patched to handle reconnect events and timeouts
+2025-09-04T18:41:30: [dotenv@17.2.2] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2025-09-04T18:41:30: Registered service for graceful shutdown: EnhancedScamProtection
+2025-09-04T18:41:30: Scam database loaded successfully
+2025-09-04T18:41:30: ✅ Telegram Bot connected: @draxmh_bridge_bot
+2025-09-04T18:41:31: Logged in as DRAXMH Bot#1233!
+2025-09-04T18:41:31: (node:70028) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-04T18:41:31: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-04T18:41:31: Whale Monitor started successfully
+2025-09-04T18:41:31: Registered service for graceful shutdown: WhaleMonitor
+2025-09-04T18:41:31: Registered service for graceful shutdown: EnhancedScamProtection
+2025-09-04T18:41:31: Scam Alert System initialized - Channel: 1307095704858005545
+2025-09-04T18:41:31: Registered service for graceful shutdown: PriceTracker
+2025-09-04T18:41:31: Price tracking started successfully
+2025-09-04T18:41:31: Updated threat database with 3 new entries
+2025-09-04T18:41:31: Connected to wss://xrplcluster.com
+2025-09-04T18:41:31: 🔗 XRPL Client connected for DEX analytics
+2025-09-04T18:41:32: WebSocket connected for price updates
+2025-09-04T18:41:32: 📊 XRPL DEX Analytics started successfully
+2025-09-04T18:41:32: Registered service for graceful shutdown: XRPLDexAnalytics
+2025-09-04T18:41:32: DEX Analytics started - Channel: 1307799407000944720
+2025-09-04T18:41:32: 🔗 XRPL Client connected for market psychology analysis
+2025-09-04T18:41:32: Price tracker started with 30s intervals
+2025-09-04T18:41:33: 🧠 Market psychology update sent successfully
+2025-09-04T18:41:33: 📊 XRP Market Psychology Analyzer started successfully
+2025-09-04T18:41:33: Registered service for graceful shutdown: XRPMarketPsychologyAnalyzer
+2025-09-04T18:41:33: Market Psychology Analysis started - Channel: 1325196609012895805
+2025-09-04T18:41:33: Smart Path Analyzer initialized
+2025-09-04T18:41:33: Smart Path Analyzer connected to XRPL
+2025-09-04T18:41:34: Smart Path Analysis update sent successfully
+2025-09-04T18:41:34: Smart Path Analysis started - Channel: 1308928972033359993
+2025-09-04T18:41:34: Registered service for graceful shutdown: SmartPathAnalyzer
+2025-09-04T18:41:34: Smart Path Analysis started - Channel: 1308928972033359993
+2025-09-04T18:41:34: 🔗 Starting Live Orderbook Service
+2025-09-04T18:41:34: 📊 Live XRP Orderbook Service started successfully
+2025-09-04T18:41:34: Registered service for graceful shutdown: LiveOrderbookService
+2025-09-04T18:41:34: Live XRP Orderbook started - Channel: 1412857950673834115
+2025-09-04T18:41:34: 🔗 Starting Multi-Exchange Price Comparison Service
+2025-09-04T18:41:35: 💱 Multi-Exchange Price Comparison Service started successfully
+2025-09-04T18:41:35: Registered service for graceful shutdown: MultiExchangePriceService
+2025-09-04T18:41:35: Multi-Exchange Price Comparison started - Channel: 1412858397447159869
+2025-09-04T18:41:35: 🔗 Starting Arbitrage Alerts Service
+2025-09-04T18:41:36: ⚡ Arbitrage Opportunity Alerts Service started successfully
+2025-09-04T18:41:36: Registered service for graceful shutdown: ArbitrageAlertsService
+2025-09-04T18:41:36: Arbitrage Opportunity Alerts started - Channel: 1412858441780695244
+2025-09-04T18:41:36: 🐋 Initializing XRPL Whale Watching Social Network...
+2025-09-04T18:41:36: 🐋 Starting Whale Discovery Service...
+2025-09-04T18:41:36: 🔍 Initializing whale database...
+2025-09-04T18:41:37: 📊 Initialized 0 whales in database
+2025-09-04T18:41:37: ❌ Failed to start Whale Discovery Service: TypeError: this.createMainActionButtons is not a function
+2025-09-04T18:41:37:     at WhaleDiscoveryService.sendInitialUpdate (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleDiscoveryService.js:219:36)
+2025-09-04T18:41:37:     at WhaleDiscoveryService.start (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleDiscoveryService.js:34:24)
+2025-09-04T18:41:37:     at async Client.<anonymous> (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:179:9)
+2025-09-04T18:41:37: Registered service for graceful shutdown: WhaleDiscoveryService
+2025-09-04T18:41:37: 🔍 Whale Discovery & Following started - Channel: 1413174672375156767
+2025-09-04T18:41:38: 🐋 Whale Social Feed Service initialized
+2025-09-04T18:41:38: Failed to initialize Whale Social Feed Service: TypeError: this.createWelcomeEmbed is not a function
+2025-09-04T18:41:38:     at WhaleSocialFeedService.sendWelcomeMessage (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:39:28)
+2025-09-04T18:41:38:     at WhaleSocialFeedService.initialize (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:24:24)
+2025-09-04T18:41:38:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:41:38:     at async Client.<anonymous> (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:185:9)
+2025-09-04T18:41:38: Registered service for graceful shutdown: WhaleSocialFeedService
+2025-09-04T18:41:38: 📱 Whale Social Feed started - Channel: 1413174720798658622
+2025-09-04T18:41:38: 🐋 Whale Profile Service initialized
+2025-09-04T18:41:38: Failed to initialize Whale Profile Service: TypeError: this.createWelcomeEmbed is not a function
+2025-09-04T18:41:38:     at WhaleProfileService.sendWelcomeMessage (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleProfileService.js:77:28)
+2025-09-04T18:41:38:     at WhaleProfileService.initialize (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleProfileService.js:21:24)
+2025-09-04T18:41:38:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:41:38:     at async Client.<anonymous> (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:191:9)
+2025-09-04T18:41:38: Registered service for graceful shutdown: WhaleProfileService
+2025-09-04T18:41:38: 👤 Individual Whale Profile started - Channel: 1413174757649547356
+2025-09-04T18:41:38: 📊 Portfolio Analysis Service initialized
+2025-09-04T18:41:38: Failed to initialize Portfolio Analysis Service: TypeError: this.createWelcomeEmbed is not a function
+2025-09-04T18:41:38:     at PortfolioAnalysisService.sendWelcomeMessage (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/portfolioAnalysisService.js:97:28)
+2025-09-04T18:41:38:     at PortfolioAnalysisService.initialize (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/portfolioAnalysisService.js:22:24)
+2025-09-04T18:41:38:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:41:38:     at async Client.<anonymous> (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:197:9)
+2025-09-04T18:41:38: Registered service for graceful shutdown: PortfolioAnalysisService
+2025-09-04T18:41:38: 📊 Portfolio Composition Analysis started - Channel: 1413174804122439680
+2025-09-04T18:41:39: Error initializing Trading Pattern Recognition Service: TypeError: this.createWelcomeEmbed is not a function
+2025-09-04T18:41:39:     at TradingPatternRecognitionService.sendWelcomeMessage (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/tradingPatternRecognitionService.js:36:28)
+2025-09-04T18:41:39:     at TradingPatternRecognitionService.initialize (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/tradingPatternRecognitionService.js:23:24)
+2025-09-04T18:41:39:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:41:39:     at async Client.<anonymous> (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:203:9)
+2025-09-04T18:41:39: Registered service for graceful shutdown: TradingPatternRecognitionService
+2025-09-04T18:41:39: 🧠 Trading Pattern Recognition started - Channel: 1413174836041351219
+2025-09-04T18:41:39: Community Features Service: XRPL client connected
+2025-09-04T18:41:39: Community Features Service startup error: TypeError: this.createWelcomeEmbed is not a function
+2025-09-04T18:41:39:     at CommunityFeaturesService.sendWelcomeMessage (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/communityFeaturesService.js:69:28)
+2025-09-04T18:41:39:     at CommunityFeaturesService.start (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/communityFeaturesService.js:43:24)
+2025-09-04T18:41:39:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:41:39:     at async Client.<anonymous> (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:209:9)
+2025-09-04T18:41:39: Registered service for graceful shutdown: CommunityFeaturesService
+2025-09-04T18:41:39: 🎮 Community Features started - Channel: 1413174865128587355
+2025-09-04T18:41:39: 🎉 XRPL Whale Watching Social Network fully initialized!
+2025-09-04T18:41:39: Registered service for graceful shutdown: Object
+2025-09-04T18:41:39: Registered service for graceful shutdown: Object
+2025-09-04T18:41:39: Registered service for graceful shutdown: Object
+2025-09-04T18:41:39: All services initialized and registered for graceful shutdown
+2025-09-04T18:52:33: [dotenv@17.2.2] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2025-09-04T18:52:34: XRPL Client successfully patched to handle reconnect events and timeouts
+2025-09-04T18:52:34: [dotenv@17.2.2] injecting env (0) from .env -- tip: 📡 auto-backup env with Radar: https://dotenvx.com/radar
+2025-09-04T18:52:34: Registered service for graceful shutdown: EnhancedScamProtection
+2025-09-04T18:52:34: Scam database loaded successfully
+2025-09-04T18:52:34: ✅ Telegram Bot connected: @draxmh_bridge_bot
+2025-09-04T18:52:35: Logged in as DRAXMH Bot#1233!
+2025-09-04T18:52:35: (node:67424) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-04T18:52:35: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-04T18:52:35: Whale Monitor started successfully
+2025-09-04T18:52:35: Registered service for graceful shutdown: WhaleMonitor
+2025-09-04T18:52:35: Registered service for graceful shutdown: EnhancedScamProtection
+2025-09-04T18:52:35: Scam Alert System initialized - Channel: 1307095704858005545
+2025-09-04T18:52:35: Registered service for graceful shutdown: PriceTracker
+2025-09-04T18:52:35: Price tracking started successfully
+2025-09-04T18:52:35: Updated threat database with 3 new entries
+2025-09-04T18:52:35: Connected to wss://xrplcluster.com
+2025-09-04T18:52:35: 🔗 XRPL Client connected for DEX analytics
+2025-09-04T18:52:36: 📊 XRPL DEX Analytics started successfully
+2025-09-04T18:52:36: Registered service for graceful shutdown: XRPLDexAnalytics
+2025-09-04T18:52:36: DEX Analytics started - Channel: 1307799407000944720
+2025-09-04T18:52:36: WebSocket connected for price updates
+2025-09-04T18:52:36: 🔗 XRPL Client connected for market psychology analysis
+2025-09-04T18:52:37: Price tracker started with 30s intervals
+2025-09-04T18:52:37: 🧠 Market psychology update sent successfully
+2025-09-04T18:52:37: 📊 XRP Market Psychology Analyzer started successfully
+2025-09-04T18:52:37: Registered service for graceful shutdown: XRPMarketPsychologyAnalyzer
+2025-09-04T18:52:37: Market Psychology Analysis started - Channel: 1325196609012895805
+2025-09-04T18:52:37: Smart Path Analyzer initialized
+2025-09-04T18:52:37: Smart Path Analyzer connected to XRPL
+2025-09-04T18:52:38: Smart Path Analysis update sent successfully
+2025-09-04T18:52:38: Smart Path Analysis started - Channel: 1308928972033359993
+2025-09-04T18:52:38: Registered service for graceful shutdown: SmartPathAnalyzer
+2025-09-04T18:52:38: Smart Path Analysis started - Channel: 1308928972033359993
+2025-09-04T18:52:38: 🔗 Starting Live Orderbook Service
+2025-09-04T18:52:39: 📊 Live XRP Orderbook Service started successfully
+2025-09-04T18:52:39: Registered service for graceful shutdown: LiveOrderbookService
+2025-09-04T18:52:39: Live XRP Orderbook started - Channel: 1412857950673834115
+2025-09-04T18:52:39: 🔗 Starting Multi-Exchange Price Comparison Service
+2025-09-04T18:52:40: 💱 Multi-Exchange Price Comparison Service started successfully
+2025-09-04T18:52:40: Registered service for graceful shutdown: MultiExchangePriceService
+2025-09-04T18:52:40: Multi-Exchange Price Comparison started - Channel: 1412858397447159869
+2025-09-04T18:52:40: 🔗 Starting Arbitrage Alerts Service
+2025-09-04T18:52:40: ⚡ Arbitrage Opportunity Alerts Service started successfully
+2025-09-04T18:52:40: Registered service for graceful shutdown: ArbitrageAlertsService
+2025-09-04T18:52:40: Arbitrage Opportunity Alerts started - Channel: 1412858441780695244
+2025-09-04T18:52:40: 🐋 Initializing XRPL Whale Watching Social Network...
+2025-09-04T18:52:40: 🐋 Starting Whale Discovery Service...
+2025-09-04T18:52:41: 🔍 Initializing whale database...
+2025-09-04T18:52:41: 📊 Initialized 0 whales in database
+2025-09-04T18:52:42: ✅ Whale Discovery Service started successfully
+2025-09-04T18:52:42: Registered service for graceful shutdown: WhaleDiscoveryService
+2025-09-04T18:52:42: 🔍 Whale Discovery & Following started - Channel: 1413174672375156767
+2025-09-04T18:52:43: 🐋 Whale Social Feed Service initialized
+2025-09-04T18:52:44: Error checking whale movements: ReferenceError: ActionRowBuilder is not defined
+2025-09-04T18:52:44:     at WhaleSocialFeedService.postWhaleMovement (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:139:27)
+2025-09-04T18:52:44:     at WhaleSocialFeedService.checkWhaleMovements (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:83:28)
+2025-09-04T18:52:44:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:52:44:     at async WhaleSocialFeedService.startFeedUpdates (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:74:9)
+2025-09-04T18:52:44:     at async WhaleSocialFeedService.initialize (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:25:13)
+2025-09-04T18:52:44:     at async Client.<anonymous> (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:185:9)
+2025-09-04T18:52:44: Registered service for graceful shutdown: WhaleSocialFeedService
+2025-09-04T18:52:44: 📱 Whale Social Feed started - Channel: 1413174720798658622
+2025-09-04T18:52:44: 🐋 Whale Profile Service initialized
+2025-09-04T18:52:44: Failed to initialize Whale Profile Service: TypeError: this.createWhaleSelectMenu is not a function
+2025-09-04T18:52:44:     at WhaleProfileService.sendWelcomeMessage (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleProfileService.js:78:33)
+2025-09-04T18:52:44:     at WhaleProfileService.initialize (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleProfileService.js:21:24)
+2025-09-04T18:52:44:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:52:44:     at async Client.<anonymous> (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:191:9)
+2025-09-04T18:52:44: Registered service for graceful shutdown: WhaleProfileService
+2025-09-04T18:52:44: 👤 Individual Whale Profile started - Channel: 1413174757649547356
+2025-09-04T18:52:45: 📊 Portfolio Analysis Service initialized
+2025-09-04T18:52:45: Failed to initialize Portfolio Analysis Service: TypeError: this.createPortfolioSelectMenu is not a function
+2025-09-04T18:52:45:     at PortfolioAnalysisService.sendWelcomeMessage (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/portfolioAnalysisService.js:98:33)
+2025-09-04T18:52:45:     at PortfolioAnalysisService.initialize (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/portfolioAnalysisService.js:22:24)
+2025-09-04T18:52:45:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:52:45:     at async Client.<anonymous> (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:197:9)
+2025-09-04T18:52:45: Registered service for graceful shutdown: PortfolioAnalysisService
+2025-09-04T18:52:45: 📊 Portfolio Composition Analysis started - Channel: 1413174804122439680
+2025-09-04T18:52:45: Trading Pattern Recognition Service initialized successfully
+2025-09-04T18:52:45: Registered service for graceful shutdown: TradingPatternRecognitionService
+2025-09-04T18:52:45: 🧠 Trading Pattern Recognition started - Channel: 1413174836041351219
+2025-09-04T18:52:46: Community Features Service: XRPL client connected
+2025-09-04T18:52:46: 🏆 Community Features Service started successfully
+2025-09-04T18:52:46: Registered service for graceful shutdown: CommunityFeaturesService
+2025-09-04T18:52:46: 🎮 Community Features started - Channel: 1413174865128587355
+2025-09-04T18:52:46: 🎉 XRPL Whale Watching Social Network fully initialized!
+2025-09-04T18:52:46: Registered service for graceful shutdown: Object
+2025-09-04T18:52:46: Registered service for graceful shutdown: Object
+2025-09-04T18:52:46: Registered service for graceful shutdown: Object
+2025-09-04T18:52:46: All services initialized and registered for graceful shutdown
+2025-09-04T18:53:14: Error checking whale movements: ReferenceError: ActionRowBuilder is not defined
+2025-09-04T18:53:14:     at WhaleSocialFeedService.postWhaleMovement (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:139:27)
+2025-09-04T18:53:14:     at WhaleSocialFeedService.checkWhaleMovements (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:83:28)
+2025-09-04T18:53:14:     at async Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:68:13)
+2025-09-04T18:53:14: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:53:14:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:53:14: [2025-09-04T15:53:14.462Z] UNHANDLED_REJECTION: this.processCommunityPredictions is not a function
+2025-09-04T18:53:14: Unhandled Rejection: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:53:14:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:53:14: Unhandled Rejection at: Promise {
+2025-09-04T18:53:14:   <rejected> TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:53:14:       at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:53:14: } reason: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:53:14:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:53:14: Unhandled Rejection: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:53:14:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:53:44: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:53:44:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:53:44: [2025-09-04T15:53:44.463Z] UNHANDLED_REJECTION: this.processCommunityPredictions is not a function
+2025-09-04T18:53:44: Unhandled Rejection: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:53:44:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:53:44: Unhandled Rejection at: Promise {
+2025-09-04T18:53:44:   <rejected> TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:53:44:       at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:53:44: } reason: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:53:44:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:53:44: Unhandled Rejection: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:53:44:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:56:53: [dotenv@17.2.2] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2025-09-04T18:56:54: XRPL Client successfully patched to handle reconnect events and timeouts
+2025-09-04T18:56:54: [dotenv@17.2.2] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2025-09-04T18:56:54: Registered service for graceful shutdown: EnhancedScamProtection
+2025-09-04T18:56:54: Scam database loaded successfully
+2025-09-04T18:56:54: ✅ Telegram Bot connected: @draxmh_bridge_bot
+2025-09-04T18:56:55: Logged in as DRAXMH Bot#1233!
+2025-09-04T18:56:55: (node:35676) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-04T18:56:55: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-04T18:56:55: Whale Monitor started successfully
+2025-09-04T18:56:55: Registered service for graceful shutdown: WhaleMonitor
+2025-09-04T18:56:55: Registered service for graceful shutdown: EnhancedScamProtection
+2025-09-04T18:56:55: Scam Alert System initialized - Channel: 1307095704858005545
+2025-09-04T18:56:55: Registered service for graceful shutdown: PriceTracker
+2025-09-04T18:56:55: Price tracking started successfully
+2025-09-04T18:56:55: Updated threat database with 3 new entries
+2025-09-04T18:56:55: Connected to wss://xrplcluster.com
+2025-09-04T18:56:55: 🔗 XRPL Client connected for DEX analytics
+2025-09-04T18:56:56: WebSocket connected for price updates
+2025-09-04T18:56:56: 📊 XRPL DEX Analytics started successfully
+2025-09-04T18:56:56: Registered service for graceful shutdown: XRPLDexAnalytics
+2025-09-04T18:56:56: DEX Analytics started - Channel: 1307799407000944720
+2025-09-04T18:56:56: 🔗 XRPL Client connected for market psychology analysis
+2025-09-04T18:56:56: Price tracker started with 30s intervals
+2025-09-04T18:56:57: 🧠 Market psychology update sent successfully
+2025-09-04T18:56:57: 📊 XRP Market Psychology Analyzer started successfully
+2025-09-04T18:56:57: Registered service for graceful shutdown: XRPMarketPsychologyAnalyzer
+2025-09-04T18:56:57: Market Psychology Analysis started - Channel: 1325196609012895805
+2025-09-04T18:56:57: Smart Path Analyzer initialized
+2025-09-04T18:56:58: Smart Path Analyzer connected to XRPL
+2025-09-04T18:56:58: Smart Path Analysis update sent successfully
+2025-09-04T18:56:58: Smart Path Analysis started - Channel: 1308928972033359993
+2025-09-04T18:56:58: Registered service for graceful shutdown: SmartPathAnalyzer
+2025-09-04T18:56:58: Smart Path Analysis started - Channel: 1308928972033359993
+2025-09-04T18:56:58: 🔗 Starting Live Orderbook Service
+2025-09-04T18:56:59: 📊 Live XRP Orderbook Service started successfully
+2025-09-04T18:56:59: Registered service for graceful shutdown: LiveOrderbookService
+2025-09-04T18:56:59: Live XRP Orderbook started - Channel: 1412857950673834115
+2025-09-04T18:56:59: 🔗 Starting Multi-Exchange Price Comparison Service
+2025-09-04T18:57:00: 💱 Multi-Exchange Price Comparison Service started successfully
+2025-09-04T18:57:00: Registered service for graceful shutdown: MultiExchangePriceService
+2025-09-04T18:57:00: Multi-Exchange Price Comparison started - Channel: 1412858397447159869
+2025-09-04T18:57:00: 🔗 Starting Arbitrage Alerts Service
+2025-09-04T18:57:00: ⚡ Arbitrage Opportunity Alerts Service started successfully
+2025-09-04T18:57:00: Registered service for graceful shutdown: ArbitrageAlertsService
+2025-09-04T18:57:00: Arbitrage Opportunity Alerts started - Channel: 1412858441780695244
+2025-09-04T18:57:00: 🐋 Initializing XRPL Whale Watching Social Network...
+2025-09-04T18:57:00: 🐋 Starting Whale Discovery Service...
+2025-09-04T18:57:01: 🔍 Initializing whale database...
+2025-09-04T18:57:02: 📊 Initialized 0 whales in database
+2025-09-04T18:57:03: ✅ Whale Discovery Service started successfully
+2025-09-04T18:57:03: Registered service for graceful shutdown: WhaleDiscoveryService
+2025-09-04T18:57:03: 🔍 Whale Discovery & Following started - Channel: 1413174672375156767
+2025-09-04T18:57:03: 🐋 Whale Social Feed Service initialized
+2025-09-04T18:57:03: Registered service for graceful shutdown: WhaleSocialFeedService
+2025-09-04T18:57:03: 📱 Whale Social Feed started - Channel: 1413174720798658622
+2025-09-04T18:57:04: 🐋 Whale Profile Service initialized
+2025-09-04T18:57:04: Registered service for graceful shutdown: WhaleProfileService
+2025-09-04T18:57:04: 👤 Individual Whale Profile started - Channel: 1413174757649547356
+2025-09-04T18:57:04: 📊 Portfolio Analysis Service initialized
+2025-09-04T18:57:05: Registered service for graceful shutdown: PortfolioAnalysisService
+2025-09-04T18:57:05: 📊 Portfolio Composition Analysis started - Channel: 1413174804122439680
+2025-09-04T18:57:06: Trading Pattern Recognition Service initialized successfully
+2025-09-04T18:57:06: Registered service for graceful shutdown: TradingPatternRecognitionService
+2025-09-04T18:57:06: 🧠 Trading Pattern Recognition started - Channel: 1413174836041351219
+2025-09-04T18:57:06: Community Features Service: XRPL client connected
+2025-09-04T18:57:07: 🏆 Community Features Service started successfully
+2025-09-04T18:57:07: Registered service for graceful shutdown: CommunityFeaturesService
+2025-09-04T18:57:07: 🎮 Community Features started - Channel: 1413174865128587355
+2025-09-04T18:57:07: 🎉 XRPL Whale Watching Social Network fully initialized!
+2025-09-04T18:57:07: Registered service for graceful shutdown: Object
+2025-09-04T18:57:07: Registered service for graceful shutdown: Object
+2025-09-04T18:57:07: Registered service for graceful shutdown: Object
+2025-09-04T18:57:07: All services initialized and registered for graceful shutdown
+2025-09-04T18:57:33: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:57:33:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:57:33: [2025-09-04T15:57:33.858Z] UNHANDLED_REJECTION: this.processCommunityPredictions is not a function
+2025-09-04T18:57:33: Unhandled Rejection: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:57:33:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:57:33: Unhandled Rejection at: Promise {
+2025-09-04T18:57:33:   <rejected> TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:57:33:       at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:57:33: } reason: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:57:33:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:57:33: Unhandled Rejection: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:57:33:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:58:04: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:58:04:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:58:04:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:58:04: [2025-09-04T15:58:04.259Z] UNHANDLED_REJECTION: this.processCommunityPredictions is not a function
+2025-09-04T18:58:04: Unhandled Rejection: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:58:04:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:58:04:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:58:04: Unhandled Rejection at: Promise {
+2025-09-04T18:58:04:   <rejected> TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:58:04:       at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:58:04:       at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:58:04: } reason: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:58:04:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:58:04:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:58:04: Unhandled Rejection: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:58:04:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:58:04:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:58:33: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:58:33:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:58:33: [2025-09-04T15:58:33.884Z] UNHANDLED_REJECTION: this.processCommunityPredictions is not a function
+2025-09-04T18:58:33: Unhandled Rejection: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:58:33:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:58:33: Unhandled Rejection at: Promise {
+2025-09-04T18:58:33:   <rejected> TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:58:33:       at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:58:33: } reason: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:58:33:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:58:33: Unhandled Rejection: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:58:33:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T19:00:25: [dotenv@17.2.2] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2025-09-04T19:00:26: XRPL Client successfully patched to handle reconnect events and timeouts
+2025-09-04T19:00:26: [dotenv@17.2.2] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2025-09-04T19:00:26: Registered service for graceful shutdown: EnhancedScamProtection
+2025-09-04T19:00:26: Scam database loaded successfully
+2025-09-04T19:00:26: ✅ Telegram Bot connected: @draxmh_bridge_bot
+2025-09-04T19:00:27: Logged in as DRAXMH Bot#1233!
+2025-09-04T19:00:27: (node:4056) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-04T19:00:27: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-04T19:00:27: Whale Monitor started successfully
+2025-09-04T19:00:27: Registered service for graceful shutdown: WhaleMonitor
+2025-09-04T19:00:27: Registered service for graceful shutdown: EnhancedScamProtection
+2025-09-04T19:00:27: Scam Alert System initialized - Channel: 1307095704858005545
+2025-09-04T19:00:27: Registered service for graceful shutdown: PriceTracker
+2025-09-04T19:00:27: Price tracking started successfully
+2025-09-04T19:00:27: Updated threat database with 3 new entries
+2025-09-04T19:00:28: Connected to wss://xrplcluster.com
+2025-09-04T19:00:28: 🔗 XRPL Client connected for DEX analytics
+2025-09-04T19:00:28: WebSocket connected for price updates
+2025-09-04T19:00:28: 📊 XRPL DEX Analytics started successfully
+2025-09-04T19:00:28: Registered service for graceful shutdown: XRPLDexAnalytics
+2025-09-04T19:00:28: DEX Analytics started - Channel: 1307799407000944720
+2025-09-04T19:00:29: 🔗 XRPL Client connected for market psychology analysis
+2025-09-04T19:00:29: Price tracker started with 30s intervals
+2025-09-04T19:00:30: 🧠 Market psychology update sent successfully
+2025-09-04T19:00:30: 📊 XRP Market Psychology Analyzer started successfully
+2025-09-04T19:00:30: Registered service for graceful shutdown: XRPMarketPsychologyAnalyzer
+2025-09-04T19:00:30: Market Psychology Analysis started - Channel: 1325196609012895805
+2025-09-04T19:00:30: Smart Path Analyzer initialized
+2025-09-04T19:00:30: Smart Path Analyzer connected to XRPL
+2025-09-04T19:00:30: Smart Path Analysis update sent successfully
+2025-09-04T19:00:30: Smart Path Analysis started - Channel: 1308928972033359993
+2025-09-04T19:00:30: Registered service for graceful shutdown: SmartPathAnalyzer
+2025-09-04T19:00:30: Smart Path Analysis started - Channel: 1308928972033359993
+2025-09-04T19:00:30: 🔗 Starting Live Orderbook Service
+2025-09-04T19:00:31: 📊 Live XRP Orderbook Service started successfully
+2025-09-04T19:00:31: Registered service for graceful shutdown: LiveOrderbookService
+2025-09-04T19:00:31: Live XRP Orderbook started - Channel: 1412857950673834115
+2025-09-04T19:00:31: 🔗 Starting Multi-Exchange Price Comparison Service
+2025-09-04T19:00:32: 💱 Multi-Exchange Price Comparison Service started successfully
+2025-09-04T19:00:32: Registered service for graceful shutdown: MultiExchangePriceService
+2025-09-04T19:00:32: Multi-Exchange Price Comparison started - Channel: 1412858397447159869
+2025-09-04T19:00:32: 🔗 Starting Arbitrage Alerts Service
+2025-09-04T19:00:33: ⚡ Arbitrage Opportunity Alerts Service started successfully
+2025-09-04T19:00:33: Registered service for graceful shutdown: ArbitrageAlertsService
+2025-09-04T19:00:33: Arbitrage Opportunity Alerts started - Channel: 1412858441780695244
+2025-09-04T19:00:33: 🐋 Initializing XRPL Whale Watching Social Network...
+2025-09-04T19:00:33: 🐋 Starting Whale Discovery Service...
+2025-09-04T19:00:33: 🔍 Initializing whale database...
+2025-09-04T19:00:34: 📊 Initialized 0 whales in database
+2025-09-04T19:00:35: ✅ Whale Discovery Service started successfully
+2025-09-04T19:00:35: Registered service for graceful shutdown: WhaleDiscoveryService
+2025-09-04T19:00:35: 🔍 Whale Discovery & Following started - Channel: 1413174672375156767
+2025-09-04T19:00:36: 🐋 Whale Social Feed Service initialized
+2025-09-04T19:00:36: Registered service for graceful shutdown: WhaleSocialFeedService
+2025-09-04T19:00:36: 📱 Whale Social Feed started - Channel: 1413174720798658622
+2025-09-04T19:00:36: 🐋 Whale Profile Service initialized
+2025-09-04T19:00:37: Registered service for graceful shutdown: WhaleProfileService
+2025-09-04T19:00:37: 👤 Individual Whale Profile started - Channel: 1413174757649547356
+2025-09-04T19:00:37: 📊 Portfolio Analysis Service initialized
+2025-09-04T19:00:37: Registered service for graceful shutdown: PortfolioAnalysisService
+2025-09-04T19:00:37: 📊 Portfolio Composition Analysis started - Channel: 1413174804122439680
+2025-09-04T19:00:38: Trading Pattern Recognition Service initialized successfully
+2025-09-04T19:00:38: Registered service for graceful shutdown: TradingPatternRecognitionService
+2025-09-04T19:00:38: 🧠 Trading Pattern Recognition started - Channel: 1413174836041351219
+2025-09-04T19:00:39: Community Features Service: XRPL client connected
+2025-09-04T19:00:39: 🏆 Community Features Service started successfully
+2025-09-04T19:00:39: Registered service for graceful shutdown: CommunityFeaturesService
+2025-09-04T19:00:39: 🎮 Community Features started - Channel: 1413174865128587355
+2025-09-04T19:00:39: 🎉 XRPL Whale Watching Social Network fully initialized!
+2025-09-04T19:00:39: Registered service for graceful shutdown: Object
+2025-09-04T19:00:39: Registered service for graceful shutdown: Object
+2025-09-04T19:00:39: Registered service for graceful shutdown: Object
+2025-09-04T19:00:39: All services initialized and registered for graceful shutdown
+2025-09-04T19:05:29: DEX Analytics update sent at 2025-09-04T16:05:29.222Z
+2025-09-04T19:05:31: Smart Path Analysis update sent successfully
+2025-09-04T19:05:31: 🧠 Market psychology update sent successfully
+2025-09-04T19:05:38: Error in pattern analysis: ReferenceError: ActionRowBuilder is not defined
+2025-09-04T19:05:38:     at TradingPatternRecognitionService.sendPatternUpdate (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/tradingPatternRecognitionService.js:186:21)
+2025-09-04T19:05:38:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/tradingPatternRecognitionService.js:56:28)
+2025-09-04T19:10:29: DEX Analytics update sent at 2025-09-04T16:10:29.194Z
+2025-09-04T19:10:31: 🧠 Market psychology update sent successfully
+2025-09-04T19:10:31: Smart Path Analysis update sent successfully
+2025-09-04T19:10:32: 📊 Live Orderbook update sent at 2025-09-04T16:10:32.834Z
+2025-09-04T19:10:33: 💱 Multi-Exchange Price update sent at 2025-09-04T16:10:33.702Z
+2025-09-04T19:10:33: ⚡ Arbitrage Alerts update sent at 2025-09-04T16:10:33.796Z
+2025-09-04T19:10:38: Error in pattern analysis: ReferenceError: ActionRowBuilder is not defined
+2025-09-04T19:10:38:     at TradingPatternRecognitionService.sendPatternUpdate (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/tradingPatternRecognitionService.js:186:21)
+2025-09-04T19:10:38:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/tradingPatternRecognitionService.js:56:28)
+2025-09-04T19:10:38:     at runNextTicks (node:internal/process/task_queues:65:5)
+2025-09-04T19:10:38:     at process.processTimers (node:internal/timers:540:9)
+2025-09-04T19:15:29: DEX Analytics update sent at 2025-09-04T16:15:29.103Z
+2025-09-04T19:15:31: 🧠 Market psychology update sent successfully
+2025-09-04T19:15:31: Smart Path Analysis update sent successfully
+2025-09-04T19:15:35: 🔍 Performing whale discovery scan...
+2025-09-04T19:15:38: Error in pattern analysis: ReferenceError: ActionRowBuilder is not defined
+2025-09-04T19:15:38:     at TradingPatternRecognitionService.sendPatternUpdate (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/tradingPatternRecognitionService.js:186:21)
+2025-09-04T19:15:38:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/tradingPatternRecognitionService.js:56:28)
+2025-09-04T19:15:38:     at runNextTicks (node:internal/process/task_queues:65:5)
+2025-09-04T19:15:38:     at process.processTimers (node:internal/timers:540:9)
+2025-09-04T19:20:30: DEX Analytics update sent at 2025-09-04T16:20:30.617Z
+2025-09-04T19:20:31: 🧠 Market psychology update sent successfully
+2025-09-04T19:20:31: Smart Path Analysis update sent successfully
+2025-09-04T19:20:33: 📊 Live Orderbook update sent at 2025-09-04T16:20:33.200Z
+2025-09-04T19:20:33: ⚡ Arbitrage Alerts update sent at 2025-09-04T16:20:33.888Z
+2025-09-04T19:20:35: 💱 Multi-Exchange Price update sent at 2025-09-04T16:20:35.298Z
+2025-09-04T19:20:38: Error in pattern analysis: ReferenceError: ActionRowBuilder is not defined
+2025-09-04T19:20:38:     at TradingPatternRecognitionService.sendPatternUpdate (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/tradingPatternRecognitionService.js:186:21)
+2025-09-04T19:20:38:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/tradingPatternRecognitionService.js:56:28)
+2025-09-04T19:25:31: [dotenv@17.2.2] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2025-09-04T19:25:31: XRPL Client successfully patched to handle reconnect events and timeouts
+2025-09-04T19:25:31: [dotenv@17.2.2] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2025-09-04T19:25:31: Registered service for graceful shutdown: EnhancedScamProtection
+2025-09-04T19:25:31: Scam database loaded successfully
+2025-09-04T19:25:31: ✅ Telegram Bot connected: @draxmh_bridge_bot
+2025-09-04T19:25:32: Logged in as DRAXMH Bot#1233!
+2025-09-04T19:25:32: (node:46996) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-04T19:25:32: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-04T19:25:32: Whale Monitor started successfully
+2025-09-04T19:25:32: Registered service for graceful shutdown: WhaleMonitor
+2025-09-04T19:25:32: Registered service for graceful shutdown: EnhancedScamProtection
+2025-09-04T19:25:32: Scam Alert System initialized - Channel: 1307095704858005545
+2025-09-04T19:25:32: Registered service for graceful shutdown: PriceTracker
+2025-09-04T19:25:32: Price tracking started successfully
+2025-09-04T19:25:32: Updated threat database with 3 new entries
+2025-09-04T19:25:33: Connected to wss://xrplcluster.com
+2025-09-04T19:25:33: WebSocket connected for price updates
+2025-09-04T19:25:33: 🔗 XRPL Client connected for DEX analytics
+2025-09-04T19:25:34: 📊 XRPL DEX Analytics started successfully
+2025-09-04T19:25:34: Registered service for graceful shutdown: XRPLDexAnalytics
+2025-09-04T19:25:34: DEX Analytics started - Channel: 1307799407000944720
+2025-09-04T19:25:34: 🔗 XRPL Client connected for market psychology analysis
+2025-09-04T19:25:34: Price tracker started with 30s intervals
+2025-09-04T19:25:35: 🧠 Market psychology update sent successfully
+2025-09-04T19:25:35: 📊 XRP Market Psychology Analyzer started successfully
+2025-09-04T19:25:35: Registered service for graceful shutdown: XRPMarketPsychologyAnalyzer
+2025-09-04T19:25:35: Market Psychology Analysis started - Channel: 1325196609012895805
+2025-09-04T19:25:35: Smart Path Analyzer initialized
+2025-09-04T19:25:35: Smart Path Analyzer connected to XRPL
+2025-09-04T19:25:36: Smart Path Analysis update sent successfully
+2025-09-04T19:25:36: Smart Path Analysis started - Channel: 1308928972033359993
+2025-09-04T19:25:36: Registered service for graceful shutdown: SmartPathAnalyzer
+2025-09-04T19:25:36: Smart Path Analysis started - Channel: 1308928972033359993
+2025-09-04T19:25:36: 🔗 Starting Live Orderbook Service
+2025-09-04T19:25:37: 📊 Live XRP Orderbook Service started successfully
+2025-09-04T19:25:37: Registered service for graceful shutdown: LiveOrderbookService
+2025-09-04T19:25:37: Live XRP Orderbook started - Channel: 1412857950673834115
+2025-09-04T19:25:37: 🔗 Starting Multi-Exchange Price Comparison Service
+2025-09-04T19:25:38: 💱 Multi-Exchange Price Comparison Service started successfully
+2025-09-04T19:25:38: Registered service for graceful shutdown: MultiExchangePriceService
+2025-09-04T19:25:38: Multi-Exchange Price Comparison started - Channel: 1412858397447159869
+2025-09-04T19:25:38: 🔗 Starting Arbitrage Alerts Service
+2025-09-04T19:25:38: ⚡ Arbitrage Opportunity Alerts Service started successfully
+2025-09-04T19:25:38: Registered service for graceful shutdown: ArbitrageAlertsService
+2025-09-04T19:25:38: Arbitrage Opportunity Alerts started - Channel: 1412858441780695244
+2025-09-04T19:25:38: 🐋 Initializing XRPL Whale Watching Social Network...
+2025-09-04T19:25:38: 🐋 Starting Whale Discovery Service...
+2025-09-04T19:25:39: 🔍 Initializing whale database...
+2025-09-04T19:25:40: 📊 Initialized 0 whales in database
+2025-09-04T19:25:40: ✅ Whale Discovery Service started successfully
+2025-09-04T19:25:40: Registered service for graceful shutdown: WhaleDiscoveryService
+2025-09-04T19:25:40: 🔍 Whale Discovery & Following started - Channel: 1413174672375156767
+2025-09-04T19:25:41: 🐋 Whale Social Feed Service initialized
+2025-09-04T19:25:41: Registered service for graceful shutdown: WhaleSocialFeedService
+2025-09-04T19:25:41: 📱 Whale Social Feed started - Channel: 1413174720798658622
+2025-09-04T19:25:41: 🐋 Whale Profile Service initialized
+2025-09-04T19:25:42: Registered service for graceful shutdown: WhaleProfileService
+2025-09-04T19:25:42: 👤 Individual Whale Profile started - Channel: 1413174757649547356
+2025-09-04T19:25:42: 📊 Portfolio Analysis Service initialized
+2025-09-04T19:25:43: Registered service for graceful shutdown: PortfolioAnalysisService
+2025-09-04T19:25:43: 📊 Portfolio Composition Analysis started - Channel: 1413174804122439680
+2025-09-04T19:25:44: Trading Pattern Recognition Service initialized successfully
+2025-09-04T19:25:44: Registered service for graceful shutdown: TradingPatternRecognitionService
+2025-09-04T19:25:44: 🧠 Trading Pattern Recognition started - Channel: 1413174836041351219
+2025-09-04T19:25:45: Community Features Service: XRPL client connected
+2025-09-04T19:25:46: 🏆 Community Features Service started successfully
+2025-09-04T19:25:46: Registered service for graceful shutdown: CommunityFeaturesService
+2025-09-04T19:25:46: 🎮 Community Features started - Channel: 1413174865128587355
+2025-09-04T19:25:46: 🎉 XRPL Whale Watching Social Network fully initialized!
+2025-09-04T19:25:46: Registered service for graceful shutdown: Object
+2025-09-04T19:25:46: Registered service for graceful shutdown: Object
+2025-09-04T19:25:46: Registered service for graceful shutdown: Object
+2025-09-04T19:25:46: All services initialized and registered for graceful shutdown
+2025-09-04T19:30:34: DEX Analytics update sent at 2025-09-04T16:30:34.700Z
+2025-09-04T19:30:36: 🧠 Market psychology update sent successfully
+2025-09-04T19:30:36: Smart Path Analysis update sent successfully
+2025-09-04T19:35:21: Button interaction received: info_check
+2025-09-04T19:35:21: Handling info buttons
+2025-09-04T19:35:21: (node:46996) Warning: Supplying "ephemeral" for interaction response options is deprecated. Utilize flags instead.
+2025-09-04T19:35:23: Button interaction received: dapps_check
+2025-09-04T19:35:28: Button interaction received: stake_stats_check
+2025-09-04T19:35:32: Button interaction received: info_check
+2025-09-04T19:35:32: Handling info buttons
+2025-09-04T19:35:34: DEX Analytics update sent at 2025-09-04T16:35:34.652Z
+2025-09-04T19:35:36: 🧠 Market psychology update sent successfully
+2025-09-04T19:35:36: Smart Path Analysis update sent successfully
+2025-09-04T19:35:37: 📊 Live Orderbook update sent at 2025-09-04T16:35:37.947Z
+2025-09-04T19:35:39: ⚡ Arbitrage Alerts update sent at 2025-09-04T16:35:39.407Z
+2025-09-04T19:35:40: 💱 Multi-Exchange Price update sent at 2025-09-04T16:35:40.048Z
+2025-09-04T19:35:46: Button interaction received: scam_alert_check
+2025-09-04T19:35:46: Routing to security buttons handler
+2025-09-04T19:35:46: Security button clicked: scam_alert_check
+2025-09-04T19:35:46: Handling scam alert button
+2025-09-04T19:35:51: Button interaction received: suggest_check
+2025-09-04T19:35:51: Routing to security buttons handler
+2025-09-04T19:35:51: Security button clicked: suggest_check
+2025-09-04T19:35:51: Handling suggest button
+2025-09-04T19:35:51: handleSuggestion called for user: not_ur_besness
+2025-09-04T19:35:52: Suggestion response sent successfully
+2025-09-04T19:35:55: Button interaction received: report_check
+2025-09-04T19:35:55: Routing to security buttons handler
+2025-09-04T19:35:55: Security button clicked: report_check
+2025-09-04T19:35:55: Handling report button
+2025-09-04T19:36:02: Spam manager cleanup started
+2025-09-04T19:36:02: No webhook configured for type: MESSAGE_CREATE
+2025-09-04T19:37:02: Spam manager cleanup: 0 users tracked
+2025-09-04T19:38:02: Spam manager cleanup: 0 users tracked
+2025-09-04T19:39:02: Spam manager cleanup: 0 users tracked
+2025-09-04T19:39:41: Button interaction received: dapps_check
+2025-09-04T19:39:46: Button interaction received: info_check
+2025-09-04T19:39:46: Handling info buttons
+2025-09-04T19:40:02: Spam manager cleanup: 0 users tracked
+2025-09-04T19:40:14: Button interaction received: draxmh_check
+2025-09-04T19:40:14: Handling fun buttons
+2025-09-04T19:40:19: Button interaction received: moon_check
+2025-09-04T19:40:19: Handling fun buttons
+2025-09-04T19:40:34: DEX Analytics update sent at 2025-09-04T16:40:34.730Z
+2025-09-04T19:40:36: Smart Path Analysis update sent successfully
+2025-09-04T19:40:36: 🧠 Market psychology update sent successfully
+2025-09-04T19:40:40: 🔍 Performing whale discovery scan...
+2025-09-04T19:41:02: Spam manager cleanup: 0 users tracked
+2025-09-04T19:42:02: Spam manager cleanup: 0 users tracked
+2025-09-04T19:43:02: Spam manager cleanup: 0 users tracked
+2025-09-04T19:44:02: Spam manager cleanup: 0 users tracked
+2025-09-04T19:45:02: Spam manager cleanup: 0 users tracked
+2025-09-04T19:45:34: DEX Analytics update sent at 2025-09-04T16:45:34.619Z
+2025-09-04T19:45:36: 🧠 Market psychology update sent successfully
+2025-09-04T19:45:36: Smart Path Analysis update sent successfully
+2025-09-04T19:45:37: 📊 Live Orderbook update sent at 2025-09-04T16:45:37.950Z
+2025-09-04T19:45:39: ⚡ Arbitrage Alerts update sent at 2025-09-04T16:45:39.329Z
+2025-09-04T19:45:39: 💱 Multi-Exchange Price update sent at 2025-09-04T16:45:39.705Z
+2025-09-04T19:46:02: Spam manager cleanup: 0 users tracked
+2025-09-04T19:47:02: Spam manager cleanup: 0 users tracked
+2025-09-04T19:48:02: Spam manager cleanup: 0 users tracked
+2025-09-04T19:49:02: Spam manager cleanup: 0 users tracked
+2025-09-04T19:50:02: Spam manager cleanup: 0 users tracked
+2025-09-04T19:50:34: DEX Analytics update sent at 2025-09-04T16:50:34.597Z
+2025-09-04T19:50:36: 🧠 Market psychology update sent successfully
+2025-09-04T19:50:36: Smart Path Analysis update sent successfully
+2025-09-04T19:51:02: Spam manager cleanup: 0 users tracked
+2025-09-04T19:52:02: Spam manager cleanup: 0 users tracked
+2025-09-04T19:53:02: Spam manager cleanup: 0 users tracked
+2025-09-04T19:54:02: Spam manager cleanup: 0 users tracked
+2025-09-04T19:55:02: Spam manager cleanup: 0 users tracked
+2025-09-04T19:55:34: DEX Analytics update sent at 2025-09-04T16:55:34.706Z
+2025-09-04T19:55:36: 🧠 Market psychology update sent successfully
+2025-09-04T19:55:36: Smart Path Analysis update sent successfully
+2025-09-04T19:55:38: 📊 Live Orderbook update sent at 2025-09-04T16:55:38.032Z
+2025-09-04T19:55:39: ⚡ Arbitrage Alerts update sent at 2025-09-04T16:55:39.400Z
+2025-09-04T19:55:39: 💱 Multi-Exchange Price update sent at 2025-09-04T16:55:39.574Z
+2025-09-04T19:55:40: 🔍 Performing whale discovery scan...
+2025-09-04T19:56:02: Spam manager cleanup: 0 users tracked
+2025-09-04T19:57:02: Spam manager cleanup: 0 users tracked
+2025-09-04T19:58:02: Spam manager cleanup: 0 users tracked
+2025-09-04T19:59:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:00:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:00:34: DEX Analytics update sent at 2025-09-04T17:00:34.601Z
+2025-09-04T20:00:36: Smart Path Analysis update sent successfully
+2025-09-04T20:00:36: 🧠 Market psychology update sent successfully
+2025-09-04T20:01:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:02:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:03:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:04:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:05:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:05:34: DEX Analytics update sent at 2025-09-04T17:05:34.528Z
+2025-09-04T20:05:36: Smart Path Analysis update sent successfully
+2025-09-04T20:05:36: 🧠 Market psychology update sent successfully
+2025-09-04T20:05:37: 📊 Live Orderbook update sent at 2025-09-04T17:05:37.887Z
+2025-09-04T20:05:41: ⚡ Arbitrage Alerts update sent at 2025-09-04T17:05:41.202Z
+2025-09-04T20:05:43: Error fetching KuCoin price: timeout of 5000ms exceeded
+2025-09-04T20:05:44: 💱 Multi-Exchange Price update sent at 2025-09-04T17:05:44.085Z
+2025-09-04T20:06:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:07:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:08:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:09:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:10:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:10:34: DEX Analytics update sent at 2025-09-04T17:10:34.711Z
+2025-09-04T20:10:36: 🧠 Market psychology update sent successfully
+2025-09-04T20:10:37: Smart Path Analysis update sent successfully
+2025-09-04T20:10:40: 🔍 Performing whale discovery scan...
+2025-09-04T20:11:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:12:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:13:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:14:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:15:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:15:34: DEX Analytics update sent at 2025-09-04T17:15:34.796Z
+2025-09-04T20:15:36: 🧠 Market psychology update sent successfully
+2025-09-04T20:15:36: Smart Path Analysis update sent successfully
+2025-09-04T20:15:37: 📊 Live Orderbook update sent at 2025-09-04T17:15:37.867Z
+2025-09-04T20:15:39: ⚡ Arbitrage Alerts update sent at 2025-09-04T17:15:39.373Z
+2025-09-04T20:15:39: 💱 Multi-Exchange Price update sent at 2025-09-04T17:15:39.586Z
+2025-09-04T20:16:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:17:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:18:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:19:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:20:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:20:34: DEX Analytics update sent at 2025-09-04T17:20:34.779Z
+2025-09-04T20:20:36: 🧠 Market psychology update sent successfully
+2025-09-04T20:20:36: Smart Path Analysis update sent successfully
+2025-09-04T20:21:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:22:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:23:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:24:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:25:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:25:32: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-04T20:25:32: Updated scam database with 0 new threats
+2025-09-04T20:25:32: Updated threat database with 3 new entries
+2025-09-04T20:25:34: DEX Analytics update sent at 2025-09-04T17:25:34.738Z
+2025-09-04T20:25:36: 🧠 Market psychology update sent successfully
+2025-09-04T20:25:36: Smart Path Analysis update sent successfully
+2025-09-04T20:25:38: 📊 Live Orderbook update sent at 2025-09-04T17:25:38.642Z
+2025-09-04T20:25:40: 🔍 Performing whale discovery scan...
+2025-09-04T20:25:41: 💱 Multi-Exchange Price update sent at 2025-09-04T17:25:41.791Z
+2025-09-04T20:25:42: ⚡ Arbitrage Alerts update sent at 2025-09-04T17:25:42.228Z
+2025-09-04T20:26:02: Spam manager cleanup: 0 users tracked
+2025-09-04T20:29:42: [dotenv@17.2.2] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2025-09-04T20:29:42: XRPL Client successfully patched to handle reconnect events and timeouts
+2025-09-04T20:29:42: [dotenv@17.2.2] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2025-09-04T20:29:42: Registered service for graceful shutdown: EnhancedScamProtection
+2025-09-04T20:29:42: Scam database loaded successfully
+2025-09-04T20:29:43: ✅ Telegram Bot connected: @draxmh_bridge_bot
+2025-09-04T20:29:44: Logged in as DRAXMH Bot#1233!
+2025-09-04T20:29:44: (node:24932) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-04T20:29:44: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-04T20:29:45: Whale Monitor started successfully
+2025-09-04T20:29:45: Registered service for graceful shutdown: WhaleMonitor
+2025-09-04T20:29:45: Registered service for graceful shutdown: EnhancedScamProtection
+2025-09-04T20:29:45: Scam Alert System initialized - Channel: 1307095704858005545
+2025-09-04T20:29:45: Registered service for graceful shutdown: PriceTracker
+2025-09-04T20:29:45: Price tracking started successfully
+2025-09-04T20:29:45: Updated threat database with 3 new entries
+2025-09-04T20:29:47: WebSocket connected for price updates
+2025-09-04T20:29:48: Connected to wss://xrplcluster.com
+2025-09-04T20:29:49: 🔗 XRPL Client connected for DEX analytics
+2025-09-04T20:29:49: Price tracker started with 30s intervals
+2025-09-04T20:29:50: 📊 XRPL DEX Analytics started successfully
+2025-09-04T20:29:50: Registered service for graceful shutdown: XRPLDexAnalytics
+2025-09-04T20:29:50: DEX Analytics started - Channel: 1307799407000944720
+2025-09-04T20:29:50: 🔗 XRPL Client connected for market psychology analysis
+2025-09-04T20:29:52: 🧠 Market psychology update sent successfully
+2025-09-04T20:29:52: 📊 XRP Market Psychology Analyzer started successfully
+2025-09-04T20:29:52: Registered service for graceful shutdown: XRPMarketPsychologyAnalyzer
+2025-09-04T20:29:52: Market Psychology Analysis started - Channel: 1325196609012895805
+2025-09-04T20:29:52: Smart Path Analyzer initialized
+2025-09-04T20:29:52: Smart Path Analyzer connected to XRPL
+2025-09-04T20:29:53: Smart Path Analysis update sent successfully
+2025-09-04T20:29:53: Smart Path Analysis started - Channel: 1308928972033359993
+2025-09-04T20:29:53: Registered service for graceful shutdown: SmartPathAnalyzer
+2025-09-04T20:29:53: Smart Path Analysis started - Channel: 1308928972033359993
+2025-09-04T20:29:53: 🔗 Starting Live Orderbook Service
+2025-09-04T20:29:54: 📊 Live XRP Orderbook Service started successfully
+2025-09-04T20:29:54: Registered service for graceful shutdown: LiveOrderbookService
+2025-09-04T20:29:54: Live XRP Orderbook started - Channel: 1412857950673834115
+2025-09-04T20:29:54: 🔗 Starting Multi-Exchange Price Comparison Service
+2025-09-04T20:29:59: Error fetching KuCoin price: timeout of 5000ms exceeded
+2025-09-04T20:30:00: 💱 Multi-Exchange Price Comparison Service started successfully
+2025-09-04T20:30:00: Registered service for graceful shutdown: MultiExchangePriceService
+2025-09-04T20:30:00: Multi-Exchange Price Comparison started - Channel: 1412858397447159869
+2025-09-04T20:30:00: 🔗 Starting Arbitrage Alerts Service
+2025-09-04T20:30:02: ⚡ Arbitrage Opportunity Alerts Service started successfully
+2025-09-04T20:30:02: Registered service for graceful shutdown: ArbitrageAlertsService
+2025-09-04T20:30:02: Arbitrage Opportunity Alerts started - Channel: 1412858441780695244
+2025-09-04T20:30:02: 🐋 Initializing XRPL Whale Watching Social Network...
+2025-09-04T20:30:02: 🐋 Starting Whale Discovery Service...
+2025-09-04T20:30:02: 🔍 Initializing whale database...
+2025-09-04T20:30:03: 📊 Initialized 0 whales in database
+2025-09-04T20:30:03: ✅ Whale Discovery Service started successfully
+2025-09-04T20:30:03: Registered service for graceful shutdown: WhaleDiscoveryService
+2025-09-04T20:30:03: 🔍 Whale Discovery & Following started - Channel: 1413174672375156767
+2025-09-04T20:30:04: 🐋 Whale Social Feed Service initialized
+2025-09-04T20:30:04: Registered service for graceful shutdown: WhaleSocialFeedService
+2025-09-04T20:30:04: 📱 Whale Social Feed started - Channel: 1413174720798658622
+2025-09-04T20:30:04: 🐋 Whale Profile Service initialized
+2025-09-04T20:30:05: Registered service for graceful shutdown: WhaleProfileService
+2025-09-04T20:30:05: 👤 Individual Whale Profile started - Channel: 1413174757649547356
+2025-09-04T20:30:06: 📊 Portfolio Analysis Service initialized
+2025-09-04T20:30:06: Registered service for graceful shutdown: PortfolioAnalysisService
+2025-09-04T20:30:06: 📊 Portfolio Composition Analysis started - Channel: 1413174804122439680
+2025-09-04T20:30:08: Trading Pattern Recognition Service initialized successfully
+2025-09-04T20:30:08: Registered service for graceful shutdown: TradingPatternRecognitionService
+2025-09-04T20:30:08: 🧠 Trading Pattern Recognition started - Channel: 1413174836041351219
+2025-09-04T20:30:08: Community Features Service: XRPL client connected
+2025-09-04T20:30:09: 🏆 Community Features Service started successfully
+2025-09-04T20:30:09: Registered service for graceful shutdown: CommunityFeaturesService
+2025-09-04T20:30:09: 🎮 Community Features started - Channel: 1413174865128587355
+2025-09-04T20:30:09: 🎉 XRPL Whale Watching Social Network fully initialized!
+2025-09-04T20:30:09: Registered service for graceful shutdown: Object
+2025-09-04T20:30:09: Registered service for graceful shutdown: Object
+2025-09-04T20:30:09: Registered service for graceful shutdown: Object
+2025-09-04T20:30:09: All services initialized and registered for graceful shutdown
+2025-09-04T20:31:29: Button interaction received: info_check
+2025-09-04T20:31:29: Handling info buttons
+2025-09-04T20:31:29: (node:24932) Warning: Supplying "ephemeral" for interaction response options is deprecated. Utilize flags instead.
+2025-09-04T20:31:33: Button interaction received: dapps_check
+2025-09-04T20:32:42: Spam manager cleanup started
+2025-09-04T20:32:42: No webhook configured for type: MESSAGE_CREATE
+2025-09-04T20:33:42: Spam manager cleanup: 0 users tracked
+2025-09-04T20:34:42: Spam manager cleanup: 0 users tracked

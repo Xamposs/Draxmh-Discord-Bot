@@ -2654,3 +2654,195 @@
 2025-09-04T15:33:11: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
 2025-09-04T16:33:11: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
 2025-09-04T17:33:11: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-04T18:19:39: Error [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\Users\xampo\Desktop\Draxmh Discord Bot\src\services\communityFeaturesService.js' imported from C:\Users\xampo\Desktop\Draxmh Discord Bot\src\index.js
+2025-09-04T18:19:39:     at finalizeResolution (node:internal/modules/esm/resolve:274:11)
+2025-09-04T18:19:39:     at moduleResolve (node:internal/modules/esm/resolve:859:10)
+2025-09-04T18:19:39:     at defaultResolve (node:internal/modules/esm/resolve:983:11)
+2025-09-04T18:19:39:     at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:801:12)
+2025-09-04T18:19:39:     at #cachedDefaultResolve (node:internal/modules/esm/loader:725:25)
+2025-09-04T18:19:39:     at ModuleLoader.resolve (node:internal/modules/esm/loader:708:38)
+2025-09-04T18:19:39:     at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:309:38)
+2025-09-04T18:19:39:     at #link (node:internal/modules/esm/module_job:202:49)
+2025-09-04T18:19:39:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+2025-09-04T18:19:39:   code: 'ERR_MODULE_NOT_FOUND',
+2025-09-04T18:19:39:   url: 'file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/communityFeaturesService.js'
+2025-09-04T18:19:39: }
+2025-09-04T18:21:38: Error [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\Users\xampo\Desktop\Draxmh Discord Bot\src\services\communityFeaturesService.js' imported from C:\Users\xampo\Desktop\Draxmh Discord Bot\src\index.js
+2025-09-04T18:21:38:     at finalizeResolution (node:internal/modules/esm/resolve:274:11)
+2025-09-04T18:21:38:     at moduleResolve (node:internal/modules/esm/resolve:859:10)
+2025-09-04T18:21:38:     at defaultResolve (node:internal/modules/esm/resolve:983:11)
+2025-09-04T18:21:38:     at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:801:12)
+2025-09-04T18:21:38:     at #cachedDefaultResolve (node:internal/modules/esm/loader:725:25)
+2025-09-04T18:21:38:     at ModuleLoader.resolve (node:internal/modules/esm/loader:708:38)
+2025-09-04T18:21:38:     at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:309:38)
+2025-09-04T18:21:38:     at #link (node:internal/modules/esm/module_job:202:49)
+2025-09-04T18:21:38:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+2025-09-04T18:21:38:   code: 'ERR_MODULE_NOT_FOUND',
+2025-09-04T18:21:38:   url: 'file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/communityFeaturesService.js'
+2025-09-04T18:21:38: }
+2025-09-04T18:26:18: file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:39
+2025-09-04T18:26:18: import { PortfolioAnalysisService } from './services/portfolioAnalysisService.js';
+2025-09-04T18:26:18:          ^^^^^^^^^^^^^^^^^^^^^^^^
+2025-09-04T18:26:18: SyntaxError: The requested module './services/portfolioAnalysisService.js' does not provide an export named 'PortfolioAnalysisService'
+2025-09-04T18:26:18:     at #_instantiate (node:internal/modules/esm/module_job:249:21)
+2025-09-04T18:26:18:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:26:18:     at async ModuleJob.run (node:internal/modules/esm/module_job:357:5)
+2025-09-04T18:26:18:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+2025-09-04T18:28:26: (node:46668) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-04T18:28:26: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-04T18:28:34: Service initialization error: TypeError: whaleSocialFeedService.start is not a function
+2025-09-04T18:28:34:     at Client.<anonymous> (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:185:38)
+2025-09-04T18:28:34:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:28:57: (node:46668) Warning: Supplying "ephemeral" for interaction response options is deprecated. Utilize flags instead.
+2025-09-04T18:37:27: (node:51764) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-04T18:37:27: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-04T18:41:31: (node:70028) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-04T18:41:31: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-04T18:41:37: ❌ Failed to start Whale Discovery Service: TypeError: this.createMainActionButtons is not a function
+2025-09-04T18:41:37:     at WhaleDiscoveryService.sendInitialUpdate (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleDiscoveryService.js:219:36)
+2025-09-04T18:41:37:     at WhaleDiscoveryService.start (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleDiscoveryService.js:34:24)
+2025-09-04T18:41:37:     at async Client.<anonymous> (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:179:9)
+2025-09-04T18:41:38: Failed to initialize Whale Social Feed Service: TypeError: this.createWelcomeEmbed is not a function
+2025-09-04T18:41:38:     at WhaleSocialFeedService.sendWelcomeMessage (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:39:28)
+2025-09-04T18:41:38:     at WhaleSocialFeedService.initialize (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:24:24)
+2025-09-04T18:41:38:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:41:38:     at async Client.<anonymous> (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:185:9)
+2025-09-04T18:41:38: Failed to initialize Whale Profile Service: TypeError: this.createWelcomeEmbed is not a function
+2025-09-04T18:41:38:     at WhaleProfileService.sendWelcomeMessage (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleProfileService.js:77:28)
+2025-09-04T18:41:38:     at WhaleProfileService.initialize (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleProfileService.js:21:24)
+2025-09-04T18:41:38:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:41:38:     at async Client.<anonymous> (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:191:9)
+2025-09-04T18:41:38: Failed to initialize Portfolio Analysis Service: TypeError: this.createWelcomeEmbed is not a function
+2025-09-04T18:41:38:     at PortfolioAnalysisService.sendWelcomeMessage (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/portfolioAnalysisService.js:97:28)
+2025-09-04T18:41:38:     at PortfolioAnalysisService.initialize (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/portfolioAnalysisService.js:22:24)
+2025-09-04T18:41:38:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:41:38:     at async Client.<anonymous> (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:197:9)
+2025-09-04T18:41:39: Error initializing Trading Pattern Recognition Service: TypeError: this.createWelcomeEmbed is not a function
+2025-09-04T18:41:39:     at TradingPatternRecognitionService.sendWelcomeMessage (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/tradingPatternRecognitionService.js:36:28)
+2025-09-04T18:41:39:     at TradingPatternRecognitionService.initialize (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/tradingPatternRecognitionService.js:23:24)
+2025-09-04T18:41:39:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:41:39:     at async Client.<anonymous> (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:203:9)
+2025-09-04T18:41:39: Community Features Service startup error: TypeError: this.createWelcomeEmbed is not a function
+2025-09-04T18:41:39:     at CommunityFeaturesService.sendWelcomeMessage (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/communityFeaturesService.js:69:28)
+2025-09-04T18:41:39:     at CommunityFeaturesService.start (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/communityFeaturesService.js:43:24)
+2025-09-04T18:41:39:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:41:39:     at async Client.<anonymous> (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:209:9)
+2025-09-04T18:52:35: (node:67424) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-04T18:52:35: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-04T18:52:44: Error checking whale movements: ReferenceError: ActionRowBuilder is not defined
+2025-09-04T18:52:44:     at WhaleSocialFeedService.postWhaleMovement (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:139:27)
+2025-09-04T18:52:44:     at WhaleSocialFeedService.checkWhaleMovements (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:83:28)
+2025-09-04T18:52:44:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:52:44:     at async WhaleSocialFeedService.startFeedUpdates (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:74:9)
+2025-09-04T18:52:44:     at async WhaleSocialFeedService.initialize (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:25:13)
+2025-09-04T18:52:44:     at async Client.<anonymous> (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:185:9)
+2025-09-04T18:52:44: Failed to initialize Whale Profile Service: TypeError: this.createWhaleSelectMenu is not a function
+2025-09-04T18:52:44:     at WhaleProfileService.sendWelcomeMessage (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleProfileService.js:78:33)
+2025-09-04T18:52:44:     at WhaleProfileService.initialize (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleProfileService.js:21:24)
+2025-09-04T18:52:44:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:52:44:     at async Client.<anonymous> (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:191:9)
+2025-09-04T18:52:45: Failed to initialize Portfolio Analysis Service: TypeError: this.createPortfolioSelectMenu is not a function
+2025-09-04T18:52:45:     at PortfolioAnalysisService.sendWelcomeMessage (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/portfolioAnalysisService.js:98:33)
+2025-09-04T18:52:45:     at PortfolioAnalysisService.initialize (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/portfolioAnalysisService.js:22:24)
+2025-09-04T18:52:45:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:52:45:     at async Client.<anonymous> (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:197:9)
+2025-09-04T18:53:14: Error checking whale movements: ReferenceError: ActionRowBuilder is not defined
+2025-09-04T18:53:14:     at WhaleSocialFeedService.postWhaleMovement (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:139:27)
+2025-09-04T18:53:14:     at WhaleSocialFeedService.checkWhaleMovements (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:83:28)
+2025-09-04T18:53:14:     at async Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:68:13)
+2025-09-04T18:53:14: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:53:14:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:53:14: [2025-09-04T15:53:14.462Z] UNHANDLED_REJECTION: this.processCommunityPredictions is not a function
+2025-09-04T18:53:14: Unhandled Rejection: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:53:14:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:53:14: Unhandled Rejection at: Promise {
+2025-09-04T18:53:14:   <rejected> TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:53:14:       at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:53:14: } reason: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:53:14:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:53:14: Unhandled Rejection: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:53:14:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:53:44: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:53:44:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:53:44: [2025-09-04T15:53:44.463Z] UNHANDLED_REJECTION: this.processCommunityPredictions is not a function
+2025-09-04T18:53:44: Unhandled Rejection: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:53:44:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:53:44: Unhandled Rejection at: Promise {
+2025-09-04T18:53:44:   <rejected> TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:53:44:       at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:53:44: } reason: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:53:44:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:53:44: Unhandled Rejection: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:53:44:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:56:55: (node:35676) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-04T18:56:55: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-04T18:57:33: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:57:33:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:57:33: [2025-09-04T15:57:33.858Z] UNHANDLED_REJECTION: this.processCommunityPredictions is not a function
+2025-09-04T18:57:33: Unhandled Rejection: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:57:33:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:57:33: Unhandled Rejection at: Promise {
+2025-09-04T18:57:33:   <rejected> TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:57:33:       at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:57:33: } reason: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:57:33:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:57:33: Unhandled Rejection: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:57:33:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:58:04: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:58:04:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:58:04:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:58:04: [2025-09-04T15:58:04.259Z] UNHANDLED_REJECTION: this.processCommunityPredictions is not a function
+2025-09-04T18:58:04: Unhandled Rejection: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:58:04:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:58:04:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:58:04: Unhandled Rejection at: Promise {
+2025-09-04T18:58:04:   <rejected> TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:58:04:       at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:58:04:       at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:58:04: } reason: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:58:04:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:58:04:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:58:04: Unhandled Rejection: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:58:04:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:58:04:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-04T18:58:33: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:58:33:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:58:33: [2025-09-04T15:58:33.884Z] UNHANDLED_REJECTION: this.processCommunityPredictions is not a function
+2025-09-04T18:58:33: Unhandled Rejection: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:58:33:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:58:33: Unhandled Rejection at: Promise {
+2025-09-04T18:58:33:   <rejected> TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:58:33:       at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:58:33: } reason: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:58:33:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T18:58:33: Unhandled Rejection: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T18:58:33:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+2025-09-04T19:00:27: (node:4056) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-04T19:00:27: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-04T19:05:38: Error in pattern analysis: ReferenceError: ActionRowBuilder is not defined
+2025-09-04T19:05:38:     at TradingPatternRecognitionService.sendPatternUpdate (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/tradingPatternRecognitionService.js:186:21)
+2025-09-04T19:05:38:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/tradingPatternRecognitionService.js:56:28)
+2025-09-04T19:10:38: Error in pattern analysis: ReferenceError: ActionRowBuilder is not defined
+2025-09-04T19:10:38:     at TradingPatternRecognitionService.sendPatternUpdate (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/tradingPatternRecognitionService.js:186:21)
+2025-09-04T19:10:38:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/tradingPatternRecognitionService.js:56:28)
+2025-09-04T19:10:38:     at runNextTicks (node:internal/process/task_queues:65:5)
+2025-09-04T19:10:38:     at process.processTimers (node:internal/timers:540:9)
+2025-09-04T19:15:38: Error in pattern analysis: ReferenceError: ActionRowBuilder is not defined
+2025-09-04T19:15:38:     at TradingPatternRecognitionService.sendPatternUpdate (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/tradingPatternRecognitionService.js:186:21)
+2025-09-04T19:15:38:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/tradingPatternRecognitionService.js:56:28)
+2025-09-04T19:15:38:     at runNextTicks (node:internal/process/task_queues:65:5)
+2025-09-04T19:15:38:     at process.processTimers (node:internal/timers:540:9)
+2025-09-04T19:20:38: Error in pattern analysis: ReferenceError: ActionRowBuilder is not defined
+2025-09-04T19:20:38:     at TradingPatternRecognitionService.sendPatternUpdate (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/tradingPatternRecognitionService.js:186:21)
+2025-09-04T19:20:38:     at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/tradingPatternRecognitionService.js:56:28)
+2025-09-04T19:25:32: (node:46996) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-04T19:25:32: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-04T19:35:21: (node:46996) Warning: Supplying "ephemeral" for interaction response options is deprecated. Utilize flags instead.
+2025-09-04T19:36:02: No webhook configured for type: MESSAGE_CREATE
+2025-09-04T20:05:43: Error fetching KuCoin price: timeout of 5000ms exceeded
+2025-09-04T20:25:32: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-04T20:29:44: (node:24932) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-04T20:29:44: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-04T20:29:59: Error fetching KuCoin price: timeout of 5000ms exceeded
+2025-09-04T20:31:29: (node:24932) Warning: Supplying "ephemeral" for interaction response options is deprecated. Utilize flags instead.
+2025-09-04T20:32:42: No webhook configured for type: MESSAGE_CREATE

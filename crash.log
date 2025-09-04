@@ -464,3 +464,29 @@ TypeError: Cannot read properties of undefined (reading 'user')
     at Client.<anonymous> (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:305:23)
     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
 
+2025-09-04T15:53:14.463Z - Unhandled Rejection: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T15:53:14.462Z - UNHANDLED_REJECTION: this.processCommunityPredictions is not a function
+TypeError: this.processCommunityPredictions is not a function
+    at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+
+2025-09-04T15:53:44.463Z - Unhandled Rejection: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T15:53:44.463Z - UNHANDLED_REJECTION: this.processCommunityPredictions is not a function
+TypeError: this.processCommunityPredictions is not a function
+    at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+
+2025-09-04T15:57:33.858Z - Unhandled Rejection: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T15:57:33.858Z - UNHANDLED_REJECTION: this.processCommunityPredictions is not a function
+TypeError: this.processCommunityPredictions is not a function
+    at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+
+2025-09-04T15:58:04.259Z - Unhandled Rejection: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T15:58:04.259Z - UNHANDLED_REJECTION: this.processCommunityPredictions is not a function
+TypeError: this.processCommunityPredictions is not a function
+    at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-09-04T15:58:33.884Z - Unhandled Rejection: TypeError: this.processCommunityPredictions is not a function
+2025-09-04T15:58:33.884Z - UNHANDLED_REJECTION: this.processCommunityPredictions is not a function
+TypeError: this.processCommunityPredictions is not a function
+    at Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/whaleSocialFeedService.js:70:24)
+
