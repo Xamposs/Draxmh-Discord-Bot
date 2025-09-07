@@ -1,33 +1,25 @@
 {
-  "scams": [
+  "knownScams": [],
+  "suspiciousUsers": [],
+  "userReputations": [
     [
-      "phishing-site.com",
+      "1123146239953883186",
       {
-        "type": "malicious_url",
-        "confidence": 0.95,
-        "source": "threat_intelligence",
-        "timestamp": 1757006985955
-      }
-    ],
-    [
-      "fake-drx-token.scam",
-      {
-        "type": "malicious_url",
-        "confidence": 0.95,
-        "source": "threat_intelligence",
-        "timestamp": 1757006985955
-      }
-    ],
-    [
-      "crypto-doubler.fraud",
-      {
-        "type": "malicious_url",
-        "confidence": 0.95,
-        "source": "threat_intelligence",
-        "timestamp": 1757006985955
+        "messages": [
+          {
+            "content": "!commands",
+            "timestamp": 1757007162932
+          },
+          {
+            "content": "!commands",
+            "timestamp": 1757007162933
+          }
+        ],
+        "reports": 0,
+        "joinDate": "2023-06-27T07:02:10.653Z",
+        "reputation": 0
       }
     ]
   ],
-  "trustedUsers": [],
-  "lastUpdated": "2025-09-04T17:29:45.966Z"
+  "lastUpdated": 1757232495491
 }

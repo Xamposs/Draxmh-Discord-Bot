@@ -7,6 +7,10 @@ class LiveOrderbookService {
         this.channelId = channelId;
         this.updateInterval = 10 * 60 * 1000; // 10 minutes
         this.intervalId = null;
+        this.failureCount = 0;
+        this.maxFailures = 5;
+        this.circuitBreakerOpen = false;
+        this.lastSuccessTime = Date.now();
         
         // Orderbook data storage
         this.orderbookData = {
@@ -39,9 +43,33 @@ class LiveOrderbookService {
             console.error('❌ Failed to start Live Orderbook Service:', error);
         }
     }
-
+        
     async sendUpdate() {
+        // Circuit breaker logic
+        if (this.circuitBreakerOpen) {
+            const timeSinceLastSuccess = Date.now() - this.lastSuccessTime;
+            if (timeSinceLastSuccess < 300000) { // 5 minutes
+                console.log('Circuit breaker open, skipping update');
+                return;
+            } else {
+                console.log('Attempting to close circuit breaker');
+                this.circuitBreakerOpen = false;
+                this.failureCount = 0;
+            }
+        }
+        
         try {
+            const orderbookData = await this.fetchOrderbookData();
+            
+            if (!orderbookData || orderbookData.length === 0) {
+                this.handleFailure();
+                return;
+            }
+            
+            // Success - reset failure count
+            this.failureCount = 0;
+            this.lastSuccessTime = Date.now();
+            
             const channel = this.discordClient.channels.cache.get(this.channelId);
             if (!channel) {
                 console.error('❌ Live Orderbook channel not found:', this.channelId);
@@ -58,12 +86,28 @@ class LiveOrderbookService {
             await channel.send(messageOptions);
         } catch (error) {
             console.error('❌ Error sending Live Orderbook update:', error);
+            this.handleFailure();
+        }
+    }
+
+    handleFailure() {
+        this.failureCount++;
+        if (this.failureCount >= this.maxFailures) {
+            console.warn(`Opening circuit breaker after ${this.failureCount} failures`);
+            this.circuitBreakerOpen = true;
         }
     }
 
     async createOrderbookEmbed() {
         try {
             const orderbookData = await this.fetchOrderbookData();
+            
+            if (!orderbookData || orderbookData.length === 0) {
+                return this.createErrorEmbed('No orderbook data available');
+            }
+
+            // Use the first successful result or fallback data
+            const data = orderbookData[0] || this.getFallbackOrderbookData();
             
             const embed = new EmbedBuilder()
                 .setTitle('📊 Live XRP Orderbook')
@@ -72,8 +116,8 @@ class LiveOrderbookService {
                 .setFooter({ text: 'Live Orderbook • Updates every 10 minutes' });
 
             // Top 5 bids and asks
-            const topBids = orderbookData.bids.slice(0, 5);
-            const topAsks = orderbookData.asks.slice(0, 5);
+            const topBids = data.bids ? data.bids.slice(0, 5) : [];
+            const topAsks = data.asks ? data.asks.slice(0, 5) : [];
 
             let bidsText = '';
             let asksText = '';
@@ -101,7 +145,7 @@ class LiveOrderbookService {
                 },
                 { 
                     name: '📈 Market Stats', 
-                    value: `**Spread:** ${orderbookData.spread.toFixed(4)} XRP\n**Best Bid:** ${orderbookData.bestBid?.toFixed(4) || 'N/A'}\n**Best Ask:** ${orderbookData.bestAsk?.toFixed(4) || 'N/A'}\n**Mid Price:** ${orderbookData.midPrice?.toFixed(4) || 'N/A'}`, 
+                    value: `**Spread:** ${data.spread?.toFixed(4) || 'N/A'} XRP\n**Best Bid:** ${data.bestBid?.toFixed(4) || 'N/A'}\n**Best Ask:** ${data.bestAsk?.toFixed(4) || 'N/A'}\n**Mid Price:** ${data.midPrice?.toFixed(4) || 'N/A'}`, 
                     inline: false 
                 }
             );
@@ -117,6 +161,12 @@ class LiveOrderbookService {
         try {
             const orderbookData = await this.fetchOrderbookData();
             
+            if (!orderbookData || orderbookData.length === 0) {
+                return this.createErrorEmbed('No depth data available');
+            }
+
+            const data = orderbookData[0] || this.getFallbackOrderbookData();
+            
             const embed = new EmbedBuilder()
                 .setTitle('📊 Market Depth Visualization')
                 .setColor('#0099ff')
@@ -126,16 +176,20 @@ class LiveOrderbookService {
             let bidVolume = 0;
             let askVolume = 0;
             
-            orderbookData.bids.slice(0, 10).forEach(bid => bidVolume += bid.size);
-            orderbookData.asks.slice(0, 10).forEach(ask => askVolume += ask.size);
+            if (data.bids) {
+                data.bids.slice(0, 10).forEach(bid => bidVolume += bid.size);
+            }
+            if (data.asks) {
+                data.asks.slice(0, 10).forEach(ask => askVolume += ask.size);
+            }
 
             const totalVolume = bidVolume + askVolume;
-            const bidPercentage = ((bidVolume / totalVolume) * 100).toFixed(1);
-            const askPercentage = ((askVolume / totalVolume) * 100).toFixed(1);
+            const bidPercentage = totalVolume > 0 ? ((bidVolume / totalVolume) * 100).toFixed(1) : '0.0';
+            const askPercentage = totalVolume > 0 ? ((askVolume / totalVolume) * 100).toFixed(1) : '0.0';
 
             // Create visual depth representation
-            const bidBar = '🟢'.repeat(Math.floor(bidPercentage / 5));
-            const askBar = '🔴'.repeat(Math.floor(askPercentage / 5));
+            const bidBar = '🟢'.repeat(Math.floor(parseFloat(bidPercentage) / 5));
+            const askBar = '🔴'.repeat(Math.floor(parseFloat(askPercentage) / 5));
 
             embed.addFields(
                 { 
@@ -181,81 +235,70 @@ class LiveOrderbookService {
     }
 
     async fetchOrderbookData() {
-        try {
-            // Fetch from multiple exchanges and aggregate
-            const [binanceData, bitstampData] = await Promise.allSettled([
-                this.fetchBinanceOrderbook(),
-                this.fetchBitstampOrderbook()
-            ]);
-
-            let bids = [];
-            let asks = [];
-
-            // Process Binance data
-            if (binanceData.status === 'fulfilled' && binanceData.value) {
-                bids = bids.concat(binanceData.value.bids);
-                asks = asks.concat(binanceData.value.asks);
-            }
-
-            // Process Bitstamp data
-            if (bitstampData.status === 'fulfilled' && bitstampData.value) {
-                bids = bids.concat(bitstampData.value.bids);
-                asks = asks.concat(bitstampData.value.asks);
-            }
-
-            // Sort and aggregate
-            bids.sort((a, b) => b.price - a.price); // Highest price first
-            asks.sort((a, b) => a.price - b.price); // Lowest price first
-
-            const bestBid = bids[0]?.price;
-            const bestAsk = asks[0]?.price;
-            const spread = bestAsk && bestBid ? bestAsk - bestBid : 0;
-            const midPrice = bestAsk && bestBid ? (bestAsk + bestBid) / 2 : 0;
-
-            return {
-                bids: bids.slice(0, 20),
-                asks: asks.slice(0, 20),
-                spread,
-                bestBid,
-                bestAsk,
-                midPrice,
-                lastUpdate: new Date()
-            };
-        } catch (error) {
-            console.error('Error fetching orderbook data:', error);
-            return this.getFallbackOrderbookData();
+        const results = await Promise.allSettled([
+            this.fetchBinanceOrderbook(),
+            this.fetchBitstampOrderbook()
+        ]);
+        
+        const successfulResults = results
+            .filter(result => result.status === 'fulfilled' && result.value !== null)
+            .map(result => result.value);
+        
+        if (successfulResults.length === 0) {
+            console.warn('All orderbook APIs failed, using fallback data');
+            return [this.getFallbackOrderbookData()];
         }
+        
+        return successfulResults;
     }
 
-    async fetchBinanceOrderbook() {
-        try {
-            const response = await axios.get('https://api.binance.com/api/v3/depth?symbol=XRPUSDT&limit=20', {
-                timeout: 5000
-            });
+    async fetchBinanceOrderbook(retries = 3) {
+        for (let attempt = 1; attempt <= retries; attempt++) {
+            try {
+                const response = await axios.get('https://api.binance.com/api/v3/depth', {
+                    params: {
+                        symbol: 'XRPUSDT',
+                        limit: 20
+                    },
+                    timeout: 15000
+                });
 
-            const bids = response.data.bids.map(([price, quantity]) => ({
-                price: parseFloat(price),
-                size: parseFloat(quantity),
-                exchange: 'Binance'
-            }));
+                const bids = response.data.bids.map(([price, quantity]) => ({
+                    price: parseFloat(price),
+                    size: parseFloat(quantity),
+                    exchange: 'Binance'
+                }));
 
-            const asks = response.data.asks.map(([price, quantity]) => ({
-                price: parseFloat(price),
-                size: parseFloat(quantity),
-                exchange: 'Binance'
-            }));
+                const asks = response.data.asks.map(([price, quantity]) => ({
+                    price: parseFloat(price),
+                    size: parseFloat(quantity),
+                    exchange: 'Binance'
+                }));
 
-            return { bids, asks };
-        } catch (error) {
-            console.error('Error fetching Binance orderbook:', error);
-            return null;
+                const bestBid = bids[0]?.price || 0;
+                const bestAsk = asks[0]?.price || 0;
+                const spread = bestAsk - bestBid;
+                const midPrice = (bestBid + bestAsk) / 2;
+
+                return { bids, asks, spread, bestBid, bestAsk, midPrice };
+            } catch (error) {
+                console.error(`Binance API attempt ${attempt}/${retries} failed:`, error.message);
+                
+                if (attempt === retries) {
+                    console.error('All Binance API attempts failed');
+                    return null;
+                }
+                
+                // Exponential backoff: wait 2^attempt seconds
+                await new Promise(resolve => setTimeout(resolve, Math.pow(2, attempt) * 1000));
+            }
         }
     }
 
     async fetchBitstampOrderbook() {
         try {
             const response = await axios.get('https://www.bitstamp.net/api/v2/order_book/xrpusd/', {
-                timeout: 5000
+                timeout: 15000
             });
 
             const bids = response.data.bids.slice(0, 20).map(([price, quantity]) => ({
@@ -270,7 +313,12 @@ class LiveOrderbookService {
                 exchange: 'Bitstamp'
             }));
 
-            return { bids, asks };
+            const bestBid = bids[0]?.price || 0;
+            const bestAsk = asks[0]?.price || 0;
+            const spread = bestAsk - bestBid;
+            const midPrice = (bestBid + bestAsk) / 2;
+
+            return { bids, asks, spread, bestBid, bestAsk, midPrice };
         } catch (error) {
             console.error('Error fetching Bitstamp orderbook:', error);
             return null;

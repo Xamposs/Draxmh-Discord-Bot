@@ -10,15 +10,20 @@ export class WhaleDiscoveryService {
         this.userFollowing = new Map(); // Store user following lists
         this.updateInterval = 15 * 60 * 1000; // 15 minutes
         this.isRunning = false;
-        this.whaleThreshold = 1000000; // 1M XRP minimum for whale status
+        this.whaleThreshold = 100000; // Lowered to 100K XRP for better detection
         
-        // Known whale addresses for initial seeding
+        // Updated whale addresses with more current large holders
         this.knownWhales = [
             { address: 'rN7n7otQDd6FczFgLdSqtcsAUxDkw6fzRH', name: 'Ripple Escrow 1', type: 'escrow' },
             { address: 'rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh', name: 'Ripple Escrow 2', type: 'escrow' },
             { address: 'rPVMhWBsfF9iMXYj3aAzJVkPDTFNSyWdKy', name: 'Binance Hot Wallet', type: 'exchange' },
             { address: 'rLNaPoKeeBjZe2qs6x52yVPZpZ8td4dc6w', name: 'Bitstamp', type: 'exchange' },
-            // Add more known addresses
+            { address: 'rJHygWcTLVpSXkowott6kzgZU6viQSVYM1', name: 'Bitso Exchange', type: 'exchange' },
+            { address: 'rLbKbPyuvs4wc1h13BEPHgbFGsRXMeFGL6', name: 'Uphold Exchange', type: 'exchange' },
+            { address: 'rw2ciyaNshpHe7bCHo4bRWq6pqqynnWKQg', name: 'Gatehub Exchange', type: 'exchange' },
+            { address: 'rEhxGqkqPPSxQ3P25J2N7inT5ieHYNoAM', name: 'Bittrex Exchange', type: 'exchange' },
+            { address: 'rDNa9td55rNjDzlu4wjZ9VhxWkYQcr5bM6', name: 'Kraken Exchange', type: 'exchange' },
+            { address: 'rBWpYJhuJWBPAkzJ4kYQqHShSkkF3rgeDE', name: 'Coinbase Exchange', type: 'exchange' }
         ];
     }
 
@@ -63,12 +68,29 @@ export class WhaleDiscoveryService {
         
         for (const whale of this.knownWhales) {
             try {
-                const accountInfo = await this.xrplClient.request({
-                    command: 'account_info',
-                    account: whale.address
-                });
+                console.log(`Checking whale: ${whale.name} (${whale.address})`);
+                
+                // Add retry logic for XRPL requests
+                let accountInfo;
+                let retries = 3;
+                
+                while (retries > 0) {
+                    try {
+                        accountInfo = await this.xrplClient.request({
+                            command: 'account_info',
+                            account: whale.address
+                        });
+                        break; // Success, exit retry loop
+                    } catch (error) {
+                        retries--;
+                        console.log(`Retry ${3 - retries}/3 for ${whale.name}: ${error.message}`);
+                        if (retries === 0) throw error;
+                        await new Promise(resolve => setTimeout(resolve, 1000)); // Wait 1 second before retry
+                    }
+                }
                 
                 const balance = parseFloat(accountInfo.result.account_data.Balance) / 1000000;
+                console.log(`${whale.name}: ${balance.toFixed(2)}M XRP`);
                 
                 if (balance >= this.whaleThreshold) {
                     this.whaleDatabase.set(whale.address, {
@@ -81,17 +103,33 @@ export class WhaleDiscoveryService {
                         rank: 0,
                         activityScore: this.calculateActivityScore(balance, whale.type)
                     });
+                    console.log(`✅ Added ${whale.name} to whale database`);
+                } else {
+                    console.log(`❌ ${whale.name} below threshold (${balance.toFixed(2)}M < ${this.whaleThreshold / 1000000}M)`);
                 }
                 
                 // Small delay to avoid rate limiting
-                await new Promise(resolve => setTimeout(resolve, 100));
+                await new Promise(resolve => setTimeout(resolve, 200));
             } catch (error) {
-                console.error(`Error fetching data for ${whale.address}:`, error.message);
+                console.error(`❌ Error fetching data for ${whale.name} (${whale.address}):`, error.message);
+                // Continue with next whale instead of failing completely
             }
         }
         
         this.rankWhales();
         console.log(`📊 Initialized ${this.whaleDatabase.size} whales in database`);
+        
+        // Log whale details for debugging
+        if (this.whaleDatabase.size > 0) {
+            console.log('🐋 Detected whales:');
+            Array.from(this.whaleDatabase.values())
+                .sort((a, b) => b.balance - a.balance)
+                .forEach((whale, index) => {
+                    console.log(`  ${index + 1}. ${whale.name}: ${whale.balance.toFixed(2)}M XRP`);
+                });
+        } else {
+            console.log('⚠️ No whales detected - check XRPL connection and whale addresses');
+        }
     }
 
     calculateActivityScore(balance, type) {

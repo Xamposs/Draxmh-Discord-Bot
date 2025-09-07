@@ -33,6 +33,116 @@ export class CommunityFeaturesService {
         };
         
         this.updateInterval = null;
+        
+        // Initialize with sample data
+        this.initializeSampleData();
+    }
+    
+    initializeSampleData() {
+        // Add sample discussions
+        const sampleDiscussions = [
+            {
+                id: 'disc_sample_1',
+                title: 'XRP Whale Movement Analysis',
+                content: 'Large whale movements detected on XRPL. What are your thoughts on the market impact?',
+                tags: ['whale', 'analysis', 'market'],
+                author: 'system',
+                createdAt: Date.now() - (2 * 60 * 60 * 1000), // 2 hours ago
+                lastActivity: Date.now() - (30 * 60 * 1000), // 30 min ago
+                replies: [],
+                reactions: { likes: 15, dislikes: 2 }
+            },
+            {
+                id: 'disc_sample_2',
+                title: 'XRPL DEX Trading Patterns',
+                content: 'Interesting arbitrage opportunities emerging across different DEX pairs.',
+                tags: ['dex', 'trading', 'arbitrage'],
+                author: 'system',
+                createdAt: Date.now() - (4 * 60 * 60 * 1000), // 4 hours ago
+                lastActivity: Date.now() - (1 * 60 * 60 * 1000), // 1 hour ago
+                replies: [],
+                reactions: { likes: 8, dislikes: 1 }
+            }
+        ];
+        
+        sampleDiscussions.forEach(disc => {
+            this.discussions.set(disc.id, disc);
+        });
+        
+        // Add sample predictions
+        const samplePredictions = [
+            {
+                id: 'pred_sample_1',
+                title: 'XRP Price Movement',
+                content: 'Predicting XRP will reach $0.65 within the next 7 days based on whale accumulation patterns.',
+                timeframe: '7 days',
+                confidence: 8,
+                author: 'system',
+                createdAt: Date.now() - (6 * 60 * 60 * 1000), // 6 hours ago
+                resolved: false,
+                correct: null,
+                votes: { bullish: 12, bearish: 3, neutral: 5 },
+                voters: new Set()
+            },
+            {
+                id: 'pred_sample_2',
+                title: 'Whale Accumulation Phase',
+                content: 'Major whales will continue accumulating for the next 2 weeks before significant price movement.',
+                timeframe: '2 weeks',
+                confidence: 7,
+                author: 'system',
+                createdAt: Date.now() - (12 * 60 * 60 * 1000), // 12 hours ago
+                resolved: false,
+                correct: null,
+                votes: { bullish: 18, bearish: 2, neutral: 4 },
+                voters: new Set()
+            }
+        ];
+        
+        samplePredictions.forEach(pred => {
+            this.predictions.set(pred.id, pred);
+        });
+        
+        // Add sample user stats
+        const sampleUsers = [
+            {
+                userId: 'sample_user_1',
+                stats: {
+                    totalPoints: 150,
+                    correctPredictions: 8,
+                    totalPredictions: 12,
+                    discussionsStarted: 5,
+                    achievements: ['first_prediction', 'discussion_starter'],
+                    lastActivity: Date.now() - (30 * 60 * 1000)
+                }
+            },
+            {
+                userId: 'sample_user_2',
+                stats: {
+                    totalPoints: 220,
+                    correctPredictions: 12,
+                    totalPredictions: 15,
+                    discussionsStarted: 8,
+                    achievements: ['first_prediction', 'accurate_predictor'],
+                    lastActivity: Date.now() - (45 * 60 * 1000)
+                }
+            },
+            {
+                userId: 'sample_user_3',
+                stats: {
+                    totalPoints: 95,
+                    correctPredictions: 4,
+                    totalPredictions: 8,
+                    discussionsStarted: 3,
+                    achievements: ['first_prediction'],
+                    lastActivity: Date.now() - (2 * 60 * 60 * 1000)
+                }
+            }
+        ];
+        
+        sampleUsers.forEach(user => {
+            this.userStats.set(user.userId, user.stats);
+        });
     }
     
     async start() {
@@ -67,8 +177,35 @@ export class CommunityFeaturesService {
         if (!channel) return;
         
         const embed = this.createWelcomeEmbed();
+        const buttons = this.createActionButtons();
         
-        await channel.send({ embeds: [embed] });
+        await channel.send({ embeds: [embed], components: [buttons] });
+    }
+    
+    createActionButtons() {
+        return new ActionRowBuilder()
+            .addComponents(
+                new ButtonBuilder()
+                    .setCustomId('community_start_discussion')
+                    .setLabel('💬 Start Discussion')
+                    .setStyle(ButtonStyle.Primary),
+                new ButtonBuilder()
+                    .setCustomId('community_make_prediction')
+                    .setLabel('🔮 Make Prediction')
+                    .setStyle(ButtonStyle.Success),
+                new ButtonBuilder()
+                    .setCustomId('community_view_leaderboard')
+                    .setLabel('🏆 Leaderboard')
+                    .setStyle(ButtonStyle.Secondary),
+                new ButtonBuilder()
+                    .setCustomId('community_view_analytics')
+                    .setLabel('📊 Analytics')
+                    .setStyle(ButtonStyle.Secondary),
+                new ButtonBuilder()
+                    .setCustomId('community_help')
+                    .setLabel('❓ Help')
+                    .setStyle(ButtonStyle.Secondary)
+            );
     }
     
     async startPeriodicUpdates() {
@@ -624,6 +761,8 @@ export class CommunityFeaturesService {
     }
     
     createWelcomeEmbed() {
+        const stats = this.calculateCommunityStats();
+        
         return new EmbedBuilder()
             .setTitle('🏆 XRPL Community Features')
             .setDescription(

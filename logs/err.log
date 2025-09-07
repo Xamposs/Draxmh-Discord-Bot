@@ -2846,3 +2846,937 @@
 2025-09-04T20:29:59: Error fetching KuCoin price: timeout of 5000ms exceeded
 2025-09-04T20:31:29: (node:24932) Warning: Supplying "ephemeral" for interaction response options is deprecated. Utilize flags instead.
 2025-09-04T20:32:42: No webhook configured for type: MESSAGE_CREATE
+2025-09-04T21:29:42: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-04T22:29:42: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-04T22:59:59: Error fetching Bitstamp orderbook: AxiosError: timeout of 5000ms exceeded
+2025-09-04T22:59:59:     at RedirectableRequest.handleRequestTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/node_modules/axios/lib/adapters/http.js:657:16)
+2025-09-04T22:59:59:     at RedirectableRequest.emit (node:events:507:28)
+2025-09-04T22:59:59:     at Timeout.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\follow-redirects\index.js:221:12)
+2025-09-04T22:59:59:     at listOnTimeout (node:internal/timers:608:17)
+2025-09-04T22:59:59:     at process.processTimers (node:internal/timers:543:7)
+2025-09-04T22:59:59:     at Axios.request (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/node_modules/axios/lib/core/Axios.js:45:41)
+2025-09-04T22:59:59:     at runNextTicks (node:internal/process/task_queues:65:5)
+2025-09-04T22:59:59:     at listOnTimeout (node:internal/timers:569:9)
+2025-09-04T22:59:59:     at process.processTimers (node:internal/timers:543:7)
+2025-09-04T22:59:59:     at async LiveOrderbookService.fetchBitstampOrderbook (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:257:30)
+2025-09-04T22:59:59:     at async Promise.allSettled (index 1)
+2025-09-04T22:59:59:     at async LiveOrderbookService.fetchOrderbookData (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:186:49)
+2025-09-04T22:59:59:     at async LiveOrderbookService.createOrderbookEmbed (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:66:35)
+2025-09-04T22:59:59:     at async Promise.all (index 0)
+2025-09-04T22:59:59:     at async LiveOrderbookService.sendUpdate (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:51:45)
+2025-09-04T22:59:59:     at async Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:30:21) {
+2025-09-04T22:59:59:   code: 'ECONNABORTED',
+2025-09-04T22:59:59:   config: {
+2025-09-04T22:59:59:     transitional: {
+2025-09-04T22:59:59:       silentJSONParsing: true,
+2025-09-04T22:59:59:       forcedJSONParsing: true,
+2025-09-04T22:59:59:       clarifyTimeoutError: false
+2025-09-04T22:59:59:     },
+2025-09-04T22:59:59:     adapter: [ 'xhr', 'http', 'fetch' ],
+2025-09-04T22:59:59:     transformRequest: [ [Function: transformRequest] ],
+2025-09-04T22:59:59:     transformResponse: [ [Function: transformResponse] ],
+2025-09-04T22:59:59:     timeout: 5000,
+2025-09-04T22:59:59:     xsrfCookieName: 'XSRF-TOKEN',
+2025-09-04T22:59:59:     xsrfHeaderName: 'X-XSRF-TOKEN',
+2025-09-04T22:59:59:     maxContentLength: -1,
+2025-09-04T22:59:59:     maxBodyLength: -1,
+2025-09-04T22:59:59:     env: { FormData: [Function [FormData]], Blob: [class Blob] },
+2025-09-04T22:59:59:     validateStatus: [Function: validateStatus],
+2025-09-04T22:59:59:     headers: Object [AxiosHeaders] {
+2025-09-04T22:59:59:       Accept: 'application/json, text/plain, */*',
+2025-09-04T22:59:59:       'Content-Type': undefined,
+2025-09-04T22:59:59:       'User-Agent': 'axios/1.11.0',
+2025-09-04T22:59:59:       'Accept-Encoding': 'gzip, compress, deflate, br'
+2025-09-04T22:59:59:     },
+2025-09-04T22:59:59:     method: 'get',
+2025-09-04T22:59:59:     url: 'https://www.bitstamp.net/api/v2/order_book/xrpusd/',
+2025-09-04T22:59:59:     allowAbsoluteUrls: true,
+2025-09-04T22:59:59:     data: undefined
+2025-09-04T22:59:59:   },
+2025-09-04T22:59:59:   request: <ref *1> Writable {
+2025-09-04T22:59:59:     _events: {
+2025-09-04T22:59:59:       close: undefined,
+2025-09-04T22:59:59:       error: [Function: handleRequestError],
+2025-09-04T22:59:59:       prefinish: undefined,
+2025-09-04T22:59:59:       finish: undefined,
+2025-09-04T22:59:59:       drain: undefined,
+2025-09-04T22:59:59:       response: [Function: handleResponse],
+2025-09-04T22:59:59:       socket: [Array],
+2025-09-04T22:59:59:       timeout: undefined,
+2025-09-04T22:59:59:       abort: undefined
+2025-09-04T22:59:59:     },
+2025-09-04T22:59:59:     _writableState: WritableState {
+2025-09-04T22:59:59:       highWaterMark: 16384,
+2025-09-04T22:59:59:       length: 0,
+2025-09-04T22:59:59:       corked: 0,
+2025-09-04T22:59:59:       onwrite: [Function: bound onwrite],
+2025-09-04T22:59:59:       writelen: 0,
+2025-09-04T22:59:59:       bufferedIndex: 0,
+2025-09-04T22:59:59:       pendingcb: 0,
+2025-09-04T22:59:59:       Symbol(kState): 17580812,
+2025-09-04T22:59:59:       Symbol(kBufferedValue): null
+2025-09-04T22:59:59:     },
+2025-09-04T22:59:59:     _maxListeners: undefined,
+2025-09-04T22:59:59:     _options: {
+2025-09-04T22:59:59:       maxRedirects: 21,
+2025-09-04T22:59:59:       maxBodyLength: Infinity,
+2025-09-04T22:59:59:       protocol: 'https:',
+2025-09-04T22:59:59:       path: '/api/v2/order_book/xrpusd/',
+2025-09-04T22:59:59:       method: 'GET',
+2025-09-04T22:59:59:       headers: [Object: null prototype],
+2025-09-04T22:59:59:       agents: [Object],
+2025-09-04T22:59:59:       auth: undefined,
+2025-09-04T22:59:59:       family: undefined,
+2025-09-04T22:59:59:       beforeRedirect: [Function: dispatchBeforeRedirect],
+2025-09-04T22:59:59:       beforeRedirects: [Object],
+2025-09-04T22:59:59:       hostname: 'www.bitstamp.net',
+2025-09-04T22:59:59:       port: '',
+2025-09-04T22:59:59:       agent: undefined,
+2025-09-04T22:59:59:       nativeProtocols: [Object],
+2025-09-04T22:59:59:       pathname: '/api/v2/order_book/xrpusd/'
+2025-09-04T22:59:59:     },
+2025-09-04T22:59:59:     _ended: true,
+2025-09-04T22:59:59:     _ending: true,
+2025-09-04T22:59:59:     _redirectCount: 0,
+2025-09-04T22:59:59:     _redirects: [],
+2025-09-04T22:59:59:     _requestBodyLength: 0,
+2025-09-04T22:59:59:     _requestBodyBuffers: [],
+2025-09-04T22:59:59:     _eventsCount: 3,
+2025-09-04T22:59:59:     _onNativeResponse: [Function (anonymous)],
+2025-09-04T22:59:59:     _currentRequest: ClientRequest {
+2025-09-04T22:59:59:       _events: [Object: null prototype],
+2025-09-04T22:59:59:       _eventsCount: 7,
+2025-09-04T22:59:59:       _maxListeners: undefined,
+2025-09-04T22:59:59:       outputData: [],
+2025-09-04T22:59:59:       outputSize: 0,
+2025-09-04T22:59:59:       writable: true,
+2025-09-04T22:59:59:       destroyed: false,
+2025-09-04T22:59:59:       _last: true,
+2025-09-04T22:59:59:       chunkedEncoding: false,
+2025-09-04T22:59:59:       shouldKeepAlive: true,
+2025-09-04T22:59:59:       maxRequestsOnConnectionReached: false,
+2025-09-04T22:59:59:       _defaultKeepAlive: true,
+2025-09-04T22:59:59:       useChunkedEncodingByDefault: false,
+2025-09-04T22:59:59:       sendDate: false,
+2025-09-04T22:59:59:       _removedConnection: false,
+2025-09-04T22:59:59:       _removedContLen: false,
+2025-09-04T22:59:59:       _removedTE: false,
+2025-09-04T22:59:59:       strictContentLength: false,
+2025-09-04T22:59:59:       _contentLength: 0,
+2025-09-04T22:59:59:       _hasBody: true,
+2025-09-04T22:59:59:       _trailer: '',
+2025-09-04T22:59:59:       finished: true,
+2025-09-04T22:59:59:       _headerSent: true,
+2025-09-04T22:59:59:       _closed: false,
+2025-09-04T22:59:59:       _header: 'GET /api/v2/order_book/xrpusd/ HTTP/1.1\r\n' +
+2025-09-04T22:59:59:         'Accept: application/json, text/plain, */*\r\n' +
+2025-09-04T22:59:59:         'User-Agent: axios/1.11.0\r\n' +
+2025-09-04T22:59:59:         'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+2025-09-04T22:59:59:         'Host: www.bitstamp.net\r\n' +
+2025-09-04T22:59:59:         'Connection: keep-alive\r\n' +
+2025-09-04T22:59:59:         '\r\n',
+2025-09-04T22:59:59:       _keepAliveTimeout: 0,
+2025-09-04T22:59:59:       _onPendingData: [Function: nop],
+2025-09-04T22:59:59:       agent: [Agent],
+2025-09-04T22:59:59:       socketPath: undefined,
+2025-09-04T22:59:59:       method: 'GET',
+2025-09-04T22:59:59:       maxHeaderSize: undefined,
+2025-09-04T22:59:59:       insecureHTTPParser: undefined,
+2025-09-04T22:59:59:       joinDuplicateHeaders: undefined,
+2025-09-04T22:59:59:       path: '/api/v2/order_book/xrpusd/',
+2025-09-04T22:59:59:       _ended: false,
+2025-09-04T22:59:59:       res: null,
+2025-09-04T22:59:59:       aborted: false,
+2025-09-04T22:59:59:       timeoutCb: [Function: emitRequestTimeout],
+2025-09-04T22:59:59:       upgradeOrConnect: false,
+2025-09-04T22:59:59:       parser: [HTTPParser],
+2025-09-04T22:59:59:       maxHeadersCount: null,
+2025-09-04T22:59:59:       reusedSocket: false,
+2025-09-04T22:59:59:       host: 'www.bitstamp.net',
+2025-09-04T22:59:59:       protocol: 'https:',
+2025-09-04T22:59:59:       _redirectable: [Circular *1],
+2025-09-04T22:59:59:       Symbol(shapeMode): false,
+2025-09-04T22:59:59:       Symbol(kCapture): false,
+2025-09-04T22:59:59:       Symbol(kBytesWritten): 0,
+2025-09-04T22:59:59:       Symbol(kNeedDrain): false,
+2025-09-04T22:59:59:       Symbol(corked): 0,
+2025-09-04T22:59:59:       Symbol(kChunkedBuffer): [],
+2025-09-04T22:59:59:       Symbol(kChunkedLength): 0,
+2025-09-04T22:59:59:       Symbol(kSocket): [TLSSocket],
+2025-09-04T22:59:59:       Symbol(kOutHeaders): [Object: null prototype],
+2025-09-04T22:59:59:       Symbol(errored): null,
+2025-09-04T22:59:59:       Symbol(kHighWaterMark): 16384,
+2025-09-04T22:59:59:       Symbol(kRejectNonStandardBodyWrites): false,
+2025-09-04T22:59:59:       Symbol(kUniqueHeaders): null
+2025-09-04T22:59:59:     },
+2025-09-04T22:59:59:     _currentUrl: 'https://www.bitstamp.net/api/v2/order_book/xrpusd/',
+2025-09-04T22:59:59:     _timeout: null,
+2025-09-04T22:59:59:     Symbol(shapeMode): true,
+2025-09-04T22:59:59:     Symbol(kCapture): false
+2025-09-04T22:59:59:   }
+2025-09-04T22:59:59: }
+2025-09-04T22:59:59: Error fetching Bitstamp orderbook: AxiosError: timeout of 5000ms exceeded
+2025-09-04T22:59:59:     at RedirectableRequest.handleRequestTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/node_modules/axios/lib/adapters/http.js:657:16)
+2025-09-04T22:59:59:     at RedirectableRequest.emit (node:events:507:28)
+2025-09-04T22:59:59:     at Timeout.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\follow-redirects\index.js:221:12)
+2025-09-04T22:59:59:     at listOnTimeout (node:internal/timers:608:17)
+2025-09-04T22:59:59:     at process.processTimers (node:internal/timers:543:7)
+2025-09-04T22:59:59:     at Axios.request (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/node_modules/axios/lib/core/Axios.js:45:41)
+2025-09-04T22:59:59:     at runNextTicks (node:internal/process/task_queues:65:5)
+2025-09-04T22:59:59:     at listOnTimeout (node:internal/timers:569:9)
+2025-09-04T22:59:59:     at process.processTimers (node:internal/timers:543:7)
+2025-09-04T22:59:59:     at async LiveOrderbookService.fetchBitstampOrderbook (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:257:30)
+2025-09-04T22:59:59:     at async Promise.allSettled (index 1)
+2025-09-04T22:59:59:     at async LiveOrderbookService.fetchOrderbookData (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:186:49)
+2025-09-04T22:59:59:     at async LiveOrderbookService.createDepthChartEmbed (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:118:35)
+2025-09-04T22:59:59:     at async Promise.all (index 1)
+2025-09-04T22:59:59:     at async LiveOrderbookService.sendUpdate (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:51:45)
+2025-09-04T22:59:59:     at async Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:30:21) {
+2025-09-04T22:59:59:   code: 'ECONNABORTED',
+2025-09-04T22:59:59:   config: {
+2025-09-04T22:59:59:     transitional: {
+2025-09-04T22:59:59:       silentJSONParsing: true,
+2025-09-04T22:59:59:       forcedJSONParsing: true,
+2025-09-04T22:59:59:       clarifyTimeoutError: false
+2025-09-04T22:59:59:     },
+2025-09-04T22:59:59:     adapter: [ 'xhr', 'http', 'fetch' ],
+2025-09-04T22:59:59:     transformRequest: [ [Function: transformRequest] ],
+2025-09-04T22:59:59:     transformResponse: [ [Function: transformResponse] ],
+2025-09-04T22:59:59:     timeout: 5000,
+2025-09-04T22:59:59:     xsrfCookieName: 'XSRF-TOKEN',
+2025-09-04T22:59:59:     xsrfHeaderName: 'X-XSRF-TOKEN',
+2025-09-04T22:59:59:     maxContentLength: -1,
+2025-09-04T22:59:59:     maxBodyLength: -1,
+2025-09-04T22:59:59:     env: { FormData: [Function [FormData]], Blob: [class Blob] },
+2025-09-04T22:59:59:     validateStatus: [Function: validateStatus],
+2025-09-04T22:59:59:     headers: Object [AxiosHeaders] {
+2025-09-04T22:59:59:       Accept: 'application/json, text/plain, */*',
+2025-09-04T22:59:59:       'Content-Type': undefined,
+2025-09-04T22:59:59:       'User-Agent': 'axios/1.11.0',
+2025-09-04T22:59:59:       'Accept-Encoding': 'gzip, compress, deflate, br'
+2025-09-04T22:59:59:     },
+2025-09-04T22:59:59:     method: 'get',
+2025-09-04T22:59:59:     url: 'https://www.bitstamp.net/api/v2/order_book/xrpusd/',
+2025-09-04T22:59:59:     allowAbsoluteUrls: true,
+2025-09-04T22:59:59:     data: undefined
+2025-09-04T22:59:59:   },
+2025-09-04T22:59:59:   request: <ref *1> Writable {
+2025-09-04T22:59:59:     _events: {
+2025-09-04T22:59:59:       close: undefined,
+2025-09-04T22:59:59:       error: [Function: handleRequestError],
+2025-09-04T22:59:59:       prefinish: undefined,
+2025-09-04T22:59:59:       finish: undefined,
+2025-09-04T22:59:59:       drain: undefined,
+2025-09-04T22:59:59:       response: [Function: handleResponse],
+2025-09-04T22:59:59:       socket: [Array],
+2025-09-04T22:59:59:       timeout: undefined,
+2025-09-04T22:59:59:       abort: undefined
+2025-09-04T22:59:59:     },
+2025-09-04T22:59:59:     _writableState: WritableState {
+2025-09-04T22:59:59:       highWaterMark: 16384,
+2025-09-04T22:59:59:       length: 0,
+2025-09-04T22:59:59:       corked: 0,
+2025-09-04T22:59:59:       onwrite: [Function: bound onwrite],
+2025-09-04T22:59:59:       writelen: 0,
+2025-09-04T22:59:59:       bufferedIndex: 0,
+2025-09-04T22:59:59:       pendingcb: 0,
+2025-09-04T22:59:59:       Symbol(kState): 17580812,
+2025-09-04T22:59:59:       Symbol(kBufferedValue): null
+2025-09-04T22:59:59:     },
+2025-09-04T22:59:59:     _maxListeners: undefined,
+2025-09-04T22:59:59:     _options: {
+2025-09-04T22:59:59:       maxRedirects: 21,
+2025-09-04T22:59:59:       maxBodyLength: Infinity,
+2025-09-04T22:59:59:       protocol: 'https:',
+2025-09-04T22:59:59:       path: '/api/v2/order_book/xrpusd/',
+2025-09-04T22:59:59:       method: 'GET',
+2025-09-04T22:59:59:       headers: [Object: null prototype],
+2025-09-04T22:59:59:       agents: [Object],
+2025-09-04T22:59:59:       auth: undefined,
+2025-09-04T22:59:59:       family: undefined,
+2025-09-04T22:59:59:       beforeRedirect: [Function: dispatchBeforeRedirect],
+2025-09-04T22:59:59:       beforeRedirects: [Object],
+2025-09-04T22:59:59:       hostname: 'www.bitstamp.net',
+2025-09-04T22:59:59:       port: '',
+2025-09-04T22:59:59:       agent: undefined,
+2025-09-04T22:59:59:       nativeProtocols: [Object],
+2025-09-04T22:59:59:       pathname: '/api/v2/order_book/xrpusd/'
+2025-09-04T22:59:59:     },
+2025-09-04T22:59:59:     _ended: true,
+2025-09-04T22:59:59:     _ending: true,
+2025-09-04T22:59:59:     _redirectCount: 0,
+2025-09-04T22:59:59:     _redirects: [],
+2025-09-04T22:59:59:     _requestBodyLength: 0,
+2025-09-04T22:59:59:     _requestBodyBuffers: [],
+2025-09-04T22:59:59:     _eventsCount: 3,
+2025-09-04T22:59:59:     _onNativeResponse: [Function (anonymous)],
+2025-09-04T22:59:59:     _currentRequest: ClientRequest {
+2025-09-04T22:59:59:       _events: [Object: null prototype],
+2025-09-04T22:59:59:       _eventsCount: 7,
+2025-09-04T22:59:59:       _maxListeners: undefined,
+2025-09-04T22:59:59:       outputData: [],
+2025-09-04T22:59:59:       outputSize: 0,
+2025-09-04T22:59:59:       writable: true,
+2025-09-04T22:59:59:       destroyed: false,
+2025-09-04T22:59:59:       _last: true,
+2025-09-04T22:59:59:       chunkedEncoding: false,
+2025-09-04T22:59:59:       shouldKeepAlive: true,
+2025-09-04T22:59:59:       maxRequestsOnConnectionReached: false,
+2025-09-04T22:59:59:       _defaultKeepAlive: true,
+2025-09-04T22:59:59:       useChunkedEncodingByDefault: false,
+2025-09-04T22:59:59:       sendDate: false,
+2025-09-04T22:59:59:       _removedConnection: false,
+2025-09-04T22:59:59:       _removedContLen: false,
+2025-09-04T22:59:59:       _removedTE: false,
+2025-09-04T22:59:59:       strictContentLength: false,
+2025-09-04T22:59:59:       _contentLength: 0,
+2025-09-04T22:59:59:       _hasBody: true,
+2025-09-04T22:59:59:       _trailer: '',
+2025-09-04T22:59:59:       finished: true,
+2025-09-04T22:59:59:       _headerSent: true,
+2025-09-04T22:59:59:       _closed: false,
+2025-09-04T22:59:59:       _header: 'GET /api/v2/order_book/xrpusd/ HTTP/1.1\r\n' +
+2025-09-04T22:59:59:         'Accept: application/json, text/plain, */*\r\n' +
+2025-09-04T22:59:59:         'User-Agent: axios/1.11.0\r\n' +
+2025-09-04T22:59:59:         'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+2025-09-04T22:59:59:         'Host: www.bitstamp.net\r\n' +
+2025-09-04T22:59:59:         'Connection: keep-alive\r\n' +
+2025-09-04T22:59:59:         '\r\n',
+2025-09-04T22:59:59:       _keepAliveTimeout: 0,
+2025-09-04T22:59:59:       _onPendingData: [Function: nop],
+2025-09-04T22:59:59:       agent: [Agent],
+2025-09-04T22:59:59:       socketPath: undefined,
+2025-09-04T22:59:59:       method: 'GET',
+2025-09-04T22:59:59:       maxHeaderSize: undefined,
+2025-09-04T22:59:59:       insecureHTTPParser: undefined,
+2025-09-04T22:59:59:       joinDuplicateHeaders: undefined,
+2025-09-04T22:59:59:       path: '/api/v2/order_book/xrpusd/',
+2025-09-04T22:59:59:       _ended: false,
+2025-09-04T22:59:59:       res: null,
+2025-09-04T22:59:59:       aborted: false,
+2025-09-04T22:59:59:       timeoutCb: [Function: emitRequestTimeout],
+2025-09-04T22:59:59:       upgradeOrConnect: false,
+2025-09-04T22:59:59:       parser: [HTTPParser],
+2025-09-04T22:59:59:       maxHeadersCount: null,
+2025-09-04T22:59:59:       reusedSocket: false,
+2025-09-04T22:59:59:       host: 'www.bitstamp.net',
+2025-09-04T22:59:59:       protocol: 'https:',
+2025-09-04T22:59:59:       _redirectable: [Circular *1],
+2025-09-04T22:59:59:       Symbol(shapeMode): false,
+2025-09-04T22:59:59:       Symbol(kCapture): false,
+2025-09-04T22:59:59:       Symbol(kBytesWritten): 0,
+2025-09-04T22:59:59:       Symbol(kNeedDrain): false,
+2025-09-04T22:59:59:       Symbol(corked): 0,
+2025-09-04T22:59:59:       Symbol(kChunkedBuffer): [],
+2025-09-04T22:59:59:       Symbol(kChunkedLength): 0,
+2025-09-04T22:59:59:       Symbol(kSocket): [TLSSocket],
+2025-09-04T22:59:59:       Symbol(kOutHeaders): [Object: null prototype],
+2025-09-04T22:59:59:       Symbol(errored): null,
+2025-09-04T22:59:59:       Symbol(kHighWaterMark): 16384,
+2025-09-04T22:59:59:       Symbol(kRejectNonStandardBodyWrites): false,
+2025-09-04T22:59:59:       Symbol(kUniqueHeaders): null
+2025-09-04T22:59:59:     },
+2025-09-04T22:59:59:     _currentUrl: 'https://www.bitstamp.net/api/v2/order_book/xrpusd/',
+2025-09-04T22:59:59:     _timeout: null,
+2025-09-04T22:59:59:     Symbol(shapeMode): true,
+2025-09-04T22:59:59:     Symbol(kCapture): false
+2025-09-04T22:59:59:   }
+2025-09-04T22:59:59: }
+2025-09-04T23:29:42: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-05T00:06:23: (node:3860) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-05T00:06:23: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-05T00:06:34: ❌ Error fetching data for Bittrex Exchange (rEhxGqkqPPSxQ3P25J2N7inT5ieHYNoAM): Account malformed.
+2025-09-05T00:06:36: ❌ Error fetching data for Kraken Exchange (rDNa9td55rNjDzlu4wjZ9VhxWkYQcr5bM6): Account malformed.
+2025-09-05T00:06:39: ❌ Error fetching data for Coinbase Exchange (rBWpYJhuJWBPAkzJ4kYQqHShSkkF3rgeDE): Account malformed.
+2025-09-05T00:07:23: (node:3860) Warning: Supplying "ephemeral" for interaction response options is deprecated. Utilize flags instead.
+2025-09-05T00:16:30: ⚠️ Data source failed, trying next... timeout of 5000ms exceeded
+2025-09-05T01:06:22: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-05T02:06:22: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-05T03:06:22: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-05T04:06:22: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-05T05:06:22: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-05T06:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-05T07:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-05T08:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-05T08:56:34: Error fetching Coinbase price: timeout of 5000ms exceeded
+2025-09-05T08:56:34: Error fetching Kraken price: timeout of 5000ms exceeded
+2025-09-05T08:56:34: Error fetching KuCoin price: timeout of 5000ms exceeded
+2025-09-05T08:56:34: Error fetching Coinbase price: timeout of 5000ms exceeded
+2025-09-05T08:56:34: Error fetching Kraken price: timeout of 5000ms exceeded
+2025-09-05T08:56:34: Error fetching KuCoin price: timeout of 5000ms exceeded
+2025-09-05T09:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-05T09:16:34: Error fetching Coinbase price: timeout of 5000ms exceeded
+2025-09-05T09:16:34: Error fetching Kraken price: timeout of 5000ms exceeded
+2025-09-05T09:16:34: Error fetching KuCoin price: timeout of 5000ms exceeded
+2025-09-05T09:16:34: Error fetching Coinbase price: timeout of 5000ms exceeded
+2025-09-05T09:16:34: Error fetching Kraken price: timeout of 5000ms exceeded
+2025-09-05T09:16:34: Error fetching KuCoin price: timeout of 5000ms exceeded
+2025-09-05T10:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-05T11:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-05T11:06:33: Error fetching Bitstamp orderbook: AxiosError: timeout of 5000ms exceeded
+2025-09-05T11:06:33:     at RedirectableRequest.handleRequestTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/node_modules/axios/lib/adapters/http.js:657:16)
+2025-09-05T11:06:33:     at RedirectableRequest.emit (node:events:507:28)
+2025-09-05T11:06:33:     at Timeout.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\follow-redirects\index.js:221:12)
+2025-09-05T11:06:33:     at listOnTimeout (node:internal/timers:608:17)
+2025-09-05T11:06:33:     at process.processTimers (node:internal/timers:543:7)
+2025-09-05T11:06:33:     at Axios.request (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/node_modules/axios/lib/core/Axios.js:45:41)
+2025-09-05T11:06:33:     at runNextTicks (node:internal/process/task_queues:65:5)
+2025-09-05T11:06:33:     at listOnTimeout (node:internal/timers:569:9)
+2025-09-05T11:06:33:     at process.processTimers (node:internal/timers:543:7)
+2025-09-05T11:06:33:     at async LiveOrderbookService.fetchBitstampOrderbook (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:257:30)
+2025-09-05T11:06:33:     at async Promise.allSettled (index 1)
+2025-09-05T11:06:33:     at async LiveOrderbookService.fetchOrderbookData (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:186:49)
+2025-09-05T11:06:33:     at async LiveOrderbookService.createOrderbookEmbed (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:66:35)
+2025-09-05T11:06:33:     at async Promise.all (index 0)
+2025-09-05T11:06:33:     at async LiveOrderbookService.sendUpdate (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:51:45)
+2025-09-05T11:06:33:     at async Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:30:21) {
+2025-09-05T11:06:33:   code: 'ECONNABORTED',
+2025-09-05T11:06:33:   config: {
+2025-09-05T11:06:33:     transitional: {
+2025-09-05T11:06:33:       silentJSONParsing: true,
+2025-09-05T11:06:33:       forcedJSONParsing: true,
+2025-09-05T11:06:33:       clarifyTimeoutError: false
+2025-09-05T11:06:33:     },
+2025-09-05T11:06:33:     adapter: [ 'xhr', 'http', 'fetch' ],
+2025-09-05T11:06:33:     transformRequest: [ [Function: transformRequest] ],
+2025-09-05T11:06:33:     transformResponse: [ [Function: transformResponse] ],
+2025-09-05T11:06:33:     timeout: 5000,
+2025-09-05T11:06:33:     xsrfCookieName: 'XSRF-TOKEN',
+2025-09-05T11:06:33:     xsrfHeaderName: 'X-XSRF-TOKEN',
+2025-09-05T11:06:33:     maxContentLength: -1,
+2025-09-05T11:06:33:     maxBodyLength: -1,
+2025-09-05T11:06:33:     env: { FormData: [Function [FormData]], Blob: [class Blob] },
+2025-09-05T11:06:33:     validateStatus: [Function: validateStatus],
+2025-09-05T11:06:33:     headers: Object [AxiosHeaders] {
+2025-09-05T11:06:33:       Accept: 'application/json, text/plain, */*',
+2025-09-05T11:06:33:       'Content-Type': undefined,
+2025-09-05T11:06:33:       'User-Agent': 'axios/1.11.0',
+2025-09-05T11:06:33:       'Accept-Encoding': 'gzip, compress, deflate, br'
+2025-09-05T11:06:33:     },
+2025-09-05T11:06:33:     method: 'get',
+2025-09-05T11:06:33:     url: 'https://www.bitstamp.net/api/v2/order_book/xrpusd/',
+2025-09-05T11:06:33:     allowAbsoluteUrls: true,
+2025-09-05T11:06:33:     data: undefined
+2025-09-05T11:06:33:   },
+2025-09-05T11:06:33:   request: <ref *1> Writable {
+2025-09-05T11:06:33:     _events: {
+2025-09-05T11:06:33:       close: undefined,
+2025-09-05T11:06:33:       error: [Function: handleRequestError],
+2025-09-05T11:06:33:       prefinish: undefined,
+2025-09-05T11:06:33:       finish: undefined,
+2025-09-05T11:06:33:       drain: undefined,
+2025-09-05T11:06:33:       response: [Function: handleResponse],
+2025-09-05T11:06:33:       socket: [Array],
+2025-09-05T11:06:33:       timeout: undefined,
+2025-09-05T11:06:33:       abort: undefined
+2025-09-05T11:06:33:     },
+2025-09-05T11:06:33:     _writableState: WritableState {
+2025-09-05T11:06:33:       highWaterMark: 16384,
+2025-09-05T11:06:33:       length: 0,
+2025-09-05T11:06:33:       corked: 0,
+2025-09-05T11:06:33:       onwrite: [Function: bound onwrite],
+2025-09-05T11:06:33:       writelen: 0,
+2025-09-05T11:06:33:       bufferedIndex: 0,
+2025-09-05T11:06:33:       pendingcb: 0,
+2025-09-05T11:06:33:       Symbol(kState): 17580812,
+2025-09-05T11:06:33:       Symbol(kBufferedValue): null
+2025-09-05T11:06:33:     },
+2025-09-05T11:06:33:     _maxListeners: undefined,
+2025-09-05T11:06:33:     _options: {
+2025-09-05T11:06:33:       maxRedirects: 21,
+2025-09-05T11:06:33:       maxBodyLength: Infinity,
+2025-09-05T11:06:33:       protocol: 'https:',
+2025-09-05T11:06:33:       path: '/api/v2/order_book/xrpusd/',
+2025-09-05T11:06:33:       method: 'GET',
+2025-09-05T11:06:33:       headers: [Object: null prototype],
+2025-09-05T11:06:33:       agents: [Object],
+2025-09-05T11:06:33:       auth: undefined,
+2025-09-05T11:06:33:       family: undefined,
+2025-09-05T11:06:33:       beforeRedirect: [Function: dispatchBeforeRedirect],
+2025-09-05T11:06:33:       beforeRedirects: [Object],
+2025-09-05T11:06:33:       hostname: 'www.bitstamp.net',
+2025-09-05T11:06:33:       port: '',
+2025-09-05T11:06:33:       agent: undefined,
+2025-09-05T11:06:33:       nativeProtocols: [Object],
+2025-09-05T11:06:33:       pathname: '/api/v2/order_book/xrpusd/'
+2025-09-05T11:06:33:     },
+2025-09-05T11:06:33:     _ended: true,
+2025-09-05T11:06:33:     _ending: true,
+2025-09-05T11:06:33:     _redirectCount: 0,
+2025-09-05T11:06:33:     _redirects: [],
+2025-09-05T11:06:33:     _requestBodyLength: 0,
+2025-09-05T11:06:33:     _requestBodyBuffers: [],
+2025-09-05T11:06:33:     _eventsCount: 3,
+2025-09-05T11:06:33:     _onNativeResponse: [Function (anonymous)],
+2025-09-05T11:06:33:     _currentRequest: ClientRequest {
+2025-09-05T11:06:33:       _events: [Object: null prototype],
+2025-09-05T11:06:33:       _eventsCount: 7,
+2025-09-05T11:06:33:       _maxListeners: undefined,
+2025-09-05T11:06:33:       outputData: [],
+2025-09-05T11:06:33:       outputSize: 0,
+2025-09-05T11:06:33:       writable: true,
+2025-09-05T11:06:33:       destroyed: false,
+2025-09-05T11:06:33:       _last: true,
+2025-09-05T11:06:33:       chunkedEncoding: false,
+2025-09-05T11:06:33:       shouldKeepAlive: true,
+2025-09-05T11:06:33:       maxRequestsOnConnectionReached: false,
+2025-09-05T11:06:33:       _defaultKeepAlive: true,
+2025-09-05T11:06:33:       useChunkedEncodingByDefault: false,
+2025-09-05T11:06:33:       sendDate: false,
+2025-09-05T11:06:33:       _removedConnection: false,
+2025-09-05T11:06:33:       _removedContLen: false,
+2025-09-05T11:06:33:       _removedTE: false,
+2025-09-05T11:06:33:       strictContentLength: false,
+2025-09-05T11:06:33:       _contentLength: 0,
+2025-09-05T11:06:33:       _hasBody: true,
+2025-09-05T11:06:33:       _trailer: '',
+2025-09-05T11:06:33:       finished: true,
+2025-09-05T11:06:33:       _headerSent: true,
+2025-09-05T11:06:33:       _closed: false,
+2025-09-05T11:06:33:       _header: 'GET /api/v2/order_book/xrpusd/ HTTP/1.1\r\n' +
+2025-09-05T11:06:33:         'Accept: application/json, text/plain, */*\r\n' +
+2025-09-05T11:06:33:         'User-Agent: axios/1.11.0\r\n' +
+2025-09-05T11:06:33:         'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+2025-09-05T11:06:33:         'Host: www.bitstamp.net\r\n' +
+2025-09-05T11:06:33:         'Connection: keep-alive\r\n' +
+2025-09-05T11:06:33:         '\r\n',
+2025-09-05T11:06:33:       _keepAliveTimeout: 0,
+2025-09-05T11:06:33:       _onPendingData: [Function: nop],
+2025-09-05T11:06:33:       agent: [Agent],
+2025-09-05T11:06:33:       socketPath: undefined,
+2025-09-05T11:06:33:       method: 'GET',
+2025-09-05T11:06:33:       maxHeaderSize: undefined,
+2025-09-05T11:06:33:       insecureHTTPParser: undefined,
+2025-09-05T11:06:33:       joinDuplicateHeaders: undefined,
+2025-09-05T11:06:33:       path: '/api/v2/order_book/xrpusd/',
+2025-09-05T11:06:33:       _ended: false,
+2025-09-05T11:06:33:       res: null,
+2025-09-05T11:06:33:       aborted: false,
+2025-09-05T11:06:33:       timeoutCb: [Function: emitRequestTimeout],
+2025-09-05T11:06:33:       upgradeOrConnect: false,
+2025-09-05T11:06:33:       parser: [HTTPParser],
+2025-09-05T11:06:33:       maxHeadersCount: null,
+2025-09-05T11:06:33:       reusedSocket: false,
+2025-09-05T11:06:33:       host: 'www.bitstamp.net',
+2025-09-05T11:06:33:       protocol: 'https:',
+2025-09-05T11:06:33:       _redirectable: [Circular *1],
+2025-09-05T11:06:33:       Symbol(shapeMode): false,
+2025-09-05T11:06:33:       Symbol(kCapture): false,
+2025-09-05T11:06:33:       Symbol(kBytesWritten): 0,
+2025-09-05T11:06:33:       Symbol(kNeedDrain): false,
+2025-09-05T11:06:33:       Symbol(corked): 0,
+2025-09-05T11:06:33:       Symbol(kChunkedBuffer): [],
+2025-09-05T11:06:33:       Symbol(kChunkedLength): 0,
+2025-09-05T11:06:33:       Symbol(kSocket): [TLSSocket],
+2025-09-05T11:06:33:       Symbol(kOutHeaders): [Object: null prototype],
+2025-09-05T11:06:33:       Symbol(errored): null,
+2025-09-05T11:06:33:       Symbol(kHighWaterMark): 16384,
+2025-09-05T11:06:33:       Symbol(kRejectNonStandardBodyWrites): false,
+2025-09-05T11:06:33:       Symbol(kUniqueHeaders): null
+2025-09-05T11:06:33:     },
+2025-09-05T11:06:33:     _currentUrl: 'https://www.bitstamp.net/api/v2/order_book/xrpusd/',
+2025-09-05T11:06:33:     _timeout: null,
+2025-09-05T11:06:33:     Symbol(shapeMode): true,
+2025-09-05T11:06:33:     Symbol(kCapture): false
+2025-09-05T11:06:33:   }
+2025-09-05T11:06:33: }
+2025-09-05T11:06:33: Error fetching Bitstamp orderbook: AxiosError: timeout of 5000ms exceeded
+2025-09-05T11:06:33:     at RedirectableRequest.handleRequestTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/node_modules/axios/lib/adapters/http.js:657:16)
+2025-09-05T11:06:33:     at RedirectableRequest.emit (node:events:507:28)
+2025-09-05T11:06:33:     at Timeout.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\follow-redirects\index.js:221:12)
+2025-09-05T11:06:33:     at listOnTimeout (node:internal/timers:608:17)
+2025-09-05T11:06:33:     at process.processTimers (node:internal/timers:543:7)
+2025-09-05T11:06:33:     at Axios.request (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/node_modules/axios/lib/core/Axios.js:45:41)
+2025-09-05T11:06:33:     at async LiveOrderbookService.fetchBitstampOrderbook (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:257:30)
+2025-09-05T11:06:33:     at async Promise.allSettled (index 1)
+2025-09-05T11:06:33:     at async LiveOrderbookService.fetchOrderbookData (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:186:49)
+2025-09-05T11:06:33:     at async LiveOrderbookService.createDepthChartEmbed (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:118:35)
+2025-09-05T11:06:33:     at async Promise.all (index 1)
+2025-09-05T11:06:33:     at async LiveOrderbookService.sendUpdate (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:51:45)
+2025-09-05T11:06:33:     at async Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:30:21) {
+2025-09-05T11:06:33:   code: 'ECONNABORTED',
+2025-09-05T11:06:33:   config: {
+2025-09-05T11:06:33:     transitional: {
+2025-09-05T11:06:33:       silentJSONParsing: true,
+2025-09-05T11:06:33:       forcedJSONParsing: true,
+2025-09-05T11:06:33:       clarifyTimeoutError: false
+2025-09-05T11:06:33:     },
+2025-09-05T11:06:33:     adapter: [ 'xhr', 'http', 'fetch' ],
+2025-09-05T11:06:33:     transformRequest: [ [Function: transformRequest] ],
+2025-09-05T11:06:33:     transformResponse: [ [Function: transformResponse] ],
+2025-09-05T11:06:33:     timeout: 5000,
+2025-09-05T11:06:33:     xsrfCookieName: 'XSRF-TOKEN',
+2025-09-05T11:06:33:     xsrfHeaderName: 'X-XSRF-TOKEN',
+2025-09-05T11:06:33:     maxContentLength: -1,
+2025-09-05T11:06:33:     maxBodyLength: -1,
+2025-09-05T11:06:33:     env: { FormData: [Function [FormData]], Blob: [class Blob] },
+2025-09-05T11:06:33:     validateStatus: [Function: validateStatus],
+2025-09-05T11:06:33:     headers: Object [AxiosHeaders] {
+2025-09-05T11:06:33:       Accept: 'application/json, text/plain, */*',
+2025-09-05T11:06:33:       'Content-Type': undefined,
+2025-09-05T11:06:33:       'User-Agent': 'axios/1.11.0',
+2025-09-05T11:06:33:       'Accept-Encoding': 'gzip, compress, deflate, br'
+2025-09-05T11:06:33:     },
+2025-09-05T11:06:33:     method: 'get',
+2025-09-05T11:06:33:     url: 'https://www.bitstamp.net/api/v2/order_book/xrpusd/',
+2025-09-05T11:06:33:     allowAbsoluteUrls: true,
+2025-09-05T11:06:33:     data: undefined
+2025-09-05T11:06:33:   },
+2025-09-05T11:06:33:   request: <ref *1> Writable {
+2025-09-05T11:06:33:     _events: {
+2025-09-05T11:06:33:       close: undefined,
+2025-09-05T11:06:33:       error: [Function: handleRequestError],
+2025-09-05T11:06:33:       prefinish: undefined,
+2025-09-05T11:06:33:       finish: undefined,
+2025-09-05T11:06:33:       drain: undefined,
+2025-09-05T11:06:33:       response: [Function: handleResponse],
+2025-09-05T11:06:33:       socket: [Array],
+2025-09-05T11:06:33:       timeout: undefined,
+2025-09-05T11:06:33:       abort: undefined
+2025-09-05T11:06:33:     },
+2025-09-05T11:06:33:     _writableState: WritableState {
+2025-09-05T11:06:33:       highWaterMark: 16384,
+2025-09-05T11:06:33:       length: 0,
+2025-09-05T11:06:33:       corked: 0,
+2025-09-05T11:06:33:       onwrite: [Function: bound onwrite],
+2025-09-05T11:06:33:       writelen: 0,
+2025-09-05T11:06:33:       bufferedIndex: 0,
+2025-09-05T11:06:33:       pendingcb: 0,
+2025-09-05T11:06:33:       Symbol(kState): 17580812,
+2025-09-05T11:06:33:       Symbol(kBufferedValue): null
+2025-09-05T11:06:33:     },
+2025-09-05T11:06:33:     _maxListeners: undefined,
+2025-09-05T11:06:33:     _options: {
+2025-09-05T11:06:33:       maxRedirects: 21,
+2025-09-05T11:06:33:       maxBodyLength: Infinity,
+2025-09-05T11:06:33:       protocol: 'https:',
+2025-09-05T11:06:33:       path: '/api/v2/order_book/xrpusd/',
+2025-09-05T11:06:33:       method: 'GET',
+2025-09-05T11:06:33:       headers: [Object: null prototype],
+2025-09-05T11:06:33:       agents: [Object],
+2025-09-05T11:06:33:       auth: undefined,
+2025-09-05T11:06:33:       family: undefined,
+2025-09-05T11:06:33:       beforeRedirect: [Function: dispatchBeforeRedirect],
+2025-09-05T11:06:33:       beforeRedirects: [Object],
+2025-09-05T11:06:33:       hostname: 'www.bitstamp.net',
+2025-09-05T11:06:33:       port: '',
+2025-09-05T11:06:33:       agent: undefined,
+2025-09-05T11:06:33:       nativeProtocols: [Object],
+2025-09-05T11:06:33:       pathname: '/api/v2/order_book/xrpusd/'
+2025-09-05T11:06:33:     },
+2025-09-05T11:06:33:     _ended: true,
+2025-09-05T11:06:33:     _ending: true,
+2025-09-05T11:06:33:     _redirectCount: 0,
+2025-09-05T11:06:33:     _redirects: [],
+2025-09-05T11:06:33:     _requestBodyLength: 0,
+2025-09-05T11:06:33:     _requestBodyBuffers: [],
+2025-09-05T11:06:33:     _eventsCount: 3,
+2025-09-05T11:06:33:     _onNativeResponse: [Function (anonymous)],
+2025-09-05T11:06:33:     _currentRequest: ClientRequest {
+2025-09-05T11:06:33:       _events: [Object: null prototype],
+2025-09-05T11:06:33:       _eventsCount: 7,
+2025-09-05T11:06:33:       _maxListeners: undefined,
+2025-09-05T11:06:33:       outputData: [],
+2025-09-05T11:06:33:       outputSize: 0,
+2025-09-05T11:06:33:       writable: true,
+2025-09-05T11:06:33:       destroyed: false,
+2025-09-05T11:06:33:       _last: true,
+2025-09-05T11:06:33:       chunkedEncoding: false,
+2025-09-05T11:06:33:       shouldKeepAlive: true,
+2025-09-05T11:06:33:       maxRequestsOnConnectionReached: false,
+2025-09-05T11:06:33:       _defaultKeepAlive: true,
+2025-09-05T11:06:33:       useChunkedEncodingByDefault: false,
+2025-09-05T11:06:33:       sendDate: false,
+2025-09-05T11:06:33:       _removedConnection: false,
+2025-09-05T11:06:33:       _removedContLen: false,
+2025-09-05T11:06:33:       _removedTE: false,
+2025-09-05T11:06:33:       strictContentLength: false,
+2025-09-05T11:06:33:       _contentLength: 0,
+2025-09-05T11:06:33:       _hasBody: true,
+2025-09-05T11:06:33:       _trailer: '',
+2025-09-05T11:06:33:       finished: true,
+2025-09-05T11:06:33:       _headerSent: true,
+2025-09-05T11:06:33:       _closed: false,
+2025-09-05T11:06:33:       _header: 'GET /api/v2/order_book/xrpusd/ HTTP/1.1\r\n' +
+2025-09-05T11:06:33:         'Accept: application/json, text/plain, */*\r\n' +
+2025-09-05T11:06:33:         'User-Agent: axios/1.11.0\r\n' +
+2025-09-05T11:06:33:         'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+2025-09-05T11:06:33:         'Host: www.bitstamp.net\r\n' +
+2025-09-05T11:06:33:         'Connection: keep-alive\r\n' +
+2025-09-05T11:06:33:         '\r\n',
+2025-09-05T11:06:33:       _keepAliveTimeout: 0,
+2025-09-05T11:06:33:       _onPendingData: [Function: nop],
+2025-09-05T11:06:33:       agent: [Agent],
+2025-09-05T11:06:33:       socketPath: undefined,
+2025-09-05T11:06:33:       method: 'GET',
+2025-09-05T11:06:33:       maxHeaderSize: undefined,
+2025-09-05T11:06:33:       insecureHTTPParser: undefined,
+2025-09-05T11:06:33:       joinDuplicateHeaders: undefined,
+2025-09-05T11:06:33:       path: '/api/v2/order_book/xrpusd/',
+2025-09-05T11:06:33:       _ended: false,
+2025-09-05T11:06:33:       res: null,
+2025-09-05T11:06:33:       aborted: false,
+2025-09-05T11:06:33:       timeoutCb: [Function: emitRequestTimeout],
+2025-09-05T11:06:33:       upgradeOrConnect: false,
+2025-09-05T11:06:33:       parser: [HTTPParser],
+2025-09-05T11:06:33:       maxHeadersCount: null,
+2025-09-05T11:06:33:       reusedSocket: false,
+2025-09-05T11:06:33:       host: 'www.bitstamp.net',
+2025-09-05T11:06:33:       protocol: 'https:',
+2025-09-05T11:06:33:       _redirectable: [Circular *1],
+2025-09-05T11:06:33:       Symbol(shapeMode): false,
+2025-09-05T11:06:33:       Symbol(kCapture): false,
+2025-09-05T11:06:33:       Symbol(kBytesWritten): 0,
+2025-09-05T11:06:33:       Symbol(kNeedDrain): false,
+2025-09-05T11:06:33:       Symbol(corked): 0,
+2025-09-05T11:06:33:       Symbol(kChunkedBuffer): [],
+2025-09-05T11:06:33:       Symbol(kChunkedLength): 0,
+2025-09-05T11:06:33:       Symbol(kSocket): [TLSSocket],
+2025-09-05T11:06:33:       Symbol(kOutHeaders): [Object: null prototype],
+2025-09-05T11:06:33:       Symbol(errored): null,
+2025-09-05T11:06:33:       Symbol(kHighWaterMark): 16384,
+2025-09-05T11:06:33:       Symbol(kRejectNonStandardBodyWrites): false,
+2025-09-05T11:06:33:       Symbol(kUniqueHeaders): null
+2025-09-05T11:06:33:     },
+2025-09-05T11:06:33:     _currentUrl: 'https://www.bitstamp.net/api/v2/order_book/xrpusd/',
+2025-09-05T11:06:33:     _timeout: null,
+2025-09-05T11:06:33:     Symbol(shapeMode): true,
+2025-09-05T11:06:33:     Symbol(kCapture): false
+2025-09-05T11:06:33:   }
+2025-09-05T11:06:33: }
+2025-09-05T11:06:34: Error fetching Bitstamp price: timeout of 5000ms exceeded
+2025-09-05T11:06:34: Error fetching Bitstamp price: timeout of 5000ms exceeded
+2025-09-05T11:06:35: Error fetching Bitstamp price: timeout of 5000ms exceeded
+2025-09-05T12:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-05T13:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-05T14:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-05T15:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-05T16:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-05T17:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-05T18:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-05T19:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-05T20:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-05T21:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-05T21:56:35: Error fetching Coinbase price: timeout of 5000ms exceeded
+2025-09-05T21:56:35: Error fetching Kraken price: timeout of 5000ms exceeded
+2025-09-05T21:56:35: Error fetching KuCoin price: timeout of 5000ms exceeded
+2025-09-05T21:56:35: Error fetching Coinbase price: timeout of 5000ms exceeded
+2025-09-05T21:56:35: Error fetching Kraken price: timeout of 5000ms exceeded
+2025-09-05T21:56:35: Error fetching KuCoin price: timeout of 5000ms exceeded
+2025-09-05T22:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-05T23:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-06T00:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-06T01:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-06T02:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-06T02:56:34: Error fetching Binance orderbook: AxiosError: timeout of 5000ms exceeded
+2025-09-06T02:56:34:     at RedirectableRequest.handleRequestTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/node_modules/axios/lib/adapters/http.js:657:16)
+2025-09-06T02:56:34:     at RedirectableRequest.emit (node:events:507:28)
+2025-09-06T02:56:34:     at Timeout.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\follow-redirects\index.js:221:12)
+2025-09-06T02:56:34:     at listOnTimeout (node:internal/timers:608:17)
+2025-09-06T02:56:34:     at process.processTimers (node:internal/timers:543:7)
+2025-09-06T02:56:34:     at Axios.request (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/node_modules/axios/lib/core/Axios.js:45:41)
+2025-09-06T02:56:34:     at runNextTicks (node:internal/process/task_queues:65:5)
+2025-09-06T02:56:34:     at listOnTimeout (node:internal/timers:569:9)
+2025-09-06T02:56:34:     at process.processTimers (node:internal/timers:543:7)
+2025-09-06T02:56:34:     at async LiveOrderbookService.fetchBinanceOrderbook (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:232:30)
+2025-09-06T02:56:34:     at async Promise.allSettled (index 0)
+2025-09-06T02:56:34:     at async LiveOrderbookService.fetchOrderbookData (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:186:49)
+2025-09-06T02:56:34:     at async LiveOrderbookService.createOrderbookEmbed (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:66:35)
+2025-09-06T02:56:34:     at async Promise.all (index 0)
+2025-09-06T02:56:34:     at async LiveOrderbookService.sendUpdate (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:51:45)
+2025-09-06T02:56:34:     at async Timeout._onTimeout (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/services/liveOrderbookService.js:30:21) {
+2025-09-06T02:56:34:   code: 'ECONNABORTED',
+2025-09-06T02:56:34:   config: {
+2025-09-06T02:56:34:     transitional: {
+2025-09-06T02:56:34:       silentJSONParsing: true,
+2025-09-06T02:56:34:       forcedJSONParsing: true,
+2025-09-06T02:56:34:       clarifyTimeoutError: false
+2025-09-06T02:56:34:     },
+2025-09-06T02:56:34:     adapter: [ 'xhr', 'http', 'fetch' ],
+2025-09-06T02:56:34:     transformRequest: [ [Function: transformRequest] ],
+2025-09-06T02:56:34:     transformResponse: [ [Function: transformResponse] ],
+2025-09-06T02:56:34:     timeout: 5000,
+2025-09-06T02:56:34:     xsrfCookieName: 'XSRF-TOKEN',
+2025-09-06T02:56:34:     xsrfHeaderName: 'X-XSRF-TOKEN',
+2025-09-06T02:56:34:     maxContentLength: -1,
+2025-09-06T02:56:34:     maxBodyLength: -1,
+2025-09-06T02:56:34:     env: { FormData: [Function [FormData]], Blob: [class Blob] },
+2025-09-06T02:56:34:     validateStatus: [Function: validateStatus],
+2025-09-06T02:56:34:     headers: Object [AxiosHeaders] {
+2025-09-06T02:56:34:       Accept: 'application/json, text/plain, */*',
+2025-09-06T02:56:34:       'Content-Type': undefined,
+2025-09-06T02:56:34:       'User-Agent': 'axios/1.11.0',
+2025-09-06T02:56:34:       'Accept-Encoding': 'gzip, compress, deflate, br'
+2025-09-06T02:56:34:     },
+2025-09-06T02:56:34:     method: 'get',
+2025-09-06T02:56:34:     url: 'https://api.binance.com/api/v3/depth?symbol=XRPUSDT&limit=20',
+2025-09-06T02:56:34:     allowAbsoluteUrls: true,
+2025-09-06T02:56:34:     data: undefined
+2025-09-06T02:56:34:   },
+2025-09-06T02:56:34:   request: <ref *1> Writable {
+2025-09-06T02:56:34:     _events: {
+2025-09-06T02:56:34:       close: undefined,
+2025-09-06T02:56:34:       error: [Function: handleRequestError],
+2025-09-06T02:56:34:       prefinish: undefined,
+2025-09-06T02:56:34:       finish: undefined,
+2025-09-06T02:56:34:       drain: undefined,
+2025-09-06T02:56:34:       response: [Function: handleResponse],
+2025-09-06T02:56:34:       socket: [Array],
+2025-09-06T02:56:34:       timeout: undefined,
+2025-09-06T02:56:34:       abort: undefined
+2025-09-06T02:56:34:     },
+2025-09-06T02:56:34:     _writableState: WritableState {
+2025-09-06T02:56:34:       highWaterMark: 16384,
+2025-09-06T02:56:34:       length: 0,
+2025-09-06T02:56:34:       corked: 0,
+2025-09-06T02:56:34:       onwrite: [Function: bound onwrite],
+2025-09-06T02:56:34:       writelen: 0,
+2025-09-06T02:56:34:       bufferedIndex: 0,
+2025-09-06T02:56:34:       pendingcb: 0,
+2025-09-06T02:56:34:       Symbol(kState): 17580812,
+2025-09-06T02:56:34:       Symbol(kBufferedValue): null
+2025-09-06T02:56:34:     },
+2025-09-06T02:56:34:     _maxListeners: undefined,
+2025-09-06T02:56:34:     _options: {
+2025-09-06T02:56:34:       maxRedirects: 21,
+2025-09-06T02:56:34:       maxBodyLength: Infinity,
+2025-09-06T02:56:34:       protocol: 'https:',
+2025-09-06T02:56:34:       path: '/api/v3/depth?symbol=XRPUSDT&limit=20',
+2025-09-06T02:56:34:       method: 'GET',
+2025-09-06T02:56:34:       headers: [Object: null prototype],
+2025-09-06T02:56:34:       agents: [Object],
+2025-09-06T02:56:34:       auth: undefined,
+2025-09-06T02:56:34:       family: undefined,
+2025-09-06T02:56:34:       beforeRedirect: [Function: dispatchBeforeRedirect],
+2025-09-06T02:56:34:       beforeRedirects: [Object],
+2025-09-06T02:56:34:       hostname: 'api.binance.com',
+2025-09-06T02:56:34:       port: '',
+2025-09-06T02:56:34:       agent: undefined,
+2025-09-06T02:56:34:       nativeProtocols: [Object],
+2025-09-06T02:56:34:       pathname: '/api/v3/depth',
+2025-09-06T02:56:34:       search: '?symbol=XRPUSDT&limit=20'
+2025-09-06T02:56:34:     },
+2025-09-06T02:56:34:     _ended: true,
+2025-09-06T02:56:34:     _ending: true,
+2025-09-06T02:56:34:     _redirectCount: 0,
+2025-09-06T02:56:34:     _redirects: [],
+2025-09-06T02:56:34:     _requestBodyLength: 0,
+2025-09-06T02:56:34:     _requestBodyBuffers: [],
+2025-09-06T02:56:34:     _eventsCount: 3,
+2025-09-06T02:56:34:     _onNativeResponse: [Function (anonymous)],
+2025-09-06T02:56:34:     _currentRequest: ClientRequest {
+2025-09-06T02:56:34:       _events: [Object: null prototype],
+2025-09-06T02:56:34:       _eventsCount: 7,
+2025-09-06T02:56:34:       _maxListeners: undefined,
+2025-09-06T02:56:34:       outputData: [],
+2025-09-06T02:56:34:       outputSize: 0,
+2025-09-06T02:56:34:       writable: true,
+2025-09-06T02:56:34:       destroyed: false,
+2025-09-06T02:56:34:       _last: true,
+2025-09-06T02:56:34:       chunkedEncoding: false,
+2025-09-06T02:56:34:       shouldKeepAlive: true,
+2025-09-06T02:56:34:       maxRequestsOnConnectionReached: false,
+2025-09-06T02:56:34:       _defaultKeepAlive: true,
+2025-09-06T02:56:34:       useChunkedEncodingByDefault: false,
+2025-09-06T02:56:34:       sendDate: false,
+2025-09-06T02:56:34:       _removedConnection: false,
+2025-09-06T02:56:34:       _removedContLen: false,
+2025-09-06T02:56:34:       _removedTE: false,
+2025-09-06T02:56:34:       strictContentLength: false,
+2025-09-06T02:56:34:       _contentLength: 0,
+2025-09-06T02:56:34:       _hasBody: true,
+2025-09-06T02:56:34:       _trailer: '',
+2025-09-06T02:56:34:       finished: true,
+2025-09-06T02:56:34:       _headerSent: true,
+2025-09-06T02:56:34:       _closed: false,
+2025-09-06T02:56:34:       _header: 'GET /api/v3/depth?symbol=XRPUSDT&limit=20 HTTP/1.1\r\n' +
+2025-09-06T02:56:34:         'Accept: application/json, text/plain, */*\r\n' +
+2025-09-06T02:56:34:         'User-Agent: axios/1.11.0\r\n' +
+2025-09-06T02:56:34:         'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+2025-09-06T02:56:34:         'Host: api.binance.com\r\n' +
+2025-09-06T02:56:34:         'Connection: keep-alive\r\n' +
+2025-09-06T02:56:34:         '\r\n',
+2025-09-06T02:56:34:       _keepAliveTimeout: 0,
+2025-09-06T02:56:34:       _onPendingData: [Function: nop],
+2025-09-06T02:56:34:       agent: [Agent],
+2025-09-06T02:56:34:       socketPath: undefined,
+2025-09-06T02:56:34:       method: 'GET',
+2025-09-06T02:56:34:       maxHeaderSize: undefined,
+2025-09-06T02:56:34:       insecureHTTPParser: undefined,
+2025-09-06T02:56:34:       joinDuplicateHeaders: undefined,
+2025-09-06T02:56:34:       path: '/api/v3/depth?symbol=XRPUSDT&limit=20',
+2025-09-06T02:56:34:       _ended: false,
+2025-09-06T02:56:34:       res: null,
+2025-09-06T02:56:34:       aborted: false,
+2025-09-06T02:56:34:       timeoutCb: [Function: emitRequestTimeout],
+2025-09-06T02:56:34:       upgradeOrConnect: false,
+2025-09-06T02:56:34:       parser: [HTTPParser],
+2025-09-06T02:56:34:       maxHeadersCount: null,
+2025-09-06T02:56:34:       reusedSocket: false,
+2025-09-06T02:56:34:       host: 'api.binance.com',
+2025-09-06T02:56:34:       protocol: 'https:',
+2025-09-06T02:56:34:       _redirectable: [Circular *1],
+2025-09-06T02:56:34:       Symbol(shapeMode): false,
+2025-09-06T02:56:34:       Symbol(kCapture): false,
+2025-09-06T02:56:34:       Symbol(kBytesWritten): 0,
+2025-09-06T02:56:34:       Symbol(kNeedDrain): false,
+2025-09-06T02:56:34:       Symbol(corked): 0,
+2025-09-06T02:56:34:       Symbol(kChunkedBuffer): [],
+2025-09-06T02:56:34:       Symbol(kChunkedLength): 0,
+2025-09-06T02:56:34:       Symbol(kSocket): [TLSSocket],
+2025-09-06T02:56:34:       Symbol(kOutHeaders): [Object: null prototype],
+2025-09-06T02:56:34:       Symbol(errored): null,
+2025-09-06T02:56:34:       Symbol(kHighWaterMark): 16384,
+2025-09-06T02:56:34:       Symbol(kRejectNonStandardBodyWrites): false,
+2025-09-06T02:56:34:       Symbol(kUniqueHeaders): null
+2025-09-06T02:56:34:     },
+2025-09-06T02:56:34:     _currentUrl: 'https://api.binance.com/api/v3/depth?symbol=XRPUSDT&limit=20',
+2025-09-06T02:56:34:     _timeout: null,
+2025-09-06T02:56:34:     Symbol(shapeMode): true,
+2025-09-06T02:56:34:     Symbol(kCapture): false
+2025-09-06T02:56:34:   }
+2025-09-06T02:56:34: }
+2025-09-06T03:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-06T04:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-06T05:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-06T06:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-06T07:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-06T08:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-06T09:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-06T10:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-06T11:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-06T12:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-06T12:16:35: Error fetching Coinbase price: timeout of 5000ms exceeded
+2025-09-06T12:16:35: Error fetching Kraken price: timeout of 5000ms exceeded
+2025-09-06T12:16:35: Error fetching KuCoin price: timeout of 5000ms exceeded
+2025-09-06T12:16:35: Error fetching Coinbase price: timeout of 5000ms exceeded
+2025-09-06T12:16:35: Error fetching Kraken price: timeout of 5000ms exceeded
+2025-09-06T12:16:35: Error fetching KuCoin price: timeout of 5000ms exceeded
+2025-09-06T13:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-06T14:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-06T15:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-06T16:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-06T17:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-06T18:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-06T19:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-06T20:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-06T21:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-06T22:06:23: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-06T22:48:16: (node:54424) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-06T22:48:16: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-06T22:48:27: ❌ Error fetching data for Bittrex Exchange (rEhxGqkqPPSxQ3P25J2N7inT5ieHYNoAM): Account malformed.
+2025-09-06T22:48:29: ❌ Error fetching data for Kraken Exchange (rDNa9td55rNjDzlu4wjZ9VhxWkYQcr5bM6): Account malformed.
+2025-09-06T22:48:32: ❌ Error fetching data for Coinbase Exchange (rBWpYJhuJWBPAkzJ4kYQqHShSkkF3rgeDE): Account malformed.
+2025-09-06T23:18:19: (node:54424) Warning: Supplying "ephemeral" for interaction response options is deprecated. Utilize flags instead.
+2025-09-06T23:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-07T00:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-07T01:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-07T02:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-07T03:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-07T04:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-07T05:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-07T06:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-07T07:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-07T08:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-07T09:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-07T10:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
