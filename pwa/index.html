@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a1a2e">
+    <title>XRPL Draxmh - Mobile Companion</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>🚀 XRPL Draxmh</h1>
+        <button id="refresh-btn" class="btn" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); width: auto; padding: 0.5rem; margin: 0;">🔄</button>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <button class="nav-btn active" data-section="home">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </button>
+        <button class="nav-btn" data-section="market">
+            <i class="fas fa-chart-line"></i>
+            <span>Market</span>
+        </button>
+        <button class="nav-btn" data-section="whales">
+            <i class="fas fa-fish"></i>
+            <span>Whales</span>
+        </button>
+        <button class="nav-btn" data-section="security">
+            <i class="fas fa-shield-alt"></i>
+            <span>Security</span>
+        </button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Home Section -->
+        <section id="home-section" class="section active">
+            <div class="card">
+                <h3>💰 XRP Price</h3>
+                <div class="price-display">
+                    <span id="xrp-price" class="price">$0.6234</span>
+                    <span id="price-change" class="price-change positive">+2.45%</span>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span id="volume" class="stat-value">$1.2B</span>
+                        <span class="stat-label">24h Volume</span>
+                    </div>
+                    <div class="stat-item">
+                        <span id="market-cap" class="stat-value">$35.8B</span>
+                        <span class="stat-label">Market Cap</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>🐋 Recent Whale Alerts</h3>
+                <div id="whale-alerts-container">
+                    <div id="home-loading" class="loading" style="display: none;"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>🛡️ Security Status</h3>
+                <div id="security-status" class="security-status safe">
+                    <span class="status-icon">🛡️</span>
+                    <div>
+                        <strong>Network Status: SAFE</strong><br>
+                        <small>Last scan: 5 minutes ago</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Market Section -->
+        <section id="market-section" class="section">
+            <div class="card">
+                <h3>📊 Exchange Prices</h3>
+                <div id="market-loading" class="loading" style="display: none;"></div>
+                <div id="exchanges-container" class="stats-grid">
+                    <!-- Exchange data will be loaded here -->
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>📈 Order Book</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-value">$0.6235</span>
+                        <span class="stat-label">Best Ask</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">$0.6230</span>
+                        <span class="stat-label">Best Bid</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Whales Section -->
+        <section id="whales-section" class="section">
+            <div class="card">
+                <h3>🐋 Whale Movements</h3>
+                <div id="whales-loading" class="loading" style="display: none;"></div>
+                <div id="recent-whales-container">
+                    <!-- Whale data will be loaded here -->
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>📊 Whale Statistics</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-value">2.1B</span>
+                        <span class="stat-label">24h Volume</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">250M</span>
+                        <span class="stat-label">Largest Transfer</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Section -->
+        <section id="security-section" class="section">
+            <div class="card">
+                <h3>⚠️ Recent Threats</h3>
+                <div id="security-loading" class="loading" style="display: none;"></div>
+                <div id="recent-threats-container">
+                    <!-- Security threats will be loaded here -->
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>🛡️ Protection Stats</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-value">15,420</span>
+                        <span class="stat-label">Protected Users</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">12</span>
+                        <span class="stat-label">Scam Addresses</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- PWA Install Prompt -->
+    <div id="install-prompt" class="install-prompt">
+        <h4>📱 Install Draxmh PWA</h4>
+        <p>Get instant access to XRPL data on your device!</p>
+        <button onclick="installPWA()" class="btn">Install Now</button>
+        <button onclick="this.parentElement.classList.remove('show')" style="background: transparent; border: 1px solid var(--border-color); margin-top: 0.5rem;">Maybe Later</button>
+    </div>
+
+    <!-- Offline Indicator -->
+    <div id="offline-indicator" class="offline-indicator">
+        📡 You're offline - showing cached data
+    </div>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>

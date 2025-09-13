@@ -3780,3 +3780,1068 @@
 2025-09-07T08:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
 2025-09-07T09:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
 2025-09-07T10:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-07T11:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-07T12:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-07T13:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-07T14:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-07T15:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-07T16:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-07T17:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-07T18:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-07T19:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-07T20:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-07T21:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-07T22:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-07T23:38:27: Error fetching Coinbase price: timeout of 5000ms exceeded
+2025-09-07T23:38:27: Error fetching Kraken price: timeout of 5000ms exceeded
+2025-09-07T23:38:27: Error fetching KuCoin price: timeout of 5000ms exceeded
+2025-09-07T23:38:27: Error fetching Coinbase price: timeout of 5000ms exceeded
+2025-09-07T23:38:27: Error fetching Kraken price: timeout of 5000ms exceeded
+2025-09-07T23:38:27: Error fetching KuCoin price: timeout of 5000ms exceeded
+2025-09-07T23:38:28: Error fetching KuCoin price: timeout of 5000ms exceeded
+2025-09-07T23:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-08T00:48:20: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-08T01:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-08T02:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-08T03:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-08T04:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-08T05:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-08T06:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-08T07:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-08T08:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-08T09:38:26: ⚠️ Data source failed, trying next... timeout of 5000ms exceeded
+2025-09-08T09:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-08T10:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-08T11:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-08T12:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-08T13:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-08T14:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-08T15:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-08T16:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-08T16:48:28: Error fetching Coinbase price: timeout of 5000ms exceeded
+2025-09-08T16:48:28: Error fetching Kraken price: timeout of 5000ms exceeded
+2025-09-08T16:48:28: Error fetching KuCoin price: timeout of 5000ms exceeded
+2025-09-08T16:48:28: Error fetching Coinbase price: timeout of 5000ms exceeded
+2025-09-08T16:48:28: Error fetching Kraken price: timeout of 5000ms exceeded
+2025-09-08T16:48:28: Error fetching KuCoin price: timeout of 5000ms exceeded
+2025-09-08T16:48:29: Error fetching Kraken price: timeout of 5000ms exceeded
+2025-09-08T16:48:29: Error fetching KuCoin price: timeout of 5000ms exceeded
+2025-09-08T16:58:28: Error fetching Coinbase price: timeout of 5000ms exceeded
+2025-09-08T16:58:28: Error fetching Coinbase price: timeout of 5000ms exceeded
+2025-09-08T16:58:28: Error fetching Kraken price: timeout of 5000ms exceeded
+2025-09-08T16:58:28: Error fetching Bitstamp price: timeout of 5000ms exceeded
+2025-09-08T16:58:28: Error fetching KuCoin price: timeout of 5000ms exceeded
+2025-09-08T16:58:29: Error fetching KuCoin price: timeout of 5000ms exceeded
+2025-09-08T17:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-08T18:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-08T19:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-08T20:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-08T21:00:42: No webhook configured for type: MESSAGE_CREATE
+2025-09-08T21:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-08T22:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-08T23:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-09T00:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-09T01:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-09T02:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-09T03:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-09T04:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-09T05:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-09T06:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-09T07:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-09T08:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-09T09:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-09T10:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-09T11:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-09T12:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-09T13:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-09T14:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-09T15:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-09T16:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-09T17:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-09T18:03:12: No webhook configured for type: MESSAGE_CREATE
+2025-09-09T18:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-09T19:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-09T20:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-09T21:08:30: Error fetching KuCoin price: timeout of 5000ms exceeded
+2025-09-09T21:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-09T22:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-09T23:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-10T00:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-10T01:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-10T02:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-10T03:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-10T04:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-10T05:48:15: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-10T06:48:16: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-10T07:48:16: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-10T08:48:16: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-10T09:48:16: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-10T10:48:16: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-10T11:48:16: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-10T12:48:16: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-10T13:48:16: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-10T14:48:16: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-10T15:48:16: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-10T15:48:32: Error fetching Coinbase price: timeout of 5000ms exceeded
+2025-09-10T15:48:32: Error fetching Coinbase price: timeout of 5000ms exceeded
+2025-09-10T15:48:32: Error fetching Kraken price: timeout of 5000ms exceeded
+2025-09-10T15:48:32: Error fetching Bitstamp price: timeout of 5000ms exceeded
+2025-09-10T15:48:32: Error fetching KuCoin price: timeout of 5000ms exceeded
+2025-09-10T15:48:32: Error fetching Binance price: timeout of 5000ms exceeded
+2025-09-10T15:48:32: Error fetching Coinbase price: timeout of 5000ms exceeded
+2025-09-10T15:48:32: Error fetching Kraken price: timeout of 5000ms exceeded
+2025-09-10T15:48:32: Error fetching Bitstamp price: timeout of 5000ms exceeded
+2025-09-10T15:48:32: Error fetching KuCoin price: timeout of 5000ms exceeded
+2025-09-10T15:48:32: ⚠️ Data source failed, trying next... timeout of 5000ms exceeded
+2025-09-10T15:48:32: ⚠️ Data source failed, trying next... timeout of 5000ms exceeded
+2025-09-10T15:48:32: ⚠️ Data source failed, trying next... timeout of 5000ms exceeded
+2025-09-10T16:48:16: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-10T17:48:16: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-10T18:48:16: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-10T19:48:16: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-10T20:48:16: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-10T21:48:16: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-10T22:48:16: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-10T23:48:16: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-11T00:48:16: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-11T01:48:16: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-11T02:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-11T03:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-11T04:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-11T05:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-11T06:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-11T07:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-11T08:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-11T09:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-11T10:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-11T11:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-11T12:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-11T13:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-11T14:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-11T15:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-11T16:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-11T17:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-11T18:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-11T19:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-11T20:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-11T21:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-11T22:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-11T23:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-12T00:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-12T01:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-12T02:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-12T03:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-12T04:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-12T05:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-12T06:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-12T07:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-12T08:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-12T09:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-12T10:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-12T11:48:17: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-12T12:26:07: ReferenceError: require is not defined in ES module scope, you can use import instead
+2025-09-12T12:26:07: This file is being treated as an ES module because it has a '.js' file extension and 'C:\Users\xampo\Desktop\Draxmh Discord Bot\package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.
+2025-09-12T12:26:07:     at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:708:23
+2025-09-12T12:26:07:     at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T12:26:07:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T12:26:07:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+2025-09-12T12:26:07: [2025-09-12T09:26:07.900Z] UNHANDLED_REJECTION: require is not defined in ES module scope, you can use import instead
+2025-09-12T12:26:07: This file is being treated as an ES module because it has a '.js' file extension and 'C:\Users\xampo\Desktop\Draxmh Discord Bot\package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.
+2025-09-12T12:26:07: Unhandled Rejection: ReferenceError: require is not defined in ES module scope, you can use import instead
+2025-09-12T12:26:07: This file is being treated as an ES module because it has a '.js' file extension and 'C:\Users\xampo\Desktop\Draxmh Discord Bot\package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.
+2025-09-12T12:26:07:     at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:708:23
+2025-09-12T12:26:07:     at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T12:26:07:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T12:26:07:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+2025-09-12T12:26:07: Unhandled Rejection at: Promise {
+2025-09-12T12:26:07:   <rejected> ReferenceError: require is not defined in ES module scope, you can use import instead
+2025-09-12T12:26:07:   This file is being treated as an ES module because it has a '.js' file extension and 'C:\Users\xampo\Desktop\Draxmh Discord Bot\package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.
+2025-09-12T12:26:07:       at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:708:23
+2025-09-12T12:26:07:       at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T12:26:07:       at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T12:26:07:       at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+2025-09-12T12:26:07: } reason: ReferenceError: require is not defined in ES module scope, you can use import instead
+2025-09-12T12:26:07: This file is being treated as an ES module because it has a '.js' file extension and 'C:\Users\xampo\Desktop\Draxmh Discord Bot\package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.
+2025-09-12T12:26:07:     at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:708:23
+2025-09-12T12:26:07:     at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T12:26:07:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T12:26:07:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+2025-09-12T12:26:07: Unhandled Rejection: ReferenceError: require is not defined in ES module scope, you can use import instead
+2025-09-12T12:26:07: This file is being treated as an ES module because it has a '.js' file extension and 'C:\Users\xampo\Desktop\Draxmh Discord Bot\package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.
+2025-09-12T12:26:07:     at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:708:23
+2025-09-12T12:26:07:     at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T12:26:07:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T12:26:07:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+2025-09-12T12:32:03: file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:15
+2025-09-12T12:32:03: import { PriceService } from '../src/services/priceService.js';
+2025-09-12T12:32:03:          ^^^^^^^^^^^^
+2025-09-12T12:32:03: SyntaxError: The requested module '../src/services/priceService.js' does not provide an export named 'PriceService'
+2025-09-12T12:32:03:     at #_instantiate (node:internal/modules/esm/module_job:249:21)
+2025-09-12T12:32:03:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T12:32:03:     at async ModuleJob.run (node:internal/modules/esm/module_job:357:5)
+2025-09-12T12:32:03:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+2025-09-12T12:38:48: PathError [TypeError]: Missing parameter name at index 1: *; visit https://git.new/pathToRegexpError for info
+2025-09-12T12:38:48:     at name (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:96:19)
+2025-09-12T12:38:48:     at parse (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:113:68)
+2025-09-12T12:38:48:     at pathToRegexp (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:267:58)
+2025-09-12T12:38:48:     at Object.match (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:237:30)
+2025-09-12T12:38:48:     at matcher (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:86:23)
+2025-09-12T12:38:48:     at new Layer (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:93:62)
+2025-09-12T12:38:48:     at router.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\index.js:428:17)
+2025-09-12T12:38:48:     at app.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:257:22)
+2025-09-12T12:38:48:     at app.<computed> [as get] (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:478:22)
+2025-09-12T12:38:48:     at PWAServer.setupMiddleware (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:55:18)
+2025-09-12T12:38:48:     at new PWAServer (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:35:14)
+2025-09-12T12:38:48:     at new DraxmhBot (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:726:26)
+2025-09-12T12:38:48:     at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:749:13
+2025-09-12T12:38:48:     at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T12:38:48:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T12:38:48:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) {
+2025-09-12T12:38:48:   originalPath: '*'
+2025-09-12T12:38:48: }
+2025-09-12T12:39:09: [2025-09-12T09:39:09.217Z] UNHANDLED_REJECTION: Missing parameter name at index 1: *; visit https://git.new/pathToRegexpError for info
+2025-09-12T12:39:09: Unhandled Rejection: PathError [TypeError]: Missing parameter name at index 1: *; visit https://git.new/pathToRegexpError for info
+2025-09-12T12:39:09:     at name (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:96:19)
+2025-09-12T12:39:09:     at parse (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:113:68)
+2025-09-12T12:39:09:     at pathToRegexp (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:267:58)
+2025-09-12T12:39:09:     at Object.match (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:237:30)
+2025-09-12T12:39:09:     at matcher (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:86:23)
+2025-09-12T12:39:09:     at new Layer (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:93:62)
+2025-09-12T12:39:09:     at router.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\index.js:428:17)
+2025-09-12T12:39:09:     at app.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:257:22)
+2025-09-12T12:39:09:     at app.<computed> [as get] (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:478:22)
+2025-09-12T12:39:09:     at PWAServer.setupMiddleware (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:55:18)
+2025-09-12T12:39:09:     at new PWAServer (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:35:14)
+2025-09-12T12:39:09:     at new DraxmhBot (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:726:26)
+2025-09-12T12:39:09:     at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:749:13
+2025-09-12T12:39:09:     at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T12:39:09:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T12:39:09:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) {
+2025-09-12T12:39:09:   originalPath: '*'
+2025-09-12T12:39:09: }
+2025-09-12T12:39:09: Unhandled Rejection at: Promise {
+2025-09-12T12:39:09:   <rejected> PathError [TypeError]: Missing parameter name at index 1: *; visit https://git.new/pathToRegexpError for info
+2025-09-12T12:39:09:       at name (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:96:19)
+2025-09-12T12:39:09:       at parse (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:113:68)
+2025-09-12T12:39:09:       at pathToRegexp (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:267:58)
+2025-09-12T12:39:09:       at Object.match (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:237:30)
+2025-09-12T12:39:09:       at matcher (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:86:23)
+2025-09-12T12:39:09:       at new Layer (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:93:62)
+2025-09-12T12:39:09:       at router.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\index.js:428:17)
+2025-09-12T12:39:09:       at app.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:257:22)
+2025-09-12T12:39:09:       at app.<computed> [as get] (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:478:22)
+2025-09-12T12:39:09:       at PWAServer.setupMiddleware (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:55:18)
+2025-09-12T12:39:09:       at new PWAServer (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:35:14)
+2025-09-12T12:39:09:       at new DraxmhBot (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:726:26)
+2025-09-12T12:39:09:       at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:749:13
+2025-09-12T12:39:09:       at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T12:39:09:       at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T12:39:09:       at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) {
+2025-09-12T12:39:09:     originalPath: '*'
+2025-09-12T12:39:09:   }
+2025-09-12T12:39:09: } reason: PathError [TypeError]: Missing parameter name at index 1: *; visit https://git.new/pathToRegexpError for info
+2025-09-12T12:39:09:     at name (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:96:19)
+2025-09-12T12:39:09:     at parse (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:113:68)
+2025-09-12T12:39:09:     at pathToRegexp (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:267:58)
+2025-09-12T12:39:09:     at Object.match (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:237:30)
+2025-09-12T12:39:09:     at matcher (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:86:23)
+2025-09-12T12:39:09:     at new Layer (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:93:62)
+2025-09-12T12:39:09:     at router.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\index.js:428:17)
+2025-09-12T12:39:09:     at app.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:257:22)
+2025-09-12T12:39:09:     at app.<computed> [as get] (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:478:22)
+2025-09-12T12:39:09:     at PWAServer.setupMiddleware (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:55:18)
+2025-09-12T12:39:09:     at new PWAServer (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:35:14)
+2025-09-12T12:39:09:     at new DraxmhBot (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:726:26)
+2025-09-12T12:39:09:     at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:749:13
+2025-09-12T12:39:09:     at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T12:39:09:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T12:39:09:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) {
+2025-09-12T12:39:09:   originalPath: '*'
+2025-09-12T12:39:09: }
+2025-09-12T12:39:09: Unhandled Rejection: PathError [TypeError]: Missing parameter name at index 1: *; visit https://git.new/pathToRegexpError for info
+2025-09-12T12:39:09:     at name (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:96:19)
+2025-09-12T12:39:09:     at parse (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:113:68)
+2025-09-12T12:39:09:     at pathToRegexp (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:267:58)
+2025-09-12T12:39:09:     at Object.match (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:237:30)
+2025-09-12T12:39:09:     at matcher (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:86:23)
+2025-09-12T12:39:09:     at new Layer (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:93:62)
+2025-09-12T12:39:09:     at router.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\index.js:428:17)
+2025-09-12T12:39:09:     at app.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:257:22)
+2025-09-12T12:39:09:     at app.<computed> [as get] (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:478:22)
+2025-09-12T12:39:09:     at PWAServer.setupMiddleware (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:55:18)
+2025-09-12T12:39:09:     at new PWAServer (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:35:14)
+2025-09-12T12:39:09:     at new DraxmhBot (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:726:26)
+2025-09-12T12:39:09:     at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:749:13
+2025-09-12T12:39:09:     at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T12:39:09:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T12:39:09:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) {
+2025-09-12T12:39:09:   originalPath: '*'
+2025-09-12T12:39:09: }
+2025-09-12T12:39:10: (node:67560) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-12T12:39:10: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-12T12:39:21: ❌ Error fetching data for Bittrex Exchange (rEhxGqkqPPSxQ3P25J2N7inT5ieHYNoAM): Account malformed.
+2025-09-12T12:39:23: ❌ Error fetching data for Kraken Exchange (rDNa9td55rNjDzlu4wjZ9VhxWkYQcr5bM6): Account malformed.
+2025-09-12T12:39:25: ❌ Error fetching data for Coinbase Exchange (rBWpYJhuJWBPAkzJ4kYQqHShSkkF3rgeDE): Account malformed.
+2025-09-12T12:53:38: (node:67560) Warning: Supplying "ephemeral" for interaction response options is deprecated. Utilize flags instead.
+2025-09-12T13:09:02: PathError [TypeError]: Missing parameter name at index 1: *; visit https://git.new/pathToRegexpError for info
+2025-09-12T13:09:02:     at name (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:96:19)
+2025-09-12T13:09:02:     at parse (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:113:68)
+2025-09-12T13:09:02:     at pathToRegexp (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:267:58)
+2025-09-12T13:09:02:     at Object.match (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:237:30)
+2025-09-12T13:09:02:     at matcher (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:86:23)
+2025-09-12T13:09:02:     at new Layer (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:93:62)
+2025-09-12T13:09:02:     at router.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\index.js:428:17)
+2025-09-12T13:09:02:     at app.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:257:22)
+2025-09-12T13:09:02:     at app.<computed> [as get] (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:478:22)
+2025-09-12T13:09:02:     at PWAServer.setupMiddleware (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:55:18)
+2025-09-12T13:09:02:     at new PWAServer (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:33:14)
+2025-09-12T13:09:02:     at new DraxmhBot (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:726:26)
+2025-09-12T13:09:02:     at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:749:13
+2025-09-12T13:09:02:     at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T13:09:02:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T13:09:02:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) {
+2025-09-12T13:09:02:   originalPath: '*'
+2025-09-12T13:09:02: }
+2025-09-12T13:09:23: [2025-09-12T10:09:23.731Z] UNHANDLED_REJECTION: Missing parameter name at index 1: *; visit https://git.new/pathToRegexpError for info
+2025-09-12T13:09:23: Unhandled Rejection: PathError [TypeError]: Missing parameter name at index 1: *; visit https://git.new/pathToRegexpError for info
+2025-09-12T13:09:23:     at name (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:96:19)
+2025-09-12T13:09:23:     at parse (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:113:68)
+2025-09-12T13:09:23:     at pathToRegexp (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:267:58)
+2025-09-12T13:09:23:     at Object.match (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:237:30)
+2025-09-12T13:09:23:     at matcher (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:86:23)
+2025-09-12T13:09:23:     at new Layer (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:93:62)
+2025-09-12T13:09:23:     at router.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\index.js:428:17)
+2025-09-12T13:09:23:     at app.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:257:22)
+2025-09-12T13:09:23:     at app.<computed> [as get] (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:478:22)
+2025-09-12T13:09:23:     at PWAServer.setupMiddleware (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:55:18)
+2025-09-12T13:09:23:     at new PWAServer (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:33:14)
+2025-09-12T13:09:23:     at new DraxmhBot (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:726:26)
+2025-09-12T13:09:23:     at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:749:13
+2025-09-12T13:09:23:     at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T13:09:23:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T13:09:23:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) {
+2025-09-12T13:09:23:   originalPath: '*'
+2025-09-12T13:09:23: }
+2025-09-12T13:09:23: Unhandled Rejection at: Promise {
+2025-09-12T13:09:23:   <rejected> PathError [TypeError]: Missing parameter name at index 1: *; visit https://git.new/pathToRegexpError for info
+2025-09-12T13:09:23:       at name (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:96:19)
+2025-09-12T13:09:23:       at parse (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:113:68)
+2025-09-12T13:09:23:       at pathToRegexp (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:267:58)
+2025-09-12T13:09:23:       at Object.match (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:237:30)
+2025-09-12T13:09:23:       at matcher (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:86:23)
+2025-09-12T13:09:23:       at new Layer (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:93:62)
+2025-09-12T13:09:23:       at router.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\index.js:428:17)
+2025-09-12T13:09:23:       at app.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:257:22)
+2025-09-12T13:09:23:       at app.<computed> [as get] (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:478:22)
+2025-09-12T13:09:23:       at PWAServer.setupMiddleware (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:55:18)
+2025-09-12T13:09:23:       at new PWAServer (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:33:14)
+2025-09-12T13:09:23:       at new DraxmhBot (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:726:26)
+2025-09-12T13:09:23:       at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:749:13
+2025-09-12T13:09:23:       at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T13:09:23:       at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T13:09:23:       at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) {
+2025-09-12T13:09:23:     originalPath: '*'
+2025-09-12T13:09:23:   }
+2025-09-12T13:09:23: } reason: PathError [TypeError]: Missing parameter name at index 1: *; visit https://git.new/pathToRegexpError for info
+2025-09-12T13:09:23:     at name (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:96:19)
+2025-09-12T13:09:23:     at parse (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:113:68)
+2025-09-12T13:09:23:     at pathToRegexp (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:267:58)
+2025-09-12T13:09:23:     at Object.match (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:237:30)
+2025-09-12T13:09:23:     at matcher (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:86:23)
+2025-09-12T13:09:23:     at new Layer (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:93:62)
+2025-09-12T13:09:23:     at router.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\index.js:428:17)
+2025-09-12T13:09:23:     at app.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:257:22)
+2025-09-12T13:09:23:     at app.<computed> [as get] (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:478:22)
+2025-09-12T13:09:23:     at PWAServer.setupMiddleware (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:55:18)
+2025-09-12T13:09:23:     at new PWAServer (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:33:14)
+2025-09-12T13:09:23:     at new DraxmhBot (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:726:26)
+2025-09-12T13:09:23:     at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:749:13
+2025-09-12T13:09:23:     at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T13:09:23:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T13:09:23:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) {
+2025-09-12T13:09:23:   originalPath: '*'
+2025-09-12T13:09:23: }
+2025-09-12T13:09:23: Unhandled Rejection: PathError [TypeError]: Missing parameter name at index 1: *; visit https://git.new/pathToRegexpError for info
+2025-09-12T13:09:23:     at name (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:96:19)
+2025-09-12T13:09:23:     at parse (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:113:68)
+2025-09-12T13:09:23:     at pathToRegexp (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:267:58)
+2025-09-12T13:09:23:     at Object.match (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:237:30)
+2025-09-12T13:09:23:     at matcher (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:86:23)
+2025-09-12T13:09:23:     at new Layer (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:93:62)
+2025-09-12T13:09:23:     at router.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\index.js:428:17)
+2025-09-12T13:09:23:     at app.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:257:22)
+2025-09-12T13:09:23:     at app.<computed> [as get] (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:478:22)
+2025-09-12T13:09:23:     at PWAServer.setupMiddleware (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:55:18)
+2025-09-12T13:09:23:     at new PWAServer (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:33:14)
+2025-09-12T13:09:23:     at new DraxmhBot (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:726:26)
+2025-09-12T13:09:23:     at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:749:13
+2025-09-12T13:09:23:     at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T13:09:23:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T13:09:23:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) {
+2025-09-12T13:09:23:   originalPath: '*'
+2025-09-12T13:09:23: }
+2025-09-12T13:09:24: (node:65484) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-12T13:09:24: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-12T13:09:36: ❌ Error fetching data for Bittrex Exchange (rEhxGqkqPPSxQ3P25J2N7inT5ieHYNoAM): Account malformed.
+2025-09-12T13:09:38: ❌ Error fetching data for Kraken Exchange (rDNa9td55rNjDzlu4wjZ9VhxWkYQcr5bM6): Account malformed.
+2025-09-12T13:09:41: ❌ Error fetching data for Coinbase Exchange (rBWpYJhuJWBPAkzJ4kYQqHShSkkF3rgeDE): Account malformed.
+2025-09-12T13:09:54: (node:65484) Warning: Supplying "ephemeral" for interaction response options is deprecated. Utilize flags instead.
+2025-09-12T13:16:49: PathError [TypeError]: Missing parameter name at index 1: *; visit https://git.new/pathToRegexpError for info
+2025-09-12T13:16:49:     at name (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:96:19)
+2025-09-12T13:16:49:     at parse (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:113:68)
+2025-09-12T13:16:49:     at pathToRegexp (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:267:58)
+2025-09-12T13:16:49:     at Object.match (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:237:30)
+2025-09-12T13:16:49:     at matcher (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:86:23)
+2025-09-12T13:16:49:     at new Layer (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:93:62)
+2025-09-12T13:16:49:     at router.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\index.js:428:17)
+2025-09-12T13:16:49:     at app.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:257:22)
+2025-09-12T13:16:49:     at app.<computed> [as get] (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:478:22)
+2025-09-12T13:16:49:     at PWAServer.setupMiddleware (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:55:18)
+2025-09-12T13:16:49:     at new PWAServer (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:33:14)
+2025-09-12T13:16:49:     at new DraxmhBot (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:726:26)
+2025-09-12T13:16:49:     at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:749:13
+2025-09-12T13:16:49:     at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T13:16:49:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T13:16:49:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) {
+2025-09-12T13:16:49:   originalPath: '*'
+2025-09-12T13:16:49: }
+2025-09-12T13:17:11: [2025-09-12T10:17:11.092Z] UNHANDLED_REJECTION: Missing parameter name at index 1: *; visit https://git.new/pathToRegexpError for info
+2025-09-12T13:17:11: Unhandled Rejection: PathError [TypeError]: Missing parameter name at index 1: *; visit https://git.new/pathToRegexpError for info
+2025-09-12T13:17:11:     at name (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:96:19)
+2025-09-12T13:17:11:     at parse (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:113:68)
+2025-09-12T13:17:11:     at pathToRegexp (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:267:58)
+2025-09-12T13:17:11:     at Object.match (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:237:30)
+2025-09-12T13:17:11:     at matcher (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:86:23)
+2025-09-12T13:17:11:     at new Layer (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:93:62)
+2025-09-12T13:17:11:     at router.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\index.js:428:17)
+2025-09-12T13:17:11:     at app.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:257:22)
+2025-09-12T13:17:11:     at app.<computed> [as get] (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:478:22)
+2025-09-12T13:17:11:     at PWAServer.setupMiddleware (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:55:18)
+2025-09-12T13:17:11:     at new PWAServer (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:33:14)
+2025-09-12T13:17:11:     at new DraxmhBot (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:726:26)
+2025-09-12T13:17:11:     at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:749:13
+2025-09-12T13:17:11:     at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T13:17:11:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T13:17:11:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) {
+2025-09-12T13:17:11:   originalPath: '*'
+2025-09-12T13:17:11: }
+2025-09-12T13:17:11: Unhandled Rejection at: Promise {
+2025-09-12T13:17:11:   <rejected> PathError [TypeError]: Missing parameter name at index 1: *; visit https://git.new/pathToRegexpError for info
+2025-09-12T13:17:11:       at name (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:96:19)
+2025-09-12T13:17:11:       at parse (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:113:68)
+2025-09-12T13:17:11:       at pathToRegexp (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:267:58)
+2025-09-12T13:17:11:       at Object.match (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:237:30)
+2025-09-12T13:17:11:       at matcher (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:86:23)
+2025-09-12T13:17:11:       at new Layer (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:93:62)
+2025-09-12T13:17:11:       at router.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\index.js:428:17)
+2025-09-12T13:17:11:       at app.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:257:22)
+2025-09-12T13:17:11:       at app.<computed> [as get] (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:478:22)
+2025-09-12T13:17:11:       at PWAServer.setupMiddleware (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:55:18)
+2025-09-12T13:17:11:       at new PWAServer (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:33:14)
+2025-09-12T13:17:11:       at new DraxmhBot (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:726:26)
+2025-09-12T13:17:11:       at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:749:13
+2025-09-12T13:17:11:       at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T13:17:11:       at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T13:17:11:       at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) {
+2025-09-12T13:17:11:     originalPath: '*'
+2025-09-12T13:17:11:   }
+2025-09-12T13:17:11: } reason: PathError [TypeError]: Missing parameter name at index 1: *; visit https://git.new/pathToRegexpError for info
+2025-09-12T13:17:11:     at name (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:96:19)
+2025-09-12T13:17:11:     at parse (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:113:68)
+2025-09-12T13:17:11:     at pathToRegexp (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:267:58)
+2025-09-12T13:17:11:     at Object.match (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:237:30)
+2025-09-12T13:17:11:     at matcher (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:86:23)
+2025-09-12T13:17:11:     at new Layer (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:93:62)
+2025-09-12T13:17:11:     at router.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\index.js:428:17)
+2025-09-12T13:17:11:     at app.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:257:22)
+2025-09-12T13:17:11:     at app.<computed> [as get] (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:478:22)
+2025-09-12T13:17:11:     at PWAServer.setupMiddleware (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:55:18)
+2025-09-12T13:17:11:     at new PWAServer (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:33:14)
+2025-09-12T13:17:11:     at new DraxmhBot (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:726:26)
+2025-09-12T13:17:11:     at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:749:13
+2025-09-12T13:17:11:     at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T13:17:11:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T13:17:11:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) {
+2025-09-12T13:17:11:   originalPath: '*'
+2025-09-12T13:17:11: }
+2025-09-12T13:17:11: Unhandled Rejection: PathError [TypeError]: Missing parameter name at index 1: *; visit https://git.new/pathToRegexpError for info
+2025-09-12T13:17:11:     at name (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:96:19)
+2025-09-12T13:17:11:     at parse (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:113:68)
+2025-09-12T13:17:11:     at pathToRegexp (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:267:58)
+2025-09-12T13:17:11:     at Object.match (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:237:30)
+2025-09-12T13:17:11:     at matcher (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:86:23)
+2025-09-12T13:17:11:     at new Layer (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:93:62)
+2025-09-12T13:17:11:     at router.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\index.js:428:17)
+2025-09-12T13:17:11:     at app.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:257:22)
+2025-09-12T13:17:11:     at app.<computed> [as get] (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:478:22)
+2025-09-12T13:17:11:     at PWAServer.setupMiddleware (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:55:18)
+2025-09-12T13:17:11:     at new PWAServer (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:33:14)
+2025-09-12T13:17:11:     at new DraxmhBot (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:726:26)
+2025-09-12T13:17:11:     at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:749:13
+2025-09-12T13:17:11:     at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T13:17:11:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T13:17:11:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) {
+2025-09-12T13:17:11:   originalPath: '*'
+2025-09-12T13:17:11: }
+2025-09-12T13:17:12: (node:37720) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-12T13:17:12: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-12T13:17:18: (node:37720) Warning: Supplying "ephemeral" for interaction response options is deprecated. Utilize flags instead.
+2025-09-12T13:17:22: ❌ Error fetching data for Bittrex Exchange (rEhxGqkqPPSxQ3P25J2N7inT5ieHYNoAM): Account malformed.
+2025-09-12T13:17:25: ❌ Error fetching data for Kraken Exchange (rDNa9td55rNjDzlu4wjZ9VhxWkYQcr5bM6): Account malformed.
+2025-09-12T13:17:27: ❌ Error fetching data for Coinbase Exchange (rBWpYJhuJWBPAkzJ4kYQqHShSkkF3rgeDE): Account malformed.
+2025-09-12T14:03:20: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-09-12T14:03:20:     at name (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:96:19)
+2025-09-12T14:03:20:     at parse (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:113:68)
+2025-09-12T14:03:20:     at pathToRegexp (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:267:58)
+2025-09-12T14:03:20:     at Object.match (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:237:30)
+2025-09-12T14:03:20:     at matcher (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:86:23)
+2025-09-12T14:03:20:     at new Layer (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:93:62)
+2025-09-12T14:03:20:     at router.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\index.js:428:17)
+2025-09-12T14:03:20:     at app.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:257:22)
+2025-09-12T14:03:20:     at app.<computed> [as get] (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:478:22)
+2025-09-12T14:03:20:     at PWAServer.setupMiddleware (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:53:18)
+2025-09-12T14:03:20:     at new PWAServer (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:31:14)
+2025-09-12T14:03:20:     at new DraxmhBot (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:726:26)
+2025-09-12T14:03:20:     at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:749:13
+2025-09-12T14:03:20:     at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T14:03:20:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T14:03:20:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) {
+2025-09-12T14:03:20:   originalPath: '/*'
+2025-09-12T14:03:20: }
+2025-09-12T14:03:20: [2025-09-12T11:03:20.702Z] UNHANDLED_REJECTION: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-09-12T14:03:20: Unhandled Rejection: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-09-12T14:03:20:     at name (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:96:19)
+2025-09-12T14:03:20:     at parse (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:113:68)
+2025-09-12T14:03:20:     at pathToRegexp (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:267:58)
+2025-09-12T14:03:20:     at Object.match (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:237:30)
+2025-09-12T14:03:20:     at matcher (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:86:23)
+2025-09-12T14:03:20:     at new Layer (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:93:62)
+2025-09-12T14:03:20:     at router.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\index.js:428:17)
+2025-09-12T14:03:20:     at app.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:257:22)
+2025-09-12T14:03:20:     at app.<computed> [as get] (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:478:22)
+2025-09-12T14:03:20:     at PWAServer.setupMiddleware (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:53:18)
+2025-09-12T14:03:20:     at new PWAServer (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:31:14)
+2025-09-12T14:03:20:     at new DraxmhBot (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:726:26)
+2025-09-12T14:03:20:     at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:749:13
+2025-09-12T14:03:20:     at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T14:03:20:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T14:03:20:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) {
+2025-09-12T14:03:20:   originalPath: '/*'
+2025-09-12T14:03:20: }
+2025-09-12T14:03:20: Unhandled Rejection at: Promise {
+2025-09-12T14:03:20:   <rejected> PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-09-12T14:03:20:       at name (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:96:19)
+2025-09-12T14:03:20:       at parse (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:113:68)
+2025-09-12T14:03:20:       at pathToRegexp (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:267:58)
+2025-09-12T14:03:20:       at Object.match (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:237:30)
+2025-09-12T14:03:20:       at matcher (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:86:23)
+2025-09-12T14:03:20:       at new Layer (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:93:62)
+2025-09-12T14:03:20:       at router.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\index.js:428:17)
+2025-09-12T14:03:20:       at app.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:257:22)
+2025-09-12T14:03:20:       at app.<computed> [as get] (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:478:22)
+2025-09-12T14:03:20:       at PWAServer.setupMiddleware (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:53:18)
+2025-09-12T14:03:20:       at new PWAServer (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:31:14)
+2025-09-12T14:03:20:       at new DraxmhBot (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:726:26)
+2025-09-12T14:03:20:       at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:749:13
+2025-09-12T14:03:20:       at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T14:03:20:       at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T14:03:20:       at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) {
+2025-09-12T14:03:20:     originalPath: '/*'
+2025-09-12T14:03:20:   }
+2025-09-12T14:03:20: } reason: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-09-12T14:03:20:     at name (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:96:19)
+2025-09-12T14:03:20:     at parse (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:113:68)
+2025-09-12T14:03:20:     at pathToRegexp (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:267:58)
+2025-09-12T14:03:20:     at Object.match (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:237:30)
+2025-09-12T14:03:20:     at matcher (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:86:23)
+2025-09-12T14:03:20:     at new Layer (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:93:62)
+2025-09-12T14:03:20:     at router.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\index.js:428:17)
+2025-09-12T14:03:20:     at app.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:257:22)
+2025-09-12T14:03:20:     at app.<computed> [as get] (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:478:22)
+2025-09-12T14:03:20:     at PWAServer.setupMiddleware (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:53:18)
+2025-09-12T14:03:20:     at new PWAServer (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:31:14)
+2025-09-12T14:03:20:     at new DraxmhBot (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:726:26)
+2025-09-12T14:03:20:     at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:749:13
+2025-09-12T14:03:20:     at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T14:03:20:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T14:03:20:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) {
+2025-09-12T14:03:20:   originalPath: '/*'
+2025-09-12T14:03:20: }
+2025-09-12T14:03:20: Unhandled Rejection: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-09-12T14:03:20:     at name (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:96:19)
+2025-09-12T14:03:20:     at parse (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:113:68)
+2025-09-12T14:03:20:     at pathToRegexp (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:267:58)
+2025-09-12T14:03:20:     at Object.match (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:237:30)
+2025-09-12T14:03:20:     at matcher (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:86:23)
+2025-09-12T14:03:20:     at new Layer (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:93:62)
+2025-09-12T14:03:20:     at router.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\index.js:428:17)
+2025-09-12T14:03:20:     at app.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:257:22)
+2025-09-12T14:03:20:     at app.<computed> [as get] (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:478:22)
+2025-09-12T14:03:20:     at PWAServer.setupMiddleware (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:53:18)
+2025-09-12T14:03:20:     at new PWAServer (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:31:14)
+2025-09-12T14:03:20:     at new DraxmhBot (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:726:26)
+2025-09-12T14:03:20:     at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:749:13
+2025-09-12T14:03:20:     at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T14:03:20:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T14:03:20:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) {
+2025-09-12T14:03:20:   originalPath: '/*'
+2025-09-12T14:03:20: }
+2025-09-12T14:03:21: (node:25300) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-12T14:03:21: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-12T14:03:33: ❌ Error fetching data for Bittrex Exchange (rEhxGqkqPPSxQ3P25J2N7inT5ieHYNoAM): Account malformed.
+2025-09-12T14:03:35: ❌ Error fetching data for Kraken Exchange (rDNa9td55rNjDzlu4wjZ9VhxWkYQcr5bM6): Account malformed.
+2025-09-12T14:03:38: ❌ Error fetching data for Coinbase Exchange (rBWpYJhuJWBPAkzJ4kYQqHShSkkF3rgeDE): Account malformed.
+2025-09-12T15:03:20: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-12T16:03:20: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-12T17:03:20: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-12T17:50:16: ❌ Failed to start PWA Server: ReferenceError: PWAServer is not defined
+2025-09-12T17:50:16:     at DraxmhBot.start (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:722:34)
+2025-09-12T17:50:16:     at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:742:5
+2025-09-12T17:50:16:     at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T17:50:16:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T17:50:16:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+2025-09-12T17:50:17: (node:54584) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-12T17:50:17: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-12T17:50:29: ❌ Error fetching data for Bittrex Exchange (rEhxGqkqPPSxQ3P25J2N7inT5ieHYNoAM): Account malformed.
+2025-09-12T17:50:31: ❌ Error fetching data for Kraken Exchange (rDNa9td55rNjDzlu4wjZ9VhxWkYQcr5bM6): Account malformed.
+2025-09-12T17:50:34: ❌ Error fetching data for Coinbase Exchange (rBWpYJhuJWBPAkzJ4kYQqHShSkkF3rgeDE): Account malformed.
+2025-09-12T17:52:16: ❌ Failed to connect to Telegram: ETELEGRAM: 504 Gateway Timeout
+2025-09-12T17:52:38: ⚠️ Telegram bot not connected, skipping message
+2025-09-12T17:52:38: No webhook configured for type: MESSAGE_CREATE
+2025-09-12T17:56:41: ❌ Failed to start PWA Server: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-09-12T17:56:41:     at name (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:96:19)
+2025-09-12T17:56:41:     at parse (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:113:68)
+2025-09-12T17:56:41:     at pathToRegexp (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:267:58)
+2025-09-12T17:56:41:     at Object.match (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:237:30)
+2025-09-12T17:56:41:     at matcher (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:86:23)
+2025-09-12T17:56:41:     at new Layer (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:93:62)
+2025-09-12T17:56:41:     at router.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\index.js:428:17)
+2025-09-12T17:56:41:     at app.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:257:22)
+2025-09-12T17:56:41:     at app.<computed> [as get] (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:478:22)
+2025-09-12T17:56:41:     at PWAServer.setupMiddleware (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:53:18)
+2025-09-12T17:56:41:     at new PWAServer (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:31:14)
+2025-09-12T17:56:41:     at DraxmhBot.start (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:723:30)
+2025-09-12T17:56:41:     at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:743:5
+2025-09-12T17:56:41:     at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T17:56:41:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T17:56:41:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) {
+2025-09-12T17:56:41:   originalPath: '/*'
+2025-09-12T17:56:41: }
+2025-09-12T17:56:42: (node:59536) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-12T17:56:42: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-12T17:56:52: ❌ Error fetching data for Bittrex Exchange (rEhxGqkqPPSxQ3P25J2N7inT5ieHYNoAM): Account malformed.
+2025-09-12T17:56:55: ❌ Error fetching data for Kraken Exchange (rDNa9td55rNjDzlu4wjZ9VhxWkYQcr5bM6): Account malformed.
+2025-09-12T17:56:57: ❌ Error fetching data for Coinbase Exchange (rBWpYJhuJWBPAkzJ4kYQqHShSkkF3rgeDE): Account malformed.
+2025-09-12T17:57:08: ⚠️ Telegram bot not connected, skipping message
+2025-09-12T17:57:08: No webhook configured for type: MESSAGE_CREATE
+2025-09-12T17:58:41: ❌ Failed to connect to Telegram (attempt 1): ETELEGRAM: 504 Gateway Timeout
+2025-09-12T18:09:24: ❌ Failed to start PWA Server: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-09-12T18:09:24:     at name (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:96:19)
+2025-09-12T18:09:24:     at parse (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:113:68)
+2025-09-12T18:09:24:     at pathToRegexp (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:267:58)
+2025-09-12T18:09:24:     at Object.match (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:237:30)
+2025-09-12T18:09:24:     at matcher (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:86:23)
+2025-09-12T18:09:24:     at new Layer (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:93:62)
+2025-09-12T18:09:24:     at router.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\index.js:428:17)
+2025-09-12T18:09:24:     at app.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:257:22)
+2025-09-12T18:09:24:     at app.<computed> [as get] (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:478:22)
+2025-09-12T18:09:24:     at PWAServer.setupMiddleware (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:53:18)
+2025-09-12T18:09:24:     at new PWAServer (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:31:14)
+2025-09-12T18:09:24:     at DraxmhBot.start (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:723:30)
+2025-09-12T18:09:24:     at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:743:5
+2025-09-12T18:09:24:     at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T18:09:24:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T18:09:24:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) {
+2025-09-12T18:09:24:   originalPath: '/*'
+2025-09-12T18:09:24: }
+2025-09-12T18:09:25: (node:57700) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-12T18:09:25: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-12T18:09:36: ❌ Error fetching data for Bittrex Exchange (rEhxGqkqPPSxQ3P25J2N7inT5ieHYNoAM): Account malformed.
+2025-09-12T18:09:38: ❌ Error fetching data for Kraken Exchange (rDNa9td55rNjDzlu4wjZ9VhxWkYQcr5bM6): Account malformed.
+2025-09-12T18:09:40: ❌ Error fetching data for Coinbase Exchange (rBWpYJhuJWBPAkzJ4kYQqHShSkkF3rgeDE): Account malformed.
+2025-09-12T18:09:53: ❌ Failed to connect to Telegram (attempt 1): Connection timeout after 30 seconds
+2025-09-12T18:09:53: 🔍 Error type: Error
+2025-09-12T18:09:53: 📍 Error code: N/A
+2025-09-12T18:12:37: No webhook configured for type: MESSAGE_CREATE
+2025-09-12T18:44:18: ❌ Failed to start PWA Server: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-09-12T18:44:18:     at name (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:96:19)
+2025-09-12T18:44:18:     at parse (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:113:68)
+2025-09-12T18:44:18:     at pathToRegexp (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:267:58)
+2025-09-12T18:44:18:     at Object.match (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:237:30)
+2025-09-12T18:44:18:     at matcher (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:86:23)
+2025-09-12T18:44:18:     at new Layer (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:93:62)
+2025-09-12T18:44:18:     at router.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\index.js:428:17)
+2025-09-12T18:44:18:     at app.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:257:22)
+2025-09-12T18:44:18:     at app.<computed> [as get] (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:478:22)
+2025-09-12T18:44:18:     at PWAServer.setupMiddleware (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:53:18)
+2025-09-12T18:44:18:     at new PWAServer (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:31:14)
+2025-09-12T18:44:18:     at DraxmhBot.start (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:723:30)
+2025-09-12T18:44:18:     at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:743:5
+2025-09-12T18:44:18:     at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T18:44:18:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T18:44:18:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) {
+2025-09-12T18:44:18:   originalPath: '/*'
+2025-09-12T18:44:18: }
+2025-09-12T18:44:19: (node:54132) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-12T18:44:19: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-12T18:44:29: ❌ Error fetching data for Bittrex Exchange (rEhxGqkqPPSxQ3P25J2N7inT5ieHYNoAM): Account malformed.
+2025-09-12T18:44:32: ❌ Error fetching data for Kraken Exchange (rDNa9td55rNjDzlu4wjZ9VhxWkYQcr5bM6): Account malformed.
+2025-09-12T18:44:34: ❌ Error fetching data for Coinbase Exchange (rBWpYJhuJWBPAkzJ4kYQqHShSkkF3rgeDE): Account malformed.
+2025-09-12T18:46:48: ⚠️ Telegram health check failed, attempting reconnection...
+2025-09-12T18:46:48: 🔍 Health check error: EFATAL: Error: ESOCKETTIMEDOUT
+2025-09-12T18:47:29: No webhook configured for type: MESSAGE_CREATE
+2025-09-12T19:26:03: ❌ Failed to start PWA Server: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-09-12T19:26:03:     at name (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:96:19)
+2025-09-12T19:26:03:     at parse (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:113:68)
+2025-09-12T19:26:03:     at pathToRegexp (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:267:58)
+2025-09-12T19:26:03:     at Object.match (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:237:30)
+2025-09-12T19:26:03:     at matcher (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:86:23)
+2025-09-12T19:26:03:     at new Layer (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:93:62)
+2025-09-12T19:26:03:     at router.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\index.js:428:17)
+2025-09-12T19:26:03:     at app.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:257:22)
+2025-09-12T19:26:03:     at app.<computed> [as get] (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:478:22)
+2025-09-12T19:26:03:     at PWAServer.setupMiddleware (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:53:18)
+2025-09-12T19:26:03:     at new PWAServer (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:31:14)
+2025-09-12T19:26:03:     at DraxmhBot.start (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:723:30)
+2025-09-12T19:26:03:     at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:743:5
+2025-09-12T19:26:03:     at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T19:26:03:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T19:26:03:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) {
+2025-09-12T19:26:03:   originalPath: '/*'
+2025-09-12T19:26:03: }
+2025-09-12T19:26:04: (node:51896) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-12T19:26:04: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-12T19:26:04: ❌ Failed to start XRPL DEX Analytics: NotConnectedError: Unexpected server response: 429
+2025-09-12T19:26:04:     at Connection.onConnectionFailed (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:298:54)
+2025-09-12T19:26:04:     at Socket.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:109:49)
+2025-09-12T19:26:04:     at Socket.emit (node:events:519:35)
+2025-09-12T19:26:04:     at emitErrorAndClose (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:1041:13)
+2025-09-12T19:26:04:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2025-09-12T19:26:04:   data: Error: Unexpected server response: 429
+2025-09-12T19:26:04:       at ClientRequest.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:913:7)
+2025-09-12T19:26:04:       at ClientRequest.emit (node:events:507:28)
+2025-09-12T19:26:04:       at HTTPParser.parserOnIncomingClient (node:_http_client:716:27)
+2025-09-12T19:26:04:       at HTTPParser.parserOnHeadersComplete (node:_http_common:117:17)
+2025-09-12T19:26:04:       at TLSSocket.socketOnData (node:_http_client:558:22)
+2025-09-12T19:26:04:       at TLSSocket.emit (node:events:507:28)
+2025-09-12T19:26:04:       at addChunk (node:internal/streams/readable:559:12)
+2025-09-12T19:26:04:       at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+2025-09-12T19:26:04:       at Readable.push (node:internal/streams/readable:390:5)
+2025-09-12T19:26:04:       at TLSWrap.onStreamRead (node:internal/stream_base_commons:189:23)
+2025-09-12T19:26:04: }
+2025-09-12T19:26:04: ❌ Failed to start XRP Market Psychology Analyzer: NotConnectedError: Unexpected server response: 429
+2025-09-12T19:26:04:     at Connection.onConnectionFailed (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:298:54)
+2025-09-12T19:26:04:     at Socket.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:109:49)
+2025-09-12T19:26:04:     at Socket.emit (node:events:519:35)
+2025-09-12T19:26:04:     at emitErrorAndClose (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:1041:13)
+2025-09-12T19:26:04:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2025-09-12T19:26:04:   data: Error: Unexpected server response: 429
+2025-09-12T19:26:04:       at ClientRequest.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:913:7)
+2025-09-12T19:26:04:       at ClientRequest.emit (node:events:507:28)
+2025-09-12T19:26:04:       at HTTPParser.parserOnIncomingClient (node:_http_client:716:27)
+2025-09-12T19:26:04:       at HTTPParser.parserOnHeadersComplete (node:_http_common:117:17)
+2025-09-12T19:26:04:       at TLSSocket.socketOnData (node:_http_client:558:22)
+2025-09-12T19:26:04:       at TLSSocket.emit (node:events:507:28)
+2025-09-12T19:26:04:       at addChunk (node:internal/streams/readable:559:12)
+2025-09-12T19:26:04:       at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+2025-09-12T19:26:04:       at Readable.push (node:internal/streams/readable:390:5)
+2025-09-12T19:26:04:       at TLSWrap.onStreamRead (node:internal/stream_base_commons:189:23)
+2025-09-12T19:26:04: }
+2025-09-12T19:26:04: XRPL connection error: Unexpected server response: 429
+2025-09-12T19:26:04: Smart Path Analyzer start error: Unexpected server response: 429
+2025-09-12T19:26:07: ❌ Failed to start Whale Discovery Service: NotConnectedError: Unexpected server response: 429
+2025-09-12T19:26:07:     at Connection.onConnectionFailed (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:298:54)
+2025-09-12T19:26:07:     at Socket.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:109:49)
+2025-09-12T19:26:07:     at Socket.emit (node:events:519:35)
+2025-09-12T19:26:07:     at emitErrorAndClose (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:1041:13)
+2025-09-12T19:26:07:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2025-09-12T19:26:07:   data: Error: Unexpected server response: 429
+2025-09-12T19:26:07:       at ClientRequest.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:913:7)
+2025-09-12T19:26:07:       at ClientRequest.emit (node:events:507:28)
+2025-09-12T19:26:07:       at HTTPParser.parserOnIncomingClient (node:_http_client:716:27)
+2025-09-12T19:26:07:       at HTTPParser.parserOnHeadersComplete (node:_http_common:117:17)
+2025-09-12T19:26:07:       at TLSSocket.socketOnData (node:_http_client:558:22)
+2025-09-12T19:26:07:       at TLSSocket.emit (node:events:507:28)
+2025-09-12T19:26:07:       at addChunk (node:internal/streams/readable:559:12)
+2025-09-12T19:26:07:       at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+2025-09-12T19:26:07:       at Readable.push (node:internal/streams/readable:390:5)
+2025-09-12T19:26:07:       at TLSWrap.onStreamRead (node:internal/stream_base_commons:189:23)
+2025-09-12T19:26:07: }
+2025-09-12T19:26:07: Failed to initialize Whale Social Feed Service: NotConnectedError: Unexpected server response: 429
+2025-09-12T19:26:07:     at Connection.onConnectionFailed (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:298:54)
+2025-09-12T19:26:07:     at Socket.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:109:49)
+2025-09-12T19:26:07:     at Socket.emit (node:events:519:35)
+2025-09-12T19:26:07:     at emitErrorAndClose (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:1041:13)
+2025-09-12T19:26:07:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2025-09-12T19:26:07:   data: Error: Unexpected server response: 429
+2025-09-12T19:26:07:       at ClientRequest.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:913:7)
+2025-09-12T19:26:07:       at ClientRequest.emit (node:events:507:28)
+2025-09-12T19:26:07:       at HTTPParser.parserOnIncomingClient (node:_http_client:716:27)
+2025-09-12T19:26:07:       at HTTPParser.parserOnHeadersComplete (node:_http_common:117:17)
+2025-09-12T19:26:07:       at TLSSocket.socketOnData (node:_http_client:558:22)
+2025-09-12T19:26:07:       at TLSSocket.emit (node:events:507:28)
+2025-09-12T19:26:07:       at addChunk (node:internal/streams/readable:559:12)
+2025-09-12T19:26:07:       at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+2025-09-12T19:26:07:       at Readable.push (node:internal/streams/readable:390:5)
+2025-09-12T19:26:07:       at TLSWrap.onStreamRead (node:internal/stream_base_commons:189:23)
+2025-09-12T19:26:07: }
+2025-09-12T19:26:07: Failed to initialize Whale Profile Service: NotConnectedError: Unexpected server response: 429
+2025-09-12T19:26:07:     at Connection.onConnectionFailed (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:298:54)
+2025-09-12T19:26:07:     at Socket.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:109:49)
+2025-09-12T19:26:07:     at Socket.emit (node:events:519:35)
+2025-09-12T19:26:07:     at emitErrorAndClose (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:1041:13)
+2025-09-12T19:26:07:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2025-09-12T19:26:07:   data: Error: Unexpected server response: 429
+2025-09-12T19:26:07:       at ClientRequest.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:913:7)
+2025-09-12T19:26:07:       at ClientRequest.emit (node:events:507:28)
+2025-09-12T19:26:07:       at HTTPParser.parserOnIncomingClient (node:_http_client:716:27)
+2025-09-12T19:26:07:       at HTTPParser.parserOnHeadersComplete (node:_http_common:117:17)
+2025-09-12T19:26:07:       at TLSSocket.socketOnData (node:_http_client:558:22)
+2025-09-12T19:26:07:       at TLSSocket.emit (node:events:507:28)
+2025-09-12T19:26:07:       at addChunk (node:internal/streams/readable:559:12)
+2025-09-12T19:26:07:       at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+2025-09-12T19:26:07:       at Readable.push (node:internal/streams/readable:390:5)
+2025-09-12T19:26:07:       at TLSWrap.onStreamRead (node:internal/stream_base_commons:189:23)
+2025-09-12T19:26:07: }
+2025-09-12T19:26:07: Failed to initialize Portfolio Analysis Service: NotConnectedError: Unexpected server response: 429
+2025-09-12T19:26:07:     at Connection.onConnectionFailed (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:298:54)
+2025-09-12T19:26:07:     at Socket.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:109:49)
+2025-09-12T19:26:07:     at Socket.emit (node:events:519:35)
+2025-09-12T19:26:07:     at emitErrorAndClose (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:1041:13)
+2025-09-12T19:26:07:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2025-09-12T19:26:07:   data: Error: Unexpected server response: 429
+2025-09-12T19:26:07:       at ClientRequest.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:913:7)
+2025-09-12T19:26:07:       at ClientRequest.emit (node:events:507:28)
+2025-09-12T19:26:07:       at HTTPParser.parserOnIncomingClient (node:_http_client:716:27)
+2025-09-12T19:26:07:       at HTTPParser.parserOnHeadersComplete (node:_http_common:117:17)
+2025-09-12T19:26:07:       at TLSSocket.socketOnData (node:_http_client:558:22)
+2025-09-12T19:26:07:       at TLSSocket.emit (node:events:507:28)
+2025-09-12T19:26:07:       at addChunk (node:internal/streams/readable:559:12)
+2025-09-12T19:26:07:       at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+2025-09-12T19:26:07:       at Readable.push (node:internal/streams/readable:390:5)
+2025-09-12T19:26:07:       at TLSWrap.onStreamRead (node:internal/stream_base_commons:189:23)
+2025-09-12T19:26:07: }
+2025-09-12T19:26:07: Error initializing Trading Pattern Recognition Service: NotConnectedError: Unexpected server response: 429
+2025-09-12T19:26:07:     at Connection.onConnectionFailed (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:298:54)
+2025-09-12T19:26:07:     at Socket.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:109:49)
+2025-09-12T19:26:07:     at Socket.emit (node:events:519:35)
+2025-09-12T19:26:07:     at emitErrorAndClose (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:1041:13)
+2025-09-12T19:26:07:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2025-09-12T19:26:07:   data: Error: Unexpected server response: 429
+2025-09-12T19:26:07:       at ClientRequest.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:913:7)
+2025-09-12T19:26:07:       at ClientRequest.emit (node:events:507:28)
+2025-09-12T19:26:07:       at HTTPParser.parserOnIncomingClient (node:_http_client:716:27)
+2025-09-12T19:26:07:       at HTTPParser.parserOnHeadersComplete (node:_http_common:117:17)
+2025-09-12T19:26:07:       at TLSSocket.socketOnData (node:_http_client:558:22)
+2025-09-12T19:26:07:       at TLSSocket.emit (node:events:507:28)
+2025-09-12T19:26:07:       at addChunk (node:internal/streams/readable:559:12)
+2025-09-12T19:26:07:       at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+2025-09-12T19:26:07:       at Readable.push (node:internal/streams/readable:390:5)
+2025-09-12T19:26:07:       at TLSWrap.onStreamRead (node:internal/stream_base_commons:189:23)
+2025-09-12T19:26:07: }
+2025-09-12T19:26:08: Community Features Service startup error: NotConnectedError: Unexpected server response: 429
+2025-09-12T19:26:08:     at Connection.onConnectionFailed (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:298:54)
+2025-09-12T19:26:08:     at Socket.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:109:49)
+2025-09-12T19:26:08:     at Socket.emit (node:events:519:35)
+2025-09-12T19:26:08:     at emitErrorAndClose (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:1041:13)
+2025-09-12T19:26:08:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2025-09-12T19:26:08:   data: Error: Unexpected server response: 429
+2025-09-12T19:26:08:       at ClientRequest.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:913:7)
+2025-09-12T19:26:08:       at ClientRequest.emit (node:events:507:28)
+2025-09-12T19:26:08:       at HTTPParser.parserOnIncomingClient (node:_http_client:716:27)
+2025-09-12T19:26:08:       at HTTPParser.parserOnHeadersComplete (node:_http_common:117:17)
+2025-09-12T19:26:08:       at TLSSocket.socketOnData (node:_http_client:558:22)
+2025-09-12T19:26:08:       at TLSSocket.emit (node:events:507:28)
+2025-09-12T19:26:08:       at addChunk (node:internal/streams/readable:559:12)
+2025-09-12T19:26:08:       at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+2025-09-12T19:26:08:       at Readable.push (node:internal/streams/readable:390:5)
+2025-09-12T19:26:08:       at TLSWrap.onStreamRead (node:internal/stream_base_commons:189:23)
+2025-09-12T19:26:08: }
+2025-09-12T19:29:39: ❌ Failed to start PWA Server: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-09-12T19:29:39:     at name (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:96:19)
+2025-09-12T19:29:39:     at parse (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:113:68)
+2025-09-12T19:29:39:     at pathToRegexp (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:267:58)
+2025-09-12T19:29:39:     at Object.match (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\path-to-regexp\dist\index.js:237:30)
+2025-09-12T19:29:39:     at matcher (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:86:23)
+2025-09-12T19:29:39:     at new Layer (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\lib\layer.js:93:62)
+2025-09-12T19:29:39:     at router.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\router\index.js:428:17)
+2025-09-12T19:29:39:     at app.route (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:257:22)
+2025-09-12T19:29:39:     at app.<computed> [as get] (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\express\lib\application.js:478:22)
+2025-09-12T19:29:39:     at PWAServer.setupMiddleware (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:53:18)
+2025-09-12T19:29:39:     at new PWAServer (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/pwa/server.js:31:14)
+2025-09-12T19:29:39:     at DraxmhBot.start (file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:723:30)
+2025-09-12T19:29:39:     at file:///C:/Users/xampo/Desktop/Draxmh%20Discord%20Bot/src/index.js:743:5
+2025-09-12T19:29:39:     at ModuleJob.run (node:internal/modules/esm/module_job:365:25)
+2025-09-12T19:29:39:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-09-12T19:29:39:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) {
+2025-09-12T19:29:39:   originalPath: '/*'
+2025-09-12T19:29:39: }
+2025-09-12T19:29:40: (node:37524) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2025-09-12T19:29:40: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-12T19:29:40: ❌ Failed to start XRPL DEX Analytics: NotConnectedError: Unexpected server response: 429
+2025-09-12T19:29:40:     at Connection.onConnectionFailed (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:298:54)
+2025-09-12T19:29:40:     at Socket.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:109:49)
+2025-09-12T19:29:40:     at Socket.emit (node:events:519:35)
+2025-09-12T19:29:40:     at emitErrorAndClose (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:1041:13)
+2025-09-12T19:29:40:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2025-09-12T19:29:40:   data: Error: Unexpected server response: 429
+2025-09-12T19:29:40:       at ClientRequest.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:913:7)
+2025-09-12T19:29:40:       at ClientRequest.emit (node:events:507:28)
+2025-09-12T19:29:40:       at HTTPParser.parserOnIncomingClient (node:_http_client:716:27)
+2025-09-12T19:29:40:       at HTTPParser.parserOnHeadersComplete (node:_http_common:117:17)
+2025-09-12T19:29:40:       at TLSSocket.socketOnData (node:_http_client:558:22)
+2025-09-12T19:29:40:       at TLSSocket.emit (node:events:507:28)
+2025-09-12T19:29:40:       at addChunk (node:internal/streams/readable:559:12)
+2025-09-12T19:29:40:       at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+2025-09-12T19:29:40:       at Readable.push (node:internal/streams/readable:390:5)
+2025-09-12T19:29:40:       at TLSWrap.onStreamRead (node:internal/stream_base_commons:189:23)
+2025-09-12T19:29:40: }
+2025-09-12T19:29:40: ❌ Failed to start XRP Market Psychology Analyzer: NotConnectedError: Unexpected server response: 429
+2025-09-12T19:29:40:     at Connection.onConnectionFailed (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:298:54)
+2025-09-12T19:29:40:     at Socket.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:109:49)
+2025-09-12T19:29:40:     at Socket.emit (node:events:519:35)
+2025-09-12T19:29:40:     at emitErrorAndClose (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:1041:13)
+2025-09-12T19:29:40:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2025-09-12T19:29:40:   data: Error: Unexpected server response: 429
+2025-09-12T19:29:40:       at ClientRequest.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:913:7)
+2025-09-12T19:29:40:       at ClientRequest.emit (node:events:507:28)
+2025-09-12T19:29:40:       at HTTPParser.parserOnIncomingClient (node:_http_client:716:27)
+2025-09-12T19:29:40:       at HTTPParser.parserOnHeadersComplete (node:_http_common:117:17)
+2025-09-12T19:29:40:       at TLSSocket.socketOnData (node:_http_client:558:22)
+2025-09-12T19:29:40:       at TLSSocket.emit (node:events:507:28)
+2025-09-12T19:29:40:       at addChunk (node:internal/streams/readable:559:12)
+2025-09-12T19:29:40:       at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+2025-09-12T19:29:40:       at Readable.push (node:internal/streams/readable:390:5)
+2025-09-12T19:29:40:       at TLSWrap.onStreamRead (node:internal/stream_base_commons:189:23)
+2025-09-12T19:29:40: }
+2025-09-12T19:29:40: XRPL connection error: Unexpected server response: 429
+2025-09-12T19:29:40: Smart Path Analyzer start error: Unexpected server response: 429
+2025-09-12T19:29:42: ❌ Failed to start Whale Discovery Service: NotConnectedError: Unexpected server response: 429
+2025-09-12T19:29:42:     at Connection.onConnectionFailed (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:298:54)
+2025-09-12T19:29:42:     at Socket.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:109:49)
+2025-09-12T19:29:42:     at Socket.emit (node:events:519:35)
+2025-09-12T19:29:42:     at emitErrorAndClose (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:1041:13)
+2025-09-12T19:29:42:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2025-09-12T19:29:42:   data: Error: Unexpected server response: 429
+2025-09-12T19:29:42:       at ClientRequest.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:913:7)
+2025-09-12T19:29:42:       at ClientRequest.emit (node:events:507:28)
+2025-09-12T19:29:42:       at HTTPParser.parserOnIncomingClient (node:_http_client:716:27)
+2025-09-12T19:29:42:       at HTTPParser.parserOnHeadersComplete (node:_http_common:117:17)
+2025-09-12T19:29:42:       at TLSSocket.socketOnData (node:_http_client:558:22)
+2025-09-12T19:29:42:       at TLSSocket.emit (node:events:507:28)
+2025-09-12T19:29:42:       at addChunk (node:internal/streams/readable:559:12)
+2025-09-12T19:29:42:       at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+2025-09-12T19:29:42:       at Readable.push (node:internal/streams/readable:390:5)
+2025-09-12T19:29:42:       at TLSWrap.onStreamRead (node:internal/stream_base_commons:189:23)
+2025-09-12T19:29:42: }
+2025-09-12T19:29:43: Failed to initialize Whale Social Feed Service: NotConnectedError: Unexpected server response: 429
+2025-09-12T19:29:43:     at Connection.onConnectionFailed (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:298:54)
+2025-09-12T19:29:43:     at Socket.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:109:49)
+2025-09-12T19:29:43:     at Socket.emit (node:events:519:35)
+2025-09-12T19:29:43:     at emitErrorAndClose (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:1041:13)
+2025-09-12T19:29:43:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2025-09-12T19:29:43:   data: Error: Unexpected server response: 429
+2025-09-12T19:29:43:       at ClientRequest.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:913:7)
+2025-09-12T19:29:43:       at ClientRequest.emit (node:events:507:28)
+2025-09-12T19:29:43:       at HTTPParser.parserOnIncomingClient (node:_http_client:716:27)
+2025-09-12T19:29:43:       at HTTPParser.parserOnHeadersComplete (node:_http_common:117:17)
+2025-09-12T19:29:43:       at TLSSocket.socketOnData (node:_http_client:558:22)
+2025-09-12T19:29:43:       at TLSSocket.emit (node:events:507:28)
+2025-09-12T19:29:43:       at addChunk (node:internal/streams/readable:559:12)
+2025-09-12T19:29:43:       at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+2025-09-12T19:29:43:       at Readable.push (node:internal/streams/readable:390:5)
+2025-09-12T19:29:43:       at TLSWrap.onStreamRead (node:internal/stream_base_commons:189:23)
+2025-09-12T19:29:43: }
+2025-09-12T19:29:43: Failed to initialize Whale Profile Service: NotConnectedError: Unexpected server response: 429
+2025-09-12T19:29:43:     at Connection.onConnectionFailed (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:298:54)
+2025-09-12T19:29:43:     at Socket.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:109:49)
+2025-09-12T19:29:43:     at Socket.emit (node:events:519:35)
+2025-09-12T19:29:43:     at emitErrorAndClose (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:1041:13)
+2025-09-12T19:29:43:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2025-09-12T19:29:43:   data: Error: Unexpected server response: 429
+2025-09-12T19:29:43:       at ClientRequest.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:913:7)
+2025-09-12T19:29:43:       at ClientRequest.emit (node:events:507:28)
+2025-09-12T19:29:43:       at HTTPParser.parserOnIncomingClient (node:_http_client:716:27)
+2025-09-12T19:29:43:       at HTTPParser.parserOnHeadersComplete (node:_http_common:117:17)
+2025-09-12T19:29:43:       at TLSSocket.socketOnData (node:_http_client:558:22)
+2025-09-12T19:29:43:       at TLSSocket.emit (node:events:507:28)
+2025-09-12T19:29:43:       at addChunk (node:internal/streams/readable:559:12)
+2025-09-12T19:29:43:       at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+2025-09-12T19:29:43:       at Readable.push (node:internal/streams/readable:390:5)
+2025-09-12T19:29:43:       at TLSWrap.onStreamRead (node:internal/stream_base_commons:189:23)
+2025-09-12T19:29:43: }
+2025-09-12T19:29:43: Failed to initialize Portfolio Analysis Service: NotConnectedError: Unexpected server response: 429
+2025-09-12T19:29:43:     at Connection.onConnectionFailed (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:298:54)
+2025-09-12T19:29:43:     at Socket.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:109:49)
+2025-09-12T19:29:43:     at Socket.emit (node:events:519:35)
+2025-09-12T19:29:43:     at emitErrorAndClose (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:1041:13)
+2025-09-12T19:29:43:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2025-09-12T19:29:43:   data: Error: Unexpected server response: 429
+2025-09-12T19:29:43:       at ClientRequest.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:913:7)
+2025-09-12T19:29:43:       at ClientRequest.emit (node:events:507:28)
+2025-09-12T19:29:43:       at HTTPParser.parserOnIncomingClient (node:_http_client:716:27)
+2025-09-12T19:29:43:       at HTTPParser.parserOnHeadersComplete (node:_http_common:117:17)
+2025-09-12T19:29:43:       at TLSSocket.socketOnData (node:_http_client:558:22)
+2025-09-12T19:29:43:       at TLSSocket.emit (node:events:507:28)
+2025-09-12T19:29:43:       at addChunk (node:internal/streams/readable:559:12)
+2025-09-12T19:29:43:       at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+2025-09-12T19:29:43:       at Readable.push (node:internal/streams/readable:390:5)
+2025-09-12T19:29:43:       at TLSWrap.onStreamRead (node:internal/stream_base_commons:189:23)
+2025-09-12T19:29:43: }
+2025-09-12T19:29:43: Error initializing Trading Pattern Recognition Service: NotConnectedError: Unexpected server response: 429
+2025-09-12T19:29:43:     at Connection.onConnectionFailed (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:298:54)
+2025-09-12T19:29:43:     at Socket.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:109:49)
+2025-09-12T19:29:43:     at Socket.emit (node:events:519:35)
+2025-09-12T19:29:43:     at emitErrorAndClose (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:1041:13)
+2025-09-12T19:29:43:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2025-09-12T19:29:43:   data: Error: Unexpected server response: 429
+2025-09-12T19:29:43:       at ClientRequest.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:913:7)
+2025-09-12T19:29:43:       at ClientRequest.emit (node:events:507:28)
+2025-09-12T19:29:43:       at HTTPParser.parserOnIncomingClient (node:_http_client:716:27)
+2025-09-12T19:29:43:       at HTTPParser.parserOnHeadersComplete (node:_http_common:117:17)
+2025-09-12T19:29:43:       at TLSSocket.socketOnData (node:_http_client:558:22)
+2025-09-12T19:29:43:       at TLSSocket.emit (node:events:507:28)
+2025-09-12T19:29:43:       at addChunk (node:internal/streams/readable:559:12)
+2025-09-12T19:29:43:       at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+2025-09-12T19:29:43:       at Readable.push (node:internal/streams/readable:390:5)
+2025-09-12T19:29:43:       at TLSWrap.onStreamRead (node:internal/stream_base_commons:189:23)
+2025-09-12T19:29:43: }
+2025-09-12T19:29:43: Community Features Service startup error: NotConnectedError: Unexpected server response: 429
+2025-09-12T19:29:43:     at Connection.onConnectionFailed (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:298:54)
+2025-09-12T19:29:43:     at Socket.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\xrpl\dist\npm\client\connection.js:109:49)
+2025-09-12T19:29:43:     at Socket.emit (node:events:519:35)
+2025-09-12T19:29:43:     at emitErrorAndClose (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:1041:13)
+2025-09-12T19:29:43:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2025-09-12T19:29:43:   data: Error: Unexpected server response: 429
+2025-09-12T19:29:43:       at ClientRequest.<anonymous> (C:\Users\xampo\Desktop\Draxmh Discord Bot\node_modules\ws\lib\websocket.js:913:7)
+2025-09-12T19:29:43:       at ClientRequest.emit (node:events:507:28)
+2025-09-12T19:29:43:       at HTTPParser.parserOnIncomingClient (node:_http_client:716:27)
+2025-09-12T19:29:43:       at HTTPParser.parserOnHeadersComplete (node:_http_common:117:17)
+2025-09-12T19:29:43:       at TLSSocket.socketOnData (node:_http_client:558:22)
+2025-09-12T19:29:43:       at TLSSocket.emit (node:events:507:28)
+2025-09-12T19:29:43:       at addChunk (node:internal/streams/readable:559:12)
+2025-09-12T19:29:43:       at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+2025-09-12T19:29:43:       at Readable.push (node:internal/streams/readable:390:5)
+2025-09-12T19:29:43:       at TLSWrap.onStreamRead (node:internal/stream_base_commons:189:23)
+2025-09-12T19:29:43: }
+2025-09-12T19:29:57: (node:37524) Warning: Supplying "ephemeral" for interaction response options is deprecated. Utilize flags instead.
+2025-09-12T20:29:39: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-12T21:29:39: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-12T22:29:39: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-12T23:29:39: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-13T00:29:39: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-13T01:29:39: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-13T01:39:47: Error fetching KuCoin price: timeout of 5000ms exceeded
+2025-09-13T01:39:47: Error fetching KuCoin price: timeout of 5000ms exceeded
+2025-09-13T02:18:15: No webhook configured for type: MESSAGE_CREATE
+2025-09-13T02:29:39: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-13T02:36:40: No webhook configured for type: MESSAGE_CREATE
+2025-09-13T03:29:39: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-13T04:29:39: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-13T05:29:39: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-13T06:29:39: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-13T07:29:39: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-13T08:29:39: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-13T09:29:39: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-13T10:29:39: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com
+2025-09-13T11:29:39: Failed to fetch from https://api.phishtank.com/data/online-valid.json: getaddrinfo ENOTFOUND api.phishtank.com

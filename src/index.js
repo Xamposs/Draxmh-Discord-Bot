@@ -31,6 +31,7 @@ import { exec } from 'child_process';
 import fs from 'fs';
 import { Client as XrplClient } from 'xrpl';
 import { SmartPathAnalyzer } from './services/smartPathAnalyzer.js';
+import { PWAServer } from '../pwa/server.js';
 
 // Add whale watching service imports - Fixed to match export patterns
 import { WhaleDiscoveryService } from './services/whaleDiscoveryService.js';  // Named export
@@ -704,5 +705,43 @@ if (process.env.NODE_ENV === 'development') {
     }, 60000); // Check every minute
 }
 
+
+
 // Login the client
 client.login(process.env.DISCORD_TOKEN);
+
+// Add this after your Discord client setup
+class DraxmhBot {
+    constructor() {
+        this.client = client;
+        this.pwaServer = null;
+    }
+
+    async start() {
+        try {
+            // Initialize PWA Server
+            this.pwaServer = new PWAServer();
+            await this.pwaServer.start();
+            console.log('✅ PWA Server started successfully');
+        } catch (error) {
+            console.error('❌ Failed to start PWA Server:', error);
+        }
+    }
+
+    async shutdown() {
+        console.log('🔄 Shutting down bot services...');
+        if (this.pwaServer) {
+            await this.pwaServer.stop();
+        }
+        process.exit(0);
+    }
+}
+
+const bot = new DraxmhBot();
+
+// Start the bot services
+bot.start();
+
+process.on('SIGINT', () => {
+    bot.shutdown();
+});

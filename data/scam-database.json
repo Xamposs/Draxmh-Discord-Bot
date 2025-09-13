@@ -7,12 +7,20 @@
       {
         "messages": [
           {
-            "content": "!commands",
-            "timestamp": 1757007162932
+            "content": "!close",
+            "timestamp": 1757719095010
           },
           {
-            "content": "!commands",
-            "timestamp": 1757007162933
+            "content": "!close",
+            "timestamp": 1757719095012
+          },
+          {
+            "content": "!announce <#1252355869451096074> Draxmh Official : Website: https://www.cryptodraxmh.gr/\ndApps: https://drxdefi.app/\nDraxmh trustline : https://xrpl.services/?issuer=rUWUQhB2pcgCbjJxaBv9GrS1hr9pCUGXxX&currency=DRX&limit=1997793963.0467827\nBuy Draxmh : https://sologenic.org/trade?market=DRX%2BrUWUQhB2pcgCbjJxaBv9GrS1hr9pCUGXxX%2F524C555344000000000000000000000000000000%2BrMxCKbEDwqr76QuheSUMdEGf4B9xJ8m5De\nTelegram Official Group : https://t.me/cryptodraxmh\nX Official Accoount : https://x.com/Crypto_draxmi?t=Yinx4sJQEFj0DBuV4jNf5A&s=09\nYou can also buy Draxmh direct through our site with Onramp : https://drxdefi.app/\nFor any update of our OFFICIAL links will be updated !",
+            "timestamp": 1757720200585
+          },
+          {
+            "content": "!announce <#1252355869451096074> Draxmh Official : Website: https://www.cryptodraxmh.gr/\ndApps: https://drxdefi.app/\nDraxmh trustline : https://xrpl.services/?issuer=rUWUQhB2pcgCbjJxaBv9GrS1hr9pCUGXxX&currency=DRX&limit=1997793963.0467827\nBuy Draxmh : https://sologenic.org/trade?market=DRX%2BrUWUQhB2pcgCbjJxaBv9GrS1hr9pCUGXxX%2F524C555344000000000000000000000000000000%2BrMxCKbEDwqr76QuheSUMdEGf4B9xJ8m5De\nTelegram Official Group : https://t.me/cryptodraxmh\nX Official Accoount : https://x.com/Crypto_draxmi?t=Yinx4sJQEFj0DBuV4jNf5A&s=09\nYou can also buy Draxmh direct through our site with Onramp : https://drxdefi.app/\nFor any update of our OFFICIAL links will be updated !",
+            "timestamp": 1757720200585
           }
         ],
         "reports": 0,
@@ -21,5 +29,5 @@
       }
     ]
   ],
-  "lastUpdated": 1757232495491
+  "lastUpdated": 1757754579685
 }
